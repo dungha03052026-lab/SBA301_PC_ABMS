@@ -4,16 +4,16 @@ import { AuthProvider } from '../shared/context/AuthContext';
 import LoginPage from '../modules/auth/LoginPage';
 
 const AppRoutes = () => {
-  return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
-  );
+    return (
+        <AuthProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="*" element={<Navigate to="/login" replace />} />
+                </Routes>
+            </BrowserRouter>
+        </AuthProvider>
+    );
 };
 
 export default AppRoutes;
