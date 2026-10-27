@@ -380,3 +380,72 @@ body {
   border-radius: var(--ps-radius-none);
   font-size: 14px;
 }
+
+/* ====================================================================
+   PLAYSTATION SIDEBAR & NAVIGATION (LIGHT UTILITY SURFACE MODE)
+   Spec: High-contrast ink text (#000000), 9999px pill active state (#0070d1),
+   1px hairline-light border, Level 0 Flat elevation.
+   ==================================================================== */
+
+.ps-sider-light {
+  background-color: var(--ps-canvas-light) !important;
+  border-right: 1px solid var(--ps-hairline-light) !important;
+  box-shadow: none !important;
+}
+
+.ps-sider-light .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+}
+
+.ps-sider-light .ant-menu-light {
+  background-color: transparent !important;
+  border-inline-end: none !important;
+}
+
+.ps-sider-light .ant-menu-item {
+  font-family: var(--ps-font) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  border-radius: var(--ps-radius-full) !important;
+  margin-bottom: 8px !important;
+  height: 46px !important;
+  line-height: 46px !important;
+  color: var(--ps-ink) !important;
+  padding: 0 20px !important;
+  transition: all 0.15s ease !important;
+}
+
+.ps-sider-light .ant-menu-item .ant-menu-item-icon {
+  font-size: 17px !important;
+  color: var(--ps-ink) !important;
+  transition: color 0.15s ease !important;
+}
+
+.ps-sider-light .ant-menu-item:hover {
+  background-color: rgba(0, 112, 209, 0.08) !important;
+  color: var(--ps-primary) !important;
+}
+
+.ps-sider-light .ant-menu-item:hover .ant-menu-item-icon {
+  color: var(--ps-primary) !important;
+}
+
+/* Selected menu item: Universal PlayStation Primary CTA Pill */
+.ps-sider-light .ant-menu-item-selected {
+  background-color: var(--ps-primary) !important;
+  color: var(--ps-on-primary) !important;
+  font-weight: 700 !important;
+}
+
+.ps-sider-light .ant-menu-item-selected .ant-menu-item-icon {
+  color: var(--ps-on-primary) !important;
+}
+
+/* Sider Trigger Collapse */
+.ps-sider-light .ant-layout-sider-trigger {
+  background-color: var(--ps-canvas-light) !important;
+  color: var(--ps-ink) !important;
+  border-top: 1px solid var(--ps-hairline-light) !important;
+  border-right: 1px solid var(--ps-hairline-light) !important;
+}

@@ -65,18 +65,14 @@ const AdminLayout = () => {
 
   return (
     <Layout style={{ minHeight: '100vh', backgroundColor: PS_COLORS.surfaceCard }}>
-      {/* Sider: PlayStation Canvas Dark (#000000) with Hairline Dark border */}
+      {/* Sider: PlayStation Light Utility Mode (#ffffff) with Hairline Light border */}
       <Sider
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
-        theme="dark"
+        theme="light"
         width={250}
-        style={{
-          backgroundColor: PS_COLORS.canvasDark,
-          borderRight: `1px solid ${PS_COLORS.hairlineDark}`,
-          boxShadow: 'none', // Level 0 Flat
-        }}
+        className="ps-sider-light"
       >
         <div
           style={{
@@ -84,8 +80,8 @@ const AdminLayout = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: PS_COLORS.canvasDark,
-            borderBottom: `1px solid ${PS_COLORS.hairlineDark}`,
+            backgroundColor: PS_COLORS.canvasLight,
+            borderBottom: `1px solid ${PS_COLORS.hairlineLight}`,
             padding: '0 16px',
           }}
         >
@@ -103,26 +99,27 @@ const AdminLayout = () => {
               <span
                 className="ps-heading-md"
                 style={{
-                  color: PS_COLORS.onDark,
-                  fontWeight: 300,
+                  color: PS_COLORS.ink,
+                  fontWeight: 600,
                   letterSpacing: '1px',
+                  fontSize: 16,
                 }}
               >
-                BMS PORTAL
+                BMS ADMIN
               </span>
             )}
           </div>
         </div>
 
-        <div style={{ padding: '16px 8px' }}>
+        <div style={{ padding: '16px 12px' }}>
           <Menu
-            theme="dark"
+            theme="light"
             mode="inline"
             selectedKeys={[location.pathname]}
             items={menuItems}
             onClick={handleMenuClick}
             style={{
-              backgroundColor: PS_COLORS.canvasDark,
+              backgroundColor: 'transparent',
               border: 'none',
             }}
           />
@@ -229,26 +226,17 @@ const AdminLayout = () => {
           </Space>
         </Header>
 
-        {/* Content: Surface Card Canvas (#f5f7fa), max 1280px or full container */}
+        {/* Content: Surface Card Canvas (#f5f7fa), max 1400px container */}
         <Content
           style={{
-            margin: '24px 32px',
+            padding: '28px 32px',
             minHeight: 'calc(100vh - 180px)',
+            maxWidth: 1400,
+            width: '100%',
+            margin: '0 auto',
           }}
         >
-          <div
-            className="ps-product-card"
-            style={{
-              backgroundColor: PS_COLORS.canvasLight,
-              border: `1px solid ${PS_COLORS.hairlineLight}`,
-              borderRadius: PS_ROUNDED.md, // 8px
-              padding: '32px',
-              minHeight: 400,
-              boxShadow: 'none',
-            }}
-          >
-            <Outlet />
-          </div>
+          <Outlet />
         </Content>
 
         {/* Footer: PlayStation Blue band (#0070d1 footer-section) */}
