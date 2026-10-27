@@ -114,7 +114,7 @@ const INITIAL_DATA = {
       new_electric_num: 180,
       old_water_num: 20,
       new_water_num: 28,
-      total_amount: 2395000.0, // (80*3500)+(8*15000)+(75.5*10000)+(1*100000+1*1200000) = 280k + 120k + 755k + 1300k = 2455k?
+      total_amount: 2455000.0, // Điện: 80*3500=280k + Nước: 8*15000=120k + Phí QL: 75.5*10000=755k + Xe: 1CAR*1200k+1MOTORBIKE*100k=1300k → Tổng: 2.455.000 VNĐ
       status: 'UNPAID', // Test chặn Move-out và Quét VietQR
       due_date: '2026-10-25',
       paid_at: null,

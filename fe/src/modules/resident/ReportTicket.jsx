@@ -1,22 +1,30 @@
 // src/modules/resident/ReportTicket.jsx
 import React from 'react';
-import { Card, Typography } from 'antd';
 import { useApartment } from '../../shared/context/ApartmentContext';
-
-const { Title, Paragraph } = Typography;
+import { PS_COLORS } from '../../shared/theme/playstationTheme';
 
 const ReportTicket = () => {
   const { selectedApartment } = useApartment();
 
   return (
-    <Card>
-      <Title level={4}>
-        🛠️ Báo hỏng Sự cố Căn hộ {selectedApartment?.room_number || ''} (UC-13, UC-17)
-      </Title>
-      <Paragraph type="secondary">
-        Tạo yêu cầu sửa chữa, theo dõi tiến độ xử lý và nghiệm thu chấm 1-5 sao sau khi thợ sửa xong.
-      </Paragraph>
-    </Card>
+    <div>
+      <h2
+        className="ps-heading-xl"
+        style={{
+          fontWeight: 300,
+          color: PS_COLORS.ink,
+          marginBottom: 12,
+        }}
+      >
+        Báo hỏng & Yêu cầu Kỹ thuật — {selectedApartment ? `${selectedApartment.room_number}` : ''}
+      </h2>
+      <p
+        className="ps-body-md"
+        style={{ color: PS_COLORS.bodyLight, marginBottom: 24 }}
+      >
+        Tạo phiếu báo hỏng sự cố căn hộ, theo dõi tiến độ và nghiệm thu chấm 1–5 sao (UC-13, UC-17).
+      </p>
+    </div>
   );
 };
 

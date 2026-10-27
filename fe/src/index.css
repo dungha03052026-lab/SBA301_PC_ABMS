@@ -1,111 +1,382 @@
+/* src/index.css */
+/* PLAYSTATION DESIGN SYSTEM IMPLEMENTATION - 100% SPEC COMPLIANT WITH DESIGN-playstation.md */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Colors */
+  --ps-primary: #0070d1;
+  --ps-primary-pressed: #0064b7;
+  --ps-primary-active: #004d8d;
+  --ps-on-primary: #ffffff;
+  --ps-commerce: #d53b00;
+  --ps-commerce-pressed: #aa2f00;
+  --ps-on-commerce: #ffffff;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --ps-ink: #000000;
+  --ps-ink-deep: #121314;
+  --ps-ink-elevated: #181818;
+  --ps-charcoal: #1f2024;
+  --ps-body-light: rgba(0, 0, 0, 0.6);
+  --ps-mute-light: #6b6b6b;
+  --ps-ash-light: #cccccc;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --ps-canvas-light: #ffffff;
+  --ps-surface-soft: #f3f3f3;
+  --ps-surface-card: #f5f7fa;
+  --ps-surface-filter: rgba(245, 247, 250, 0.3);
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --ps-canvas-dark: #000000;
+  --ps-surface-dark-elevated: #121314;
+  --ps-surface-dark-card: #181818;
+  --ps-on-dark: #ffffff;
+  --ps-body-dark: rgba(255, 255, 255, 0.7);
+  --ps-mute-dark: rgba(229, 229, 229, 0.55);
+  --ps-ash-dark: rgba(229, 229, 229, 0.2);
+
+  --ps-hairline-light: #f3f3f3;
+  --ps-hairline-dark: rgba(229, 229, 229, 0.2);
+  --ps-warning: #c81b3a;
+
+  /* Fonts */
+  --ps-font: 'PlayStation SST', 'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  /* Radius Scale */
+  --ps-radius-none: 0px;
+  --ps-radius-sm: 4px;
+  --ps-radius-md: 8px;
+  --ps-radius-lg: 16px;
+  --ps-radius-full: 9999px;
+
+  /* Spacing Scale */
+  --ps-space-xxs: 4px;
+  --ps-space-xs: 8px;
+  --ps-space-sm: 12px;
+  --ps-space-md: 16px;
+  --ps-space-lg: 24px;
+  --ps-space-xl: 32px;
+  --ps-space-xxl: 48px;
+  --ps-space-section: 96px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  font-family: var(--ps-font);
+  background-color: var(--ps-surface-card);
+  color: var(--ps-ink);
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
+/* ====================================================================
+   PLAYSTATION TYPOGRAPHY HIERARCHY
+   Signature Rule: Display headings are light weight 300!
+   ==================================================================== */
+
+.ps-display-xl {
+  font-family: var(--ps-font);
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.1px;
+}
+
+.ps-display-lg {
+  font-family: var(--ps-font);
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+}
+
+.ps-display-md {
+  font-family: var(--ps-font);
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.ps-heading-xl {
+  font-family: var(--ps-font);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+}
+
+.ps-heading-lg {
+  font-family: var(--ps-font);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+}
+
+.ps-heading-md {
+  font-family: var(--ps-font);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.ps-body-md {
+  font-family: var(--ps-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+}
+
+.ps-body-strong {
+  font-family: var(--ps-font);
+  font-size: 18px;
   font-weight: 500;
-  color: var(--text-h);
+  line-height: 1.25;
+  letter-spacing: 0.4px;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.ps-body-sm {
+  font-family: var(--ps-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+.ps-caption-md {
+  font-family: var(--ps-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.ps-caption-sm {
+  font-family: var(--ps-font);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* ====================================================================
+   PLAYSTATION COMPONENTS & BUTTONS
+   ==================================================================== */
+
+/* Universal Primary CTA Pill */
+.ps-btn-primary {
+  background-color: var(--ps-primary) !important;
+  color: var(--ps-on-primary) !important;
+  font-family: var(--ps-font);
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.25;
+  letter-spacing: 0.45px;
+  border-radius: var(--ps-radius-full) !important;
+  padding: 12px 28px !important;
+  height: 48px !important;
+  border: none !important;
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.ps-btn-primary:hover,
+.ps-btn-primary:focus {
+  background-color: var(--ps-primary-pressed) !important;
+  color: var(--ps-on-primary) !important;
+}
+
+.ps-btn-primary:active {
+  background-color: var(--ps-primary-active) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Commerce Orange Store/Pay CTA Pill */
+.ps-btn-commerce {
+  background-color: var(--ps-commerce) !important;
+  color: var(--ps-on-commerce) !important;
+  font-family: var(--ps-font);
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.25;
+  letter-spacing: 0.45px;
+  border-radius: var(--ps-radius-full) !important;
+  padding: 12px 28px !important;
+  height: 48px !important;
+  border: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ps-btn-commerce:hover,
+.ps-btn-commerce:focus {
+  background-color: var(--ps-commerce-pressed) !important;
+  color: var(--ps-on-commerce) !important;
+}
+
+/* Outline Secondary Pill (Light Surface) */
+.ps-btn-secondary-light {
+  background-color: transparent !important;
+  color: var(--ps-ink) !important;
+  font-family: var(--ps-font);
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border: 1px solid var(--ps-ash-light) !important;
+  border-radius: var(--ps-radius-full) !important;
+  padding: 8px 24px !important;
+  height: 40px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ps-btn-secondary-light:hover {
+  background-color: var(--ps-surface-soft) !important;
+}
+
+/* Outline Secondary Pill (Dark Surface) */
+.ps-btn-secondary-dark {
+  background-color: transparent !important;
+  color: var(--ps-on-dark) !important;
+  font-family: var(--ps-font);
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border: 1px solid var(--ps-hairline-dark) !important;
+  border-radius: var(--ps-radius-full) !important;
+  padding: 8px 24px !important;
+  height: 40px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ps-btn-secondary-dark:hover {
+  background-color: var(--ps-surface-dark-card) !important;
+}
+
+/* Filter Pill - Light Surface */
+.ps-filter-pill {
+  background-color: var(--ps-surface-card);
+  color: var(--ps-ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.324px;
+  border-radius: var(--ps-radius-full);
+  padding: 8px 18px;
+  border: 1px solid var(--ps-ash-light);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-filter-pill:hover {
+  background-color: var(--ps-canvas-light);
+  border-color: var(--ps-primary);
+  color: var(--ps-primary);
+}
+
+.ps-filter-pill:active,
+.ps-filter-pill.active {
+  background-color: var(--ps-primary);
+  color: #ffffff;
+  border-color: var(--ps-primary);
+}
+
+/* Filter Pill - Dark Surface */
+.ps-filter-pill-dark {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--ps-on-dark);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.324px;
+  border-radius: var(--ps-radius-full);
+  padding: 8px 18px;
+  border: 1px solid var(--ps-hairline-dark);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-filter-pill-dark:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.ps-filter-pill-dark:active,
+.ps-filter-pill-dark.active {
+  background-color: var(--ps-primary);
+  color: #ffffff;
+  border-color: var(--ps-primary);
+}
+
+/* Product Card - Light Canvas (8px radius, Flat Level 0, no resting shadow!) */
+.ps-product-card {
+  background-color: var(--ps-canvas-light);
+  color: var(--ps-ink);
+  border-radius: var(--ps-radius-md);
+  padding: var(--ps-space-lg);
+  border: 1px solid var(--ps-hairline-light);
+  box-shadow: none !important;
+}
+
+.ps-product-card-dark {
+  background-color: var(--ps-surface-dark-card);
+  color: var(--ps-on-dark);
+  border-radius: var(--ps-radius-md);
+  padding: var(--ps-space-lg);
+  border: 1px solid var(--ps-hairline-dark);
+  box-shadow: none !important;
+}
+
+/* Universal Section Divider: Color-block bands rather than decorative lines */
+.ps-band-dark {
+  background-color: var(--ps-canvas-dark);
+  color: var(--ps-on-dark);
+}
+
+.ps-band-light {
+  background-color: var(--ps-canvas-light);
+  color: var(--ps-ink);
+}
+
+.ps-band-blue {
+  background-color: var(--ps-primary);
+  color: var(--ps-on-primary);
+}
+
+/* PlayStation Blue Footer */
+.ps-footer-section {
+  background-color: var(--ps-primary);
+  color: var(--ps-on-primary);
+  padding: var(--ps-space-xxl) var(--ps-space-xl);
+  border-radius: var(--ps-radius-none);
+  font-size: 14px;
 }

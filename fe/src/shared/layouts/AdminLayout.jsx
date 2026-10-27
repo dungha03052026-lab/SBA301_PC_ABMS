@@ -14,9 +14,10 @@ import {
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ChangePasswordModal from '../components/ChangePasswordModal';
+import { PS_COLORS, PS_ROUNDED } from '../theme/playstationTheme';
 
-const { Header, Sider, Content } = Layout;
-const { Text, Title } = Typography;
+const { Header, Sider, Content, Footer } = Layout;
+const { Text } = Typography;
 
 const AdminLayout = () => {
   const { user, logout } = useAuth();
@@ -63,16 +64,18 @@ const AdminLayout = () => {
   };
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: '100vh', backgroundColor: PS_COLORS.surfaceCard }}>
+      {/* Sider: PlayStation Canvas Dark (#000000) with Hairline Dark border */}
       <Sider
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
         theme="dark"
-        width={240}
+        width={250}
         style={{
-          boxShadow: '2px 0 8px rgba(0,0,0,0.15)',
-          zIndex: 10,
+          backgroundColor: PS_COLORS.canvasDark,
+          borderRight: `1px solid ${PS_COLORS.hairlineDark}`,
+          boxShadow: 'none', // Level 0 Flat
         }}
       >
         <div
@@ -81,88 +84,192 @@ const AdminLayout = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#002140',
-            color: '#fff',
-            fontWeight: 'bold',
-            fontSize: collapsed ? 16 : 18,
-            letterSpacing: 1,
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
+            backgroundColor: PS_COLORS.canvasDark,
+            borderBottom: `1px solid ${PS_COLORS.hairlineDark}`,
+            padding: '0 16px',
           }}
         >
-          {collapsed ? 'BMS' : '🏢 BMS PORTAL'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            {/* PlayStation Blue Brand Indicator */}
+            <div
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: '50%',
+                backgroundColor: PS_COLORS.primary,
+              }}
+            />
+            {!collapsed && (
+              <span
+                className="ps-heading-md"
+                style={{
+                  color: PS_COLORS.onDark,
+                  fontWeight: 300,
+                  letterSpacing: '1px',
+                }}
+              >
+                BMS PORTAL
+              </span>
+            )}
+          </div>
         </div>
-        <Menu
-          theme="dark"
-          mode="inline"
-          selectedKeys={[location.pathname]}
-          items={menuItems}
-          onClick={handleMenuClick}
-        />
+
+        <div style={{ padding: '16px 8px' }}>
+          <Menu
+            theme="dark"
+            mode="inline"
+            selectedKeys={[location.pathname]}
+            items={menuItems}
+            onClick={handleMenuClick}
+            style={{
+              backgroundColor: PS_COLORS.canvasDark,
+              border: 'none',
+            }}
+          />
+        </div>
       </Sider>
 
-      <Layout>
+      <Layout style={{ backgroundColor: PS_COLORS.surfaceCard }}>
+        {/* Header: Pure White (#ffffff), Level 0 Flat with Hairline Light border */}
         <Header
           style={{
-            background: '#fff',
-            padding: '0 24px',
+            backgroundColor: PS_COLORS.canvasLight,
+            padding: '0 32px',
+            height: 64,
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+            borderBottom: `1px solid ${PS_COLORS.hairlineLight}`,
+            boxShadow: 'none', // Strictly no resting drop shadow
             zIndex: 9,
           }}
         >
           <div>
-            <Text strong style={{ fontSize: 16 }}>
+            <h2
+              className="ps-heading-lg"
+              style={{
+                color: PS_COLORS.ink,
+                margin: 0,
+                fontWeight: 300, // Signature PlayStation weight 300
+              }}
+            >
               Hệ thống Quản lý Vận hành Chung cư
-            </Text>
+            </h2>
           </div>
 
-          <Space size="middle">
-            <Space>
-              <Avatar icon={<UserOutlined />} style={{ backgroundColor: '#1677ff' }} />
+          <Space size="middle" align="center">
+            <Space align="center" size="small">
+              <Avatar
+                icon={<UserOutlined />}
+                style={{
+                  backgroundColor: PS_COLORS.primary,
+                  color: PS_COLORS.onPrimary,
+                }}
+              />
               <div style={{ lineHeight: 1.2 }}>
-                <Text strong style={{ display: 'block' }}>
+                <span
+                  style={{
+                    display: 'block',
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: PS_COLORS.ink,
+                  }}
+                >
                   {user?.full_name || 'Admin'}
-                </Text>
-                <Tag color="geekblue" style={{ margin: 0 }}>
+                </span>
+                <span
+                  className="ps-caption-sm"
+                  style={{
+                    display: 'inline-block',
+                    backgroundColor: PS_COLORS.primary,
+                    color: PS_COLORS.onPrimary,
+                    padding: '2px 8px',
+                    borderRadius: PS_ROUNDED.full,
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: '0.3px',
+                  }}
+                >
                   BAN QUẢN LÝ
-                </Tag>
+                </span>
               </div>
             </Space>
 
+            {/* Button Secondary Light: Outline Pill */}
             <Button
               icon={<KeyOutlined />}
               onClick={() => setChangePassOpen(true)}
-              size="middle"
+              style={{
+                borderRadius: PS_ROUNDED.full,
+                height: 38,
+                padding: '0 20px',
+                borderColor: PS_COLORS.ashLight,
+                fontWeight: 600,
+                fontSize: 14,
+              }}
             >
               Đổi mật khẩu
             </Button>
 
+            {/* Button Warning: Destructive Action Pill */}
             <Button
               icon={<LogoutOutlined />}
               danger
               onClick={handleLogout}
-              size="middle"
+              style={{
+                borderRadius: PS_ROUNDED.full,
+                height: 38,
+                padding: '0 20px',
+                fontWeight: 600,
+                fontSize: 14,
+              }}
             >
               Đăng xuất
             </Button>
           </Space>
         </Header>
 
+        {/* Content: Surface Card Canvas (#f5f7fa), max 1280px or full container */}
         <Content
           style={{
-            margin: '20px',
-            padding: '24px',
-            background: '#fff',
-            borderRadius: '8px',
-            minHeight: 280,
-            boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+            margin: '24px 32px',
+            minHeight: 'calc(100vh - 180px)',
           }}
         >
-          <Outlet />
+          <div
+            className="ps-product-card"
+            style={{
+              backgroundColor: PS_COLORS.canvasLight,
+              border: `1px solid ${PS_COLORS.hairlineLight}`,
+              borderRadius: PS_ROUNDED.md, // 8px
+              padding: '32px',
+              minHeight: 400,
+              boxShadow: 'none',
+            }}
+          >
+            <Outlet />
+          </div>
         </Content>
+
+        {/* Footer: PlayStation Blue band (#0070d1 footer-section) */}
+        <Footer
+          style={{
+            backgroundColor: PS_COLORS.primary,
+            color: PS_COLORS.onPrimary,
+            padding: '24px 32px',
+            textAlign: 'center',
+            fontSize: 14,
+          }}
+        >
+          <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+            <span style={{ fontWeight: 300, letterSpacing: '0.5px' }}>
+              BMS • Apartment Building Management System
+            </span>
+            <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
+              Thiết kế theo chuẩn PlayStation Design System (Flat Level 0 • Pill CTAs • 8px Radius)
+            </span>
+          </div>
+        </Footer>
       </Layout>
 
       <ChangePasswordModal

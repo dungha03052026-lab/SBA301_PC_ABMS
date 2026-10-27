@@ -1,5 +1,5 @@
 // src/shared/context/AuthContext.jsx
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react'; // Bug 4 fixed: bỏ useEffect không dùng
 import { MockDB } from '../constants/mockData';
 
 const AuthContext = createContext(null);
@@ -42,11 +42,11 @@ export const AuthProvider = ({ children }) => {
     return authUser;
   };
 
-  // Đăng nhập thật bằng số điện thoại hoặc email
+  // Đăng nhập thật bằng số điện thoại hoặc email (UC-01)
   const login = async (username, password) => {
     const users = MockDB.getUsers();
     const found = users.find(
-      (u) => (u.phone_number === username || u.email === username)
+      (u) => u.phone_number === username || u.email === username
     );
 
     if (!found) {
@@ -60,7 +60,9 @@ export const AuthProvider = ({ children }) => {
       };
     }
 
-    if (found.password !== password && password !== '123456') {
+    // Bug 2 fixed: so khớp đúng với mật khẩu lưu trong MockDB, không có backdoor '123456'
+    const isPasswordCorrect = found.password === password;
+    if (!isPasswordCorrect) {
       return { success: false, message: 'Mật khẩu không chính xác' };
     }
 
@@ -89,7 +91,9 @@ export const AuthProvider = ({ children }) => {
     }
 
     const targetUser = users[userIndex];
-    if (targetUser.password !== currentPassword && currentPassword !== '123456') {
+
+    // Bug 2 fixed: so khớp đúng với mật khẩu hiện tại, không có backdoor
+    if (targetUser.password !== currentPassword) {
       return { success: false, message: 'Mật khẩu hiện tại không chính xác' };
     }
 
