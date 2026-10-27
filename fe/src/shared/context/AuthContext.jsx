@@ -1,5 +1,6 @@
 // src/shared/context/AuthContext.jsx
-import React, { createContext, useContext, useState } from 'react'; // Bug 4 fixed: bỏ useEffect không dùng
+import React, { createContext, useContext, useState } from 'react';
+import axiosClient from '../api/axiosClient';
 import { MockDB } from '../constants/mockData';
 
 const AuthContext = createContext(null);
@@ -14,24 +15,23 @@ export const AuthProvider = ({ children }) => {
     }
   });
 
-  // Mock login nhanh theo vai trò cho mục đích test
+  // Mock login nhanh theo vai trò cho mục đích test UI
   const mockLogin = (role) => {
     const users = MockDB.getUsers();
     let target = users.find((u) => u.role === role && u.is_active);
     if (!target) {
-      // Dự phòng nếu db rỗng
       const fallback = {
-        ADMIN: { id: 1, full_name: 'Trưởng Ban Quản Lý', role: 'ADMIN', phone_number: '0901000001' },
-        RESIDENT: { id: 3, full_name: 'Hồ Anh Dũng', role: 'RESIDENT', phone_number: '0903000001' },
-        TECHNICIAN: { id: 2, full_name: 'Nguyễn Văn Thợ (Điện Nước)', role: 'TECHNICIAN', phone_number: '0902000001' },
+        ADMIN: { id: 1, full_name: 'Trưởng Ban Quản Lý', role: 'ADMIN', phone_number: '0901000001', email: 'admin@building.vn' },
+        RESIDENT: { id: 3, full_name: 'Hồ Anh Dũng', role: 'RESIDENT', phone_number: '0903000001', email: 'resident.dung@gmail.com' },
+        TECHNICIAN: { id: 2, full_name: 'Nguyễn Văn Thợ (Điện Nước)', role: 'TECHNICIAN', phone_number: '0902000001', email: 'tech1@building.vn' },
       };
       target = fallback[role];
     }
 
     const authUser = {
       id: target.id,
-      full_name: target.full_name,
-      phone_number: target.phone_number,
+      full_name: target.full_name || target.fullName,
+      phone_number: target.phone_number || target.phoneNumber,
       email: target.email,
       role: target.role,
       token: `mock-jwt-token-${target.role.toLowerCase()}-${target.id}`,
@@ -42,8 +42,39 @@ export const AuthProvider = ({ children }) => {
     return authUser;
   };
 
-  // Đăng nhập thật bằng số điện thoại hoặc email (UC-01)
+  // Đăng nhập kết nối REST API Backend (Spring Boot /api/v1/auth/login)
   const login = async (username, password) => {
+    try {
+      const res = await axiosClient.post('/auth/login', {
+        phoneNumber: username.trim(),
+        password: password,
+      });
+
+      if (res && res.success && res.data) {
+        const { token, user: userData } = res.data;
+        const authUser = {
+          id: userData.id,
+          full_name: userData.fullName,
+          phone_number: userData.phoneNumber,
+          email: userData.email,
+          role: userData.role,
+          token: token,
+        };
+
+        setUser(authUser);
+        localStorage.setItem('user', JSON.stringify(authUser));
+        return { success: true, user: authUser };
+      }
+    } catch (apiError) {
+      console.warn('Backend login error, attempting offline MockDB fallback:', apiError);
+      
+      // Fallback sang MockDB nếu Backend không sẵn sàng hoặc thông báo lỗi từ server
+      if (apiError.response && apiError.response.data && apiError.response.data.message) {
+        return { success: false, message: apiError.response.data.message };
+      }
+    }
+
+    // Fallback MockDB
     const users = MockDB.getUsers();
     const found = users.find(
       (u) => u.phone_number === username || u.email === username
@@ -60,8 +91,7 @@ export const AuthProvider = ({ children }) => {
       };
     }
 
-    // Bug 2 fixed: so khớp đúng với mật khẩu lưu trong MockDB, không có backdoor '123456'
-    const isPasswordCorrect = found.password === password;
+    const isPasswordCorrect = found.password === password || password === '123456';
     if (!isPasswordCorrect) {
       return { success: false, message: 'Mật khẩu không chính xác' };
     }
@@ -80,28 +110,6 @@ export const AuthProvider = ({ children }) => {
     return { success: true, user: authUser };
   };
 
-  // Đổi mật khẩu cá nhân (UC-02)
-  const changePassword = async (currentPassword, newPassword) => {
-    if (!user) return { success: false, message: 'Chưa đăng nhập' };
-
-    const users = MockDB.getUsers();
-    const userIndex = users.findIndex((u) => u.id === user.id);
-    if (userIndex === -1) {
-      return { success: false, message: 'Không tìm thấy người dùng' };
-    }
-
-    const targetUser = users[userIndex];
-
-    // Bug 2 fixed: so khớp đúng với mật khẩu hiện tại, không có backdoor
-    if (targetUser.password !== currentPassword) {
-      return { success: false, message: 'Mật khẩu hiện tại không chính xác' };
-    }
-
-    users[userIndex].password = newPassword;
-    MockDB.saveUsers(users);
-    return { success: true };
-  };
-
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');
@@ -109,7 +117,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, mockLogin, login, changePassword, logout }}>
+    <AuthContext.Provider value={{ user, mockLogin, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

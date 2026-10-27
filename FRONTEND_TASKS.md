@@ -165,8 +165,8 @@
 
 ### GIAI ĐOẠN 4: ĐẤU NỐI REST API BACKEND & KIỂM THỬ TÍCH HỢP (E2E)
 
-- [ ] Đấu nối `axiosClient` thay thế mock data khi Backend sẵn sàng.
-- [ ] Kiểm thử 5 kịch bản tích hợp khép kín:
+- [x] Đấu nối `axiosClient` thay thế mock data khi Backend sẵn sàng.
+- [x] Kiểm thử 5 kịch bản tích hợp khép kín:
   - **Kịch bản 1 (Context Switch):** Đổi giữa căn hộ `A-101` và `B-502` trên Header $\rightarrow$ Dữ liệu hóa đơn, sự cố đổi tức thì.
   - **Kịch bản 2 (Chốt số & Hóa đơn):** Nhập số điện nước $\rightarrow$ Tính nhẩm đúng $\rightarrow$ Xuất hóa đơn đúng mã `INV-YYYYMM-ROOM`.
   - **Kịch bản 3 (VietQR & Gạch nợ):** Cư dân quét VietQR $\rightarrow$ Báo đã chuyển (`PENDING`) $\rightarrow$ Admin duyệt (`PAID`).

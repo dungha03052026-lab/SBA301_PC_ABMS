@@ -1,6 +1,7 @@
 // src/shared/context/ApartmentContext.jsx
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
+import axiosClient from '../api/axiosClient';
 import { MockDB } from '../constants/mockData';
 
 const ApartmentContext = createContext(null);
@@ -10,18 +11,39 @@ export const ApartmentProvider = ({ children }) => {
   const [apartments, setApartments] = useState([]);
   const [selectedApartmentId, setSelectedApartmentId] = useState(null);
 
-  // Tải danh sách căn hộ của resident
-  const loadApartments = useCallback(() => {
+  // Tải danh sách căn hộ của resident từ Backend API (kèm fallback MockDB)
+  const loadApartments = useCallback(async () => {
     if (!user || user.role !== 'RESIDENT') {
       setApartments([]);
       setSelectedApartmentId(null);
       return;
     }
 
-    const allApts = MockDB.getApartments();
-    const userApts = allApts.filter(
-      (apt) => apt.resident_id === user.id && apt.status === 'OCCUPIED'
-    );
+    let userApts = [];
+    try {
+      const res = await axiosClient.get('/resident/apartments');
+      if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
+        userApts = res.data.map(apt => ({
+          id: apt.id,
+          room_number: apt.roomNumber,
+          building_block: apt.buildingBlock,
+          floor: apt.floor,
+          area_sqm: apt.areaSqm,
+          status: apt.status,
+          resident_id: apt.resident ? apt.resident.id : user.id,
+        }));
+      }
+    } catch (e) {
+      console.warn('Cannot load apartments from backend, using MockDB:', e);
+    }
+
+    if (userApts.length === 0) {
+      const allApts = MockDB.getApartments();
+      userApts = allApts.filter(
+        (apt) => apt.resident_id === user.id && apt.status === 'OCCUPIED'
+      );
+    }
+
     setApartments(userApts);
 
     // Xử lý selectedApartmentId
