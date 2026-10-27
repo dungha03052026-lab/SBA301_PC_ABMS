@@ -21,6 +21,19 @@ public interface ApartmentService {
             String search
     );
 
+    com.example.apartmentbs.dto.response.PageResponse<ApartmentResponse> searchApartmentsPaged(
+            String buildingBlock,
+            Integer floor,
+            ApartmentStatus status,
+            BigDecimal minArea,
+            BigDecimal maxArea,
+            String search,
+            int page,
+            int size,
+            String sortBy,
+            String sortDir
+    );
+
     ApartmentResponse getApartmentById(Long id);
     ApartmentResponse createApartment(ApartmentRequest request);
     ApartmentResponse updateApartment(Long id, ApartmentRequest request);

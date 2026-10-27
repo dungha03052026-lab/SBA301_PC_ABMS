@@ -5,15 +5,21 @@ import com.example.apartmentbs.dto.request.MeterReadingItem;
 import com.example.apartmentbs.dto.request.TariffRequest;
 import com.example.apartmentbs.dto.response.InvoiceBreakdown;
 import com.example.apartmentbs.dto.response.InvoiceResponse;
+import com.example.apartmentbs.dto.response.PageResponse;
 import com.example.apartmentbs.dto.response.TariffResponse;
 import com.example.apartmentbs.exception.AppException;
 import com.example.apartmentbs.model.*;
 import com.example.apartmentbs.repository.*;
 import com.example.apartmentbs.service.BillingService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -73,6 +79,40 @@ public class BillingServiceImpl implements BillingService {
         return invoices.stream()
                 .map(inv -> enrichInvoiceResponse(inv, tariff))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public PageResponse<InvoiceResponse> searchInvoicesPaged(
+            String billingMonth,
+            InvoiceStatus status,
+            Long apartmentId,
+            int page,
+            int size,
+            String sortBy,
+            String sortDir
+    ) {
+        String validSortBy = StringUtils.hasText(sortBy) ? sortBy : "createdAt";
+        Sort.Direction direction = "asc".equalsIgnoreCase(sortDir) ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, validSortBy));
+
+        Page<Invoice> invoicePage;
+        if (apartmentId != null) {
+            invoicePage = invoiceRepository.findByApartmentId(apartmentId, pageable);
+        } else if (status != null) {
+            invoicePage = invoiceRepository.findByStatus(status, pageable);
+        } else if (StringUtils.hasText(billingMonth)) {
+            invoicePage = invoiceRepository.findByBillingMonth(billingMonth, pageable);
+        } else {
+            invoicePage = invoiceRepository.findAll(pageable);
+        }
+
+        ServiceTariff tariff = getOrInitTariff();
+        List<InvoiceResponse> content = invoicePage.getContent().stream()
+                .map(inv -> enrichInvoiceResponse(inv, tariff))
+                .collect(Collectors.toList());
+
+        return PageResponse.from(invoicePage, content);
     }
 
     @Override

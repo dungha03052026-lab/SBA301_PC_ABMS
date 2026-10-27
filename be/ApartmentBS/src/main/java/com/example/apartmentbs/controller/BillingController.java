@@ -4,6 +4,7 @@ import com.example.apartmentbs.dto.request.BatchInvoiceCreateRequest;
 import com.example.apartmentbs.dto.request.TariffRequest;
 import com.example.apartmentbs.dto.response.ApiResponse;
 import com.example.apartmentbs.dto.response.InvoiceResponse;
+import com.example.apartmentbs.dto.response.PageResponse;
 import com.example.apartmentbs.dto.response.TariffResponse;
 import com.example.apartmentbs.model.InvoiceStatus;
 import com.example.apartmentbs.model.User;
@@ -42,7 +43,24 @@ public class BillingController {
     // --- ADMIN INVOICE ENDPOINTS ---
     @GetMapping("/admin/invoices")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ApiResponse<List<InvoiceResponse>>> searchInvoices(
+    public ResponseEntity<ApiResponse<PageResponse<InvoiceResponse>>> searchInvoices(
+            @RequestParam(required = false) String billingMonth,
+            @RequestParam(required = false) InvoiceStatus status,
+            @RequestParam(required = false) Long apartmentId,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String sortDir
+    ) {
+        PageResponse<InvoiceResponse> result = billingService.searchInvoicesPaged(
+                billingMonth, status, apartmentId, page, size, sortBy, sortDir
+        );
+        return ResponseEntity.ok(ApiResponse.ok(result));
+    }
+
+    @GetMapping("/admin/invoices/all")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<ApiResponse<List<InvoiceResponse>>> getAllInvoices(
             @RequestParam(required = false) String billingMonth,
             @RequestParam(required = false) InvoiceStatus status,
             @RequestParam(required = false) Long apartmentId

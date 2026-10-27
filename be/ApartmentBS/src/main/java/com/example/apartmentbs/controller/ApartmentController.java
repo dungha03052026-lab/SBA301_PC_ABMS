@@ -3,10 +3,7 @@ package com.example.apartmentbs.controller;
 import com.example.apartmentbs.dto.request.ApartmentRequest;
 import com.example.apartmentbs.dto.request.MoveInRequest;
 import com.example.apartmentbs.dto.request.VehicleRequest;
-import com.example.apartmentbs.dto.response.ApiResponse;
-import com.example.apartmentbs.dto.response.ApartmentResponse;
-import com.example.apartmentbs.dto.response.UserResponse;
-import com.example.apartmentbs.dto.response.VehicleResponse;
+import com.example.apartmentbs.dto.response.*;
 import com.example.apartmentbs.model.ApartmentStatus;
 import com.example.apartmentbs.service.ApartmentService;
 import jakarta.validation.Valid;
@@ -27,7 +24,26 @@ public class ApartmentController {
     private final ApartmentService apartmentService;
 
     @GetMapping("/apartments")
-    public ResponseEntity<ApiResponse<List<ApartmentResponse>>> searchApartments(
+    public ResponseEntity<ApiResponse<PageResponse<ApartmentResponse>>> searchApartments(
+            @RequestParam(required = false) String buildingBlock,
+            @RequestParam(required = false) Integer floor,
+            @RequestParam(required = false) ApartmentStatus status,
+            @RequestParam(required = false) BigDecimal minArea,
+            @RequestParam(required = false) BigDecimal maxArea,
+            @RequestParam(required = false) String search,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "roomNumber") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir
+    ) {
+        PageResponse<ApartmentResponse> result = apartmentService.searchApartmentsPaged(
+                buildingBlock, floor, status, minArea, maxArea, search, page, size, sortBy, sortDir
+        );
+        return ResponseEntity.ok(ApiResponse.ok(result));
+    }
+
+    @GetMapping("/apartments/all")
+    public ResponseEntity<ApiResponse<List<ApartmentResponse>>> getAllApartments(
             @RequestParam(required = false) String buildingBlock,
             @RequestParam(required = false) Integer floor,
             @RequestParam(required = false) ApartmentStatus status,

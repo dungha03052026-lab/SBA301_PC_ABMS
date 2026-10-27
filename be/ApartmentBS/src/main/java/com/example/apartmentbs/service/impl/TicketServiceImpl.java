@@ -3,6 +3,7 @@ package com.example.apartmentbs.service.impl;
 import com.example.apartmentbs.dto.request.TicketCompleteRequest;
 import com.example.apartmentbs.dto.request.TicketCreateRequest;
 import com.example.apartmentbs.dto.request.TicketRateRequest;
+import com.example.apartmentbs.dto.response.PageResponse;
 import com.example.apartmentbs.dto.response.TicketResponse;
 import com.example.apartmentbs.exception.AppException;
 import com.example.apartmentbs.model.*;
@@ -11,9 +12,14 @@ import com.example.apartmentbs.repository.TicketRepository;
 import com.example.apartmentbs.repository.UserRepository;
 import com.example.apartmentbs.service.TicketService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -67,10 +73,40 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     @Transactional(readOnly = true)
+    public PageResponse<TicketResponse> getTicketsByResidentPaged(Long residentId, int page, int size, String sortBy, String sortDir) {
+        String validSortBy = StringUtils.hasText(sortBy) ? sortBy : "createdAt";
+        Sort.Direction direction = "asc".equalsIgnoreCase(sortDir) ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, validSortBy));
+
+        Page<Ticket> ticketPage = ticketRepository.findByResidentId(residentId, pageable);
+        List<TicketResponse> dtoList = ticketPage.getContent().stream()
+                .map(TicketResponse::fromEntity)
+                .collect(Collectors.toList());
+
+        return PageResponse.from(ticketPage, dtoList);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<TicketResponse> getOpenTickets() {
         return ticketRepository.findByStatusOrderByCreatedAtDesc(TicketStatus.OPEN).stream()
                 .map(TicketResponse::fromEntity)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public PageResponse<TicketResponse> getOpenTicketsPaged(int page, int size, String sortBy, String sortDir) {
+        String validSortBy = StringUtils.hasText(sortBy) ? sortBy : "createdAt";
+        Sort.Direction direction = "asc".equalsIgnoreCase(sortDir) ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, validSortBy));
+
+        Page<Ticket> ticketPage = ticketRepository.findByStatus(TicketStatus.OPEN, pageable);
+        List<TicketResponse> dtoList = ticketPage.getContent().stream()
+                .map(TicketResponse::fromEntity)
+                .collect(Collectors.toList());
+
+        return PageResponse.from(ticketPage, dtoList);
     }
 
     @Override
@@ -83,10 +119,40 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     @Transactional(readOnly = true)
+    public PageResponse<TicketResponse> getAssignedTicketsPaged(Long technicianId, int page, int size, String sortBy, String sortDir) {
+        String validSortBy = StringUtils.hasText(sortBy) ? sortBy : "createdAt";
+        Sort.Direction direction = "asc".equalsIgnoreCase(sortDir) ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, validSortBy));
+
+        Page<Ticket> ticketPage = ticketRepository.findByAssignedToId(technicianId, pageable);
+        List<TicketResponse> dtoList = ticketPage.getContent().stream()
+                .map(TicketResponse::fromEntity)
+                .collect(Collectors.toList());
+
+        return PageResponse.from(ticketPage, dtoList);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<TicketResponse> getAllTickets() {
         return ticketRepository.findAllByOrderByCreatedAtDesc().stream()
                 .map(TicketResponse::fromEntity)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public PageResponse<TicketResponse> getAllTicketsPaged(int page, int size, String sortBy, String sortDir) {
+        String validSortBy = StringUtils.hasText(sortBy) ? sortBy : "createdAt";
+        Sort.Direction direction = "asc".equalsIgnoreCase(sortDir) ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, validSortBy));
+
+        Page<Ticket> ticketPage = ticketRepository.findAll(pageable);
+        List<TicketResponse> dtoList = ticketPage.getContent().stream()
+                .map(TicketResponse::fromEntity)
+                .collect(Collectors.toList());
+
+        return PageResponse.from(ticketPage, dtoList);
     }
 
     @Override

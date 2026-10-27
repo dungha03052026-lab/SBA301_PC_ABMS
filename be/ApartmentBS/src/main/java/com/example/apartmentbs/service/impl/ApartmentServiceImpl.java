@@ -4,6 +4,7 @@ import com.example.apartmentbs.dto.request.ApartmentRequest;
 import com.example.apartmentbs.dto.request.MoveInRequest;
 import com.example.apartmentbs.dto.request.VehicleRequest;
 import com.example.apartmentbs.dto.response.ApartmentResponse;
+import com.example.apartmentbs.dto.response.PageResponse;
 import com.example.apartmentbs.dto.response.UserResponse;
 import com.example.apartmentbs.dto.response.VehicleResponse;
 import com.example.apartmentbs.exception.AppException;
@@ -15,6 +16,9 @@ import com.example.apartmentbs.repository.VehicleRepository;
 import com.example.apartmentbs.repository.specification.ApartmentSpecification;
 import com.example.apartmentbs.service.ApartmentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
@@ -59,6 +63,40 @@ public class ApartmentServiceImpl implements ApartmentService {
                     return ApartmentResponse.fromEntity(apt, vehicles.size());
                 })
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public PageResponse<ApartmentResponse> searchApartmentsPaged(
+            String buildingBlock,
+            Integer floor,
+            ApartmentStatus status,
+            BigDecimal minArea,
+            BigDecimal maxArea,
+            String search,
+            int page,
+            int size,
+            String sortBy,
+            String sortDir
+    ) {
+        Specification<Apartment> spec = ApartmentSpecification.filter(
+                buildingBlock, floor, status, minArea, maxArea, search
+        );
+
+        String validSortBy = StringUtils.hasText(sortBy) ? sortBy : "roomNumber";
+        Sort.Direction direction = "desc".equalsIgnoreCase(sortDir) ? Sort.Direction.DESC : Sort.Direction.ASC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, validSortBy));
+
+        Page<Apartment> apartmentPage = apartmentRepository.findAll(spec, pageable);
+
+        List<ApartmentResponse> dtoList = apartmentPage.getContent().stream()
+                .map(apt -> {
+                    List<Vehicle> vehicles = vehicleRepository.findByApartmentId(apt.getId());
+                    return ApartmentResponse.fromEntity(apt, vehicles.size());
+                })
+                .collect(Collectors.toList());
+
+        return PageResponse.from(apartmentPage, dtoList);
     }
 
     @Override

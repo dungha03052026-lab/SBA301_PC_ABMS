@@ -5,6 +5,7 @@ import com.example.apartmentbs.dto.request.TicketCompleteRequest;
 import com.example.apartmentbs.dto.request.TicketCreateRequest;
 import com.example.apartmentbs.dto.request.TicketRateRequest;
 import com.example.apartmentbs.dto.response.ApiResponse;
+import com.example.apartmentbs.dto.response.PageResponse;
 import com.example.apartmentbs.dto.response.TicketResponse;
 import com.example.apartmentbs.model.User;
 import com.example.apartmentbs.service.AuthService;
@@ -28,7 +29,19 @@ public class TicketController {
     // --- ADMIN ENDPOINTS ---
     @GetMapping("/admin/tickets")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ApiResponse<List<TicketResponse>>> getAllTickets() {
+    public ResponseEntity<ApiResponse<PageResponse<TicketResponse>>> getAllTickets(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String sortDir
+    ) {
+        PageResponse<TicketResponse> list = ticketService.getAllTicketsPaged(page, size, sortBy, sortDir);
+        return ResponseEntity.ok(ApiResponse.ok(list));
+    }
+
+    @GetMapping("/admin/tickets/all")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<ApiResponse<List<TicketResponse>>> getAllTicketsList() {
         List<TicketResponse> list = ticketService.getAllTickets();
         return ResponseEntity.ok(ApiResponse.ok(list));
     }
@@ -46,7 +59,20 @@ public class TicketController {
     // --- RESIDENT ENDPOINTS ---
     @GetMapping("/resident/tickets")
     @PreAuthorize("hasRole('RESIDENT')")
-    public ResponseEntity<ApiResponse<List<TicketResponse>>> getResidentTickets() {
+    public ResponseEntity<ApiResponse<PageResponse<TicketResponse>>> getResidentTickets(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String sortDir
+    ) {
+        User resident = authService.getAuthenticatedUser();
+        PageResponse<TicketResponse> list = ticketService.getTicketsByResidentPaged(resident.getId(), page, size, sortBy, sortDir);
+        return ResponseEntity.ok(ApiResponse.ok(list));
+    }
+
+    @GetMapping("/resident/tickets/all")
+    @PreAuthorize("hasRole('RESIDENT')")
+    public ResponseEntity<ApiResponse<List<TicketResponse>>> getResidentTicketsList() {
         User resident = authService.getAuthenticatedUser();
         List<TicketResponse> list = ticketService.getTicketsByResident(resident.getId());
         return ResponseEntity.ok(ApiResponse.ok(list));
@@ -79,14 +105,39 @@ public class TicketController {
     // --- TECHNICIAN ENDPOINTS ---
     @GetMapping("/technician/tickets/pool")
     @PreAuthorize("hasRole('TECHNICIAN')")
-    public ResponseEntity<ApiResponse<List<TicketResponse>>> getOpenTickets() {
+    public ResponseEntity<ApiResponse<PageResponse<TicketResponse>>> getOpenTickets(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir
+    ) {
+        PageResponse<TicketResponse> list = ticketService.getOpenTicketsPaged(page, size, sortBy, sortDir);
+        return ResponseEntity.ok(ApiResponse.ok(list));
+    }
+
+    @GetMapping("/technician/tickets/pool/all")
+    @PreAuthorize("hasRole('TECHNICIAN')")
+    public ResponseEntity<ApiResponse<List<TicketResponse>>> getOpenTicketsList() {
         List<TicketResponse> list = ticketService.getOpenTickets();
         return ResponseEntity.ok(ApiResponse.ok(list));
     }
 
     @GetMapping("/technician/tickets/my-tasks")
     @PreAuthorize("hasRole('TECHNICIAN')")
-    public ResponseEntity<ApiResponse<List<TicketResponse>>> getMyTasks() {
+    public ResponseEntity<ApiResponse<PageResponse<TicketResponse>>> getMyTasks(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String sortDir
+    ) {
+        User tech = authService.getAuthenticatedUser();
+        PageResponse<TicketResponse> list = ticketService.getAssignedTicketsPaged(tech.getId(), page, size, sortBy, sortDir);
+        return ResponseEntity.ok(ApiResponse.ok(list));
+    }
+
+    @GetMapping("/technician/tickets/my-tasks/all")
+    @PreAuthorize("hasRole('TECHNICIAN')")
+    public ResponseEntity<ApiResponse<List<TicketResponse>>> getMyTasksList() {
         User tech = authService.getAuthenticatedUser();
         List<TicketResponse> list = ticketService.getAssignedTickets(tech.getId());
         return ResponseEntity.ok(ApiResponse.ok(list));
