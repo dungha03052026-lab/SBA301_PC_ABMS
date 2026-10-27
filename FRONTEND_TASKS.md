@@ -88,7 +88,7 @@
 
 ### GIAI ĐOẠN 1: PHÂN HỆ BAN QUẢN LÝ (ADMIN MODULES)
 
-- [ ] `fe/src/modules/admin/ApartmentManagement.jsx` (**UC-04, UC-05, UC-06, UC-07**):
+- [x] `fe/src/modules/admin/ApartmentManagement.jsx` (**UC-04, UC-05, UC-06, UC-07**):
   - **Danh sách căn hộ (UC-04):** Bảng hiển thị thông tin phòng, tầng, khối nhà, diện tích, trạng thái, tên chủ hộ, số xe đã đăng ký.
   - **Bộ lọc:** Lọc theo khối tòa nhà, tầng, trạng thái (`ALL`, `VACANT`, `OCCUPIED`), tìm kiếm số phòng.
   - **Thêm căn hộ mới (UC-04):** Modal thêm căn hộ, validate trùng số phòng.
@@ -101,23 +101,23 @@
     - **Chặn cứng** nếu còn nợ: Bật Modal cảnh báo màu đỏ liệt kê chi tiết các hóa đơn chưa hoàn thành thanh toán.
     - Nếu nợ $= 0$: Bật xác nhận $\rightarrow$ chuyển căn hộ về `VACANT`, gỡ `resident_id = null`, xóa toàn bộ xe trong bảng `vehicles`, soft-disable tài khoản cư dân nếu không còn sở hữu căn nào khác.
   - **Quản lý Phương tiện (UC-07):** Modal quản lý xe của từng căn hộ: Xem danh sách xe, Thêm xe mới (kiểm tra trùng biển số), Xóa xe.
-- [ ] `fe/src/modules/admin/MeterReading.jsx` (**UC-08, UC-09, BR-05**):
+- [x] `fe/src/modules/admin/MeterReading.jsx` (**UC-08, UC-09, BR-05**):
   - **Cấu hình Đơn giá (UC-08):** Drawer/Modal cho phép xem và sửa 5 loại đơn giá dịch vụ (`service_tariffs`).
   - **Chọn kỳ hóa đơn (`billing_month`):** Tự động lọc **chỉ hiển thị các căn hộ `OCCUPIED`** (bỏ qua toàn bộ căn `VACANT`).
   - **Bảng nhập chỉ số:** Tự động điền số cũ từ kỳ trước (hoặc mặc định 0).
   - **Tính nhẩm trực tiếp (Realtime Calculation):** Khi gõ số mới, hệ thống tự động tính thành tiền điện, nước, phí quản lý ($m^2 \times \text{giá}$), phí gửi xe (xe máy + ô tô) và **Tổng tiền** (`BR-05`).
   - **Validation:** Bắt buộc $new \ge old$ (báo đỏ ô nhập liệu tức thì và disable nút Xuất nếu sai).
   - **Xuất hóa đơn:** Xuất từng căn hoặc xuất hàng loạt cho các căn chưa tạo trong kỳ, sinh mã `INV-YYYYMM-ROOM`, trạng thái `UNPAID`.
-- [ ] `fe/src/modules/admin/InvoiceApproval.jsx` (**UC-12, BR-06 - Plan B**):
+- [x] `fe/src/modules/admin/InvoiceApproval.jsx` (**UC-12, BR-06 - Plan B**):
   - Màn hình đối soát sao kê, mặc định ưu tiên lọc các hóa đơn `PENDING` (Chờ đối soát).
   - Hiển thị: Mã hóa đơn, Căn hộ, Chủ hộ, Kỳ hóa đơn, Số tiền, Thời gian cư dân bấm xác nhận chuyển khoản.
   - Nút **"Duyệt (Đã nhận tiền)"**: Chuyển hóa đơn sang `PAID`, gán thời gian duyệt và tên Admin duyệt.
   - Nút **"Từ chối (Chưa nhận được)"**: Trả trạng thái hóa đơn từ `PENDING` về lại `UNPAID` để cư dân chuyển khoản lại.
-- [ ] `fe/src/modules/admin/TicketManagement.jsx` (**UC-18, BR-07**):
+- [x] `fe/src/modules/admin/TicketManagement.jsx` (**UC-18, BR-07**):
   - Bảng giám sát toàn bộ sự cố trong tòa nhà.
   - Bộ lọc nhanh **"Sự cố quá hạn > 24h"**, tô viền đỏ nổi bật cho các ticket `OPEN` tạo cách hiện tại $> 24\text{h}$.
   - Nút **"Chỉ định thợ"**: Modal chọn kỹ thuật viên để gán cưỡng bức $\rightarrow$ chuyển ticket sang `IN_PROGRESS` và gán đích danh `assigned_to`.
-- [ ] `fe/src/modules/admin/Announcements.jsx` (**UC-19**):
+- [x] `fe/src/modules/admin/Announcements.jsx` (**UC-19**):
   - Quản lý danh sách bản tin tòa nhà.
   - Modal tạo bản tin: Tiêu đề, Nội dung chi tiết, Tùy chọn ghim bản tin lên đầu (`is_pinned`).
   - Nút Bật/Tắt ghim và nút Xóa bản tin.
@@ -126,21 +126,21 @@
 
 ### GIAI ĐOẠN 2: PHÂN HỆ CƯ DÂN (RESIDENT MODULES)
 
-- [ ] `fe/src/modules/resident/MyInvoices.jsx` (**UC-10, UC-11, BR-06**):
+- [x] `fe/src/modules/resident/MyInvoices.jsx` (**UC-10, UC-11, BR-06**):
   - Tự động lấy danh sách hóa đơn theo `selectedApartmentId` đang chọn trên Header.
   - Hiển thị danh sách hóa đơn kèm Tag trạng thái màu: `UNPAID` (Đỏ), `PENDING` (Vàng/Cam), `PAID` (Xanh lá).
   - Nút **"Xem chi tiết / Thanh toán"**: Bật Modal bảng kê chi tiết từng thành phần (điện, nước, diện tích, xe).
   - **Tích hợp VietQR động (UC-11):** Khi hóa đơn `UNPAID`, render mã QR qua URL API VietQR:  
     `https://img.vietqr.io/image/MB-0901234567-compact2.png?amount=${totalAmount}&addInfo=${invoiceCode}`
   - Nút **"Tôi đã chuyển khoản"**: Hộp thoại xác nhận $\rightarrow$ cập nhật trạng thái hóa đơn sang `PENDING`. Khóa nút nếu đã ở `PENDING` hoặc `PAID`.
-- [ ] `fe/src/modules/resident/ReportTicket.jsx` (**UC-13, UC-17**):
+- [x] `fe/src/modules/resident/ReportTicket.jsx` (**UC-13, UC-17**):
   - Nút **"Tạo phiếu báo hỏng" (UC-13)**: Modal chọn phân loại (`Điện`, `Nước`, `Khác`), Tiêu đề, Mô tả sự cố, Link ảnh minh họa. Sinh mã `TCK-YYYYMM-SEQ`, tạo trạng thái `OPEN`.
   - Danh sách phiếu sự cố của căn hộ kèm tiến trình (Timeline/Steps).
   - **Nghiệm thu & Đánh giá (UC-17):** Khi ticket ở trạng thái `RESOLVED`:
     - Xem biên bản xử lý của thợ (`technician_note`).
     - Nút **"Nghiệm thu & Đánh giá"**: Chọn số sao (1–5 sao qua component `<Rate />`), đóng phiếu sang `CLOSED`.
     - Nút **"Chưa khắc phục xong (Yêu cầu làm lại)"**: Đẩy ticket quay về trạng thái `IN_PROGRESS` để thợ làm lại.
-- [ ] `fe/src/modules/resident/ResidentAnnouncements.jsx` (**UC-20**):
+- [x] `fe/src/modules/resident/ResidentAnnouncements.jsx` (**UC-20**):
   - Hiển thị bản tin thông báo tòa nhà.
   - Sắp xếp ưu tiên: **Các thông báo được ghim (`is_pinned = true`) luôn nằm trên cùng** kèm nhãn `[Quan trọng]`, sau đó đến thứ tự thời gian mới nhất.
 
@@ -148,14 +148,14 @@
 
 ### GIAI ĐOẠN 3: PHÂN HỆ KỸ THUẬT VIÊN (TECHNICIAN MODULES)
 
-- [ ] `fe/src/modules/technician/TaskPool.jsx` (**UC-14, UC-15, BR-07**):
+- [x] `fe/src/modules/technician/TaskPool.jsx` (**UC-14, UC-15, BR-07**):
   - Danh sách toàn bộ các sự cố `OPEN` chưa có thợ nhận trong tòa nhà.
   - Tự động tính thời gian chờ: Nếu ticket tạo cách hiện tại $> 24\text{ giờ}$ $\rightarrow$ gắn cờ đỏ `[QUÁ HẠN > 24H]`.
   - Nút **"Nhận việc (Claim)" (UC-15 - Atomic Check)**:
     - Kiểm tra trạng thái hiện tại còn `OPEN` không.
     - Nếu còn `OPEN` $\rightarrow$ gán `assigned_to = technician.id`, đổi sang `IN_PROGRESS`, tự động chuyển sang tab "Việc của tôi".
     - Nếu đã bị nhận bởi thợ khác hoặc Admin đã chỉ định $\rightarrow$ báo lỗi xung đột (HTTP 409 Conflict) và làm mới danh sách.
-- [ ] `fe/src/modules/technician/MyTasks.jsx` (**UC-16**):
+- [x] `fe/src/modules/technician/MyTasks.jsx` (**UC-16**):
   - Danh sách các ticket đang thực hiện (`IN_PROGRESS`) thuộc về chính kỹ thuật viên đang đăng nhập.
   - Nút **"Báo hoàn thành"**:
     - Bật Modal bắt buộc nhập biên bản xử lý (`technician_note`).

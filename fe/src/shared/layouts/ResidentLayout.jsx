@@ -249,19 +249,7 @@ const ResidentLayout = () => {
           minHeight: 'calc(100vh - 192px)',
         }}
       >
-        <div
-          className="ps-product-card"
-          style={{
-            backgroundColor: PS_COLORS.canvasLight,
-            border: `1px solid ${PS_COLORS.hairlineLight}`,
-            borderRadius: PS_ROUNDED.md, // 8px
-            padding: '36px',
-            minHeight: 480,
-            boxShadow: 'none', // Strictly no resting drop shadow
-          }}
-        >
-          <Outlet />
-        </div>
+        <Outlet />
       </Content>
 
       {/* Footer: PlayStation Blue band (#0070d1 footer-section) */}
