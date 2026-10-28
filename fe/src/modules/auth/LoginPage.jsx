@@ -31,11 +31,11 @@ const LoginPage = () => {
   };
 
   // Quick Role Testing: Tự động điền thông tin và đăng nhập
-  const handleQuickRole = (role) => {
+  const handleQuickRole = async (role) => {
     const roleCredentials = {
-      ADMIN: { username: '0901000001', pass: 'password123' },
-      RESIDENT: { username: '0903000001', pass: 'password123' },
-      TECHNICIAN: { username: '0902000001', pass: 'password123' },
+      ADMIN: { username: '0901000001', pass: '123456' },
+      RESIDENT: { username: '0903000001', pass: '123456' },
+      TECHNICIAN: { username: '0902000001', pass: '123456' },
     };
 
     const cred = roleCredentials[role];
@@ -46,8 +46,22 @@ const LoginPage = () => {
       });
     }
 
+    setLoading(true);
+    try {
+      const res = await login(cred.username, cred.pass);
+      if (res && res.success) {
+        message.success(`Đăng nhập Backend thành công: ${res.user.full_name} (${role})`);
+        navigateByRole(res.user.role);
+        return;
+      }
+    } catch {
+      // Fallback nếu Backend chưa bật
+    } finally {
+      setLoading(false);
+    }
+
     const loggedUser = mockLogin(role);
-    message.success(`Đăng nhập thành công với vai trò: ${role}`);
+    message.info(`Đang chạy chế độ Offline (MockDB) với vai trò: ${role}`);
     navigateByRole(loggedUser.role);
   };
 
