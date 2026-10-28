@@ -1041,7 +1041,7 @@ const ApartmentManagement = () => {
               value={blockFilter}
               onChange={(val) => setBlockFilter(val)}
               style={{
-                width: 170,
+                width: 160,
                 height: 44,
                 borderRadius: PS_ROUNDED.sm,
               }}
@@ -1049,6 +1049,22 @@ const ApartmentManagement = () => {
                 { label: 'Tất cả khối nhà', value: 'ALL' },
                 { label: 'Khối Tòa A', value: 'Tòa A' },
                 { label: 'Khối Tòa B', value: 'Tòa B' },
+              ]}
+            />
+
+            {/* Status Filter Select (Dropdown Trạng thái phòng) */}
+            <Select
+              value={statusFilter}
+              onChange={(val) => setStatusFilter(val)}
+              style={{
+                width: 175,
+                height: 44,
+                borderRadius: PS_ROUNDED.sm,
+              }}
+              options={[
+                { label: 'Tất cả trạng thái', value: 'ALL' },
+                { label: 'Đang cư trú (OCCUPIED)', value: 'OCCUPIED' },
+                { label: 'Đang trống (VACANT)', value: 'VACANT' },
               ]}
             />
 
