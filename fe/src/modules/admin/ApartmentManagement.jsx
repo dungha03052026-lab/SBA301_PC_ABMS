@@ -236,9 +236,31 @@ const ApartmentManagement = () => {
   };
 
   const handleSaveApartment = async (values) => {
+    const payload = {
+      roomNumber: values.room_number?.trim(),
+      buildingBlock: values.building_block,
+      floor: values.floor,
+      areaSqm: values.area_sqm,
+    };
+
     try {
       if (apartmentEditMode && selectedApartment) {
-        // Cập nhật
+        // 1. Thử gọi API Backend Cập nhật vào MSSQL
+        try {
+          await axiosClient.put(`/admin/apartments/${selectedApartment.id}`, payload);
+          message.success(`Cập nhật căn hộ ${values.room_number} thành công trên CSDL!`);
+          setApartmentModalOpen(false);
+          await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+          return;
+        } catch (apiErr) {
+          if (apiErr.response?.data?.message) {
+            message.error(apiErr.response.data.message);
+            return;
+          }
+          console.warn('API update failed, fallback to MockDB', apiErr);
+        }
+
+        // Fallback MockDB
         const updatedList = apartments.map((item) =>
           item.id === selectedApartment.id
             ? {
@@ -253,7 +275,22 @@ const ApartmentManagement = () => {
         MockDB.saveApartments(updatedList);
         message.success(`Cập nhật thông tin căn hộ ${selectedApartment.room_number} thành công!`);
       } else {
-        // Tạo mới - kiểm tra trùng mã phòng
+        // 2. Thử gọi API Backend Thêm mới vào MSSQL
+        try {
+          await axiosClient.post('/admin/apartments', payload);
+          message.success(`Thêm mới căn hộ ${payload.roomNumber} thành công vào CSDL MSSQL!`);
+          setApartmentModalOpen(false);
+          await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+          return;
+        } catch (apiErr) {
+          if (apiErr.response?.data?.message) {
+            message.error(apiErr.response.data.message);
+            return;
+          }
+          console.warn('API create failed, fallback to MockDB', apiErr);
+        }
+
+        // Tạo mới - kiểm tra trùng mã phòng (Offline MockDB)
         const exists = apartments.some(
           (a) => a.room_number.toLowerCase() === values.room_number.trim().toLowerCase()
         );
@@ -300,6 +337,31 @@ const ApartmentManagement = () => {
 
   const handleConfirmMoveIn = async (values) => {
     try {
+      const moveInPayload =
+        moveInType === 'EXISTING'
+          ? { residentId: values.existing_resident_id }
+          : {
+              fullName: values.full_name?.trim(),
+              phoneNumber: values.phone_number?.trim(),
+              email: values.email?.trim() || undefined,
+            };
+
+      // 1. Thử gọi API Backend Spring Boot
+      try {
+        await axiosClient.post(`/admin/apartments/${selectedApartment.id}/move-in`, moveInPayload);
+        message.success(`Tiếp nhận Move-in thành công cho căn hộ ${selectedApartment.room_number} trên CSDL!`);
+        setMoveInModalOpen(false);
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Move-in API failed, fallback MockDB', apiErr);
+      }
+
+      // Fallback MockDB
       let residentId = null;
 
       if (moveInType === 'EXISTING') {
@@ -376,16 +438,31 @@ const ApartmentManagement = () => {
     setMoveOutModalOpen(true);
   };
 
-  const handleConfirmMoveOut = () => {
+  const handleConfirmMoveOut = async () => {
     if (moveOutDebts.length > 0) {
       message.error('Không thể thực hiện Move-out vì căn hộ còn công nợ chưa thanh toán!');
       return;
     }
 
     try {
+      // 1. Thử gọi API Backend Spring Boot
+      try {
+        await axiosClient.post(`/admin/apartments/${selectedApartment.id}/move-out`);
+        message.success(`Đã hoàn tất bàn giao Move-out cho căn hộ ${selectedApartment.room_number} trên CSDL!`);
+        setMoveOutModalOpen(false);
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Move-out API failed, fallback MockDB', apiErr);
+      }
+
       const oldResidentId = selectedApartment.resident_id;
 
-      // 1. Cập nhật căn hộ về VACANT
+      // 1. Cập nhật căn hộ về VACANT (Fallback MockDB)
       const updatedApartments = apartments.map((a) =>
         a.id === selectedApartment.id
           ? {
@@ -440,6 +517,34 @@ const ApartmentManagement = () => {
 
   const handleAddVehicle = async (values) => {
     try {
+      const vehiclePayload = {
+        licensePlate: values.license_plate.trim().toUpperCase(),
+        vehicleType: values.vehicle_type,
+        ownerName: values.owner_name?.trim(),
+      };
+
+      // 1. Thử gọi API Backend Spring Boot
+      try {
+        await axiosClient.post(`/admin/apartments/${selectedApartment.id}/vehicles`, vehiclePayload);
+        message.success(`Đăng ký phương tiện ${vehiclePayload.licensePlate} thành công trên CSDL!`);
+        vehicleForm.resetFields();
+        if (selectedApartment.resident) {
+          vehicleForm.setFieldsValue({
+            owner_name: selectedApartment.resident.full_name,
+            vehicle_type: 'MOTORBIKE',
+          });
+        }
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Add vehicle API failed, fallback MockDB', apiErr);
+      }
+
+      // Fallback MockDB
       // Kiểm tra biển số xe trùng
       const exists = vehicles.some(
         (v) => v.license_plate.toUpperCase() === values.license_plate.trim().toUpperCase()
@@ -476,8 +581,21 @@ const ApartmentManagement = () => {
     }
   };
 
-  const handleDeleteVehicle = (vehicleId) => {
+  const handleDeleteVehicle = async (vehicleId) => {
     try {
+      try {
+        await axiosClient.delete(`/admin/apartments/${selectedApartment.id}/vehicles/${vehicleId}`);
+        message.success('Đã hủy đăng ký phương tiện trên CSDL!');
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Delete vehicle API failed, fallback MockDB', apiErr);
+      }
+
       const updated = vehicles.filter((v) => v.id !== vehicleId);
       MockDB.saveVehicles(updated);
       message.success('Đã hủy đăng ký phương tiện!');
