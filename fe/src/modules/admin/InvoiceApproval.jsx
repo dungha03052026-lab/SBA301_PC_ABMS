@@ -32,6 +32,7 @@ import {
   FilterOutlined,
 } from '@ant-design/icons';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -53,11 +54,58 @@ const InvoiceApproval = () => {
   const [detailModalOpen, setDetailModalOpen] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
 
-  const reloadData = () => {
-    setInvoices(MockDB.getInvoices());
-    setApartments(MockDB.getApartments());
-    setUsers(MockDB.getUsers());
-    setTariffs(MockDB.getTariffs());
+  const reloadData = async () => {
+    let invs = MockDB.getInvoices();
+    let apts = MockDB.getApartments();
+    let usrs = MockDB.getUsers();
+    let trfs = MockDB.getTariffs();
+
+    try {
+      const [invRes, aptRes] = await Promise.allSettled([
+        axiosClient.get('/admin/invoices/all'),
+        axiosClient.get('/admin/apartments/all'),
+      ]);
+
+      if (invRes.status === 'fulfilled' && Array.isArray(invRes.value?.data || invRes.value)) {
+        const rawInvs = invRes.value?.data || invRes.value;
+        invs = rawInvs.map((i) => ({
+          id: i.id,
+          invoice_code: i.invoiceCode,
+          apartment_id: i.apartmentId,
+          billing_month: i.billingMonth,
+          old_electric_num: i.oldElectricNum,
+          new_electric_num: i.newElectricNum,
+          old_water_num: i.oldWaterNum,
+          new_water_num: i.newWaterNum,
+          total_amount: i.totalAmount,
+          status: i.status,
+          due_date: i.dueDate,
+          created_at: i.createdAt,
+          paid_at: i.paidAt,
+          approved_by: i.approvedBy,
+        }));
+      }
+
+      if (aptRes.status === 'fulfilled' && Array.isArray(aptRes.value?.data || aptRes.value)) {
+        const rawApts = aptRes.value?.data || aptRes.value;
+        apts = rawApts.map((a) => ({
+          id: a.id,
+          room_number: a.roomNumber,
+          floor: a.floor,
+          building_block: a.buildingBlock,
+          area_sqm: a.areaSqm,
+          status: a.status,
+          resident_id: a.resident?.id || null,
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in InvoiceApproval, using MockDB baseline', e);
+    }
+
+    setInvoices(invs);
+    setApartments(apts);
+    setUsers(usrs);
+    setTariffs(trfs);
   };
 
   useEffect(() => {
@@ -115,8 +163,21 @@ const InvoiceApproval = () => {
   // ==========================================
   // THAO TÁC DUYỆT GẠCH NỢ (APPROVE)
   // ==========================================
-  const handleApproveInvoice = (invoice) => {
+  const handleApproveInvoice = async (invoice) => {
     try {
+      try {
+        await axiosClient.put(`/admin/invoices/${invoice.id}/approve`);
+        message.success(`Đã xác nhận gạch nợ thành công cho hóa đơn ${invoice.invoice_code} trên CSDL MSSQL!`);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Approve invoice API failed, fallback MockDB', apiErr);
+      }
+
       const updatedList = invoices.map((item) =>
         item.id === invoice.id
           ? {
@@ -139,8 +200,21 @@ const InvoiceApproval = () => {
   // ==========================================
   // THAO TÁC TỪ CHỐI GẠCH NỢ (REJECT)
   // ==========================================
-  const handleRejectInvoice = (invoice) => {
+  const handleRejectInvoice = async (invoice) => {
     try {
+      try {
+        await axiosClient.put(`/admin/invoices/${invoice.id}/reject`);
+        message.warning(`Đã từ chối và trả hóa đơn ${invoice.invoice_code} về trạng thái CHƯA THANH TOÁN trên CSDL!`);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Reject invoice API failed, fallback MockDB', apiErr);
+      }
+
       const updatedList = invoices.map((item) =>
         item.id === invoice.id
           ? {

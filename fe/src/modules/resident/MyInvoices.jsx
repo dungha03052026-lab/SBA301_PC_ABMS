@@ -31,6 +31,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { useApartment } from '../../shared/context/ApartmentContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -48,10 +49,57 @@ const MyInvoices = () => {
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
 
-  const reloadData = () => {
-    setInvoices(MockDB.getInvoices());
-    setTariffs(MockDB.getTariffs());
-    setVehicles(MockDB.getVehicles());
+  const reloadData = async () => {
+    let invs = MockDB.getInvoices();
+    let trfs = MockDB.getTariffs();
+    let vehs = MockDB.getVehicles();
+
+    try {
+      const params = selectedApartmentId ? { apartmentId: selectedApartmentId } : {};
+      const [invRes, tariffRes] = await Promise.allSettled([
+        axiosClient.get('/resident/invoices', { params }),
+        axiosClient.get('/tariffs'),
+      ]);
+
+      if (invRes.status === 'fulfilled' && Array.isArray(invRes.value?.data || invRes.value)) {
+        const rawInvs = invRes.value?.data || invRes.value;
+        invs = rawInvs.map((i) => ({
+          id: i.id,
+          invoice_code: i.invoiceCode,
+          apartment_id: i.apartmentId,
+          billing_month: i.billingMonth,
+          old_electric_num: i.oldElectricNum,
+          new_electric_num: i.newElectricNum,
+          old_water_num: i.oldWaterNum,
+          new_water_num: i.newWaterNum,
+          total_amount: i.totalAmount,
+          status: i.status,
+          due_date: i.dueDate,
+          created_at: i.createdAt,
+          paid_at: i.paidAt,
+        }));
+      }
+
+      if (tariffRes.status === 'fulfilled' && (tariffRes.value?.data || tariffRes.value)) {
+        const t = tariffRes.value?.data || tariffRes.value;
+        if (t && t.managementFeePerSqm !== undefined) {
+          trfs = {
+            id: t.id,
+            management_fee_per_sqm: t.managementFeePerSqm,
+            electricity_unit_price: t.electricityUnitPrice,
+            water_unit_price: t.waterUnitPrice,
+            motorbike_fee: t.motorbikeFee,
+            car_fee: t.carFee,
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('API error in MyInvoices, using MockDB baseline', e);
+    }
+
+    setInvoices(invs);
+    setTariffs(trfs);
+    setVehicles(vehs);
   };
 
   useEffect(() => {
@@ -87,8 +135,27 @@ const MyInvoices = () => {
   // ==========================================
   // UC-11: BÁO ĐÃ CHUYỂN KHOẢN (STATUS -> PENDING)
   // ==========================================
-  const handleConfirmTransfer = (invoiceId) => {
+  const handleConfirmTransfer = async (invoiceId) => {
     try {
+      try {
+        await axiosClient.post(`/resident/invoices/${invoiceId}/confirm-payment`);
+        message.success('Đã gửi thông báo chuyển khoản lên hệ thống CSDL MSSQL! Ban Quản Lý sẽ đối soát sao kê và gạch nợ sớm nhất.');
+        if (selectedInvoice && selectedInvoice.id === invoiceId) {
+          setSelectedInvoice((prev) => ({
+            ...prev,
+            status: 'PENDING',
+          }));
+        }
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Confirm payment API failed, fallback MockDB', apiErr);
+      }
+
       const updatedList = invoices.map((item) =>
         item.id === invoiceId
           ? {
@@ -102,7 +169,6 @@ const MyInvoices = () => {
       MockDB.saveInvoices(updatedList);
       message.success('Đã gửi thông báo chuyển khoản! Ban Quản Lý sẽ đối soát sao kê và gạch nợ sớm nhất.');
 
-      // Cập nhật selectedInvoice trong modal nếu đang mở
       if (selectedInvoice && selectedInvoice.id === invoiceId) {
         setSelectedInvoice((prev) => ({
           ...prev,

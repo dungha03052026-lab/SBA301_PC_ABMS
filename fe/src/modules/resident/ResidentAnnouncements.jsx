@@ -27,6 +27,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const ResidentAnnouncements = () => {
@@ -37,9 +38,36 @@ const ResidentAnnouncements = () => {
   const [selectedAnnouncement, setSelectedAnnouncement] = useState(null);
   const [detailModalOpen, setDetailModalOpen] = useState(false);
 
-  const reloadData = () => {
-    setAnnouncements(MockDB.getAnnouncements());
-    setUsers(MockDB.getUsers());
+  const reloadData = async () => {
+    let anns = MockDB.getAnnouncements();
+    let usrs = MockDB.getUsers();
+
+    try {
+      const res = await axiosClient.get('/announcements');
+      if (res && Array.isArray(res.data || res)) {
+        const raw = res.data || res;
+        anns = raw.map((a) => ({
+          id: a.id,
+          title: a.title,
+          content: a.content,
+          created_by: a.author ? a.author.id : 1,
+          author: a.author
+            ? {
+                id: a.author.id,
+                full_name: a.author.fullName,
+                email: a.author.email,
+              }
+            : null,
+          is_pinned: a.isPinned,
+          created_at: a.createdAt,
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in ResidentAnnouncements, using MockDB baseline', e);
+    }
+
+    setAnnouncements(anns);
+    setUsers(usrs);
   };
 
   useEffect(() => {

@@ -32,6 +32,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -54,9 +55,36 @@ const Announcements = () => {
 
   const [form] = Form.useForm();
 
-  const reloadData = () => {
-    setAnnouncements(MockDB.getAnnouncements());
-    setUsers(MockDB.getUsers());
+  const reloadData = async () => {
+    let anns = MockDB.getAnnouncements();
+    let usrs = MockDB.getUsers();
+
+    try {
+      const res = await axiosClient.get('/announcements');
+      if (res && Array.isArray(res.data || res)) {
+        const raw = res.data || res;
+        anns = raw.map((a) => ({
+          id: a.id,
+          title: a.title,
+          content: a.content,
+          created_by: a.author ? a.author.id : 1,
+          author: a.author
+            ? {
+                id: a.author.id,
+                full_name: a.author.fullName,
+                email: a.author.email,
+              }
+            : null,
+          is_pinned: a.isPinned,
+          created_at: a.createdAt,
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in Announcements, using MockDB baseline', e);
+    }
+
+    setAnnouncements(anns);
+    setUsers(usrs);
   };
 
   useEffect(() => {
@@ -132,7 +160,27 @@ const Announcements = () => {
 
   const handleSave = async (values) => {
     try {
+      const payload = {
+        title: values.title.trim(),
+        content: values.content.trim(),
+        isPinned: Boolean(values.is_pinned),
+      };
+
       if (editMode && selectedAnnouncement) {
+        try {
+          await axiosClient.put(`/admin/announcements/${selectedAnnouncement.id}`, payload);
+          message.success('Cập nhật bản tin thông báo thành công trên CSDL MSSQL!');
+          setModalOpen(false);
+          reloadData();
+          return;
+        } catch (apiErr) {
+          if (apiErr.response?.data?.message) {
+            message.error(apiErr.response.data.message);
+            return;
+          }
+          console.warn('Update announcement API failed, fallback MockDB', apiErr);
+        }
+
         const updated = announcements.map((item) =>
           item.id === selectedAnnouncement.id
             ? {
@@ -147,6 +195,20 @@ const Announcements = () => {
         MockDB.saveAnnouncements(updated);
         message.success('Cập nhật bản tin thông báo thành công!');
       } else {
+        try {
+          await axiosClient.post('/admin/announcements', payload);
+          message.success('Đăng bản tin thông báo mới thành công vào CSDL MSSQL!');
+          setModalOpen(false);
+          reloadData();
+          return;
+        } catch (apiErr) {
+          if (apiErr.response?.data?.message) {
+            message.error(apiErr.response.data.message);
+            return;
+          }
+          console.warn('Create announcement API failed, fallback MockDB', apiErr);
+        }
+
         const newId = announcements.length > 0 ? Math.max(...announcements.map((a) => a.id)) + 1 : 1;
         const newAnn = {
           id: newId,
@@ -170,8 +232,21 @@ const Announcements = () => {
   };
 
   // Toggle Pin nhanh trực tiếp từ bảng
-  const handleTogglePin = (record) => {
+  const handleTogglePin = async (record) => {
     try {
+      try {
+        await axiosClient.put(`/admin/announcements/${record.id}`, {
+          title: record.title,
+          content: record.content,
+          isPinned: !record.is_pinned,
+        });
+        message.success(`Đã ${record.is_pinned ? 'bỏ ghim' : 'ghim'} bản tin "${record.title}" trên CSDL!`);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        console.warn('Toggle pin API failed, fallback MockDB', apiErr);
+      }
+
       const updated = announcements.map((item) =>
         item.id === record.id
           ? { ...item, is_pinned: !item.is_pinned }
@@ -186,8 +261,21 @@ const Announcements = () => {
   };
 
   // Xóa bản tin
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     try {
+      try {
+        await axiosClient.delete(`/admin/announcements/${id}`);
+        message.success('Đã xóa bản tin thông báo trên CSDL MSSQL!');
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Delete announcement API failed, fallback MockDB', apiErr);
+      }
+
       const updated = announcements.filter((item) => item.id !== id);
       MockDB.saveAnnouncements(updated);
       message.success('Đã xóa bản tin thông báo!');
