@@ -1057,7 +1057,7 @@ const ApartmentManagement = () => {
               value={statusFilter}
               onChange={(val) => setStatusFilter(val)}
               style={{
-                width: 175,
+                width: 200,
                 height: 44,
                 borderRadius: PS_ROUNDED.sm,
               }}
@@ -1067,37 +1067,6 @@ const ApartmentManagement = () => {
                 { label: 'Đang trống (VACANT)', value: 'VACANT' },
               ]}
             />
-
-            {/* Backend Criteria API Status Tag */}
-            {isBackendLive ? (
-              <Tag
-                style={{
-                  borderRadius: PS_ROUNDED.full,
-                  padding: '4px 12px',
-                  fontSize: 12,
-                  fontWeight: 600,
-                  border: 'none',
-                  backgroundColor: 'rgba(0, 112, 209, 0.1)',
-                  color: PS_COLORS.primary,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 5,
-                }}
-              >
-                <CheckCircleOutlined /> Criteria API Live
-              </Tag>
-            ) : (
-              <Tag
-                style={{
-                  borderRadius: PS_ROUNDED.full,
-                  padding: '4px 12px',
-                  fontSize: 12,
-                  color: PS_COLORS.muteLight,
-                }}
-              >
-                Offline (MockDB)
-              </Tag>
-            )}
           </div>
 
           {/* Status Filter Pills: rounded.full (9999px) */}
