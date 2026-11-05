@@ -58,7 +58,7 @@ public class AnnouncementController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<Void>> deleteAnnouncement(@PathVariable Long id) {
         announcementService.deleteAnnouncement(id);
-        return ResponseEntity.ok(ApiResponse.ok("Đã xóa thành công", null));
+        return ResponseEntity.ok(ApiResponse.ok("Đã xóa thông báo thành công", null));
     }
 
 
