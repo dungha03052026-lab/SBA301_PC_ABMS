@@ -1,0 +1,182 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java",
+      "language": "java",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java",
+      "language": "java",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "language": "java",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "language": "java",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "language": "java",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java",
+      "language": "java",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java",
+      "language": "java",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java": []
+  }
+}

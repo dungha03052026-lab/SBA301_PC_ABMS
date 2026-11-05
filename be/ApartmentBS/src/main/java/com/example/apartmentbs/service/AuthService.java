@@ -1,5 +1,6 @@
 package com.example.apartmentbs.service;
 
+import com.example.apartmentbs.dto.request.ChangePasswordRequest;
 import com.example.apartmentbs.dto.request.LoginRequest;
 import com.example.apartmentbs.dto.response.AuthResponse;
 import com.example.apartmentbs.dto.response.UserResponse;
@@ -9,4 +10,5 @@ public interface AuthService {
     AuthResponse login(LoginRequest request);
     UserResponse getCurrentUser();
     User getAuthenticatedUser();
+    void changePassword(Long userId, ChangePasswordRequest request);
 }

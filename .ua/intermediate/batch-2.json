@@ -1,0 +1,197 @@
+{
+  "nodes": [
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-1.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-1.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-1.json",
+      "summary": "config file in json with 84 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-2.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-2.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-2.json",
+      "summary": "config file in json with 119 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-3.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-3.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-3.json",
+      "summary": "config file in json with 28 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-4.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-4.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-4.json",
+      "summary": "config file in json with 182 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-5.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-5.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-5.json",
+      "summary": "config file in json with 182 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-6.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-6.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-6.json",
+      "summary": "config file in json with 182 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-7.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-7.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-7.json",
+      "summary": "config file in json with 182 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-analyzer-input-8.json",
+      "type": "config",
+      "name": "ua-file-analyzer-input-8.json",
+      "filePath": ".ua/tmp/ua-file-analyzer-input-8.json",
+      "summary": "config file in json with 28 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-1.json",
+      "type": "config",
+      "name": "ua-file-extract-results-1.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-1.json",
+      "summary": "config file in json with 355 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-2.json",
+      "type": "config",
+      "name": "ua-file-extract-results-2.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-2.json",
+      "summary": "config file in json with 58 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-3.json",
+      "type": "config",
+      "name": "ua-file-extract-results-3.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-3.json",
+      "summary": "config file in json with 103 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-4.json",
+      "type": "config",
+      "name": "ua-file-extract-results-4.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-4.json",
+      "summary": "config file in json with 3019 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-5.json",
+      "type": "config",
+      "name": "ua-file-extract-results-5.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-5.json",
+      "summary": "config file in json with 2862 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-6.json",
+      "type": "config",
+      "name": "ua-file-extract-results-6.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-6.json",
+      "summary": "config file in json with 7014 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-7.json",
+      "type": "config",
+      "name": "ua-file-extract-results-7.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-7.json",
+      "summary": "config file in json with 6697 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/tmp/ua-file-extract-results-8.json",
+      "type": "config",
+      "name": "ua-file-extract-results-8.json",
+      "filePath": ".ua/tmp/ua-file-extract-results-8.json",
+      "summary": "config file in json with 140 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

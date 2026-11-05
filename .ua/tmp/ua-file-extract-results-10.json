@@ -1,0 +1,658 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 7,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "fe/src/shared/context/ApartmentContext.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "ApartmentProvider",
+          "startLine": 9,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "useApartment",
+          "startLine": 94,
+          "endLine": 94,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApartmentProvider",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "useApartment",
+          "line": 94,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ApartmentProvider",
+          "callee": "useAuth",
+          "lineNumber": 10
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "useState",
+          "lineNumber": 11
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "useState",
+          "lineNumber": 12
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "useCallback",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "setApartments",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "setSelectedApartmentId",
+          "lineNumber": 18
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "axiosClient.get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "Array.isArray",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "res.data.map",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "console.warn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "MockDB.getApartments",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "allApts.filter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "setApartments",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "localStorage.getItem",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "parseInt",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "userApts.some",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "setSelectedApartmentId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "setSelectedApartmentId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "localStorage.setItem",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "defaultId.toString",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "setSelectedApartmentId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "useEffect",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "loadApartments",
+          "lineNumber": 67
+        },
+        {
+          "caller": "switchApartment",
+          "callee": "parseInt",
+          "lineNumber": 72
+        },
+        {
+          "caller": "switchApartment",
+          "callee": "setSelectedApartmentId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "switchApartment",
+          "callee": "localStorage.setItem",
+          "lineNumber": 74
+        },
+        {
+          "caller": "switchApartment",
+          "callee": "id.toString",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ApartmentProvider",
+          "callee": "apartments.find",
+          "lineNumber": 77
+        },
+        {
+          "caller": "useApartment",
+          "callee": "useContext",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fe/src/shared/context/AuthContext.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "AuthProvider",
+          "startLine": 8,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "useAuth",
+          "startLine": 126,
+          "endLine": 126,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthProvider",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "useAuth",
+          "line": 126,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AuthProvider",
+          "callee": "useState",
+          "lineNumber": 9
+        },
+        {
+          "caller": "AuthProvider",
+          "callee": "localStorage.getItem",
+          "lineNumber": 11
+        },
+        {
+          "caller": "AuthProvider",
+          "callee": "JSON.parse",
+          "lineNumber": 12
+        },
+        {
+          "caller": "mockLogin",
+          "callee": "MockDB.getUsers",
+          "lineNumber": 20
+        },
+        {
+          "caller": "mockLogin",
+          "callee": "users.find",
+          "lineNumber": 21
+        },
+        {
+          "caller": "mockLogin",
+          "callee": "target.role.toLowerCase",
+          "lineNumber": 37
+        },
+        {
+          "caller": "mockLogin",
+          "callee": "setUser",
+          "lineNumber": 40
+        },
+        {
+          "caller": "mockLogin",
+          "callee": "localStorage.setItem",
+          "lineNumber": 41
+        },
+        {
+          "caller": "mockLogin",
+          "callee": "JSON.stringify",
+          "lineNumber": 41
+        },
+        {
+          "caller": "login",
+          "callee": "axiosClient.post",
+          "lineNumber": 48
+        },
+        {
+          "caller": "login",
+          "callee": "username.trim",
+          "lineNumber": 49
+        },
+        {
+          "caller": "login",
+          "callee": "setUser",
+          "lineNumber": 64
+        },
+        {
+          "caller": "login",
+          "callee": "localStorage.setItem",
+          "lineNumber": 65
+        },
+        {
+          "caller": "login",
+          "callee": "JSON.stringify",
+          "lineNumber": 65
+        },
+        {
+          "caller": "login",
+          "callee": "console.warn",
+          "lineNumber": 69
+        },
+        {
+          "caller": "login",
+          "callee": "MockDB.getUsers",
+          "lineNumber": 78
+        },
+        {
+          "caller": "login",
+          "callee": "users.find",
+          "lineNumber": 79
+        },
+        {
+          "caller": "login",
+          "callee": "found.role.toLowerCase",
+          "lineNumber": 105
+        },
+        {
+          "caller": "login",
+          "callee": "setUser",
+          "lineNumber": 108
+        },
+        {
+          "caller": "login",
+          "callee": "localStorage.setItem",
+          "lineNumber": 109
+        },
+        {
+          "caller": "login",
+          "callee": "JSON.stringify",
+          "lineNumber": 109
+        },
+        {
+          "caller": "logout",
+          "callee": "setUser",
+          "lineNumber": 114
+        },
+        {
+          "caller": "logout",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 115
+        },
+        {
+          "caller": "logout",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 116
+        },
+        {
+          "caller": "useAuth",
+          "callee": "useContext",
+          "lineNumber": 126
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fe/src/shared/layouts/AdminLayout.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 271,
+      "nonEmptyLines": 256,
+      "functions": [
+        {
+          "name": "AdminLayout",
+          "startLine": 22,
+          "endLine": 269,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AdminLayout",
+          "callee": "useAuth",
+          "lineNumber": 23
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "useNavigate",
+          "lineNumber": 24
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "useLocation",
+          "lineNumber": 25
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleMenuClick",
+          "callee": "navigate",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "logout",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "navigate",
+          "lineNumber": 63
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "setCollapsed",
+          "lineNumber": 72
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "setChangePassOpen",
+          "lineNumber": 198
+        },
+        {
+          "caller": "AdminLayout",
+          "callee": "setChangePassOpen",
+          "lineNumber": 265
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fe/src/shared/layouts/ResidentLayout.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 293,
+      "nonEmptyLines": 277,
+      "functions": [
+        {
+          "name": "ResidentLayout",
+          "startLine": 22,
+          "endLine": 291,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ResidentLayout",
+          "callee": "useAuth",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "useApartment",
+          "lineNumber": 24
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "useNavigate",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "useLocation",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleMenuClick",
+          "callee": "navigate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "logout",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "navigate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "navigate",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "apartments.map",
+          "lineNumber": 130
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "setChangePassOpen",
+          "lineNumber": 208
+        },
+        {
+          "caller": "ResidentLayout",
+          "callee": "setChangePassOpen",
+          "lineNumber": 287
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fe/src/shared/layouts/TechLayout.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 229,
+      "nonEmptyLines": 215,
+      "functions": [
+        {
+          "name": "TechLayout",
+          "startLine": 18,
+          "endLine": 227,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TechLayout",
+          "callee": "useAuth",
+          "lineNumber": 19
+        },
+        {
+          "caller": "TechLayout",
+          "callee": "useNavigate",
+          "lineNumber": 20
+        },
+        {
+          "caller": "TechLayout",
+          "callee": "useLocation",
+          "lineNumber": 21
+        },
+        {
+          "caller": "TechLayout",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handleMenuClick",
+          "callee": "navigate",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "logout",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "navigate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "TechLayout",
+          "callee": "navigate",
+          "lineNumber": 73
+        },
+        {
+          "caller": "TechLayout",
+          "callee": "setChangePassOpen",
+          "lineNumber": 145
+        },
+        {
+          "caller": "TechLayout",
+          "callee": "setChangePassOpen",
+          "lineNumber": 223
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fe/src/shared/theme/playstationTheme.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 184,
+      "nonEmptyLines": 172,
+      "exports": [
+        {
+          "name": "PS_COLORS",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "PS_ROUNDED",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "PS_SPACING",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "playstationAntdTheme",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fe/vite.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

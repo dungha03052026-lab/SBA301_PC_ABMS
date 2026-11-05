@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "document:fe/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "fe/README.md",
+      "summary": "docs file in markdown with 16 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:fe/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "fe/package.json",
+      "summary": "config file in json with 33 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

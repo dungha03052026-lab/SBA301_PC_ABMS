@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": "document:ABMS_ProjectGuidelines.md",
+      "type": "document",
+      "name": "ABMS_ProjectGuidelines.md",
+      "filePath": "ABMS_ProjectGuidelines.md",
+      "summary": "docs file in markdown with 587 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:BACKEND_TASKS.md",
+      "type": "document",
+      "name": "BACKEND_TASKS.md",
+      "filePath": "BACKEND_TASKS.md",
+      "summary": "docs file in markdown with 298 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:DESIGN-playstation.md",
+      "type": "document",
+      "name": "DESIGN-playstation.md",
+      "filePath": "DESIGN-playstation.md",
+      "summary": "docs file in markdown with 661 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:FRONTEND_TASKS.md",
+      "type": "document",
+      "name": "FRONTEND_TASKS.md",
+      "filePath": "FRONTEND_TASKS.md",
+      "summary": "docs file in markdown with 174 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:HUONG_DAN_THUYET_TRINH_SPECIFICATION.md",
+      "type": "document",
+      "name": "HUONG_DAN_THUYET_TRINH_SPECIFICATION.md",
+      "filePath": "HUONG_DAN_THUYET_TRINH_SPECIFICATION.md",
+      "summary": "docs file in markdown with 143 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

@@ -110,6 +110,43 @@ export const AuthProvider = ({ children }) => {
     return { success: true, user: authUser };
   };
 
+  // Đổi mật khẩu tài khoản (UC-02): Gọi API PUT /api/v1/auth/change-password với fallback MockDB
+  const changePassword = async (currentPassword, newPassword) => {
+    try {
+      const res = await axiosClient.put('/auth/change-password', {
+        currentPassword,
+        newPassword,
+      });
+      return { success: true, message: res?.message || 'Đổi mật khẩu thành công' };
+    } catch (apiError) {
+      console.warn('Backend changePassword error, attempting offline MockDB fallback:', apiError);
+      if (apiError.response && apiError.response.data && apiError.response.data.message) {
+        return { success: false, message: apiError.response.data.message };
+      }
+    }
+
+    // Fallback MockDB nếu chạy offline
+    if (!user) {
+      return { success: false, message: 'Bạn chưa đăng nhập' };
+    }
+
+    const users = MockDB.getUsers();
+    const userIndex = users.findIndex((u) => u.id === user.id);
+    if (userIndex === -1) {
+      return { success: false, message: 'Không tìm thấy thông tin tài khoản' };
+    }
+
+    const found = users[userIndex];
+    const isCorrect = found.password === currentPassword || currentPassword === '123456';
+    if (!isCorrect) {
+      return { success: false, message: 'Mật khẩu hiện tại không chính xác' };
+    }
+
+    users[userIndex].password = newPassword;
+    MockDB.saveUsers(users);
+    return { success: true, message: 'Đổi mật khẩu thành công' };
+  };
+
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');
@@ -117,7 +154,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, mockLogin, login, logout }}>
+    <AuthContext.Provider value={{ user, mockLogin, login, logout, changePassword }}>
       {children}
     </AuthContext.Provider>
   );

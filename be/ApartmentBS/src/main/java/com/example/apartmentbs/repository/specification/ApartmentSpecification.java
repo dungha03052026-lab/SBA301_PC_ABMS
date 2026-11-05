@@ -11,7 +11,6 @@ import org.springframework.util.StringUtils;
 import java.math.BigDecimal;
 
 /**
- * Specification Pattern - Best Practice của Spring Data JPA:
  * Chia nhỏ từng điều kiện lọc thành các hàm độc lập và ghép nối bằng Fluent API Specification.where().and()
  */
 public class ApartmentSpecification {

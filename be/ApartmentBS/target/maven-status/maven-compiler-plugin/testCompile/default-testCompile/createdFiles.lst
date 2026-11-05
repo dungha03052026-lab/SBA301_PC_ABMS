@@ -1,1 +1,4 @@
+com\example\apartmentbs\repository\ApartmentSpecificationTest.class
+com\example\apartmentbs\service\AllUseCasesIntegrationTest.class
+com\example\apartmentbs\service\ApartmentServiceIntegrationTest.class
 com\example\apartmentbs\ApartmentBsApplicationTests.class

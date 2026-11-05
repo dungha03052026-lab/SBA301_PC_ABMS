@@ -1,0 +1,182 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "language": "java",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "language": "java",
+      "sizeLines": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "db/ApartmentDB.sql",
+      "language": "sql",
+      "sizeLines": 214,
+      "fileCategory": "data"
+    },
+    {
+      "path": "docs/UA_ONBOARDING.md",
+      "language": "markdown",
+      "sizeLines": 157,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "fe/eslint.config.js",
+      "language": "javascript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/App.css",
+      "language": "css",
+      "sizeLines": 184,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "fe/src/App.jsx",
+      "language": "javascript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/app/routes.jsx",
+      "language": "javascript",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/index.css",
+      "language": "css",
+      "sizeLines": 451,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "fe/src/main.jsx",
+      "language": "javascript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/Announcements.jsx",
+      "language": "javascript",
+      "sizeLines": 791,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/ApartmentManagement.jsx",
+      "language": "javascript",
+      "sizeLines": 1667,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/InvoiceApproval.jsx",
+      "language": "javascript",
+      "sizeLines": 757,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/MeterReading.jsx",
+      "language": "javascript",
+      "sizeLines": 1133,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/TicketManagement.jsx",
+      "language": "javascript",
+      "sizeLines": 895,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/auth/LoginPage.jsx",
+      "language": "javascript",
+      "sizeLines": 472,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/resident/MyInvoices.jsx",
+      "language": "javascript",
+      "sizeLines": 705,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/resident/ReportTicket.jsx",
+      "language": "javascript",
+      "sizeLines": 940,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/resident/ResidentAnnouncements.jsx",
+      "language": "javascript",
+      "sizeLines": 393,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/technician/MyTasks.jsx",
+      "language": "javascript",
+      "sizeLines": 713,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/technician/TaskPool.jsx",
+      "language": "javascript",
+      "sizeLines": 714,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/api/axiosClient.js",
+      "language": "javascript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/components/ChangePasswordModal.jsx",
+      "language": "javascript",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/components/ProtectedRoute.jsx",
+      "language": "javascript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/constants/mockData.js",
+      "language": "javascript",
+      "sizeLines": 290,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java": [],
+    "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java": [],
+    "db/ApartmentDB.sql": [],
+    "docs/UA_ONBOARDING.md": [],
+    "fe/eslint.config.js": [],
+    "fe/src/App.css": [],
+    "fe/src/App.jsx": [],
+    "fe/src/app/routes.jsx": [],
+    "fe/src/index.css": [],
+    "fe/src/main.jsx": [],
+    "fe/src/modules/admin/Announcements.jsx": [],
+    "fe/src/modules/admin/ApartmentManagement.jsx": [],
+    "fe/src/modules/admin/InvoiceApproval.jsx": [],
+    "fe/src/modules/admin/MeterReading.jsx": [],
+    "fe/src/modules/admin/TicketManagement.jsx": [],
+    "fe/src/modules/auth/LoginPage.jsx": [],
+    "fe/src/modules/resident/MyInvoices.jsx": [],
+    "fe/src/modules/resident/ReportTicket.jsx": [],
+    "fe/src/modules/resident/ResidentAnnouncements.jsx": [],
+    "fe/src/modules/technician/MyTasks.jsx": [],
+    "fe/src/modules/technician/TaskPool.jsx": [],
+    "fe/src/shared/api/axiosClient.js": [],
+    "fe/src/shared/components/ChangePasswordModal.jsx": [],
+    "fe/src/shared/components/ProtectedRoute.jsx": [],
+    "fe/src/shared/constants/mockData.js": []
+  }
+}

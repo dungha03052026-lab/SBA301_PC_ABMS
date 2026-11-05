@@ -230,12 +230,23 @@ public class ApartmentServiceImpl implements ApartmentService {
         }
 
         // Xóa các phương tiện liên quan đến căn hộ
+        User oldResident = apt.getResident();
+
         vehicleRepository.deleteByApartmentId(id);
 
         // Chuyển trạng thái căn hộ về trống
         apt.setResident(null);
         apt.setStatus(ApartmentStatus.VACANT);
         Apartment saved = apartmentRepository.save(apt);
+
+        // UC-06: Bàn giao chuyển đi & Khóa tài khoản cư dân nếu không còn sở hữu căn hộ nào khác
+        if (oldResident != null) {
+            long remainingCount = apartmentRepository.countByResidentIdAndStatus(oldResident.getId(), ApartmentStatus.OCCUPIED);
+            if (remainingCount == 0) {
+                oldResident.setIsActive(false);
+                userRepository.save(oldResident);
+            }
+        }
 
         return ApartmentResponse.fromEntity(saved, 0);
     }

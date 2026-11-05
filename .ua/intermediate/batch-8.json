@@ -1,0 +1,4734 @@
+{
+  "nodes": [
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "type": "file",
+      "name": "TicketCategory.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "summary": "code file in java with 7 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java:TicketCategory",
+      "type": "class",
+      "name": "TicketCategory",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "lineRange": [
+        3,
+        7
+      ],
+      "summary": "Class TicketCategory",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "type": "file",
+      "name": "TicketStatus.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "summary": "code file in java with 8 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java:TicketStatus",
+      "type": "class",
+      "name": "TicketStatus",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "lineRange": [
+        3,
+        8
+      ],
+      "summary": "Class TicketStatus",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "type": "file",
+      "name": "User.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "summary": "code file in java with 46 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java:User",
+      "type": "class",
+      "name": "User",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "lineRange": [
+        11,
+        46
+      ],
+      "summary": "Class User",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "type": "file",
+      "name": "Vehicle.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "summary": "code file in java with 40 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java:Vehicle",
+      "type": "class",
+      "name": "Vehicle",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "lineRange": [
+        11,
+        40
+      ],
+      "summary": "Class Vehicle",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "type": "file",
+      "name": "VehicleType.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "summary": "code file in java with 6 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java:VehicleType",
+      "type": "class",
+      "name": "VehicleType",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "lineRange": [
+        3,
+        6
+      ],
+      "summary": "Class VehicleType",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "type": "file",
+      "name": "AnnouncementRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "summary": "code file in java with 12 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java:AnnouncementRepository",
+      "type": "class",
+      "name": "AnnouncementRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "lineRange": [
+        9,
+        12
+      ],
+      "summary": "Class AnnouncementRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "type": "file",
+      "name": "ApartmentRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "summary": "code file in java with 18 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:ApartmentRepository",
+      "type": "class",
+      "name": "ApartmentRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "lineRange": [
+        12,
+        18
+      ],
+      "summary": "Class ApartmentRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "type": "file",
+      "name": "InvoiceRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "summary": "code file in java with 29 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "type": "class",
+      "name": "InvoiceRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        15,
+        29
+      ],
+      "summary": "Class InvoiceRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "type": "file",
+      "name": "ServiceTariffRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "summary": "code file in java with 9 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java:ServiceTariffRepository",
+      "type": "class",
+      "name": "ServiceTariffRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "lineRange": [
+        7,
+        9
+      ],
+      "summary": "Class ServiceTariffRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "type": "file",
+      "name": "TicketRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "summary": "code file in java with 33 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "type": "class",
+      "name": "TicketRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        18,
+        33
+      ],
+      "summary": "Class TicketRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "type": "file",
+      "name": "UserRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "summary": "code file in java with 18 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "type": "class",
+      "name": "UserRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "lineRange": [
+        11,
+        18
+      ],
+      "summary": "Class UserRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of UserRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of UserRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of UserRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of UserRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of UserRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "type": "file",
+      "name": "VehicleRepository.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "summary": "code file in java with 16 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:VehicleRepository",
+      "type": "class",
+      "name": "VehicleRepository",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "lineRange": [
+        10,
+        16
+      ],
+      "summary": "Class VehicleRepository",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of VehicleRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of VehicleRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of VehicleRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of VehicleRepository",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "type": "file",
+      "name": "ApartmentSpecification.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "summary": "code file in java with 91 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "type": "class",
+      "name": "ApartmentSpecification",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        16,
+        91
+      ],
+      "summary": "Class ApartmentSpecification",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecification",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecification",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecification",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecification",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecification",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecification",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:filter",
+      "type": "function",
+      "name": "filter",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        21,
+        35
+      ],
+      "summary": "Function filter",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:hasBuildingBlock",
+      "type": "function",
+      "name": "hasBuildingBlock",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "Function hasBuildingBlock",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:hasFloor",
+      "type": "function",
+      "name": "hasFloor",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        48,
+        51
+      ],
+      "summary": "Function hasFloor",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:hasStatus",
+      "type": "function",
+      "name": "hasStatus",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "Function hasStatus",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:areaBetween",
+      "type": "function",
+      "name": "areaBetween",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        60,
+        73
+      ],
+      "summary": "Function areaBetween",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:searchGeneral",
+      "type": "function",
+      "name": "searchGeneral",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "lineRange": [
+        76,
+        90
+      ],
+      "summary": "Function searchGeneral",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "type": "file",
+      "name": "AnnouncementService.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "summary": "code file in java with 14 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "type": "class",
+      "name": "AnnouncementService",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "lineRange": [
+        8,
+        14
+      ],
+      "summary": "Class AnnouncementService",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "type": "file",
+      "name": "ApartmentService.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "summary": "code file in java with 53 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "type": "class",
+      "name": "ApartmentService",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        15,
+        53
+      ],
+      "summary": "Class ApartmentService",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "type": "file",
+      "name": "AuthService.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "summary": "code file in java with 12 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:AuthService",
+      "type": "class",
+      "name": "AuthService",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "lineRange": [
+        8,
+        12
+      ],
+      "summary": "Class AuthService",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AuthService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AuthService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AuthService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "type": "file",
+      "name": "BillingService.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "summary": "code file in java with 25 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "type": "class",
+      "name": "BillingService",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        12,
+        25
+      ],
+      "summary": "Class BillingService",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "type": "file",
+      "name": "TicketService.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "summary": "code file in java with 27 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "type": "class",
+      "name": "TicketService",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        11,
+        27
+      ],
+      "summary": "Class TicketService",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketService",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "type": "file",
+      "name": "AnnouncementServiceImpl.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "summary": "code file in java with 82 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "type": "class",
+      "name": "AnnouncementServiceImpl",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        20,
+        82
+      ],
+      "summary": "Class AnnouncementServiceImpl",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:getAllAnnouncements",
+      "type": "function",
+      "name": "getAllAnnouncements",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        27,
+        33
+      ],
+      "summary": "Function getAllAnnouncements",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:getAnnouncementById",
+      "type": "function",
+      "name": "getAnnouncementById",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        35,
+        41
+      ],
+      "summary": "Function getAnnouncementById",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:createAnnouncement",
+      "type": "function",
+      "name": "createAnnouncement",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        43,
+        59
+      ],
+      "summary": "Function createAnnouncement",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:updateAnnouncement",
+      "type": "function",
+      "name": "updateAnnouncement",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        61,
+        73
+      ],
+      "summary": "Function updateAnnouncement",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:deleteAnnouncement",
+      "type": "function",
+      "name": "deleteAnnouncement",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "lineRange": [
+        75,
+        81
+      ],
+      "summary": "Function deleteAnnouncement",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "type": "file",
+      "name": "ApartmentServiceImpl.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "summary": "code file in java with 325 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "type": "class",
+      "name": "ApartmentServiceImpl",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        35,
+        325
+      ],
+      "summary": "Class ApartmentServiceImpl",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:searchApartments",
+      "type": "function",
+      "name": "searchApartments",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        45,
+        66
+      ],
+      "summary": "Function searchApartments",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:searchApartmentsPaged",
+      "type": "function",
+      "name": "searchApartmentsPaged",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        68,
+        100
+      ],
+      "summary": "Function searchApartmentsPaged",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getApartmentById",
+      "type": "function",
+      "name": "getApartmentById",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        102,
+        108
+      ],
+      "summary": "Function getApartmentById",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:createApartment",
+      "type": "function",
+      "name": "createApartment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        110,
+        128
+      ],
+      "summary": "Function createApartment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:updateApartment",
+      "type": "function",
+      "name": "updateApartment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        130,
+        148
+      ],
+      "summary": "Function updateApartment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:deleteApartment",
+      "type": "function",
+      "name": "deleteApartment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        150,
+        158
+      ],
+      "summary": "Function deleteApartment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:moveIn",
+      "type": "function",
+      "name": "moveIn",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        160,
+        208
+      ],
+      "summary": "Function moveIn",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:moveOut",
+      "type": "function",
+      "name": "moveOut",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        210,
+        241
+      ],
+      "summary": "Function moveOut",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getVehiclesByApartment",
+      "type": "function",
+      "name": "getVehiclesByApartment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        243,
+        250
+      ],
+      "summary": "Function getVehiclesByApartment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:addVehicle",
+      "type": "function",
+      "name": "addVehicle",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        252,
+        278
+      ],
+      "summary": "Function addVehicle",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:deleteVehicle",
+      "type": "function",
+      "name": "deleteVehicle",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        280,
+        292
+      ],
+      "summary": "Function deleteVehicle",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getApartmentsByResident",
+      "type": "function",
+      "name": "getApartmentsByResident",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        294,
+        303
+      ],
+      "summary": "Function getApartmentsByResident",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getResidents",
+      "type": "function",
+      "name": "getResidents",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        305,
+        311
+      ],
+      "summary": "Function getResidents",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getTechnicians",
+      "type": "function",
+      "name": "getTechnicians",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        313,
+        319
+      ],
+      "summary": "Function getTechnicians",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:findApartmentOrThrow",
+      "type": "function",
+      "name": "findApartmentOrThrow",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "lineRange": [
+        321,
+        324
+      ],
+      "summary": "Function findApartmentOrThrow",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "type": "file",
+      "name": "AuthServiceImpl.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "summary": "code file in java with 76 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:AuthServiceImpl",
+      "type": "class",
+      "name": "AuthServiceImpl",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        19,
+        76
+      ],
+      "summary": "Class AuthServiceImpl",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AuthServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AuthServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AuthServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:login",
+      "type": "function",
+      "name": "login",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        27,
+        58
+      ],
+      "summary": "Function login",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:getCurrentUser",
+      "type": "function",
+      "name": "getCurrentUser",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        60,
+        64
+      ],
+      "summary": "Function getCurrentUser",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:getAuthenticatedUser",
+      "type": "function",
+      "name": "getAuthenticatedUser",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "lineRange": [
+        66,
+        75
+      ],
+      "summary": "Function getAuthenticatedUser",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "type": "file",
+      "name": "BillingServiceImpl.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "summary": "code file in java with 318 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "type": "class",
+      "name": "BillingServiceImpl",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        32,
+        318
+      ],
+      "summary": "Class BillingServiceImpl",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of BillingServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getTariff",
+      "type": "function",
+      "name": "getTariff",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        42,
+        47
+      ],
+      "summary": "Function getTariff",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:updateTariff",
+      "type": "function",
+      "name": "updateTariff",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        49,
+        62
+      ],
+      "summary": "Function updateTariff",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:searchInvoices",
+      "type": "function",
+      "name": "searchInvoices",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        64,
+        82
+      ],
+      "summary": "Function searchInvoices",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:searchInvoicesPaged",
+      "type": "function",
+      "name": "searchInvoicesPaged",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        84,
+        116
+      ],
+      "summary": "Function searchInvoicesPaged",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getInvoiceById",
+      "type": "function",
+      "name": "getInvoiceById",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        118,
+        124
+      ],
+      "summary": "Function getInvoiceById",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getInvoicesByApartment",
+      "type": "function",
+      "name": "getInvoicesByApartment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        126,
+        133
+      ],
+      "summary": "Function getInvoicesByApartment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:batchGenerateInvoices",
+      "type": "function",
+      "name": "batchGenerateInvoices",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        135,
+        212
+      ],
+      "summary": "Function batchGenerateInvoices",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:confirmPayment",
+      "type": "function",
+      "name": "confirmPayment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        214,
+        233
+      ],
+      "summary": "Function confirmPayment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:approveInvoice",
+      "type": "function",
+      "name": "approveInvoice",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        235,
+        251
+      ],
+      "summary": "Function approveInvoice",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:rejectInvoice",
+      "type": "function",
+      "name": "rejectInvoice",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        253,
+        266
+      ],
+      "summary": "Function rejectInvoice",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getOrInitTariff",
+      "type": "function",
+      "name": "getOrInitTariff",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        268,
+        281
+      ],
+      "summary": "Function getOrInitTariff",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:enrichInvoiceResponse",
+      "type": "function",
+      "name": "enrichInvoiceResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "lineRange": [
+        283,
+        317
+      ],
+      "summary": "Function enrichInvoiceResponse",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "type": "file",
+      "name": "TicketServiceImpl.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "summary": "code file in java with 255 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "type": "class",
+      "name": "TicketServiceImpl",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        29,
+        255
+      ],
+      "summary": "Class TicketServiceImpl",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketServiceImpl",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:createTicket",
+      "type": "function",
+      "name": "createTicket",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        37,
+        64
+      ],
+      "summary": "Function createTicket",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getTicketsByResident",
+      "type": "function",
+      "name": "getTicketsByResident",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        66,
+        72
+      ],
+      "summary": "Function getTicketsByResident",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getTicketsByResidentPaged",
+      "type": "function",
+      "name": "getTicketsByResidentPaged",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        74,
+        87
+      ],
+      "summary": "Function getTicketsByResidentPaged",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getOpenTickets",
+      "type": "function",
+      "name": "getOpenTickets",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        89,
+        95
+      ],
+      "summary": "Function getOpenTickets",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getOpenTicketsPaged",
+      "type": "function",
+      "name": "getOpenTicketsPaged",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        97,
+        110
+      ],
+      "summary": "Function getOpenTicketsPaged",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAssignedTickets",
+      "type": "function",
+      "name": "getAssignedTickets",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        112,
+        118
+      ],
+      "summary": "Function getAssignedTickets",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAssignedTicketsPaged",
+      "type": "function",
+      "name": "getAssignedTicketsPaged",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        120,
+        133
+      ],
+      "summary": "Function getAssignedTicketsPaged",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAllTickets",
+      "type": "function",
+      "name": "getAllTickets",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        135,
+        141
+      ],
+      "summary": "Function getAllTickets",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAllTicketsPaged",
+      "type": "function",
+      "name": "getAllTicketsPaged",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        143,
+        156
+      ],
+      "summary": "Function getAllTicketsPaged",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getTicketById",
+      "type": "function",
+      "name": "getTicketById",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        158,
+        164
+      ],
+      "summary": "Function getTicketById",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:claimTicket",
+      "type": "function",
+      "name": "claimTicket",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        166,
+        188
+      ],
+      "summary": "Function claimTicket",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:completeTicket",
+      "type": "function",
+      "name": "completeTicket",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        190,
+        210
+      ],
+      "summary": "Function completeTicket",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:inspectTicket",
+      "type": "function",
+      "name": "inspectTicket",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        212,
+        238
+      ],
+      "summary": "Function inspectTicket",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:forceAssignTicket",
+      "type": "function",
+      "name": "forceAssignTicket",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "lineRange": [
+        240,
+        254
+      ],
+      "summary": "Function forceAssignTicket",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "type": "file",
+      "name": "ApartmentBsApplicationTests.java",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "summary": "code file in java with 13 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:ApartmentBsApplicationTests",
+      "type": "class",
+      "name": "ApartmentBsApplicationTests",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "lineRange": [
+        6,
+        13
+      ],
+      "summary": "Class ApartmentBsApplicationTests",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentBsApplicationTests",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:contextLoads",
+      "type": "function",
+      "name": "contextLoads",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "lineRange": [
+        9,
+        11
+      ],
+      "summary": "Function contextLoads",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java:TicketCategory",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java:TicketStatus",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java:User",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java:Vehicle",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java:VehicleType",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java:AnnouncementRepository",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java:AnnouncementRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:ApartmentRepository",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:ApartmentRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:ApartmentRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:ApartmentRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:ApartmentRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:InvoiceRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java:ServiceTariffRepository",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:TicketRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:UserRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:VehicleRepository",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:VehicleRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:VehicleRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:VehicleRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:VehicleRepository",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:ApartmentSpecification",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:filter",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:hasBuildingBlock",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:hasFloor",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:hasStatus",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:areaBetween",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java:searchGeneral",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:AnnouncementService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:ApartmentService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:AuthService",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:AuthService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:AuthService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:AuthService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:BillingService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:TicketService",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:AnnouncementServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:getAllAnnouncements",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:getAnnouncementById",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:createAnnouncement",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:updateAnnouncement",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java:deleteAnnouncement",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:ApartmentServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:searchApartments",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:searchApartmentsPaged",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getApartmentById",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:createApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:updateApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:deleteApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:moveIn",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:moveOut",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getVehiclesByApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:addVehicle",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:deleteVehicle",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getApartmentsByResident",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getResidents",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:getTechnicians",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java:findApartmentOrThrow",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:AuthServiceImpl",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:AuthServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:AuthServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:AuthServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:login",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:getCurrentUser",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java:getAuthenticatedUser",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:BillingServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getTariff",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:updateTariff",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:searchInvoices",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:searchInvoicesPaged",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getInvoiceById",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getInvoicesByApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:batchGenerateInvoices",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:confirmPayment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:approveInvoice",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:rejectInvoice",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:getOrInitTariff",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java:enrichInvoiceResponse",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:TicketServiceImpl",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:createTicket",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getTicketsByResident",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getTicketsByResidentPaged",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getOpenTickets",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getOpenTicketsPaged",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAssignedTickets",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAssignedTicketsPaged",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAllTickets",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getAllTicketsPaged",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:getTicketById",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:claimTicket",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:completeTicket",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:inspectTicket",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java:forceAssignTicket",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "target": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:ApartmentBsApplicationTests",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:ApartmentBsApplicationTests",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java:contextLoads",
+      "type": "contains"
+    }
+  ]
+}

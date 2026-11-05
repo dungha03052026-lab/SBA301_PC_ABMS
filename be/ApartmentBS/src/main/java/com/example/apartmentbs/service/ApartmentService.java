@@ -4,6 +4,7 @@ import com.example.apartmentbs.dto.request.ApartmentRequest;
 import com.example.apartmentbs.dto.request.MoveInRequest;
 import com.example.apartmentbs.dto.request.VehicleRequest;
 import com.example.apartmentbs.dto.response.ApartmentResponse;
+import com.example.apartmentbs.dto.response.PageResponse;
 import com.example.apartmentbs.dto.response.UserResponse;
 import com.example.apartmentbs.dto.response.VehicleResponse;
 import com.example.apartmentbs.model.ApartmentStatus;
@@ -21,7 +22,7 @@ public interface ApartmentService {
             String search
     );
 
-    com.example.apartmentbs.dto.response.PageResponse<ApartmentResponse> searchApartmentsPaged(
+   PageResponse<ApartmentResponse> searchApartmentsPaged(
             String buildingBlock,
             Integer floor,
             ApartmentStatus status,

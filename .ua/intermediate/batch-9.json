@@ -1,0 +1,1153 @@
+{
+  "nodes": [
+    {
+      "id": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "type": "file",
+      "name": "ApartmentSpecificationTest.java",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "summary": "code file in java with 150 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "type": "class",
+      "name": "ApartmentSpecificationTest",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        22,
+        150
+      ],
+      "summary": "Class ApartmentSpecificationTest",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecificationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecificationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecificationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecificationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecificationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentSpecificationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:setUp",
+      "type": "function",
+      "name": "setUp",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        37,
+        79
+      ],
+      "summary": "Function setUp",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testFilterByBuildingBlock",
+      "type": "function",
+      "name": "testFilterByBuildingBlock",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        81,
+        90
+      ],
+      "summary": "Function testFilterByBuildingBlock",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testFilterByStatus",
+      "type": "function",
+      "name": "testFilterByStatus",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        92,
+        101
+      ],
+      "summary": "Function testFilterByStatus",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testFilterByAreaBetween",
+      "type": "function",
+      "name": "testFilterByAreaBetween",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        103,
+        112
+      ],
+      "summary": "Function testFilterByAreaBetween",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testSearchGeneralByResidentNameAndPhone",
+      "type": "function",
+      "name": "testSearchGeneralByResidentNameAndPhone",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        114,
+        132
+      ],
+      "summary": "Function testSearchGeneralByResidentNameAndPhone",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testCompositeFilter",
+      "type": "function",
+      "name": "testCompositeFilter",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "lineRange": [
+        134,
+        149
+      ],
+      "summary": "Function testCompositeFilter",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "type": "file",
+      "name": "ApartmentServiceIntegrationTest.java",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "summary": "code file in java with 181 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "type": "class",
+      "name": "ApartmentServiceIntegrationTest",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        22,
+        181
+      ],
+      "summary": "Class ApartmentServiceIntegrationTest",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceIntegrationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceIntegrationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceIntegrationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceIntegrationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentServiceIntegrationTest",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testCreateApartment_Success",
+      "type": "function",
+      "name": "testCreateApartment_Success",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        38,
+        59
+      ],
+      "summary": "Function testCreateApartment_Success",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testCreateApartment_DuplicateRoomNumber_ThrowsAppException",
+      "type": "function",
+      "name": "testCreateApartment_DuplicateRoomNumber_ThrowsAppException",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        61,
+        81
+      ],
+      "summary": "Function testCreateApartment_DuplicateRoomNumber_ThrowsAppException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testMoveIn_NewResident_PersistsUserAndApartment",
+      "type": "function",
+      "name": "testMoveIn_NewResident_PersistsUserAndApartment",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        83,
+        110
+      ],
+      "summary": "Function testMoveIn_NewResident_PersistsUserAndApartment",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testMoveOut_WithUnpaidInvoices_ThrowsAppException",
+      "type": "function",
+      "name": "testMoveOut_WithUnpaidInvoices_ThrowsAppException",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        112,
+        150
+      ],
+      "summary": "Function testMoveOut_WithUnpaidInvoices_ThrowsAppException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testMoveOut_CleanDebt_SuccessfullyVacates",
+      "type": "function",
+      "name": "testMoveOut_CleanDebt_SuccessfullyVacates",
+      "filePath": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "lineRange": [
+        152,
+        180
+      ],
+      "summary": "Function testMoveOut_CleanDebt_SuccessfullyVacates",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:db/ApartmentDB.sql",
+      "type": "file",
+      "name": "ApartmentDB.sql",
+      "filePath": "db/ApartmentDB.sql",
+      "summary": "data file in sql with 215 lines",
+      "tags": [
+        "data",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/UA_ONBOARDING.md",
+      "type": "document",
+      "name": "UA_ONBOARDING.md",
+      "filePath": "docs/UA_ONBOARDING.md",
+      "summary": "docs file in markdown with 157 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/eslint.config.js",
+      "type": "file",
+      "name": "eslint.config.js",
+      "filePath": "fe/eslint.config.js",
+      "summary": "code file in javascript with 21 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/App.jsx",
+      "type": "file",
+      "name": "App.jsx",
+      "filePath": "fe/src/App.jsx",
+      "summary": "code file in javascript with 15 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/App.jsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "fe/src/App.jsx",
+      "lineRange": [
+        7,
+        13
+      ],
+      "summary": "Function App",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/app/routes.jsx",
+      "type": "file",
+      "name": "routes.jsx",
+      "filePath": "fe/src/app/routes.jsx",
+      "summary": "code file in javascript with 96 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/app/routes.jsx:AppRoutes",
+      "type": "function",
+      "name": "AppRoutes",
+      "filePath": "fe/src/app/routes.jsx",
+      "lineRange": [
+        32,
+        94
+      ],
+      "summary": "Function AppRoutes",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "fe/src/main.jsx",
+      "summary": "code file in javascript with 16 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/admin/Announcements.jsx",
+      "type": "file",
+      "name": "Announcements.jsx",
+      "filePath": "fe/src/modules/admin/Announcements.jsx",
+      "summary": "code file in javascript with 791 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/admin/Announcements.jsx:Announcements",
+      "type": "function",
+      "name": "Announcements",
+      "filePath": "fe/src/modules/admin/Announcements.jsx",
+      "lineRange": [
+        41,
+        789
+      ],
+      "summary": "Function Announcements",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/admin/ApartmentManagement.jsx",
+      "type": "file",
+      "name": "ApartmentManagement.jsx",
+      "filePath": "fe/src/modules/admin/ApartmentManagement.jsx",
+      "summary": "code file in javascript with 1667 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/admin/ApartmentManagement.jsx:ApartmentManagement",
+      "type": "function",
+      "name": "ApartmentManagement",
+      "filePath": "fe/src/modules/admin/ApartmentManagement.jsx",
+      "lineRange": [
+        47,
+        1665
+      ],
+      "summary": "Function ApartmentManagement",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/admin/InvoiceApproval.jsx",
+      "type": "file",
+      "name": "InvoiceApproval.jsx",
+      "filePath": "fe/src/modules/admin/InvoiceApproval.jsx",
+      "summary": "code file in javascript with 757 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/admin/InvoiceApproval.jsx:InvoiceApproval",
+      "type": "function",
+      "name": "InvoiceApproval",
+      "filePath": "fe/src/modules/admin/InvoiceApproval.jsx",
+      "lineRange": [
+        39,
+        755
+      ],
+      "summary": "Function InvoiceApproval",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/admin/MeterReading.jsx",
+      "type": "file",
+      "name": "MeterReading.jsx",
+      "filePath": "fe/src/modules/admin/MeterReading.jsx",
+      "summary": "code file in javascript with 1133 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/admin/MeterReading.jsx:MeterReading",
+      "type": "function",
+      "name": "MeterReading",
+      "filePath": "fe/src/modules/admin/MeterReading.jsx",
+      "lineRange": [
+        40,
+        1131
+      ],
+      "summary": "Function MeterReading",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/admin/TicketManagement.jsx",
+      "type": "file",
+      "name": "TicketManagement.jsx",
+      "filePath": "fe/src/modules/admin/TicketManagement.jsx",
+      "summary": "code file in javascript with 895 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/admin/TicketManagement.jsx:TicketManagement",
+      "type": "function",
+      "name": "TicketManagement",
+      "filePath": "fe/src/modules/admin/TicketManagement.jsx",
+      "lineRange": [
+        40,
+        893
+      ],
+      "summary": "Function TicketManagement",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/auth/LoginPage.jsx",
+      "type": "file",
+      "name": "LoginPage.jsx",
+      "filePath": "fe/src/modules/auth/LoginPage.jsx",
+      "summary": "code file in javascript with 472 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/auth/LoginPage.jsx:LoginPage",
+      "type": "function",
+      "name": "LoginPage",
+      "filePath": "fe/src/modules/auth/LoginPage.jsx",
+      "lineRange": [
+        20,
+        470
+      ],
+      "summary": "Function LoginPage",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/resident/MyInvoices.jsx",
+      "type": "file",
+      "name": "MyInvoices.jsx",
+      "filePath": "fe/src/modules/resident/MyInvoices.jsx",
+      "summary": "code file in javascript with 705 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/resident/MyInvoices.jsx:MyInvoices",
+      "type": "function",
+      "name": "MyInvoices",
+      "filePath": "fe/src/modules/resident/MyInvoices.jsx",
+      "lineRange": [
+        40,
+        703
+      ],
+      "summary": "Function MyInvoices",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/resident/ReportTicket.jsx",
+      "type": "file",
+      "name": "ReportTicket.jsx",
+      "filePath": "fe/src/modules/resident/ReportTicket.jsx",
+      "summary": "code file in javascript with 940 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/resident/ReportTicket.jsx:ReportTicket",
+      "type": "function",
+      "name": "ReportTicket",
+      "filePath": "fe/src/modules/resident/ReportTicket.jsx",
+      "lineRange": [
+        47,
+        938
+      ],
+      "summary": "Function ReportTicket",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/resident/ResidentAnnouncements.jsx",
+      "type": "file",
+      "name": "ResidentAnnouncements.jsx",
+      "filePath": "fe/src/modules/resident/ResidentAnnouncements.jsx",
+      "summary": "code file in javascript with 393 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/resident/ResidentAnnouncements.jsx:ResidentAnnouncements",
+      "type": "function",
+      "name": "ResidentAnnouncements",
+      "filePath": "fe/src/modules/resident/ResidentAnnouncements.jsx",
+      "lineRange": [
+        33,
+        391
+      ],
+      "summary": "Function ResidentAnnouncements",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/technician/MyTasks.jsx",
+      "type": "file",
+      "name": "MyTasks.jsx",
+      "filePath": "fe/src/modules/technician/MyTasks.jsx",
+      "summary": "code file in javascript with 713 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/technician/MyTasks.jsx:MyTasks",
+      "type": "function",
+      "name": "MyTasks",
+      "filePath": "fe/src/modules/technician/MyTasks.jsx",
+      "lineRange": [
+        42,
+        711
+      ],
+      "summary": "Function MyTasks",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/modules/technician/TaskPool.jsx",
+      "type": "file",
+      "name": "TaskPool.jsx",
+      "filePath": "fe/src/modules/technician/TaskPool.jsx",
+      "summary": "code file in javascript with 714 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:fe/src/modules/technician/TaskPool.jsx:TaskPool",
+      "type": "function",
+      "name": "TaskPool",
+      "filePath": "fe/src/modules/technician/TaskPool.jsx",
+      "lineRange": [
+        42,
+        712
+      ],
+      "summary": "Function TaskPool",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/api/axiosClient.js",
+      "type": "file",
+      "name": "axiosClient.js",
+      "filePath": "fe/src/shared/api/axiosClient.js",
+      "summary": "code file in javascript with 50 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/components/ChangePasswordModal.jsx",
+      "type": "file",
+      "name": "ChangePasswordModal.jsx",
+      "filePath": "fe/src/shared/components/ChangePasswordModal.jsx",
+      "summary": "code file in javascript with 127 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/components/ChangePasswordModal.jsx:ChangePasswordModal",
+      "type": "function",
+      "name": "ChangePasswordModal",
+      "filePath": "fe/src/shared/components/ChangePasswordModal.jsx",
+      "lineRange": [
+        7,
+        125
+      ],
+      "summary": "Function ChangePasswordModal",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/components/ProtectedRoute.jsx",
+      "type": "file",
+      "name": "ProtectedRoute.jsx",
+      "filePath": "fe/src/shared/components/ProtectedRoute.jsx",
+      "summary": "code file in javascript with 30 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/components/ProtectedRoute.jsx:ProtectedRoute",
+      "type": "function",
+      "name": "ProtectedRoute",
+      "filePath": "fe/src/shared/components/ProtectedRoute.jsx",
+      "lineRange": [
+        6,
+        28
+      ],
+      "summary": "Function ProtectedRoute",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/constants/mockData.js",
+      "type": "file",
+      "name": "mockData.js",
+      "filePath": "fe/src/shared/constants/mockData.js",
+      "summary": "code file in javascript with 290 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/constants/mockData.js:initMockStorage",
+      "type": "function",
+      "name": "initMockStorage",
+      "filePath": "fe/src/shared/constants/mockData.js",
+      "lineRange": [
+        196,
+        218
+      ],
+      "summary": "Function initMockStorage",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/constants/mockData.js:getList",
+      "type": "function",
+      "name": "getList",
+      "filePath": "fe/src/shared/constants/mockData.js",
+      "lineRange": [
+        224,
+        232
+      ],
+      "summary": "Function getList",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/constants/mockData.js:setList",
+      "type": "function",
+      "name": "setList",
+      "filePath": "fe/src/shared/constants/mockData.js",
+      "lineRange": [
+        234,
+        240
+      ],
+      "summary": "Function setList",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:ApartmentSpecificationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:setUp",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testFilterByBuildingBlock",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testFilterByStatus",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testFilterByAreaBetween",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testSearchGeneralByResidentNameAndPhone",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java:testCompositeFilter",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "target": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:ApartmentServiceIntegrationTest",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testCreateApartment_Success",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testCreateApartment_DuplicateRoomNumber_ThrowsAppException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testMoveIn_NewResident_PersistsUserAndApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testMoveOut_WithUnpaidInvoices_ThrowsAppException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "target": "function:be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java:testMoveOut_CleanDebt_SuccessfullyVacates",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/App.jsx",
+      "target": "function:fe/src/App.jsx:App",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/app/routes.jsx",
+      "target": "function:fe/src/app/routes.jsx:AppRoutes",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/admin/Announcements.jsx",
+      "target": "function:fe/src/modules/admin/Announcements.jsx:Announcements",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/admin/ApartmentManagement.jsx",
+      "target": "function:fe/src/modules/admin/ApartmentManagement.jsx:ApartmentManagement",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/admin/InvoiceApproval.jsx",
+      "target": "function:fe/src/modules/admin/InvoiceApproval.jsx:InvoiceApproval",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/admin/MeterReading.jsx",
+      "target": "function:fe/src/modules/admin/MeterReading.jsx:MeterReading",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/admin/TicketManagement.jsx",
+      "target": "function:fe/src/modules/admin/TicketManagement.jsx:TicketManagement",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/auth/LoginPage.jsx",
+      "target": "function:fe/src/modules/auth/LoginPage.jsx:LoginPage",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/resident/MyInvoices.jsx",
+      "target": "function:fe/src/modules/resident/MyInvoices.jsx:MyInvoices",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/resident/ReportTicket.jsx",
+      "target": "function:fe/src/modules/resident/ReportTicket.jsx:ReportTicket",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/resident/ResidentAnnouncements.jsx",
+      "target": "function:fe/src/modules/resident/ResidentAnnouncements.jsx:ResidentAnnouncements",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/technician/MyTasks.jsx",
+      "target": "function:fe/src/modules/technician/MyTasks.jsx:MyTasks",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/modules/technician/TaskPool.jsx",
+      "target": "function:fe/src/modules/technician/TaskPool.jsx:TaskPool",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/components/ChangePasswordModal.jsx",
+      "target": "function:fe/src/shared/components/ChangePasswordModal.jsx:ChangePasswordModal",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/components/ProtectedRoute.jsx",
+      "target": "function:fe/src/shared/components/ProtectedRoute.jsx:ProtectedRoute",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/constants/mockData.js",
+      "target": "function:fe/src/shared/constants/mockData.js:initMockStorage",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/constants/mockData.js",
+      "target": "function:fe/src/shared/constants/mockData.js:getList",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/constants/mockData.js",
+      "target": "function:fe/src/shared/constants/mockData.js:setList",
+      "type": "contains"
+    }
+  ]
+}

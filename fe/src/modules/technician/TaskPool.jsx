@@ -135,6 +135,7 @@ const TaskPool = () => {
         if (a.isOverdue !== b.isOverdue) {
           return b.isOverdue ? 1 : -1;
         }
+        
         return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
       });
   }, [tickets, apartments, users]);

@@ -1,0 +1,182 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": ".ua/knowledge-graph.json",
+      "language": "json",
+      "sizeLines": 7780,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/meta.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/run-batches.cjs",
+      "language": "javascript",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/.gitattributes",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/.mvn/wrapper/maven-wrapper.properties",
+      "language": "properties",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "be/ApartmentBS/mvnw",
+      "language": "unknown",
+      "sizeLines": 295,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/ApartmentBsApplication.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/CorsConfig.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtAuthenticationFilter.java",
+      "language": "java",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtTokenProvider.java",
+      "language": "java",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/SecurityConfig.java",
+      "language": "java",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AnnouncementController.java",
+      "language": "java",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ApartmentController.java",
+      "language": "java",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AuthController.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/BillingController.java",
+      "language": "java",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ResidentApartmentController.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/TicketController.java",
+      "language": "java",
+      "sizeLines": 164,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/AnnouncementRequest.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ApartmentRequest.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/BatchInvoiceCreateRequest.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ForceAssignRequest.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/LoginRequest.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MeterReadingItem.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MoveInRequest.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TariffRequest.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".ua/knowledge-graph.json": [],
+    ".ua/meta.json": [],
+    ".ua/tmp/run-batches.cjs": [],
+    "be/ApartmentBS/.gitattributes": [],
+    "be/ApartmentBS/.mvn/wrapper/maven-wrapper.properties": [],
+    "be/ApartmentBS/mvnw": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/ApartmentBsApplication.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/CorsConfig.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtAuthenticationFilter.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtTokenProvider.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/SecurityConfig.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AnnouncementController.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ApartmentController.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AuthController.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/BillingController.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ResidentApartmentController.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/TicketController.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/AnnouncementRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ApartmentRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/BatchInvoiceCreateRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ForceAssignRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/LoginRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MeterReadingItem.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MoveInRequest.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TariffRequest.java": []
+  }
+}

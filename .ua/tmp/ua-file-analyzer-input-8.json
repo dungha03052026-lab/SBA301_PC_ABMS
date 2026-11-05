@@ -1,0 +1,182 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "language": "java",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "language": "java",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "language": "java",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "language": "java",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "language": "java",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "language": "java",
+      "sizeLines": 325,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "language": "java",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "language": "java",
+      "sizeLines": 318,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "language": "java",
+      "sizeLines": 255,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 18,
+      "fileCategory": "config"
+    },
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java": [],
+    "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java": [],
+    "be/ApartmentBS/src/main/resources/application.properties": [],
+    "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java": []
+  }
+}

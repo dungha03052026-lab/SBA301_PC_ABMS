@@ -14,5 +14,7 @@ public interface ApartmentRepository extends JpaRepository<Apartment, Long>, Jpa
     Optional<Apartment> findByRoomNumber(String roomNumber);
     boolean existsByRoomNumber(String roomNumber);
     List<Apartment> findByResidentId(Long residentId);
+    List<Apartment> findByResidentIdAndStatus(Long residentId, ApartmentStatus status);
+    long countByResidentIdAndStatus(Long residentId, ApartmentStatus status);
     List<Apartment> findByStatus(ApartmentStatus status);
 }
