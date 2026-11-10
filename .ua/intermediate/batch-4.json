@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {
+      "id": "document:be/ApartmentBS/HELP.md",
+      "type": "document",
+      "name": "HELP.md",
+      "filePath": "be/ApartmentBS/HELP.md",
+      "summary": "docs file in markdown with 25 lines",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

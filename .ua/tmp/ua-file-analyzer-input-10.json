@@ -1,0 +1,56 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "fe/src/shared/context/ApartmentContext.jsx",
+      "language": "javascript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/context/AuthContext.jsx",
+      "language": "javascript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/layouts/AdminLayout.jsx",
+      "language": "javascript",
+      "sizeLines": 271,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/layouts/ResidentLayout.jsx",
+      "language": "javascript",
+      "sizeLines": 293,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/layouts/TechLayout.jsx",
+      "language": "javascript",
+      "sizeLines": 229,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/theme/playstationTheme.js",
+      "language": "javascript",
+      "sizeLines": 184,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/vite.config.js",
+      "language": "javascript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "fe/src/shared/context/ApartmentContext.jsx": [],
+    "fe/src/shared/context/AuthContext.jsx": [],
+    "fe/src/shared/layouts/AdminLayout.jsx": [],
+    "fe/src/shared/layouts/ResidentLayout.jsx": [],
+    "fe/src/shared/layouts/TechLayout.jsx": [],
+    "fe/src/shared/theme/playstationTheme.js": [],
+    "fe/vite.config.js": []
+  }
+}

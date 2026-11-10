@@ -27,7 +27,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Long>, JpaSpecif
     Page<Ticket> findByStatus(TicketStatus status, Pageable pageable);
     List<Ticket> findAllByOrderByCreatedAtDesc();
 
-    @Modifying
+    @Modifying(clearAutomatically = true, flushAutomatically = true)
     @Query("UPDATE Ticket t SET t.status = com.example.apartmentbs.model.TicketStatus.IN_PROGRESS, t.assignedTo = :technician WHERE t.id = :ticketId AND t.status = com.example.apartmentbs.model.TicketStatus.OPEN")
     int claimTicket(@Param("ticketId") Long ticketId, @Param("technician") User technician);
 }

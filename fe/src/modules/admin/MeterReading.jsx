@@ -34,6 +34,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const MeterReading = () => {
@@ -59,12 +60,68 @@ const MeterReading = () => {
 
   const [tariffForm] = Form.useForm();
 
-  const reloadData = () => {
-    const apts = MockDB.getApartments();
-    const usrs = MockDB.getUsers();
-    const vehs = MockDB.getVehicles();
-    const trfs = MockDB.getTariffs();
-    const invs = MockDB.getInvoices();
+  const reloadData = async () => {
+    let apts = MockDB.getApartments();
+    let usrs = MockDB.getUsers();
+    let vehs = MockDB.getVehicles();
+    let trfs = MockDB.getTariffs();
+    let invs = MockDB.getInvoices();
+
+    // 1. Đồng bộ dữ liệu thật từ Backend Spring Boot
+    try {
+      const [tariffRes, aptRes, invRes] = await Promise.allSettled([
+        axiosClient.get('/tariffs'),
+        axiosClient.get('/admin/apartments/all'),
+        axiosClient.get('/admin/invoices/all'),
+      ]);
+
+      if (tariffRes.status === 'fulfilled' && (tariffRes.value?.data || tariffRes.value)) {
+        const t = tariffRes.value?.data || tariffRes.value;
+        if (t && t.managementFeePerSqm !== undefined) {
+          trfs = {
+            id: t.id,
+            management_fee_per_sqm: t.managementFeePerSqm,
+            electricity_unit_price: t.electricityUnitPrice,
+            water_unit_price: t.waterUnitPrice,
+            motorbike_fee: t.motorbikeFee,
+            car_fee: t.carFee,
+          };
+        }
+      }
+
+      if (aptRes.status === 'fulfilled' && Array.isArray(aptRes.value?.data || aptRes.value)) {
+        const rawApts = aptRes.value?.data || aptRes.value;
+        apts = rawApts.map((a) => ({
+          id: a.id,
+          room_number: a.roomNumber,
+          floor: a.floor,
+          building_block: a.buildingBlock,
+          area_sqm: a.areaSqm,
+          status: a.status,
+          resident_id: a.resident?.id || null,
+        }));
+      }
+
+      if (invRes.status === 'fulfilled' && Array.isArray(invRes.value?.data || invRes.value)) {
+        const rawInvs = invRes.value?.data || invRes.value;
+        invs = rawInvs.map((i) => ({
+          id: i.id,
+          invoice_code: i.invoiceCode,
+          apartment_id: i.apartmentId,
+          billing_month: i.billingMonth,
+          old_electric_num: i.oldElectricNum,
+          new_electric_num: i.newElectricNum,
+          old_water_num: i.oldWaterNum,
+          new_water_num: i.newWaterNum,
+          total_amount: i.totalAmount,
+          status: i.status,
+          due_date: i.dueDate,
+          created_at: i.createdAt,
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in MeterReading, using MockDB baseline', e);
+    }
 
     setApartments(apts);
     setUsers(usrs);
@@ -196,6 +253,27 @@ const MeterReading = () => {
 
   const handleSaveTariffs = async (values) => {
     try {
+      try {
+        const payload = {
+          managementFeePerSqm: values.management_fee_per_sqm,
+          electricityUnitPrice: values.electricity_unit_price,
+          waterUnitPrice: values.water_unit_price,
+          motorbikeFee: values.motorbike_fee,
+          carFee: values.car_fee,
+        };
+        await axiosClient.put('/admin/tariffs', payload);
+        message.success('Cập nhật bảng đơn giá dịch vụ thành công vào CSDL MSSQL!');
+        setTariffModalOpen(false);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Tariff API failed, fallback MockDB', apiErr);
+      }
+
       const updatedTariffs = {
         ...tariffs,
         ...values,
@@ -239,7 +317,7 @@ const MeterReading = () => {
   };
 
   // Xuất 1 căn hộ
-  const handleGenerateSingleInvoice = (item) => {
+  const handleGenerateSingleInvoice = async (item) => {
     if (!item.isValid) {
       message.error(`Chỉ số căn hộ ${item.room_number} không hợp lệ! Số mới phải >= số cũ.`);
       return;
@@ -251,6 +329,32 @@ const MeterReading = () => {
     }
 
     try {
+      try {
+        const payload = {
+          billingMonth: billingMonth,
+          dueDate: `${billingMonth}-25`,
+          readings: [
+            {
+              apartmentId: item.id,
+              oldElectricNum: item.currentReading.oldElectric,
+              newElectricNum: item.currentReading.newElectric,
+              oldWaterNum: item.currentReading.oldWater,
+              newWaterNum: item.currentReading.newWater,
+            },
+          ],
+        };
+        await axiosClient.post('/admin/invoices/batch-generate', payload);
+        message.success(`Đã xuất hóa đơn cho căn hộ ${item.room_number} vào CSDL MSSQL!`);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Single invoice API failed, fallback MockDB', apiErr);
+      }
+
       const newInvoice = createInvoiceObject(item);
       const updatedInvoices = [...invoices, newInvoice];
       MockDB.saveInvoices(updatedInvoices);
@@ -263,7 +367,7 @@ const MeterReading = () => {
   };
 
   // Xuất hàng loạt cho tất cả căn chưa xuất trong kỳ
-  const handleBatchGenerate = () => {
+  const handleBatchGenerate = async () => {
     const pendingItems = occupiedApartments.filter((a) => !a.existingInvoice);
 
     if (pendingItems.length === 0) {
@@ -280,6 +384,31 @@ const MeterReading = () => {
     }
 
     try {
+      try {
+        const payload = {
+          billingMonth: billingMonth,
+          dueDate: `${billingMonth}-25`,
+          readings: pendingItems.map((item) => ({
+            apartmentId: item.id,
+            oldElectricNum: item.currentReading.oldElectric,
+            newElectricNum: item.currentReading.newElectric,
+            oldWaterNum: item.currentReading.oldWater,
+            newWaterNum: item.currentReading.newWater,
+          })),
+        };
+        const res = await axiosClient.post('/admin/invoices/batch-generate', payload);
+        const count = res?.data?.length || pendingItems.length;
+        message.success(`Đã chốt số và xuất thành công ${count} hóa đơn vào CSDL MSSQL!`);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Batch invoice API failed, fallback MockDB', apiErr);
+      }
+
       let currentMaxId = invoices.length > 0 ? Math.max(...invoices.map((i) => i.id)) : 0;
       const cleanMonth = billingMonth.replace('-', '');
 

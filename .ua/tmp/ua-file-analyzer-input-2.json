@@ -1,0 +1,119 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-1.json",
+      "language": "json",
+      "sizeLines": 41,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-2.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-3.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-4.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-5.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-6.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-7.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-8.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-1.json",
+      "language": "json",
+      "sizeLines": 678,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-2.json",
+      "language": "json",
+      "sizeLines": 57,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-3.json",
+      "language": "json",
+      "sizeLines": 102,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-4.json",
+      "language": "json",
+      "sizeLines": 3018,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-5.json",
+      "language": "json",
+      "sizeLines": 2861,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-6.json",
+      "language": "json",
+      "sizeLines": 7013,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-7.json",
+      "language": "json",
+      "sizeLines": 6696,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-8.json",
+      "language": "json",
+      "sizeLines": 139,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".ua/tmp/ua-file-analyzer-input-1.json": [],
+    ".ua/tmp/ua-file-analyzer-input-2.json": [],
+    ".ua/tmp/ua-file-analyzer-input-3.json": [],
+    ".ua/tmp/ua-file-analyzer-input-4.json": [],
+    ".ua/tmp/ua-file-analyzer-input-5.json": [],
+    ".ua/tmp/ua-file-analyzer-input-6.json": [],
+    ".ua/tmp/ua-file-analyzer-input-7.json": [],
+    ".ua/tmp/ua-file-analyzer-input-8.json": [],
+    ".ua/tmp/ua-file-extract-results-1.json": [],
+    ".ua/tmp/ua-file-extract-results-2.json": [],
+    ".ua/tmp/ua-file-extract-results-3.json": [],
+    ".ua/tmp/ua-file-extract-results-4.json": [],
+    ".ua/tmp/ua-file-extract-results-5.json": [],
+    ".ua/tmp/ua-file-extract-results-6.json": [],
+    ".ua/tmp/ua-file-extract-results-7.json": [],
+    ".ua/tmp/ua-file-extract-results-8.json": []
+  }
+}

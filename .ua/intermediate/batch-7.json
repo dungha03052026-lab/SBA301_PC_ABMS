@@ -1,0 +1,1692 @@
+{
+  "nodes": [
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java",
+      "type": "file",
+      "name": "TicketCompleteRequest.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java",
+      "summary": "code file in java with 17 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java:TicketCompleteRequest",
+      "type": "class",
+      "name": "TicketCompleteRequest",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java",
+      "lineRange": [
+        9,
+        17
+      ],
+      "summary": "Class TicketCompleteRequest",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java",
+      "type": "file",
+      "name": "TicketCreateRequest.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java",
+      "summary": "code file in java with 30 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java:TicketCreateRequest",
+      "type": "class",
+      "name": "TicketCreateRequest",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java",
+      "lineRange": [
+        11,
+        30
+      ],
+      "summary": "Class TicketCreateRequest",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java",
+      "type": "file",
+      "name": "TicketRateRequest.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java",
+      "summary": "code file in java with 21 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java:TicketRateRequest",
+      "type": "class",
+      "name": "TicketRateRequest",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java",
+      "lineRange": [
+        10,
+        21
+      ],
+      "summary": "Class TicketRateRequest",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java",
+      "type": "file",
+      "name": "VehicleRequest.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java",
+      "summary": "code file in java with 24 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java:VehicleRequest",
+      "type": "class",
+      "name": "VehicleRequest",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java",
+      "lineRange": [
+        11,
+        24
+      ],
+      "summary": "Class VehicleRequest",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "type": "file",
+      "name": "AnnouncementResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "summary": "code file in java with 36 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:AnnouncementResponse",
+      "type": "class",
+      "name": "AnnouncementResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "lineRange": [
+        11,
+        36
+      ],
+      "summary": "Class AnnouncementResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AnnouncementResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "lineRange": [
+        24,
+        35
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "type": "file",
+      "name": "ApartmentResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "summary": "code file in java with 57 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:ApartmentResponse",
+      "type": "class",
+      "name": "ApartmentResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "lineRange": [
+        13,
+        57
+      ],
+      "summary": "Class ApartmentResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApartmentResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "lineRange": [
+        28,
+        41
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "lineRange": [
+        43,
+        56
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "type": "file",
+      "name": "ApiResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "summary": "code file in java with 47 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ApiResponse",
+      "type": "class",
+      "name": "ApiResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        10,
+        47
+      ],
+      "summary": "Class ApiResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApiResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApiResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ApiResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ok",
+      "type": "function",
+      "name": "ok",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        21,
+        28
+      ],
+      "summary": "Function ok",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ok",
+      "type": "function",
+      "name": "ok",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": "Function ok",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:error",
+      "type": "function",
+      "name": "error",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "lineRange": [
+        39,
+        46
+      ],
+      "summary": "Function error",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java",
+      "type": "file",
+      "name": "AuthResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java",
+      "summary": "code file in java with 16 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java:AuthResponse",
+      "type": "class",
+      "name": "AuthResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java",
+      "lineRange": [
+        8,
+        16
+      ],
+      "summary": "Class AuthResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java",
+      "type": "file",
+      "name": "InvoiceBreakdown.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java",
+      "summary": "code file in java with 34 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java:InvoiceBreakdown",
+      "type": "class",
+      "name": "InvoiceBreakdown",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java",
+      "lineRange": [
+        10,
+        34
+      ],
+      "summary": "Class InvoiceBreakdown",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "type": "file",
+      "name": "InvoiceResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "summary": "code file in java with 92 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:InvoiceResponse",
+      "type": "class",
+      "name": "InvoiceResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "lineRange": [
+        14,
+        92
+      ],
+      "summary": "Class InvoiceResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of InvoiceResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "lineRange": [
+        47,
+        91
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "type": "file",
+      "name": "PageResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "summary": "code file in java with 44 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:PageResponse",
+      "type": "class",
+      "name": "PageResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "lineRange": [
+        11,
+        44
+      ],
+      "summary": "Class PageResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of PageResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:from",
+      "type": "function",
+      "name": "from",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "lineRange": [
+        31,
+        43
+      ],
+      "summary": "Function from",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "type": "file",
+      "name": "TariffResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "summary": "code file in java with 37 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:TariffResponse",
+      "type": "class",
+      "name": "TariffResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "lineRange": [
+        12,
+        37
+      ],
+      "summary": "Class TariffResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TariffResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "lineRange": [
+        25,
+        36
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "type": "file",
+      "name": "TicketResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "summary": "code file in java with 81 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:TicketResponse",
+      "type": "class",
+      "name": "TicketResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "lineRange": [
+        14,
+        81
+      ],
+      "summary": "Class TicketResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of TicketResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "lineRange": [
+        46,
+        80
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "type": "file",
+      "name": "UserResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "summary": "code file in java with 37 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:UserResponse",
+      "type": "class",
+      "name": "UserResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "lineRange": [
+        12,
+        37
+      ],
+      "summary": "Class UserResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of UserResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "lineRange": [
+        25,
+        36
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "type": "file",
+      "name": "VehicleResponse.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "summary": "code file in java with 35 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:VehicleResponse",
+      "type": "class",
+      "name": "VehicleResponse",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "lineRange": [
+        12,
+        35
+      ],
+      "summary": "Class VehicleResponse",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of VehicleResponse",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:fromEntity",
+      "type": "function",
+      "name": "fromEntity",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "Function fromEntity",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "type": "file",
+      "name": "AppException.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "summary": "code file in java with 19 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "type": "class",
+      "name": "AppException",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "lineRange": [
+        6,
+        19
+      ],
+      "summary": "Class AppException",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AppException",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of AppException",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "type": "function",
+      "name": "AppException",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "lineRange": [
+        10,
+        13
+      ],
+      "summary": "Function AppException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "type": "function",
+      "name": "AppException",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "lineRange": [
+        15,
+        18
+      ],
+      "summary": "Function AppException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "type": "file",
+      "name": "GlobalExceptionHandler.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "summary": "code file in java with 51 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "class",
+      "name": "GlobalExceptionHandler",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        15,
+        51
+      ],
+      "summary": "Class GlobalExceptionHandler",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of GlobalExceptionHandler",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of GlobalExceptionHandler",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of GlobalExceptionHandler",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of GlobalExceptionHandler",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of GlobalExceptionHandler",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleAppException",
+      "type": "function",
+      "name": "handleAppException",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        18,
+        22
+      ],
+      "summary": "Function handleAppException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleValidationException",
+      "type": "function",
+      "name": "handleValidationException",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        24,
+        31
+      ],
+      "summary": "Function handleValidationException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleBadCredentials",
+      "type": "function",
+      "name": "handleBadCredentials",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        33,
+        37
+      ],
+      "summary": "Function handleBadCredentials",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleAccessDenied",
+      "type": "function",
+      "name": "handleAccessDenied",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": "Function handleAccessDenied",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleGenericException",
+      "type": "function",
+      "name": "handleGenericException",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "Function handleGenericException",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java",
+      "type": "file",
+      "name": "Announcement.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java",
+      "summary": "code file in java with 40 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java:Announcement",
+      "type": "class",
+      "name": "Announcement",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java",
+      "lineRange": [
+        11,
+        40
+      ],
+      "summary": "Class Announcement",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "type": "file",
+      "name": "Apartment.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "summary": "code file in java with 53 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:Apartment",
+      "type": "class",
+      "name": "Apartment",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "lineRange": [
+        12,
+        53
+      ],
+      "summary": "Class Apartment",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of Apartment",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:preUpdate",
+      "type": "function",
+      "name": "preUpdate",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "lineRange": [
+        49,
+        52
+      ],
+      "summary": "Function preUpdate",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java",
+      "type": "file",
+      "name": "ApartmentStatus.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java",
+      "summary": "code file in java with 6 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java:ApartmentStatus",
+      "type": "class",
+      "name": "ApartmentStatus",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java",
+      "lineRange": [
+        3,
+        6
+      ],
+      "summary": "Class ApartmentStatus",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java",
+      "type": "file",
+      "name": "Invoice.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java",
+      "summary": "code file in java with 68 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java:Invoice",
+      "type": "class",
+      "name": "Invoice",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java",
+      "lineRange": [
+        13,
+        68
+      ],
+      "summary": "Class Invoice",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java",
+      "type": "file",
+      "name": "InvoiceStatus.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java",
+      "summary": "code file in java with 7 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java:InvoiceStatus",
+      "type": "class",
+      "name": "InvoiceStatus",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java",
+      "lineRange": [
+        3,
+        7
+      ],
+      "summary": "Class InvoiceStatus",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java",
+      "type": "file",
+      "name": "Role.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java",
+      "summary": "code file in java with 7 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java:Role",
+      "type": "class",
+      "name": "Role",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java",
+      "lineRange": [
+        3,
+        7
+      ],
+      "summary": "Class Role",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "type": "file",
+      "name": "ServiceTariff.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "summary": "code file in java with 46 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:ServiceTariff",
+      "type": "class",
+      "name": "ServiceTariff",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "lineRange": [
+        12,
+        46
+      ],
+      "summary": "Class ServiceTariff",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:undefined",
+      "type": "function",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "lineRange": [
+        null,
+        null
+      ],
+      "summary": "Method undefined of ServiceTariff",
+      "tags": [
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:preUpdate",
+      "type": "function",
+      "name": "preUpdate",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "Function preUpdate",
+      "tags": [
+        "function",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java",
+      "type": "file",
+      "name": "Ticket.java",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java",
+      "summary": "code file in java with 68 lines",
+      "tags": [
+        "code",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java:Ticket",
+      "type": "class",
+      "name": "Ticket",
+      "filePath": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java",
+      "lineRange": [
+        11,
+        68
+      ],
+      "summary": "Class Ticket",
+      "tags": [
+        "class",
+        "java"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java:TicketCompleteRequest",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java:TicketCreateRequest",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java:TicketRateRequest",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java:VehicleRequest",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:AnnouncementResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:AnnouncementResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:ApartmentResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:ApartmentResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:ApartmentResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ApiResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ApiResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ApiResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ApiResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ok",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:ok",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java:error",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java:AuthResponse",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java:InvoiceBreakdown",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:InvoiceResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:InvoiceResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:PageResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:PageResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java:from",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:TariffResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:TariffResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:TicketResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:TicketResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:UserResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:UserResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:VehicleResponse",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:VehicleResponse",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java:fromEntity",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java:AppException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleAppException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleValidationException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleBadCredentials",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleAccessDenied",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java:handleGenericException",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java:Announcement",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:Apartment",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:Apartment",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java:preUpdate",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java:ApartmentStatus",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java:Invoice",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java:InvoiceStatus",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java:Role",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:ServiceTariff",
+      "type": "contains"
+    },
+    {
+      "source": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:ServiceTariff",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:undefined",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "target": "function:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java:preUpdate",
+      "type": "contains"
+    },
+    {
+      "source": "file:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java",
+      "target": "class:be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java:Ticket",
+      "type": "contains"
+    }
+  ]
+}

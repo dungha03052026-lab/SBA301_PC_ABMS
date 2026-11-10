@@ -34,6 +34,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const TicketManagement = () => {
@@ -53,10 +54,70 @@ const TicketManagement = () => {
   const [selectedTicket, setSelectedTicket] = useState(null);
   const [selectedTechId, setSelectedTechId] = useState(null);
 
-  const reloadData = () => {
-    setTickets(MockDB.getTickets());
-    setApartments(MockDB.getApartments());
-    setUsers(MockDB.getUsers());
+  const reloadData = async () => {
+    let tcks = MockDB.getTickets();
+    let apts = MockDB.getApartments();
+    let usrs = MockDB.getUsers();
+
+    try {
+      const [ticketRes, aptRes, techRes] = await Promise.allSettled([
+        axiosClient.get('/admin/tickets/all'),
+        axiosClient.get('/admin/apartments/all'),
+        axiosClient.get('/admin/users/technicians'),
+      ]);
+
+      if (ticketRes.status === 'fulfilled' && Array.isArray(ticketRes.value?.data || ticketRes.value)) {
+        const rawTickets = ticketRes.value?.data || ticketRes.value;
+        tcks = rawTickets.map((t) => ({
+          id: t.id,
+          ticket_code: t.ticketCode,
+          apartment_id: t.apartmentId,
+          resident_id: t.residentId,
+          category: t.category,
+          title: t.title,
+          description: t.description,
+          image_url: t.imageUrl,
+          status: t.status,
+          assigned_to: t.assignedTo,
+          technician_note: t.technicianNote,
+          rating: t.rating,
+          created_at: t.createdAt,
+          resolved_at: t.resolvedAt,
+        }));
+      }
+
+      if (aptRes.status === 'fulfilled' && Array.isArray(aptRes.value?.data || aptRes.value)) {
+        const rawApts = aptRes.value?.data || aptRes.value;
+        apts = rawApts.map((a) => ({
+          id: a.id,
+          room_number: a.roomNumber,
+          floor: a.floor,
+          building_block: a.buildingBlock,
+          area_sqm: a.areaSqm,
+          status: a.status,
+          resident_id: a.resident?.id || null,
+        }));
+      }
+
+      if (techRes.status === 'fulfilled' && Array.isArray(techRes.value?.data || techRes.value)) {
+        const rawTechs = techRes.value?.data || techRes.value;
+        const techs = rawTechs.map((u) => ({
+          id: u.id,
+          full_name: u.fullName,
+          phone_number: u.phoneNumber,
+          email: u.email,
+          role: 'TECHNICIAN',
+          is_active: u.isActive,
+        }));
+        usrs = [...usrs.filter((u) => u.role !== 'TECHNICIAN'), ...techs];
+      }
+    } catch (e) {
+      console.warn('API error in TicketManagement, using MockDB baseline', e);
+    }
+
+    setTickets(tcks);
+    setApartments(apts);
+    setUsers(usrs);
   };
 
   useEffect(() => {
@@ -131,13 +192,29 @@ const TicketManagement = () => {
     setAssignModalOpen(true);
   };
 
-  const handleConfirmAssign = () => {
+  const handleConfirmAssign = async () => {
     if (!selectedTechId) {
       message.error('Vui lòng chọn nhân viên kỹ thuật!');
       return;
     }
 
     try {
+      try {
+        await axiosClient.put(`/admin/tickets/${selectedTicket.id}/force-assign`, {
+          technicianId: selectedTechId,
+        });
+        message.success(`Đã chỉ định kỹ thuật viên tiếp nhận xử lý sự cố ${selectedTicket.ticket_code} trên CSDL MSSQL!`);
+        setAssignModalOpen(false);
+        reloadData();
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Force assign API failed, fallback MockDB', apiErr);
+      }
+
       const updatedList = tickets.map((item) =>
         item.id === selectedTicket.id
           ? {

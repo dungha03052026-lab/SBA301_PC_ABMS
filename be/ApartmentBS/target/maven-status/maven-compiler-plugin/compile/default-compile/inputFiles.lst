@@ -12,6 +12,7 @@ E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\exa
 E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\AnnouncementRequest.java
 E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\ApartmentRequest.java
 E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\BatchInvoiceCreateRequest.java
+E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\ChangePasswordRequest.java
 E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\ForceAssignRequest.java
 E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\LoginRequest.java
 E:\Springboot\SBA301_PC_ABMS\SBA301_PC_ABMS\be\ApartmentBS\src\main\java\com\example\apartmentbs\dto\request\MeterReadingItem.java

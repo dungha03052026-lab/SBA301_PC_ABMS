@@ -1,0 +1,28 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "be/ApartmentBS/HELP.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "be/ApartmentBS/mvnw.cmd",
+      "language": "batch",
+      "sizeLines": 189,
+      "fileCategory": "script"
+    },
+    {
+      "path": "be/ApartmentBS/pom.xml",
+      "language": "xml",
+      "sizeLines": 111,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "be/ApartmentBS/HELP.md": [],
+    "be/ApartmentBS/mvnw.cmd": [],
+    "be/ApartmentBS/pom.xml": []
+  }
+}

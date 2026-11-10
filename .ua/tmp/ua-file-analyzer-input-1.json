@@ -1,0 +1,84 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": ".ua/intermediate/assembled-graph.json",
+      "language": "json",
+      "sizeLines": 7359,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-1.json",
+      "language": "json",
+      "sizeLines": 64,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-2.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-3.json",
+      "language": "json",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-4.json",
+      "language": "json",
+      "sizeLines": 2986,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-5.json",
+      "language": "json",
+      "sizeLines": 1691,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-6.json",
+      "language": "json",
+      "sizeLines": 5163,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-7.json",
+      "language": "json",
+      "sizeLines": 785,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-8.json",
+      "language": "json",
+      "sizeLines": 62,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batches.json",
+      "language": "json",
+      "sizeLines": 1242,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/scan-result.json",
+      "language": "json",
+      "sizeLines": 717,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".ua/intermediate/assembled-graph.json": [],
+    ".ua/intermediate/batch-1.json": [],
+    ".ua/intermediate/batch-2.json": [],
+    ".ua/intermediate/batch-3.json": [],
+    ".ua/intermediate/batch-4.json": [],
+    ".ua/intermediate/batch-5.json": [],
+    ".ua/intermediate/batch-6.json": [],
+    ".ua/intermediate/batch-7.json": [],
+    ".ua/intermediate/batch-8.json": [],
+    ".ua/intermediate/batches.json": [],
+    ".ua/intermediate/scan-result.json": []
+  }
+}

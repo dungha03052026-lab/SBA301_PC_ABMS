@@ -1,0 +1,237 @@
+{
+  "nodes": [
+    {
+      "id": "file:fe/src/shared/context/ApartmentContext.jsx",
+      "type": "file",
+      "name": "ApartmentContext.jsx",
+      "filePath": "fe/src/shared/context/ApartmentContext.jsx",
+      "summary": "code file in javascript with 94 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/context/ApartmentContext.jsx:ApartmentProvider",
+      "type": "function",
+      "name": "ApartmentProvider",
+      "filePath": "fe/src/shared/context/ApartmentContext.jsx",
+      "lineRange": [
+        9,
+        92
+      ],
+      "summary": "Function ApartmentProvider",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/context/ApartmentContext.jsx:useApartment",
+      "type": "function",
+      "name": "useApartment",
+      "filePath": "fe/src/shared/context/ApartmentContext.jsx",
+      "lineRange": [
+        94,
+        94
+      ],
+      "summary": "Function useApartment",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/context/AuthContext.jsx",
+      "type": "file",
+      "name": "AuthContext.jsx",
+      "filePath": "fe/src/shared/context/AuthContext.jsx",
+      "summary": "code file in javascript with 126 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/context/AuthContext.jsx:AuthProvider",
+      "type": "function",
+      "name": "AuthProvider",
+      "filePath": "fe/src/shared/context/AuthContext.jsx",
+      "lineRange": [
+        8,
+        124
+      ],
+      "summary": "Function AuthProvider",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/context/AuthContext.jsx:useAuth",
+      "type": "function",
+      "name": "useAuth",
+      "filePath": "fe/src/shared/context/AuthContext.jsx",
+      "lineRange": [
+        126,
+        126
+      ],
+      "summary": "Function useAuth",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/layouts/AdminLayout.jsx",
+      "type": "file",
+      "name": "AdminLayout.jsx",
+      "filePath": "fe/src/shared/layouts/AdminLayout.jsx",
+      "summary": "code file in javascript with 271 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/layouts/AdminLayout.jsx:AdminLayout",
+      "type": "function",
+      "name": "AdminLayout",
+      "filePath": "fe/src/shared/layouts/AdminLayout.jsx",
+      "lineRange": [
+        22,
+        269
+      ],
+      "summary": "Function AdminLayout",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/layouts/ResidentLayout.jsx",
+      "type": "file",
+      "name": "ResidentLayout.jsx",
+      "filePath": "fe/src/shared/layouts/ResidentLayout.jsx",
+      "summary": "code file in javascript with 293 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/layouts/ResidentLayout.jsx:ResidentLayout",
+      "type": "function",
+      "name": "ResidentLayout",
+      "filePath": "fe/src/shared/layouts/ResidentLayout.jsx",
+      "lineRange": [
+        22,
+        291
+      ],
+      "summary": "Function ResidentLayout",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/layouts/TechLayout.jsx",
+      "type": "file",
+      "name": "TechLayout.jsx",
+      "filePath": "fe/src/shared/layouts/TechLayout.jsx",
+      "summary": "code file in javascript with 229 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:fe/src/shared/layouts/TechLayout.jsx:TechLayout",
+      "type": "function",
+      "name": "TechLayout",
+      "filePath": "fe/src/shared/layouts/TechLayout.jsx",
+      "lineRange": [
+        18,
+        227
+      ],
+      "summary": "Function TechLayout",
+      "tags": [
+        "function",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/src/shared/theme/playstationTheme.js",
+      "type": "file",
+      "name": "playstationTheme.js",
+      "filePath": "fe/src/shared/theme/playstationTheme.js",
+      "summary": "code file in javascript with 184 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:fe/vite.config.js",
+      "type": "file",
+      "name": "vite.config.js",
+      "filePath": "fe/vite.config.js",
+      "summary": "code file in javascript with 7 lines",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:fe/src/shared/context/ApartmentContext.jsx",
+      "target": "function:fe/src/shared/context/ApartmentContext.jsx:ApartmentProvider",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/context/ApartmentContext.jsx",
+      "target": "function:fe/src/shared/context/ApartmentContext.jsx:useApartment",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/context/AuthContext.jsx",
+      "target": "function:fe/src/shared/context/AuthContext.jsx:AuthProvider",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/context/AuthContext.jsx",
+      "target": "function:fe/src/shared/context/AuthContext.jsx:useAuth",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/layouts/AdminLayout.jsx",
+      "target": "function:fe/src/shared/layouts/AdminLayout.jsx:AdminLayout",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/layouts/ResidentLayout.jsx",
+      "target": "function:fe/src/shared/layouts/ResidentLayout.jsx:ResidentLayout",
+      "type": "contains"
+    },
+    {
+      "source": "file:fe/src/shared/layouts/TechLayout.jsx",
+      "target": "function:fe/src/shared/layouts/TechLayout.jsx:TechLayout",
+      "type": "contains"
+    }
+  ]
+}

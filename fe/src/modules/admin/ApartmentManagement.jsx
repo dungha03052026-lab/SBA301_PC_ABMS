@@ -41,6 +41,7 @@ import {
   LogoutOutlined,
 } from '@ant-design/icons';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const ApartmentManagement = () => {
@@ -48,6 +49,11 @@ const ApartmentManagement = () => {
   // 1. STATE & DATA INITIALIZATION
   // ==========================================
   const [apartments, setApartments] = useState([]);
+  const [backendApartments, setBackendApartments] = useState([]);
+  const [isBackendLive, setIsBackendLive] = useState(false);
+  const [loadingTable, setLoadingTable] = useState(false);
+  const [backendStats, setBackendStats] = useState({ total: 0, occupied: 0, vacant: 0, vehicles: 0 });
+
   const [users, setUsers] = useState([]);
   const [vehicles, setVehicles] = useState([]);
   const [invoices, setInvoices] = useState([]);
@@ -73,7 +79,7 @@ const ApartmentManagement = () => {
   const [moveInForm] = Form.useForm();
   const [vehicleForm] = Form.useForm();
 
-  // Load data from LocalStorage MockDB
+  // Load data from LocalStorage MockDB (offline baseline)
   const reloadData = () => {
     setApartments(MockDB.getApartments());
     setUsers(MockDB.getUsers());
@@ -85,7 +91,82 @@ const ApartmentManagement = () => {
     reloadData();
   }, []);
 
-  // Map resident and vehicle count
+  // Gọi REST API Backend Spring Boot (JPA Criteria API / ApartmentSpecification)
+  const fetchApartmentsFromBackend = async (block, status, search) => {
+    setLoadingTable(true);
+    try {
+      const params = {};
+      if (search && search.trim()) {
+        params.search = search.trim();
+      }
+      if (block && block !== 'ALL') {
+        params.buildingBlock = block;
+      }
+      if (status && status !== 'ALL') {
+        params.status = status;
+      }
+
+      // axiosClient interceptor đã trả về response.data (ApiResponse)
+      const res = await axiosClient.get('/admin/apartments/all', { params });
+      const dataList = res?.data || res;
+
+      if (Array.isArray(dataList)) {
+        const mapped = dataList.map((apt) => ({
+          id: apt.id,
+          room_number: apt.roomNumber,
+          floor: apt.floor,
+          building_block: apt.buildingBlock,
+          area_sqm: apt.areaSqm,
+          status: apt.status,
+          resident_id: apt.resident?.id || null,
+          resident: apt.resident
+            ? {
+                id: apt.resident.id,
+                full_name: apt.resident.fullName,
+                phone_number: apt.resident.phoneNumber,
+                email: apt.resident.email,
+              }
+            : null,
+          vehicles: [],
+          vehicleCount: apt.vehicleCount || 0,
+          updated_at: apt.updatedAt,
+        }));
+
+        setBackendApartments(mapped);
+        setIsBackendLive(true);
+
+        // Lưu thông số tổng quan khi không lọc
+        if ((!search || !search.trim()) && block === 'ALL' && status === 'ALL') {
+          const occ = mapped.filter((a) => a.status === 'OCCUPIED').length;
+          const vac = mapped.filter((a) => a.status === 'VACANT').length;
+          const totalVeh = mapped.reduce((sum, a) => sum + (a.vehicleCount || 0), 0);
+          setBackendStats({
+            total: mapped.length,
+            occupied: occ,
+            vacant: vac,
+            vehicles: totalVeh,
+          });
+        }
+        return;
+      }
+    } catch (err) {
+      console.warn('Backend Criteria API offline hoặc chưa đăng nhập, sử dụng MockDB:', err);
+      setIsBackendLive(false);
+    } finally {
+      setLoadingTable(false);
+    }
+  };
+
+  // Debounce gọi API Criteria mỗi khi người dùng thay đổi bộ lọc
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, [blockFilter, statusFilter, searchRoom]);
+
+  // Map resident and vehicle count cho MockDB
   const apartmentListWithMeta = useMemo(() => {
     return apartments.map((apt) => {
       const resident = users.find((u) => u.id === apt.resident_id);
@@ -98,12 +179,13 @@ const ApartmentManagement = () => {
     });
   }, [apartments, users, vehicles]);
 
-  // Filtered List
+  // Filtered List fallback (Offline Client-side)
   const filteredApartments = useMemo(() => {
     return apartmentListWithMeta.filter((apt) => {
-      const matchRoom = apt.room_number
-        .toLowerCase()
-        .includes(searchRoom.trim().toLowerCase());
+      const q = searchRoom.trim().toLowerCase();
+      const matchRoom = (apt.room_number || '').toLowerCase().includes(q) ||
+        (apt.resident?.full_name || '').toLowerCase().includes(q) ||
+        (apt.resident?.phone_number || '').includes(q);
       const matchBlock =
         blockFilter === 'ALL' || apt.building_block === blockFilter;
       const matchStatus =
@@ -112,11 +194,19 @@ const ApartmentManagement = () => {
     });
   }, [apartmentListWithMeta, searchRoom, blockFilter, statusFilter]);
 
+  // Dữ liệu hiển thị cuối cùng: Ưu tiên dữ liệu lọc từ Backend Criteria API
+  const displayedApartments = useMemo(() => {
+    if (isBackendLive) {
+      return backendApartments;
+    }
+    return filteredApartments;
+  }, [isBackendLive, backendApartments, filteredApartments]);
+
   // Metrics summary
-  const totalApartments = apartments.length;
-  const occupiedCount = apartments.filter((a) => a.status === 'OCCUPIED').length;
-  const vacantCount = apartments.filter((a) => a.status === 'VACANT').length;
-  const totalVehiclesCount = vehicles.length;
+  const totalApartments = isBackendLive ? (backendStats.total || backendApartments.length) : apartments.length;
+  const occupiedCount = isBackendLive ? (backendStats.occupied || backendApartments.filter((a) => a.status === 'OCCUPIED').length) : apartments.filter((a) => a.status === 'OCCUPIED').length;
+  const vacantCount = isBackendLive ? (backendStats.vacant || backendApartments.filter((a) => a.status === 'VACANT').length) : apartments.filter((a) => a.status === 'VACANT').length;
+  const totalVehiclesCount = isBackendLive ? backendStats.vehicles : vehicles.length;
 
   // ==========================================
   // 2. UC-04: CRUD CĂN HỘ
@@ -146,9 +236,31 @@ const ApartmentManagement = () => {
   };
 
   const handleSaveApartment = async (values) => {
+    const payload = {
+      roomNumber: values.room_number?.trim(),
+      buildingBlock: values.building_block,
+      floor: values.floor,
+      areaSqm: values.area_sqm,
+    };
+
     try {
       if (apartmentEditMode && selectedApartment) {
-        // Cập nhật
+        // 1. Thử gọi API Backend Cập nhật vào MSSQL
+        try {
+          await axiosClient.put(`/admin/apartments/${selectedApartment.id}`, payload);
+          message.success(`Cập nhật căn hộ ${values.room_number} thành công trên CSDL!`);
+          setApartmentModalOpen(false);
+          await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+          return;
+        } catch (apiErr) {
+          if (apiErr.response?.data?.message) {
+            message.error(apiErr.response.data.message);
+            return;
+          }
+          console.warn('API update failed, fallback to MockDB', apiErr);
+        }
+
+        // Fallback MockDB
         const updatedList = apartments.map((item) =>
           item.id === selectedApartment.id
             ? {
@@ -163,7 +275,22 @@ const ApartmentManagement = () => {
         MockDB.saveApartments(updatedList);
         message.success(`Cập nhật thông tin căn hộ ${selectedApartment.room_number} thành công!`);
       } else {
-        // Tạo mới - kiểm tra trùng mã phòng
+        // 2. Thử gọi API Backend Thêm mới vào MSSQL
+        try {
+          await axiosClient.post('/admin/apartments', payload);
+          message.success(`Thêm mới căn hộ ${payload.roomNumber} thành công vào CSDL MSSQL!`);
+          setApartmentModalOpen(false);
+          await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+          return;
+        } catch (apiErr) {
+          if (apiErr.response?.data?.message) {
+            message.error(apiErr.response.data.message);
+            return;
+          }
+          console.warn('API create failed, fallback to MockDB', apiErr);
+        }
+
+        // Tạo mới - kiểm tra trùng mã phòng (Offline MockDB)
         const exists = apartments.some(
           (a) => a.room_number.toLowerCase() === values.room_number.trim().toLowerCase()
         );
@@ -210,6 +337,31 @@ const ApartmentManagement = () => {
 
   const handleConfirmMoveIn = async (values) => {
     try {
+      const moveInPayload =
+        moveInType === 'EXISTING'
+          ? { residentId: values.existing_resident_id }
+          : {
+              fullName: values.full_name?.trim(),
+              phoneNumber: values.phone_number?.trim(),
+              email: values.email?.trim() || undefined,
+            };
+
+      // 1. Thử gọi API Backend Spring Boot
+      try {
+        await axiosClient.post(`/admin/apartments/${selectedApartment.id}/move-in`, moveInPayload);
+        message.success(`Tiếp nhận Move-in thành công cho căn hộ ${selectedApartment.room_number} trên CSDL!`);
+        setMoveInModalOpen(false);
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Move-in API failed, fallback MockDB', apiErr);
+      }
+
+      // Fallback MockDB
       let residentId = null;
 
       if (moveInType === 'EXISTING') {
@@ -286,16 +438,31 @@ const ApartmentManagement = () => {
     setMoveOutModalOpen(true);
   };
 
-  const handleConfirmMoveOut = () => {
+  const handleConfirmMoveOut = async () => {
     if (moveOutDebts.length > 0) {
       message.error('Không thể thực hiện Move-out vì căn hộ còn công nợ chưa thanh toán!');
       return;
     }
 
     try {
+      // 1. Thử gọi API Backend Spring Boot
+      try {
+        await axiosClient.post(`/admin/apartments/${selectedApartment.id}/move-out`);
+        message.success(`Đã hoàn tất bàn giao Move-out cho căn hộ ${selectedApartment.room_number} trên CSDL!`);
+        setMoveOutModalOpen(false);
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Move-out API failed, fallback MockDB', apiErr);
+      }
+
       const oldResidentId = selectedApartment.resident_id;
 
-      // 1. Cập nhật căn hộ về VACANT
+      // 1. Cập nhật căn hộ về VACANT (Fallback MockDB)
       const updatedApartments = apartments.map((a) =>
         a.id === selectedApartment.id
           ? {
@@ -350,6 +517,34 @@ const ApartmentManagement = () => {
 
   const handleAddVehicle = async (values) => {
     try {
+      const vehiclePayload = {
+        licensePlate: values.license_plate.trim().toUpperCase(),
+        vehicleType: values.vehicle_type,
+        ownerName: values.owner_name?.trim(),
+      };
+
+      // 1. Thử gọi API Backend Spring Boot
+      try {
+        await axiosClient.post(`/admin/apartments/${selectedApartment.id}/vehicles`, vehiclePayload);
+        message.success(`Đăng ký phương tiện ${vehiclePayload.licensePlate} thành công trên CSDL!`);
+        vehicleForm.resetFields();
+        if (selectedApartment.resident) {
+          vehicleForm.setFieldsValue({
+            owner_name: selectedApartment.resident.full_name,
+            vehicle_type: 'MOTORBIKE',
+          });
+        }
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Add vehicle API failed, fallback MockDB', apiErr);
+      }
+
+      // Fallback MockDB
       // Kiểm tra biển số xe trùng
       const exists = vehicles.some(
         (v) => v.license_plate.toUpperCase() === values.license_plate.trim().toUpperCase()
@@ -386,8 +581,21 @@ const ApartmentManagement = () => {
     }
   };
 
-  const handleDeleteVehicle = (vehicleId) => {
+  const handleDeleteVehicle = async (vehicleId) => {
     try {
+      try {
+        await axiosClient.delete(`/admin/apartments/${selectedApartment.id}/vehicles/${vehicleId}`);
+        message.success('Đã hủy đăng ký phương tiện trên CSDL!');
+        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        return;
+      } catch (apiErr) {
+        if (apiErr.response?.data?.message) {
+          message.error(apiErr.response.data.message);
+          return;
+        }
+        console.warn('Delete vehicle API failed, fallback MockDB', apiErr);
+      }
+
       const updated = vehicles.filter((v) => v.id !== vehicleId);
       MockDB.saveVehicles(updated);
       message.success('Đã hủy đăng ký phương tiện!');
@@ -511,8 +719,10 @@ const ApartmentManagement = () => {
       title: 'PHƯƠNG TIỆN',
       key: 'vehicles',
       render: (_, record) => {
-        const carCount = record.vehicles.filter((v) => v.vehicle_type === 'CAR').length;
-        const motorCount = record.vehicles.filter((v) => v.vehicle_type === 'MOTORBIKE').length;
+        const vehiclesList = record.vehicles || [];
+        const count = record.vehicleCount !== undefined ? record.vehicleCount : vehiclesList.length;
+        const carCount = vehiclesList.filter((v) => v.vehicle_type === 'CAR').length;
+        const motorCount = vehiclesList.filter((v) => v.vehicle_type === 'MOTORBIKE').length;
 
         if (record.status === 'VACANT') {
           return <span style={{ color: PS_COLORS.ashLight, fontSize: 13 }}>—</span>;
@@ -533,7 +743,7 @@ const ApartmentManagement = () => {
               padding: '0 14px',
             }}
           >
-            {record.vehicles.length} xe ({carCount} ô tô, {motorCount} xe máy)
+            {count} xe {vehiclesList.length > 0 ? `(${carCount} ô tô, ${motorCount} xe máy)` : ''}
           </Button>
         );
       },
@@ -814,11 +1024,11 @@ const ApartmentManagement = () => {
             {/* Search Input: 4px radius, 44px height */}
             <Input
               prefix={<SearchOutlined style={{ color: PS_COLORS.muteLight }} />}
-              placeholder="Tìm theo mã phòng (VD: A-101)..."
+              placeholder="Tìm theo phòng, cư dân, SĐT..."
               value={searchRoom}
               onChange={(e) => setSearchRoom(e.target.value)}
               style={{
-                width: 260,
+                width: 280,
                 height: 44,
                 borderRadius: PS_ROUNDED.sm,
                 borderColor: PS_COLORS.ashLight,
@@ -831,7 +1041,7 @@ const ApartmentManagement = () => {
               value={blockFilter}
               onChange={(val) => setBlockFilter(val)}
               style={{
-                width: 170,
+                width: 160,
                 height: 44,
                 borderRadius: PS_ROUNDED.sm,
               }}
@@ -839,6 +1049,22 @@ const ApartmentManagement = () => {
                 { label: 'Tất cả khối nhà', value: 'ALL' },
                 { label: 'Khối Tòa A', value: 'Tòa A' },
                 { label: 'Khối Tòa B', value: 'Tòa B' },
+              ]}
+            />
+
+            {/* Status Filter Select (Dropdown Trạng thái phòng) */}
+            <Select
+              value={statusFilter}
+              onChange={(val) => setStatusFilter(val)}
+              style={{
+                width: 200,
+                height: 44,
+                borderRadius: PS_ROUNDED.sm,
+              }}
+              options={[
+                { label: 'Tất cả trạng thái', value: 'ALL' },
+                { label: 'Đang cư trú (OCCUPIED)', value: 'OCCUPIED' },
+                { label: 'Đang trống (VACANT)', value: 'VACANT' },
               ]}
             />
           </div>
@@ -850,7 +1076,7 @@ const ApartmentManagement = () => {
               className={`ps-filter-pill ${statusFilter === 'ALL' ? 'active' : ''}`}
               onClick={() => setStatusFilter('ALL')}
             >
-              Tất cả ({apartments.length})
+              Tất cả ({totalApartments})
             </button>
             <button
               type="button"
@@ -872,8 +1098,9 @@ const ApartmentManagement = () => {
         {/* Apartments Table */}
         <Table
           columns={columns}
-          dataSource={filteredApartments}
+          dataSource={displayedApartments}
           rowKey="id"
+          loading={loadingTable}
           pagination={{
             pageSize: 6,
             showSizeChanger: false,

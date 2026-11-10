@@ -1,0 +1,5402 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [
+    "be/ApartmentBS/src/main/resources/application.properties"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 24,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 24,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "TicketCategory",
+          "startLine": 3,
+          "endLine": 7,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TicketCategory",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "TicketStatus",
+          "startLine": 3,
+          "endLine": 8,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TicketStatus",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "User",
+          "startLine": 11,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "id",
+            "phoneNumber",
+            "email",
+            "passwordHash",
+            "fullName",
+            "role",
+            "isActive",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "User",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "Vehicle",
+          "startLine": 11,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "id",
+            "apartment",
+            "licensePlate",
+            "vehicleType",
+            "ownerName",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Vehicle",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "classes": [
+        {
+          "name": "VehicleType",
+          "startLine": 3,
+          "endLine": 6,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "VehicleType",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "AnnouncementRepository",
+          "startLine": 9,
+          "endLine": 12,
+          "methods": [
+            "findAllByOrderByIsPinnedDescCreatedAtDesc"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AnnouncementRepository",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ApartmentRepository",
+          "startLine": 12,
+          "endLine": 18,
+          "methods": [
+            "findByRoomNumber",
+            "existsByRoomNumber",
+            "findByResidentId",
+            "findByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApartmentRepository",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "InvoiceRepository",
+          "startLine": 15,
+          "endLine": 29,
+          "methods": [
+            "findByInvoiceCode",
+            "findByApartmentId",
+            "findByApartmentIdOrderByBillingMonthDesc",
+            "findByApartmentId",
+            "findByApartmentIdAndStatusIn",
+            "countByApartmentIdAndStatusIn",
+            "findByBillingMonth",
+            "findByBillingMonth",
+            "findByApartmentIdAndBillingMonth",
+            "findByStatus",
+            "findByStatus",
+            "findAllByOrderByCreatedAtDesc"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "InvoiceRepository",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "ServiceTariffRepository",
+          "startLine": 7,
+          "endLine": 9,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServiceTariffRepository",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "TicketRepository",
+          "startLine": 18,
+          "endLine": 33,
+          "methods": [
+            "findByTicketCode",
+            "findByApartmentIdOrderByCreatedAtDesc",
+            "findByResidentIdOrderByCreatedAtDesc",
+            "findByResidentId",
+            "findByAssignedToIdOrderByCreatedAtDesc",
+            "findByAssignedToId",
+            "findByStatusOrderByCreatedAtDesc",
+            "findByStatus",
+            "findAllByOrderByCreatedAtDesc",
+            "claimTicket"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TicketRepository",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "UserRepository",
+          "startLine": 11,
+          "endLine": 18,
+          "methods": [
+            "findByPhoneNumber",
+            "findByEmail",
+            "existsByPhoneNumber",
+            "existsByEmail",
+            "findByRole"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserRepository",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "VehicleRepository",
+          "startLine": 10,
+          "endLine": 16,
+          "methods": [
+            "findByApartmentId",
+            "existsByLicensePlate",
+            "countByApartmentIdAndVehicleType",
+            "deleteByApartmentId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "VehicleRepository",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 21,
+          "endLine": 35,
+          "params": [
+            "buildingBlock",
+            "floor",
+            "status",
+            "minArea",
+            "maxArea",
+            "search"
+          ]
+        },
+        {
+          "name": "hasBuildingBlock",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "buildingBlock"
+          ]
+        },
+        {
+          "name": "hasFloor",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "floor"
+          ]
+        },
+        {
+          "name": "hasStatus",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "areaBetween",
+          "startLine": 60,
+          "endLine": 73,
+          "params": [
+            "minArea",
+            "maxArea"
+          ]
+        },
+        {
+          "name": "searchGeneral",
+          "startLine": 76,
+          "endLine": 90,
+          "params": [
+            "search"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApartmentSpecification",
+          "startLine": 16,
+          "endLine": 91,
+          "methods": [
+            "filter",
+            "hasBuildingBlock",
+            "hasFloor",
+            "hasStatus",
+            "areaBetween",
+            "searchGeneral"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "hasBuildingBlock",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "hasFloor",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "hasStatus",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "areaBetween",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "searchGeneral",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "ApartmentSpecification",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "Specification\n                .where(hasBuildingBlock(buildingBlock))\n                .and(hasFloor(floor))\n                .and(hasStatus(status))\n                .and(areaBetween(minArea, maxArea)).and",
+          "lineNumber": 29
+        },
+        {
+          "caller": "filter",
+          "callee": "Specification\n                .where(hasBuildingBlock(buildingBlock))\n                .and(hasFloor(floor))\n                .and(hasStatus(status)).and",
+          "lineNumber": 29
+        },
+        {
+          "caller": "filter",
+          "callee": "Specification\n                .where(hasBuildingBlock(buildingBlock))\n                .and(hasFloor(floor)).and",
+          "lineNumber": 29
+        },
+        {
+          "caller": "filter",
+          "callee": "Specification\n                .where(hasBuildingBlock(buildingBlock)).and",
+          "lineNumber": 29
+        },
+        {
+          "caller": "filter",
+          "callee": "Specification.where",
+          "lineNumber": 29
+        },
+        {
+          "caller": "filter",
+          "callee": "hasBuildingBlock",
+          "lineNumber": 30
+        },
+        {
+          "caller": "filter",
+          "callee": "hasFloor",
+          "lineNumber": 31
+        },
+        {
+          "caller": "filter",
+          "callee": "hasStatus",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filter",
+          "callee": "areaBetween",
+          "lineNumber": 33
+        },
+        {
+          "caller": "filter",
+          "callee": "searchGeneral",
+          "lineNumber": 34
+        },
+        {
+          "caller": "hasBuildingBlock",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 44
+        },
+        {
+          "caller": "hasBuildingBlock",
+          "callee": "cb.equal",
+          "lineNumber": 44
+        },
+        {
+          "caller": "hasBuildingBlock",
+          "callee": "root.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "hasFloor",
+          "callee": "cb.equal",
+          "lineNumber": 50
+        },
+        {
+          "caller": "hasFloor",
+          "callee": "root.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "hasStatus",
+          "callee": "cb.equal",
+          "lineNumber": 56
+        },
+        {
+          "caller": "hasStatus",
+          "callee": "root.get",
+          "lineNumber": 56
+        },
+        {
+          "caller": "areaBetween",
+          "callee": "cb.between",
+          "lineNumber": 63
+        },
+        {
+          "caller": "areaBetween",
+          "callee": "root.get",
+          "lineNumber": 63
+        },
+        {
+          "caller": "areaBetween",
+          "callee": "cb.greaterThanOrEqualTo",
+          "lineNumber": 66
+        },
+        {
+          "caller": "areaBetween",
+          "callee": "root.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "areaBetween",
+          "callee": "cb.lessThanOrEqualTo",
+          "lineNumber": 69
+        },
+        {
+          "caller": "areaBetween",
+          "callee": "root.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 78
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "search.trim().toLowerCase",
+          "lineNumber": 81
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "search.trim",
+          "lineNumber": 81
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "root.join",
+          "lineNumber": 82
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.or",
+          "lineNumber": 84
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.like",
+          "lineNumber": 85
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.lower",
+          "lineNumber": 85
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "root.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.like",
+          "lineNumber": 86
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.lower",
+          "lineNumber": 86
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "residentJoin.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.like",
+          "lineNumber": 87
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "cb.lower",
+          "lineNumber": 87
+        },
+        {
+          "caller": "searchGeneral",
+          "callee": "residentJoin.get",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AnnouncementService",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [
+            "getAllAnnouncements",
+            "getAnnouncementById",
+            "createAnnouncement",
+            "updateAnnouncement",
+            "deleteAnnouncement"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AnnouncementService",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "ApartmentService",
+          "startLine": 15,
+          "endLine": 53,
+          "methods": [
+            "searchApartments",
+            "searchApartmentsPaged",
+            "getApartmentById",
+            "createApartment",
+            "updateApartment",
+            "deleteApartment",
+            "moveIn",
+            "moveOut",
+            "getVehiclesByApartment",
+            "addVehicle",
+            "deleteVehicle",
+            "getApartmentsByResident",
+            "getResidents",
+            "getTechnicians"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApartmentService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "AuthService",
+          "startLine": 8,
+          "endLine": 12,
+          "methods": [
+            "login",
+            "getCurrentUser",
+            "getAuthenticatedUser"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthService",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "BillingService",
+          "startLine": 12,
+          "endLine": 25,
+          "methods": [
+            "getTariff",
+            "updateTariff",
+            "searchInvoices",
+            "searchInvoicesPaged",
+            "getInvoiceById",
+            "getInvoicesByApartment",
+            "batchGenerateInvoices",
+            "confirmPayment",
+            "approveInvoice",
+            "rejectInvoice"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BillingService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "TicketService",
+          "startLine": 11,
+          "endLine": 27,
+          "methods": [
+            "createTicket",
+            "getTicketsByResident",
+            "getTicketsByResidentPaged",
+            "getOpenTickets",
+            "getOpenTicketsPaged",
+            "getAssignedTickets",
+            "getAssignedTicketsPaged",
+            "getAllTickets",
+            "getAllTicketsPaged",
+            "getTicketById",
+            "claimTicket",
+            "completeTicket",
+            "inspectTicket",
+            "forceAssignTicket"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TicketService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "getAllAnnouncements",
+          "startLine": 27,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "getAnnouncementById",
+          "startLine": 35,
+          "endLine": 41,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createAnnouncement",
+          "startLine": 43,
+          "endLine": 59,
+          "params": [
+            "request",
+            "adminId"
+          ]
+        },
+        {
+          "name": "updateAnnouncement",
+          "startLine": 61,
+          "endLine": 73,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "deleteAnnouncement",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AnnouncementServiceImpl",
+          "startLine": 20,
+          "endLine": 82,
+          "methods": [
+            "getAllAnnouncements",
+            "getAnnouncementById",
+            "createAnnouncement",
+            "updateAnnouncement",
+            "deleteAnnouncement"
+          ],
+          "properties": [
+            "announcementRepository",
+            "userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAllAnnouncements",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "getAnnouncementById",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "createAnnouncement",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "updateAnnouncement",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAnnouncement",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "AnnouncementServiceImpl",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "announcementRepository.findAllByOrderByIsPinnedDescCreatedAtDesc().stream()\r\n                .map(AnnouncementResponse::fromEntity).collect",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "announcementRepository.findAllByOrderByIsPinnedDescCreatedAtDesc().stream().map",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "announcementRepository.findAllByOrderByIsPinnedDescCreatedAtDesc().stream",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "announcementRepository.findAllByOrderByIsPinnedDescCreatedAtDesc",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "Collectors.toList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "announcementRepository.findById(id).orElseThrow",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "announcementRepository.findById",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "new AppException",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "AnnouncementResponse.fromEntity",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "userRepository.findById(adminId).orElseThrow",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "userRepository.findById",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "new AppException",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder()\r\n                .title(request.getTitle().trim())\r\n                .content(request.getContent().trim())\r\n                .createdBy(admin)\r\n                .isPinned(Boolean.TRUE.equals(request.getIsPinned()))\r\n                .createdAt(LocalDateTime.now()).build",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder()\r\n                .title(request.getTitle().trim())\r\n                .content(request.getContent().trim())\r\n                .createdBy(admin)\r\n                .isPinned(Boolean.TRUE.equals(request.getIsPinned())).createdAt",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder()\r\n                .title(request.getTitle().trim())\r\n                .content(request.getContent().trim())\r\n                .createdBy(admin).isPinned",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder()\r\n                .title(request.getTitle().trim())\r\n                .content(request.getContent().trim()).createdBy",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder()\r\n                .title(request.getTitle().trim()).content",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder().title",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Announcement.builder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "request.getTitle().trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "request.getTitle",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "request.getContent().trim",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "request.getContent",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "request.getIsPinned",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "announcementRepository.save",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "AnnouncementResponse.fromEntity",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcementRepository.findById(id).orElseThrow",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcementRepository.findById",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "new AppException",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcement.setTitle",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "request.getTitle().trim",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "request.getTitle",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcement.setContent",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "request.getContent().trim",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "request.getContent",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcement.setIsPinned",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "request.getIsPinned",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcementRepository.save",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "AnnouncementResponse.fromEntity",
+          "lineNumber": 72
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "announcementRepository.findById(id).orElseThrow",
+          "lineNumber": 78
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "announcementRepository.findById",
+          "lineNumber": 78
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "new AppException",
+          "lineNumber": 79
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "announcementRepository.delete",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 325,
+      "nonEmptyLines": 278,
+      "functions": [
+        {
+          "name": "searchApartments",
+          "startLine": 45,
+          "endLine": 66,
+          "params": [
+            "buildingBlock",
+            "floor",
+            "status",
+            "minArea",
+            "maxArea",
+            "search"
+          ]
+        },
+        {
+          "name": "searchApartmentsPaged",
+          "startLine": 68,
+          "endLine": 100,
+          "params": [
+            "buildingBlock",
+            "floor",
+            "status",
+            "minArea",
+            "maxArea",
+            "search",
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getApartmentById",
+          "startLine": 102,
+          "endLine": 108,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createApartment",
+          "startLine": 110,
+          "endLine": 128,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "updateApartment",
+          "startLine": 130,
+          "endLine": 148,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "deleteApartment",
+          "startLine": 150,
+          "endLine": 158,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "moveIn",
+          "startLine": 160,
+          "endLine": 208,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "moveOut",
+          "startLine": 210,
+          "endLine": 241,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getVehiclesByApartment",
+          "startLine": 243,
+          "endLine": 250,
+          "params": [
+            "apartmentId"
+          ]
+        },
+        {
+          "name": "addVehicle",
+          "startLine": 252,
+          "endLine": 278,
+          "params": [
+            "apartmentId",
+            "request"
+          ]
+        },
+        {
+          "name": "deleteVehicle",
+          "startLine": 280,
+          "endLine": 292,
+          "params": [
+            "apartmentId",
+            "vehicleId"
+          ]
+        },
+        {
+          "name": "getApartmentsByResident",
+          "startLine": 294,
+          "endLine": 303,
+          "params": [
+            "residentId"
+          ]
+        },
+        {
+          "name": "getResidents",
+          "startLine": 305,
+          "endLine": 311,
+          "params": []
+        },
+        {
+          "name": "getTechnicians",
+          "startLine": 313,
+          "endLine": 319,
+          "params": []
+        },
+        {
+          "name": "findApartmentOrThrow",
+          "startLine": 321,
+          "endLine": 324,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApartmentServiceImpl",
+          "startLine": 35,
+          "endLine": 325,
+          "methods": [
+            "searchApartments",
+            "searchApartmentsPaged",
+            "getApartmentById",
+            "createApartment",
+            "updateApartment",
+            "deleteApartment",
+            "moveIn",
+            "moveOut",
+            "getVehiclesByApartment",
+            "addVehicle",
+            "deleteVehicle",
+            "getApartmentsByResident",
+            "getResidents",
+            "getTechnicians",
+            "findApartmentOrThrow"
+          ],
+          "properties": [
+            "apartmentRepository",
+            "userRepository",
+            "vehicleRepository",
+            "invoiceRepository",
+            "passwordEncoder"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "searchApartments",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "searchApartmentsPaged",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getApartmentById",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "createApartment",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "updateApartment",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "deleteApartment",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "moveIn",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "moveOut",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "getVehiclesByApartment",
+          "line": 243,
+          "isDefault": false
+        },
+        {
+          "name": "addVehicle",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "deleteVehicle",
+          "line": 280,
+          "isDefault": false
+        },
+        {
+          "name": "getApartmentsByResident",
+          "line": 294,
+          "isDefault": false
+        },
+        {
+          "name": "getResidents",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "getTechnicians",
+          "line": 313,
+          "isDefault": false
+        },
+        {
+          "name": "ApartmentServiceImpl",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "searchApartments",
+          "callee": "ApartmentSpecification.filter",
+          "lineNumber": 55
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "apartmentRepository.findAll",
+          "lineNumber": 58
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "Sort.by",
+          "lineNumber": 58
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "apartments.stream()\r\n                .map(apt -> {\r\n                    List<Vehicle> vehicles = vehicleRepository.findByApartmentId(apt.getId());\r\n                    return ApartmentResponse.fromEntity(apt, vehicles.size());\r\n                }).collect",
+          "lineNumber": 60
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "apartments.stream().map",
+          "lineNumber": 60
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "apartments.stream",
+          "lineNumber": 60
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "vehicleRepository.findByApartmentId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "apt.getId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 63
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "vehicles.size",
+          "lineNumber": 63
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "Collectors.toList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "ApartmentSpecification.filter",
+          "lineNumber": 82
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 86
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "\"desc\".equalsIgnoreCase",
+          "lineNumber": 87
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "PageRequest.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "Sort.by",
+          "lineNumber": 88
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "apartmentRepository.findAll",
+          "lineNumber": 90
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "apartmentPage.getContent().stream()\r\n                .map(apt -> {\r\n                    List<Vehicle> vehicles = vehicleRepository.findByApartmentId(apt.getId());\r\n                    return ApartmentResponse.fromEntity(apt, vehicles.size());\r\n                }).collect",
+          "lineNumber": 92
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "apartmentPage.getContent().stream().map",
+          "lineNumber": 92
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "apartmentPage.getContent().stream",
+          "lineNumber": 92
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "apartmentPage.getContent",
+          "lineNumber": 92
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "vehicleRepository.findByApartmentId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "apt.getId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 95
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "vehicles.size",
+          "lineNumber": 95
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "Collectors.toList",
+          "lineNumber": 97
+        },
+        {
+          "caller": "searchApartmentsPaged",
+          "callee": "PageResponse.from",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "vehicleRepository.findByApartmentId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "apt.getId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "vehicles.size",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createApartment",
+          "callee": "apartmentRepository.existsByRoomNumber",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createApartment",
+          "callee": "new AppException",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder()\r\n                .roomNumber(request.getRoomNumber().trim())\r\n                .floor(request.getFloor())\r\n                .buildingBlock(request.getBuildingBlock().trim())\r\n                .areaSqm(request.getAreaSqm())\r\n                .status(ApartmentStatus.VACANT)\r\n                .resident(null).build",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder()\r\n                .roomNumber(request.getRoomNumber().trim())\r\n                .floor(request.getFloor())\r\n                .buildingBlock(request.getBuildingBlock().trim())\r\n                .areaSqm(request.getAreaSqm())\r\n                .status(ApartmentStatus.VACANT).resident",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder()\r\n                .roomNumber(request.getRoomNumber().trim())\r\n                .floor(request.getFloor())\r\n                .buildingBlock(request.getBuildingBlock().trim())\r\n                .areaSqm(request.getAreaSqm()).status",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder()\r\n                .roomNumber(request.getRoomNumber().trim())\r\n                .floor(request.getFloor())\r\n                .buildingBlock(request.getBuildingBlock().trim()).areaSqm",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder()\r\n                .roomNumber(request.getRoomNumber().trim())\r\n                .floor(request.getFloor()).buildingBlock",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder()\r\n                .roomNumber(request.getRoomNumber().trim()).floor",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder().roomNumber",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "Apartment.builder",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getRoomNumber().trim",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getFloor",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getBuildingBlock().trim",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getBuildingBlock",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createApartment",
+          "callee": "request.getAreaSqm",
+          "lineNumber": 121
+        },
+        {
+          "caller": "createApartment",
+          "callee": "apartmentRepository.save",
+          "lineNumber": 126
+        },
+        {
+          "caller": "createApartment",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apt.getRoomNumber().equalsIgnoreCase",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getRoomNumber().trim",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apartmentRepository.existsByRoomNumber",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "new AppException",
+          "lineNumber": 137
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 137
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apt.setRoomNumber",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getRoomNumber().trim",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getRoomNumber",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apt.setFloor",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getFloor",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apt.setBuildingBlock",
+          "lineNumber": 142
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getBuildingBlock().trim",
+          "lineNumber": 142
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getBuildingBlock",
+          "lineNumber": 142
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apt.setAreaSqm",
+          "lineNumber": 143
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "request.getAreaSqm",
+          "lineNumber": 143
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apartmentRepository.save",
+          "lineNumber": 145
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "vehicleRepository.findByApartmentId",
+          "lineNumber": 146
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 147
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "vehicles.size",
+          "lineNumber": 147
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 153
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "apt.getStatus",
+          "lineNumber": 154
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "new AppException",
+          "lineNumber": 155
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "apartmentRepository.delete",
+          "lineNumber": 157
+        },
+        {
+          "caller": "moveIn",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 163
+        },
+        {
+          "caller": "moveIn",
+          "callee": "apt.getStatus",
+          "lineNumber": 165
+        },
+        {
+          "caller": "moveIn",
+          "callee": "new AppException",
+          "lineNumber": 166
+        },
+        {
+          "caller": "moveIn",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 166
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getResidentId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "moveIn",
+          "callee": "userRepository.findById(request.getResidentId()).orElseThrow",
+          "lineNumber": 172
+        },
+        {
+          "caller": "moveIn",
+          "callee": "userRepository.findById",
+          "lineNumber": 172
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getResidentId",
+          "lineNumber": 172
+        },
+        {
+          "caller": "moveIn",
+          "callee": "new AppException",
+          "lineNumber": 173
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getResidentId",
+          "lineNumber": 173
+        },
+        {
+          "caller": "moveIn",
+          "callee": "resident.getRole",
+          "lineNumber": 174
+        },
+        {
+          "caller": "moveIn",
+          "callee": "new AppException",
+          "lineNumber": 175
+        },
+        {
+          "caller": "moveIn",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 179
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getFullName",
+          "lineNumber": 179
+        },
+        {
+          "caller": "moveIn",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 179
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber",
+          "lineNumber": 179
+        },
+        {
+          "caller": "moveIn",
+          "callee": "new AppException",
+          "lineNumber": 180
+        },
+        {
+          "caller": "moveIn",
+          "callee": "userRepository.existsByPhoneNumber",
+          "lineNumber": 182
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber",
+          "lineNumber": 182
+        },
+        {
+          "caller": "moveIn",
+          "callee": "new AppException",
+          "lineNumber": 183
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber",
+          "lineNumber": 183
+        },
+        {
+          "caller": "moveIn",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 186
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getEmail",
+          "lineNumber": 186
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getEmail().trim",
+          "lineNumber": 187
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getEmail",
+          "lineNumber": 187
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber().trim",
+          "lineNumber": 188
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber",
+          "lineNumber": 188
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim())\r\n                    .phoneNumber(request.getPhoneNumber().trim())\r\n                    .email(email)\r\n                    .passwordHash(passwordEncoder.encode(\"123456\"))\r\n                    .role(Role.RESIDENT)\r\n                    .isActive(true)\r\n                    .createdAt(LocalDateTime.now()).build",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim())\r\n                    .phoneNumber(request.getPhoneNumber().trim())\r\n                    .email(email)\r\n                    .passwordHash(passwordEncoder.encode(\"123456\"))\r\n                    .role(Role.RESIDENT)\r\n                    .isActive(true).createdAt",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim())\r\n                    .phoneNumber(request.getPhoneNumber().trim())\r\n                    .email(email)\r\n                    .passwordHash(passwordEncoder.encode(\"123456\"))\r\n                    .role(Role.RESIDENT).isActive",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim())\r\n                    .phoneNumber(request.getPhoneNumber().trim())\r\n                    .email(email)\r\n                    .passwordHash(passwordEncoder.encode(\"123456\")).role",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim())\r\n                    .phoneNumber(request.getPhoneNumber().trim())\r\n                    .email(email).passwordHash",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim())\r\n                    .phoneNumber(request.getPhoneNumber().trim()).email",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder()\r\n                    .fullName(request.getFullName().trim()).phoneNumber",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder().fullName",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "User.builder",
+          "lineNumber": 190
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getFullName().trim",
+          "lineNumber": 191
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getFullName",
+          "lineNumber": 191
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber().trim",
+          "lineNumber": 192
+        },
+        {
+          "caller": "moveIn",
+          "callee": "request.getPhoneNumber",
+          "lineNumber": 192
+        },
+        {
+          "caller": "moveIn",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 194
+        },
+        {
+          "caller": "moveIn",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 197
+        },
+        {
+          "caller": "moveIn",
+          "callee": "userRepository.save",
+          "lineNumber": 200
+        },
+        {
+          "caller": "moveIn",
+          "callee": "apt.setResident",
+          "lineNumber": 203
+        },
+        {
+          "caller": "moveIn",
+          "callee": "apt.setStatus",
+          "lineNumber": 204
+        },
+        {
+          "caller": "moveIn",
+          "callee": "apartmentRepository.save",
+          "lineNumber": 205
+        },
+        {
+          "caller": "moveIn",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 207
+        },
+        {
+          "caller": "moveOut",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 213
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apt.getStatus",
+          "lineNumber": 215
+        },
+        {
+          "caller": "moveOut",
+          "callee": "new AppException",
+          "lineNumber": 216
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 216
+        },
+        {
+          "caller": "moveOut",
+          "callee": "invoiceRepository.countByApartmentIdAndStatusIn",
+          "lineNumber": 220
+        },
+        {
+          "caller": "moveOut",
+          "callee": "List.of",
+          "lineNumber": 221
+        },
+        {
+          "caller": "moveOut",
+          "callee": "new AppException",
+          "lineNumber": 224
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 225
+        },
+        {
+          "caller": "moveOut",
+          "callee": "vehicleRepository.deleteByApartmentId",
+          "lineNumber": 233
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apt.setResident",
+          "lineNumber": 236
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apt.setStatus",
+          "lineNumber": 237
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apartmentRepository.save",
+          "lineNumber": 238
+        },
+        {
+          "caller": "moveOut",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 240
+        },
+        {
+          "caller": "getVehiclesByApartment",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 246
+        },
+        {
+          "caller": "getVehiclesByApartment",
+          "callee": "vehicleRepository.findByApartmentId(apartmentId).stream()\r\n                .map(VehicleResponse::fromEntity).collect",
+          "lineNumber": 247
+        },
+        {
+          "caller": "getVehiclesByApartment",
+          "callee": "vehicleRepository.findByApartmentId(apartmentId).stream().map",
+          "lineNumber": 247
+        },
+        {
+          "caller": "getVehiclesByApartment",
+          "callee": "vehicleRepository.findByApartmentId(apartmentId).stream",
+          "lineNumber": 247
+        },
+        {
+          "caller": "getVehiclesByApartment",
+          "callee": "vehicleRepository.findByApartmentId",
+          "lineNumber": 247
+        },
+        {
+          "caller": "getVehiclesByApartment",
+          "callee": "Collectors.toList",
+          "lineNumber": 249
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 255
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "apt.getStatus",
+          "lineNumber": 256
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "new AppException",
+          "lineNumber": 257
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "vehicleRepository.existsByLicensePlate",
+          "lineNumber": 260
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getLicensePlate().trim",
+          "lineNumber": 260
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getLicensePlate",
+          "lineNumber": 260
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "new AppException",
+          "lineNumber": 261
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getLicensePlate",
+          "lineNumber": 261
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 264
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getOwnerName",
+          "lineNumber": 264
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getOwnerName().trim",
+          "lineNumber": 265
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getOwnerName",
+          "lineNumber": 265
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "apt.getResident",
+          "lineNumber": 266
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "apt.getResident().getFullName",
+          "lineNumber": 266
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "apt.getResident",
+          "lineNumber": 266
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder()\r\n                .apartment(apt)\r\n                .licensePlate(request.getLicensePlate().trim().toUpperCase())\r\n                .vehicleType(request.getVehicleType())\r\n                .ownerName(ownerName)\r\n                .createdAt(LocalDateTime.now()).build",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder()\r\n                .apartment(apt)\r\n                .licensePlate(request.getLicensePlate().trim().toUpperCase())\r\n                .vehicleType(request.getVehicleType())\r\n                .ownerName(ownerName).createdAt",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder()\r\n                .apartment(apt)\r\n                .licensePlate(request.getLicensePlate().trim().toUpperCase())\r\n                .vehicleType(request.getVehicleType()).ownerName",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder()\r\n                .apartment(apt)\r\n                .licensePlate(request.getLicensePlate().trim().toUpperCase()).vehicleType",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder()\r\n                .apartment(apt).licensePlate",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder().apartment",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "Vehicle.builder",
+          "lineNumber": 268
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getLicensePlate().trim().toUpperCase",
+          "lineNumber": 270
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getLicensePlate().trim",
+          "lineNumber": 270
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getLicensePlate",
+          "lineNumber": 270
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "request.getVehicleType",
+          "lineNumber": 271
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 273
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "vehicleRepository.save",
+          "lineNumber": 276
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "VehicleResponse.fromEntity",
+          "lineNumber": 277
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "findApartmentOrThrow",
+          "lineNumber": 283
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "vehicleRepository.findById(vehicleId).orElseThrow",
+          "lineNumber": 284
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "vehicleRepository.findById",
+          "lineNumber": 284
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "new AppException",
+          "lineNumber": 285
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "vehicle.getApartment().getId().equals",
+          "lineNumber": 287
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "vehicle.getApartment().getId",
+          "lineNumber": 287
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "vehicle.getApartment",
+          "lineNumber": 287
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "new AppException",
+          "lineNumber": 288
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "vehicleRepository.delete",
+          "lineNumber": 291
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "apartmentRepository.findByResidentId(residentId).stream()\r\n                .map(apt -> {\r\n                    List<Vehicle> vehicles = vehicleRepository.findByApartmentId(apt.getId());\r\n                    return ApartmentResponse.fromEntity(apt, vehicles.size());\r\n                }).collect",
+          "lineNumber": 297
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "apartmentRepository.findByResidentId(residentId).stream().map",
+          "lineNumber": 297
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "apartmentRepository.findByResidentId(residentId).stream",
+          "lineNumber": 297
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "apartmentRepository.findByResidentId",
+          "lineNumber": 297
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "vehicleRepository.findByApartmentId",
+          "lineNumber": 299
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "apt.getId",
+          "lineNumber": 299
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "ApartmentResponse.fromEntity",
+          "lineNumber": 300
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "vehicles.size",
+          "lineNumber": 300
+        },
+        {
+          "caller": "getApartmentsByResident",
+          "callee": "Collectors.toList",
+          "lineNumber": 302
+        },
+        {
+          "caller": "getResidents",
+          "callee": "userRepository.findByRole(Role.RESIDENT).stream()\r\n                .map(UserResponse::fromEntity).collect",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getResidents",
+          "callee": "userRepository.findByRole(Role.RESIDENT).stream().map",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getResidents",
+          "callee": "userRepository.findByRole(Role.RESIDENT).stream",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getResidents",
+          "callee": "userRepository.findByRole",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getResidents",
+          "callee": "Collectors.toList",
+          "lineNumber": 310
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "userRepository.findByRole(Role.TECHNICIAN).stream()\r\n                .map(UserResponse::fromEntity).collect",
+          "lineNumber": 316
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "userRepository.findByRole(Role.TECHNICIAN).stream().map",
+          "lineNumber": 316
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "userRepository.findByRole(Role.TECHNICIAN).stream",
+          "lineNumber": 316
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "userRepository.findByRole",
+          "lineNumber": 316
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "Collectors.toList",
+          "lineNumber": 318
+        },
+        {
+          "caller": "findApartmentOrThrow",
+          "callee": "apartmentRepository.findById(id).orElseThrow",
+          "lineNumber": 322
+        },
+        {
+          "caller": "findApartmentOrThrow",
+          "callee": "apartmentRepository.findById",
+          "lineNumber": 322
+        },
+        {
+          "caller": "findApartmentOrThrow",
+          "callee": "new AppException",
+          "lineNumber": 323
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 27,
+          "endLine": 58,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "getCurrentUser",
+          "startLine": 60,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "getAuthenticatedUser",
+          "startLine": 66,
+          "endLine": 75,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthServiceImpl",
+          "startLine": 19,
+          "endLine": 76,
+          "methods": [
+            "login",
+            "getCurrentUser",
+            "getAuthenticatedUser"
+          ],
+          "properties": [
+            "userRepository",
+            "passwordEncoder",
+            "tokenProvider"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "getCurrentUser",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getAuthenticatedUser",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "AuthServiceImpl",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "userRepository.findByPhoneNumber(request.getPhoneNumber()).orElseThrow",
+          "lineNumber": 30
+        },
+        {
+          "caller": "login",
+          "callee": "userRepository.findByPhoneNumber",
+          "lineNumber": 30
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPhoneNumber",
+          "lineNumber": 30
+        },
+        {
+          "caller": "login",
+          "callee": "new AppException",
+          "lineNumber": 31
+        },
+        {
+          "caller": "login",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 33
+        },
+        {
+          "caller": "login",
+          "callee": "user.getIsActive",
+          "lineNumber": 33
+        },
+        {
+          "caller": "login",
+          "callee": "new AppException",
+          "lineNumber": 34
+        },
+        {
+          "caller": "login",
+          "callee": "passwordEncoder.matches",
+          "lineNumber": 37
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword",
+          "lineNumber": 37
+        },
+        {
+          "caller": "login",
+          "callee": "user.getPasswordHash",
+          "lineNumber": 37
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword().equals",
+          "lineNumber": 38
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword",
+          "lineNumber": 38
+        },
+        {
+          "caller": "login",
+          "callee": "user.getPasswordHash",
+          "lineNumber": 38
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword().equals",
+          "lineNumber": 39
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword",
+          "lineNumber": 39
+        },
+        {
+          "caller": "login",
+          "callee": "new AppException",
+          "lineNumber": 42
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword().equals",
+          "lineNumber": 46
+        },
+        {
+          "caller": "login",
+          "callee": "request.getPassword",
+          "lineNumber": 46
+        },
+        {
+          "caller": "login",
+          "callee": "user.getPasswordHash().startsWith",
+          "lineNumber": 46
+        },
+        {
+          "caller": "login",
+          "callee": "user.getPasswordHash",
+          "lineNumber": 46
+        },
+        {
+          "caller": "login",
+          "callee": "user.setPasswordHash",
+          "lineNumber": 47
+        },
+        {
+          "caller": "login",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "login",
+          "callee": "userRepository.save",
+          "lineNumber": 48
+        },
+        {
+          "caller": "login",
+          "callee": "tokenProvider.generateToken",
+          "lineNumber": 51
+        },
+        {
+          "caller": "login",
+          "callee": "AuthResponse.builder()\r\n                .token(token)\r\n                .tokenType(\"Bearer\")\r\n                .user(UserResponse.fromEntity(user)).build",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "AuthResponse.builder()\r\n                .token(token)\r\n                .tokenType(\"Bearer\").user",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "AuthResponse.builder()\r\n                .token(token).tokenType",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "AuthResponse.builder().token",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "AuthResponse.builder",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "UserResponse.fromEntity",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "UserResponse.fromEntity",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "getAuthenticatedUser",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "SecurityContextHolder.getContext().getAuthentication",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "SecurityContextHolder.getContext",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "authentication.getPrincipal",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "new AppException",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "userRepository.findById(user.getId()).orElseThrow",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "userRepository.findById",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "user.getId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getAuthenticatedUser",
+          "callee": "new AppException",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 318,
+      "nonEmptyLines": 274,
+      "functions": [
+        {
+          "name": "getTariff",
+          "startLine": 42,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "updateTariff",
+          "startLine": 49,
+          "endLine": 62,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "searchInvoices",
+          "startLine": 64,
+          "endLine": 82,
+          "params": [
+            "billingMonth",
+            "status",
+            "apartmentId"
+          ]
+        },
+        {
+          "name": "searchInvoicesPaged",
+          "startLine": 84,
+          "endLine": 116,
+          "params": [
+            "billingMonth",
+            "status",
+            "apartmentId",
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getInvoiceById",
+          "startLine": 118,
+          "endLine": 124,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getInvoicesByApartment",
+          "startLine": 126,
+          "endLine": 133,
+          "params": [
+            "apartmentId"
+          ]
+        },
+        {
+          "name": "batchGenerateInvoices",
+          "startLine": 135,
+          "endLine": 212,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "confirmPayment",
+          "startLine": 214,
+          "endLine": 233,
+          "params": [
+            "invoiceId",
+            "residentId"
+          ]
+        },
+        {
+          "name": "approveInvoice",
+          "startLine": 235,
+          "endLine": 251,
+          "params": [
+            "invoiceId",
+            "adminId"
+          ]
+        },
+        {
+          "name": "rejectInvoice",
+          "startLine": 253,
+          "endLine": 266,
+          "params": [
+            "invoiceId"
+          ]
+        },
+        {
+          "name": "getOrInitTariff",
+          "startLine": 268,
+          "endLine": 281,
+          "params": []
+        },
+        {
+          "name": "enrichInvoiceResponse",
+          "startLine": 283,
+          "endLine": 317,
+          "params": [
+            "invoice",
+            "tariff"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BillingServiceImpl",
+          "startLine": 32,
+          "endLine": 318,
+          "methods": [
+            "getTariff",
+            "updateTariff",
+            "searchInvoices",
+            "searchInvoicesPaged",
+            "getInvoiceById",
+            "getInvoicesByApartment",
+            "batchGenerateInvoices",
+            "confirmPayment",
+            "approveInvoice",
+            "rejectInvoice",
+            "getOrInitTariff",
+            "enrichInvoiceResponse"
+          ],
+          "properties": [
+            "tariffRepository",
+            "invoiceRepository",
+            "apartmentRepository",
+            "vehicleRepository",
+            "userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTariff",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateTariff",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "searchInvoices",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "searchInvoicesPaged",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getInvoiceById",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "getInvoicesByApartment",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "batchGenerateInvoices",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "confirmPayment",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "approveInvoice",
+          "line": 235,
+          "isDefault": false
+        },
+        {
+          "name": "rejectInvoice",
+          "line": 253,
+          "isDefault": false
+        },
+        {
+          "name": "BillingServiceImpl",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTariff",
+          "callee": "getOrInitTariff",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getTariff",
+          "callee": "TariffResponse.fromEntity",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "getOrInitTariff",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariff.setManagementFeePerSqm",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "request.getManagementFeePerSqm",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariff.setElectricityUnitPrice",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "request.getElectricityUnitPrice",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariff.setWaterUnitPrice",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "request.getWaterUnitPrice",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariff.setMotorbikeFee",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "request.getMotorbikeFee",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariff.setCarFee",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "request.getCarFee",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariff.setUpdatedAt",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "tariffRepository.save",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "TariffResponse.fromEntity",
+          "lineNumber": 61
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoiceRepository.findByApartmentIdOrderByBillingMonthDesc",
+          "lineNumber": 69
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoiceRepository.findByStatus",
+          "lineNumber": 71
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "billingMonth.isBlank",
+          "lineNumber": 72
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoiceRepository.findByBillingMonth",
+          "lineNumber": 73
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoiceRepository.findAllByOrderByCreatedAtDesc",
+          "lineNumber": 75
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "getOrInitTariff",
+          "lineNumber": 78
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoices.stream()\r\n                .map(inv -> enrichInvoiceResponse(inv, tariff)).collect",
+          "lineNumber": 79
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoices.stream().map",
+          "lineNumber": 79
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "invoices.stream",
+          "lineNumber": 79
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 80
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "Collectors.toList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 95
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "\"asc\".equalsIgnoreCase",
+          "lineNumber": 96
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "PageRequest.of",
+          "lineNumber": 97
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "Sort.by",
+          "lineNumber": 97
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoiceRepository.findByApartmentId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoiceRepository.findByStatus",
+          "lineNumber": 103
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 104
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoiceRepository.findByBillingMonth",
+          "lineNumber": 105
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoiceRepository.findAll",
+          "lineNumber": 107
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "getOrInitTariff",
+          "lineNumber": 110
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoicePage.getContent().stream()\r\n                .map(inv -> enrichInvoiceResponse(inv, tariff)).collect",
+          "lineNumber": 111
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoicePage.getContent().stream().map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoicePage.getContent().stream",
+          "lineNumber": 111
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "invoicePage.getContent",
+          "lineNumber": 111
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 112
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "Collectors.toList",
+          "lineNumber": 113
+        },
+        {
+          "caller": "searchInvoicesPaged",
+          "callee": "PageResponse.from",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getInvoiceById",
+          "callee": "invoiceRepository.findById(id).orElseThrow",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getInvoiceById",
+          "callee": "invoiceRepository.findById",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getInvoiceById",
+          "callee": "new AppException",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getInvoiceById",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getInvoiceById",
+          "callee": "getOrInitTariff",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "getOrInitTariff",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "invoiceRepository.findByApartmentIdOrderByBillingMonthDesc(apartmentId).stream()\r\n                .map(inv -> enrichInvoiceResponse(inv, tariff)).collect",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "invoiceRepository.findByApartmentIdOrderByBillingMonthDesc(apartmentId).stream().map",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "invoiceRepository.findByApartmentIdOrderByBillingMonthDesc(apartmentId).stream",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "invoiceRepository.findByApartmentIdOrderByBillingMonthDesc",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getInvoicesByApartment",
+          "callee": "Collectors.toList",
+          "lineNumber": 132
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "getOrInitTariff",
+          "lineNumber": 138
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "new ArrayList<>",
+          "lineNumber": 139
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getDueDate",
+          "lineNumber": 141
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getDueDate",
+          "lineNumber": 141
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "LocalDate.now().plusDays",
+          "lineNumber": 141
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "LocalDate.now",
+          "lineNumber": 141
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getReadings",
+          "lineNumber": 143
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apartmentRepository.findById(item.getApartmentId()).orElseThrow",
+          "lineNumber": 144
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apartmentRepository.findById",
+          "lineNumber": 144
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getApartmentId",
+          "lineNumber": 144
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "new AppException",
+          "lineNumber": 145
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getApartmentId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getStatus",
+          "lineNumber": 148
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewElectricNum",
+          "lineNumber": 153
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldElectricNum",
+          "lineNumber": 153
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "new AppException",
+          "lineNumber": 154
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 154
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewElectricNum",
+          "lineNumber": 154
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldElectricNum",
+          "lineNumber": 155
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewWaterNum",
+          "lineNumber": 157
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldWaterNum",
+          "lineNumber": 157
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "new AppException",
+          "lineNumber": 158
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 158
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewWaterNum",
+          "lineNumber": 158
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldWaterNum",
+          "lineNumber": 159
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewElectricNum",
+          "lineNumber": 163
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldElectricNum",
+          "lineNumber": 163
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewWaterNum",
+          "lineNumber": 164
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldWaterNum",
+          "lineNumber": 164
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getAreaSqm().multiply",
+          "lineNumber": 166
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getAreaSqm",
+          "lineNumber": 166
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "tariff.getManagementFeePerSqm",
+          "lineNumber": 166
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf(electricUsage).multiply",
+          "lineNumber": 167
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 167
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "tariff.getElectricityUnitPrice",
+          "lineNumber": 167
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf(waterUsage).multiply",
+          "lineNumber": 168
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 168
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "tariff.getWaterUnitPrice",
+          "lineNumber": 168
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "vehicleRepository.countByApartmentIdAndVehicleType",
+          "lineNumber": 170
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "vehicleRepository.countByApartmentIdAndVehicleType",
+          "lineNumber": 171
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getId",
+          "lineNumber": 171
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf(motoCount).multiply(tariff.getMotorbikeFee()).add",
+          "lineNumber": 172
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf(motoCount).multiply",
+          "lineNumber": 172
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 172
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "tariff.getMotorbikeFee",
+          "lineNumber": 172
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf(carCount).multiply",
+          "lineNumber": 173
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 173
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "tariff.getCarFee",
+          "lineNumber": 173
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "mgmtFee.add(elecAmount).add(waterAmount).add",
+          "lineNumber": 175
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "mgmtFee.add(elecAmount).add",
+          "lineNumber": 175
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "mgmtFee.add",
+          "lineNumber": 175
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "String.format",
+          "lineNumber": 177
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getBillingMonth().replace",
+          "lineNumber": 178
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getBillingMonth",
+          "lineNumber": 178
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getRoomNumber().replace",
+          "lineNumber": 179
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getRoomNumber",
+          "lineNumber": 179
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoiceRepository.findByApartmentIdAndBillingMonth",
+          "lineNumber": 181
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "apt.getId",
+          "lineNumber": 181
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getBillingMonth",
+          "lineNumber": 181
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "existingOpt.isPresent",
+          "lineNumber": 183
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "existingOpt.get",
+          "lineNumber": 184
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoice.setOldElectricNum",
+          "lineNumber": 185
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldElectricNum",
+          "lineNumber": 185
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoice.setNewElectricNum",
+          "lineNumber": 186
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewElectricNum",
+          "lineNumber": 186
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoice.setOldWaterNum",
+          "lineNumber": 187
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldWaterNum",
+          "lineNumber": 187
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoice.setNewWaterNum",
+          "lineNumber": 188
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewWaterNum",
+          "lineNumber": 188
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoice.setTotalAmount",
+          "lineNumber": 189
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoice.setDueDate",
+          "lineNumber": 190
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum())\r\n                        .oldWaterNum(item.getOldWaterNum())\r\n                        .newWaterNum(item.getNewWaterNum())\r\n                        .totalAmount(totalAmount)\r\n                        .status(InvoiceStatus.UNPAID)\r\n                        .dueDate(dueDate)\r\n                        .createdAt(LocalDateTime.now()).build",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum())\r\n                        .oldWaterNum(item.getOldWaterNum())\r\n                        .newWaterNum(item.getNewWaterNum())\r\n                        .totalAmount(totalAmount)\r\n                        .status(InvoiceStatus.UNPAID)\r\n                        .dueDate(dueDate).createdAt",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum())\r\n                        .oldWaterNum(item.getOldWaterNum())\r\n                        .newWaterNum(item.getNewWaterNum())\r\n                        .totalAmount(totalAmount)\r\n                        .status(InvoiceStatus.UNPAID).dueDate",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum())\r\n                        .oldWaterNum(item.getOldWaterNum())\r\n                        .newWaterNum(item.getNewWaterNum())\r\n                        .totalAmount(totalAmount).status",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum())\r\n                        .oldWaterNum(item.getOldWaterNum())\r\n                        .newWaterNum(item.getNewWaterNum()).totalAmount",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum())\r\n                        .oldWaterNum(item.getOldWaterNum()).newWaterNum",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum())\r\n                        .newElectricNum(item.getNewElectricNum()).oldWaterNum",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth())\r\n                        .oldElectricNum(item.getOldElectricNum()).newElectricNum",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt)\r\n                        .billingMonth(request.getBillingMonth()).oldElectricNum",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code)\r\n                        .apartment(apt).billingMonth",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder()\r\n                        .invoiceCode(code).apartment",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder().invoiceCode",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "Invoice.builder",
+          "lineNumber": 192
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "request.getBillingMonth",
+          "lineNumber": 195
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldElectricNum",
+          "lineNumber": 196
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewElectricNum",
+          "lineNumber": 197
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getOldWaterNum",
+          "lineNumber": 198
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "item.getNewWaterNum",
+          "lineNumber": 199
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 203
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "invoiceRepository.save",
+          "lineNumber": 207
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "results.add",
+          "lineNumber": 208
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 208
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoiceRepository.findById(invoiceId).orElseThrow",
+          "lineNumber": 217
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoiceRepository.findById",
+          "lineNumber": 217
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "new AppException",
+          "lineNumber": 218
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getApartment().getResident",
+          "lineNumber": 220
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getApartment",
+          "lineNumber": 220
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getApartment().getResident().getId().equals",
+          "lineNumber": 221
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getApartment().getResident().getId",
+          "lineNumber": 221
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getApartment().getResident",
+          "lineNumber": 221
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getApartment",
+          "lineNumber": 221
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "new AppException",
+          "lineNumber": 222
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.getStatus",
+          "lineNumber": 225
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "new AppException",
+          "lineNumber": 226
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoice.setStatus",
+          "lineNumber": 230
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "invoiceRepository.save",
+          "lineNumber": 231
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 232
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "getOrInitTariff",
+          "lineNumber": 232
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "invoiceRepository.findById(invoiceId).orElseThrow",
+          "lineNumber": 238
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "invoiceRepository.findById",
+          "lineNumber": 238
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "new AppException",
+          "lineNumber": 239
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "userRepository.findById(adminId).orElseThrow",
+          "lineNumber": 241
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "userRepository.findById",
+          "lineNumber": 241
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "new AppException",
+          "lineNumber": 242
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "invoice.setStatus",
+          "lineNumber": 245
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "invoice.setApprovedBy",
+          "lineNumber": 246
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "invoice.setPaidAt",
+          "lineNumber": 247
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 247
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "invoiceRepository.save",
+          "lineNumber": 249
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 250
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "getOrInitTariff",
+          "lineNumber": 250
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "invoiceRepository.findById(invoiceId).orElseThrow",
+          "lineNumber": 256
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "invoiceRepository.findById",
+          "lineNumber": 256
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "new AppException",
+          "lineNumber": 257
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "invoice.setStatus",
+          "lineNumber": 260
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "invoice.setApprovedBy",
+          "lineNumber": 261
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "invoice.setPaidAt",
+          "lineNumber": 262
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "invoiceRepository.save",
+          "lineNumber": 264
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "enrichInvoiceResponse",
+          "lineNumber": 265
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "getOrInitTariff",
+          "lineNumber": 265
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "tariffRepository.findById(1).orElseGet",
+          "lineNumber": 269
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "tariffRepository.findById",
+          "lineNumber": 269
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1)\r\n                    .managementFeePerSqm(new BigDecimal(\"10000.00\"))\r\n                    .electricityUnitPrice(new BigDecimal(\"3500.00\"))\r\n                    .waterUnitPrice(new BigDecimal(\"15000.00\"))\r\n                    .motorbikeFee(new BigDecimal(\"100000.00\"))\r\n                    .carFee(new BigDecimal(\"1200000.00\"))\r\n                    .updatedAt(LocalDateTime.now()).build",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1)\r\n                    .managementFeePerSqm(new BigDecimal(\"10000.00\"))\r\n                    .electricityUnitPrice(new BigDecimal(\"3500.00\"))\r\n                    .waterUnitPrice(new BigDecimal(\"15000.00\"))\r\n                    .motorbikeFee(new BigDecimal(\"100000.00\"))\r\n                    .carFee(new BigDecimal(\"1200000.00\")).updatedAt",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1)\r\n                    .managementFeePerSqm(new BigDecimal(\"10000.00\"))\r\n                    .electricityUnitPrice(new BigDecimal(\"3500.00\"))\r\n                    .waterUnitPrice(new BigDecimal(\"15000.00\"))\r\n                    .motorbikeFee(new BigDecimal(\"100000.00\")).carFee",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1)\r\n                    .managementFeePerSqm(new BigDecimal(\"10000.00\"))\r\n                    .electricityUnitPrice(new BigDecimal(\"3500.00\"))\r\n                    .waterUnitPrice(new BigDecimal(\"15000.00\")).motorbikeFee",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1)\r\n                    .managementFeePerSqm(new BigDecimal(\"10000.00\"))\r\n                    .electricityUnitPrice(new BigDecimal(\"3500.00\")).waterUnitPrice",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1)\r\n                    .managementFeePerSqm(new BigDecimal(\"10000.00\")).electricityUnitPrice",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder()\r\n                    .id(1).managementFeePerSqm",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder().id",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "ServiceTariff.builder",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "new BigDecimal",
+          "lineNumber": 272
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "new BigDecimal",
+          "lineNumber": 273
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "new BigDecimal",
+          "lineNumber": 274
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "new BigDecimal",
+          "lineNumber": 275
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "new BigDecimal",
+          "lineNumber": 276
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 277
+        },
+        {
+          "caller": "getOrInitTariff",
+          "callee": "tariffRepository.save",
+          "lineNumber": 279
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceResponse.fromEntity",
+          "lineNumber": 284
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "invoice.getApartment",
+          "lineNumber": 285
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "invoice.getApartment",
+          "lineNumber": 286
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "vehicleRepository.countByApartmentIdAndVehicleType",
+          "lineNumber": 287
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "apt.getId",
+          "lineNumber": 287
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "vehicleRepository.countByApartmentIdAndVehicleType",
+          "lineNumber": 288
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "apt.getId",
+          "lineNumber": 288
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "apt.getAreaSqm().multiply",
+          "lineNumber": 290
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "apt.getAreaSqm",
+          "lineNumber": 290
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getManagementFeePerSqm",
+          "lineNumber": 290
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf(response.getElectricUsage()).multiply",
+          "lineNumber": 291
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 291
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "response.getElectricUsage",
+          "lineNumber": 291
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getElectricityUnitPrice",
+          "lineNumber": 291
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf(response.getWaterUsage()).multiply",
+          "lineNumber": 292
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 292
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "response.getWaterUsage",
+          "lineNumber": 292
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getWaterUnitPrice",
+          "lineNumber": 292
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf(motoCount).multiply(tariff.getMotorbikeFee()).add",
+          "lineNumber": 293
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf(motoCount).multiply",
+          "lineNumber": 293
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 293
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getMotorbikeFee",
+          "lineNumber": 293
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf(carCount).multiply",
+          "lineNumber": 294
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 294
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getCarFee",
+          "lineNumber": 294
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount)\r\n                    .motorbikeCount(motoCount)\r\n                    .motorbikeFee(tariff.getMotorbikeFee())\r\n                    .carCount(carCount)\r\n                    .carFee(tariff.getCarFee())\r\n                    .totalParkingFee(parkingFee)\r\n                    .totalAmount(invoice.getTotalAmount()).build",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount)\r\n                    .motorbikeCount(motoCount)\r\n                    .motorbikeFee(tariff.getMotorbikeFee())\r\n                    .carCount(carCount)\r\n                    .carFee(tariff.getCarFee())\r\n                    .totalParkingFee(parkingFee).totalAmount",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount)\r\n                    .motorbikeCount(motoCount)\r\n                    .motorbikeFee(tariff.getMotorbikeFee())\r\n                    .carCount(carCount)\r\n                    .carFee(tariff.getCarFee()).totalParkingFee",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount)\r\n                    .motorbikeCount(motoCount)\r\n                    .motorbikeFee(tariff.getMotorbikeFee())\r\n                    .carCount(carCount).carFee",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount)\r\n                    .motorbikeCount(motoCount)\r\n                    .motorbikeFee(tariff.getMotorbikeFee()).carCount",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount)\r\n                    .motorbikeCount(motoCount).motorbikeFee",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice())\r\n                    .waterAmount(waterAmount).motorbikeCount",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage())\r\n                    .waterRate(tariff.getWaterUnitPrice()).waterAmount",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount)\r\n                    .waterUsage(response.getWaterUsage()).waterRate",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice())\r\n                    .electricAmount(elecAmount).waterUsage",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage())\r\n                    .electricRate(tariff.getElectricityUnitPrice()).electricAmount",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee)\r\n                    .electricUsage(response.getElectricUsage()).electricRate",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm())\r\n                    .managementFee(mgmtFee).electricUsage",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm())\r\n                    .managementFeeRate(tariff.getManagementFeePerSqm()).managementFee",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder()\r\n                    .areaSqm(apt.getAreaSqm()).managementFeeRate",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder().areaSqm",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "InvoiceBreakdown.builder",
+          "lineNumber": 296
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "apt.getAreaSqm",
+          "lineNumber": 297
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getManagementFeePerSqm",
+          "lineNumber": 298
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "response.getElectricUsage",
+          "lineNumber": 300
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getElectricityUnitPrice",
+          "lineNumber": 301
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "response.getWaterUsage",
+          "lineNumber": 303
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getWaterUnitPrice",
+          "lineNumber": 304
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getMotorbikeFee",
+          "lineNumber": 307
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "tariff.getCarFee",
+          "lineNumber": 309
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "invoice.getTotalAmount",
+          "lineNumber": 311
+        },
+        {
+          "caller": "enrichInvoiceResponse",
+          "callee": "response.setBreakdown",
+          "lineNumber": 314
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 255,
+      "nonEmptyLines": 211,
+      "functions": [
+        {
+          "name": "createTicket",
+          "startLine": 37,
+          "endLine": 64,
+          "params": [
+            "request",
+            "residentId"
+          ]
+        },
+        {
+          "name": "getTicketsByResident",
+          "startLine": 66,
+          "endLine": 72,
+          "params": [
+            "residentId"
+          ]
+        },
+        {
+          "name": "getTicketsByResidentPaged",
+          "startLine": 74,
+          "endLine": 87,
+          "params": [
+            "residentId",
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getOpenTickets",
+          "startLine": 89,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "getOpenTicketsPaged",
+          "startLine": 97,
+          "endLine": 110,
+          "params": [
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getAssignedTickets",
+          "startLine": 112,
+          "endLine": 118,
+          "params": [
+            "technicianId"
+          ]
+        },
+        {
+          "name": "getAssignedTicketsPaged",
+          "startLine": 120,
+          "endLine": 133,
+          "params": [
+            "technicianId",
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getAllTickets",
+          "startLine": 135,
+          "endLine": 141,
+          "params": []
+        },
+        {
+          "name": "getAllTicketsPaged",
+          "startLine": 143,
+          "endLine": 156,
+          "params": [
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getTicketById",
+          "startLine": 158,
+          "endLine": 164,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "claimTicket",
+          "startLine": 166,
+          "endLine": 188,
+          "params": [
+            "ticketId",
+            "technicianId"
+          ]
+        },
+        {
+          "name": "completeTicket",
+          "startLine": 190,
+          "endLine": 210,
+          "params": [
+            "ticketId",
+            "request",
+            "technicianId"
+          ]
+        },
+        {
+          "name": "inspectTicket",
+          "startLine": 212,
+          "endLine": 238,
+          "params": [
+            "ticketId",
+            "request",
+            "residentId"
+          ]
+        },
+        {
+          "name": "forceAssignTicket",
+          "startLine": 240,
+          "endLine": 254,
+          "params": [
+            "ticketId",
+            "technicianId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TicketServiceImpl",
+          "startLine": 29,
+          "endLine": 255,
+          "methods": [
+            "createTicket",
+            "getTicketsByResident",
+            "getTicketsByResidentPaged",
+            "getOpenTickets",
+            "getOpenTicketsPaged",
+            "getAssignedTickets",
+            "getAssignedTicketsPaged",
+            "getAllTickets",
+            "getAllTicketsPaged",
+            "getTicketById",
+            "claimTicket",
+            "completeTicket",
+            "inspectTicket",
+            "forceAssignTicket"
+          ],
+          "properties": [
+            "ticketRepository",
+            "apartmentRepository",
+            "userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTicket",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "getTicketsByResident",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getTicketsByResidentPaged",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getOpenTickets",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getOpenTicketsPaged",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "getAssignedTickets",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "getAssignedTicketsPaged",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "getAllTickets",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "getAllTicketsPaged",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "getTicketById",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "claimTicket",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "completeTicket",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "inspectTicket",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "forceAssignTicket",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "TicketServiceImpl",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTicket",
+          "callee": "userRepository.findById(residentId).orElseThrow",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createTicket",
+          "callee": "userRepository.findById",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createTicket",
+          "callee": "new AppException",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createTicket",
+          "callee": "apartmentRepository.findById(request.getApartmentId()).orElseThrow",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createTicket",
+          "callee": "apartmentRepository.findById",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getApartmentId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createTicket",
+          "callee": "new AppException",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getApartmentId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createTicket",
+          "callee": "LocalDateTime.now().format",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createTicket",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createTicket",
+          "callee": "DateTimeFormatter.ofPattern",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createTicket",
+          "callee": "ticketRepository.count",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createTicket",
+          "callee": "String.format",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident)\r\n                .category(request.getCategory())\r\n                .title(request.getTitle().trim())\r\n                .description(request.getDescription().trim())\r\n                .imageUrl(request.getImageUrl())\r\n                .status(TicketStatus.OPEN)\r\n                .createdAt(LocalDateTime.now()).build",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident)\r\n                .category(request.getCategory())\r\n                .title(request.getTitle().trim())\r\n                .description(request.getDescription().trim())\r\n                .imageUrl(request.getImageUrl())\r\n                .status(TicketStatus.OPEN).createdAt",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident)\r\n                .category(request.getCategory())\r\n                .title(request.getTitle().trim())\r\n                .description(request.getDescription().trim())\r\n                .imageUrl(request.getImageUrl()).status",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident)\r\n                .category(request.getCategory())\r\n                .title(request.getTitle().trim())\r\n                .description(request.getDescription().trim()).imageUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident)\r\n                .category(request.getCategory())\r\n                .title(request.getTitle().trim()).description",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident)\r\n                .category(request.getCategory()).title",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt)\r\n                .resident(resident).category",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode)\r\n                .apartment(apt).resident",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder()\r\n                .ticketCode(ticketCode).apartment",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder().ticketCode",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "Ticket.builder",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getCategory",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getTitle().trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getTitle",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getDescription().trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getDescription",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createTicket",
+          "callee": "request.getImageUrl",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createTicket",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createTicket",
+          "callee": "ticketRepository.save",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createTicket",
+          "callee": "TicketResponse.fromEntity",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getTicketsByResident",
+          "callee": "ticketRepository.findByResidentIdOrderByCreatedAtDesc(residentId).stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTicketsByResident",
+          "callee": "ticketRepository.findByResidentIdOrderByCreatedAtDesc(residentId).stream().map",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTicketsByResident",
+          "callee": "ticketRepository.findByResidentIdOrderByCreatedAtDesc(residentId).stream",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTicketsByResident",
+          "callee": "ticketRepository.findByResidentIdOrderByCreatedAtDesc",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTicketsByResident",
+          "callee": "Collectors.toList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "\"asc\".equalsIgnoreCase",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "PageRequest.of",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "Sort.by",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "ticketRepository.findByResidentId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "ticketPage.getContent().stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "ticketPage.getContent().stream().map",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "ticketPage.getContent().stream",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "ticketPage.getContent",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "Collectors.toList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getTicketsByResidentPaged",
+          "callee": "PageResponse.from",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ticketRepository.findByStatusOrderByCreatedAtDesc(TicketStatus.OPEN).stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ticketRepository.findByStatusOrderByCreatedAtDesc(TicketStatus.OPEN).stream().map",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ticketRepository.findByStatusOrderByCreatedAtDesc(TicketStatus.OPEN).stream",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ticketRepository.findByStatusOrderByCreatedAtDesc",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "Collectors.toList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "\"asc\".equalsIgnoreCase",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "PageRequest.of",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "Sort.by",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "ticketRepository.findByStatus",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "ticketPage.getContent().stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "ticketPage.getContent().stream().map",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "ticketPage.getContent().stream",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "ticketPage.getContent",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "Collectors.toList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getOpenTicketsPaged",
+          "callee": "PageResponse.from",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getAssignedTickets",
+          "callee": "ticketRepository.findByAssignedToIdOrderByCreatedAtDesc(technicianId).stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getAssignedTickets",
+          "callee": "ticketRepository.findByAssignedToIdOrderByCreatedAtDesc(technicianId).stream().map",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getAssignedTickets",
+          "callee": "ticketRepository.findByAssignedToIdOrderByCreatedAtDesc(technicianId).stream",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getAssignedTickets",
+          "callee": "ticketRepository.findByAssignedToIdOrderByCreatedAtDesc",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getAssignedTickets",
+          "callee": "Collectors.toList",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "\"asc\".equalsIgnoreCase",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "PageRequest.of",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "Sort.by",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "ticketRepository.findByAssignedToId",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "ticketPage.getContent().stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "ticketPage.getContent().stream().map",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "ticketPage.getContent().stream",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "ticketPage.getContent",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "Collectors.toList",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getAssignedTicketsPaged",
+          "callee": "PageResponse.from",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "ticketRepository.findAllByOrderByCreatedAtDesc().stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "ticketRepository.findAllByOrderByCreatedAtDesc().stream().map",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "ticketRepository.findAllByOrderByCreatedAtDesc().stream",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "ticketRepository.findAllByOrderByCreatedAtDesc",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "Collectors.toList",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "\"asc\".equalsIgnoreCase",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "PageRequest.of",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "Sort.by",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "ticketRepository.findAll",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "ticketPage.getContent().stream()\r\n                .map(TicketResponse::fromEntity).collect",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "ticketPage.getContent().stream().map",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "ticketPage.getContent().stream",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "ticketPage.getContent",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "Collectors.toList",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getAllTicketsPaged",
+          "callee": "PageResponse.from",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getTicketById",
+          "callee": "ticketRepository.findById(id).orElseThrow",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getTicketById",
+          "callee": "ticketRepository.findById",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getTicketById",
+          "callee": "new AppException",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getTicketById",
+          "callee": "TicketResponse.fromEntity",
+          "lineNumber": 163
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "userRepository.findById(technicianId).orElseThrow",
+          "lineNumber": 169
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "userRepository.findById",
+          "lineNumber": 169
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "new AppException",
+          "lineNumber": 170
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "technician.getRole",
+          "lineNumber": 172
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "new AppException",
+          "lineNumber": 173
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "ticketRepository.claimTicket",
+          "lineNumber": 177
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "new AppException",
+          "lineNumber": 179
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "ticketRepository.findById(ticketId).orElseThrow",
+          "lineNumber": 185
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "ticketRepository.findById",
+          "lineNumber": 185
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "new AppException",
+          "lineNumber": 186
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "TicketResponse.fromEntity",
+          "lineNumber": 187
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticketRepository.findById(ticketId).orElseThrow",
+          "lineNumber": 193
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticketRepository.findById",
+          "lineNumber": 193
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "new AppException",
+          "lineNumber": 194
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.getAssignedTo",
+          "lineNumber": 196
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.getAssignedTo().getId().equals",
+          "lineNumber": 196
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.getAssignedTo().getId",
+          "lineNumber": 196
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.getAssignedTo",
+          "lineNumber": 196
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "new AppException",
+          "lineNumber": 197
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.getStatus",
+          "lineNumber": 200
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "new AppException",
+          "lineNumber": 201
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.setStatus",
+          "lineNumber": 204
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.setTechnicianNote",
+          "lineNumber": 205
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "request.getTechnicianNote().trim",
+          "lineNumber": 205
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "request.getTechnicianNote",
+          "lineNumber": 205
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticket.setResolvedAt",
+          "lineNumber": 206
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 206
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticketRepository.save",
+          "lineNumber": 208
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "TicketResponse.fromEntity",
+          "lineNumber": 209
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticketRepository.findById(ticketId).orElseThrow",
+          "lineNumber": 215
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticketRepository.findById",
+          "lineNumber": 215
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "new AppException",
+          "lineNumber": 216
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.getResident().getId().equals",
+          "lineNumber": 218
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.getResident().getId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.getResident",
+          "lineNumber": 218
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "new AppException",
+          "lineNumber": 219
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.getStatus",
+          "lineNumber": 222
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "new AppException",
+          "lineNumber": 223
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 226
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "request.getRework",
+          "lineNumber": 226
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.setStatus",
+          "lineNumber": 228
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "request.getRating",
+          "lineNumber": 231
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "request.getRating",
+          "lineNumber": 231
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.setRating",
+          "lineNumber": 232
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticket.setStatus",
+          "lineNumber": 233
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticketRepository.save",
+          "lineNumber": 236
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "TicketResponse.fromEntity",
+          "lineNumber": 237
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ticketRepository.findById(ticketId).orElseThrow",
+          "lineNumber": 243
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ticketRepository.findById",
+          "lineNumber": 243
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "new AppException",
+          "lineNumber": 244
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "userRepository.findById(technicianId).orElseThrow",
+          "lineNumber": 246
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "userRepository.findById",
+          "lineNumber": 246
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "new AppException",
+          "lineNumber": 247
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ticket.setAssignedTo",
+          "lineNumber": 249
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ticket.setStatus",
+          "lineNumber": 250
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ticketRepository.save",
+          "lineNumber": 252
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "TicketResponse.fromEntity",
+          "lineNumber": 253
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "contextLoads",
+          "startLine": 9,
+          "endLine": 11,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApartmentBsApplicationTests",
+          "startLine": 6,
+          "endLine": 13,
+          "methods": [
+            "contextLoads"
+          ],
+          "properties": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

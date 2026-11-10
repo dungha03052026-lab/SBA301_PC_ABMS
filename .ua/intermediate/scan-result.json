@@ -1,0 +1,904 @@
+{
+  "scriptCompleted": true,
+  "contentDigest": "ad750c29b4ebfa0caf48eca02a5f4f9d50cdb2752095f1bcbf7ee71352ffebb6",
+  "files": [
+    {
+      "path": ".ua/intermediate/assembled-graph.json",
+      "language": "json",
+      "sizeLines": 7359,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-1.json",
+      "language": "json",
+      "sizeLines": 64,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-2.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-3.json",
+      "language": "json",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-4.json",
+      "language": "json",
+      "sizeLines": 2986,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-5.json",
+      "language": "json",
+      "sizeLines": 1691,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-6.json",
+      "language": "json",
+      "sizeLines": 5163,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-7.json",
+      "language": "json",
+      "sizeLines": 785,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batch-8.json",
+      "language": "json",
+      "sizeLines": 62,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/batches.json",
+      "language": "json",
+      "sizeLines": 1242,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/scan-result.json",
+      "language": "json",
+      "sizeLines": 717,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/knowledge-graph.json",
+      "language": "json",
+      "sizeLines": 7780,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/meta.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/run-batches.cjs",
+      "language": "javascript",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-1.json",
+      "language": "json",
+      "sizeLines": 41,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-2.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-3.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-4.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-5.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-6.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-7.json",
+      "language": "json",
+      "sizeLines": 181,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-analyzer-input-8.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-1.json",
+      "language": "json",
+      "sizeLines": 678,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-2.json",
+      "language": "json",
+      "sizeLines": 57,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-3.json",
+      "language": "json",
+      "sizeLines": 102,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-4.json",
+      "language": "json",
+      "sizeLines": 3018,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-5.json",
+      "language": "json",
+      "sizeLines": 2861,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-6.json",
+      "language": "json",
+      "sizeLines": 7013,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-7.json",
+      "language": "json",
+      "sizeLines": 6696,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-file-extract-results-8.json",
+      "language": "json",
+      "sizeLines": 139,
+      "fileCategory": "config"
+    },
+    {
+      "path": "ABMS_ProjectGuidelines.md",
+      "language": "markdown",
+      "sizeLines": 586,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "BACKEND_TASKS.md",
+      "language": "markdown",
+      "sizeLines": 298,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "DESIGN-playstation.md",
+      "language": "markdown",
+      "sizeLines": 661,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "FRONTEND_TASKS.md",
+      "language": "markdown",
+      "sizeLines": 174,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "HUONG_DAN_THUYET_TRINH_SPECIFICATION.md",
+      "language": "markdown",
+      "sizeLines": 143,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "be/ApartmentBS/.gitattributes",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/.mvn/wrapper/maven-wrapper.properties",
+      "language": "properties",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "be/ApartmentBS/HELP.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "be/ApartmentBS/mvnw",
+      "language": "unknown",
+      "sizeLines": 295,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/mvnw.cmd",
+      "language": "batch",
+      "sizeLines": 189,
+      "fileCategory": "script"
+    },
+    {
+      "path": "be/ApartmentBS/pom.xml",
+      "language": "xml",
+      "sizeLines": 111,
+      "fileCategory": "config"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/ApartmentBsApplication.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/CorsConfig.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtAuthenticationFilter.java",
+      "language": "java",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtTokenProvider.java",
+      "language": "java",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/SecurityConfig.java",
+      "language": "java",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AnnouncementController.java",
+      "language": "java",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ApartmentController.java",
+      "language": "java",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AuthController.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/BillingController.java",
+      "language": "java",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ResidentApartmentController.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/TicketController.java",
+      "language": "java",
+      "sizeLines": 164,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/AnnouncementRequest.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ApartmentRequest.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/BatchInvoiceCreateRequest.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ForceAssignRequest.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/LoginRequest.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MeterReadingItem.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MoveInRequest.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TariffRequest.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCompleteRequest.java",
+      "language": "java",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketCreateRequest.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TicketRateRequest.java",
+      "language": "java",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/VehicleRequest.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AnnouncementResponse.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApartmentResponse.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/ApiResponse.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/AuthResponse.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceBreakdown.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/InvoiceResponse.java",
+      "language": "java",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/PageResponse.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TariffResponse.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/TicketResponse.java",
+      "language": "java",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/UserResponse.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/response/VehicleResponse.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/AppException.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/exception/GlobalExceptionHandler.java",
+      "language": "java",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Announcement.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Apartment.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ApartmentStatus.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Invoice.java",
+      "language": "java",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/InvoiceStatus.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Role.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/ServiceTariff.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Ticket.java",
+      "language": "java",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketCategory.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/TicketStatus.java",
+      "language": "java",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/User.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/Vehicle.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/model/VehicleType.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/AnnouncementRepository.java",
+      "language": "java",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ApartmentRepository.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/InvoiceRepository.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/ServiceTariffRepository.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/TicketRepository.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/UserRepository.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/VehicleRepository.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/repository/specification/ApartmentSpecification.java",
+      "language": "java",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AnnouncementService.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/ApartmentService.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/AuthService.java",
+      "language": "java",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/BillingService.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/TicketService.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AnnouncementServiceImpl.java",
+      "language": "java",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/ApartmentServiceImpl.java",
+      "language": "java",
+      "sizeLines": 325,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/AuthServiceImpl.java",
+      "language": "java",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/BillingServiceImpl.java",
+      "language": "java",
+      "sizeLines": 318,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/service/impl/TicketServiceImpl.java",
+      "language": "java",
+      "sizeLines": 255,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 18,
+      "fileCategory": "config"
+    },
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/ApartmentBsApplicationTests.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/repository/ApartmentSpecificationTest.java",
+      "language": "java",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "be/ApartmentBS/src/test/java/com/example/apartmentbs/service/ApartmentServiceIntegrationTest.java",
+      "language": "java",
+      "sizeLines": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "db/ApartmentDB.sql",
+      "language": "sql",
+      "sizeLines": 214,
+      "fileCategory": "data"
+    },
+    {
+      "path": "docs/UA_ONBOARDING.md",
+      "language": "markdown",
+      "sizeLines": 157,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "fe/README.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "fe/eslint.config.js",
+      "language": "javascript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/index.html",
+      "language": "html",
+      "sizeLines": 20,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "fe/package.json",
+      "language": "json",
+      "sizeLines": 33,
+      "fileCategory": "config"
+    },
+    {
+      "path": "fe/src/App.css",
+      "language": "css",
+      "sizeLines": 184,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "fe/src/App.jsx",
+      "language": "javascript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/app/routes.jsx",
+      "language": "javascript",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/index.css",
+      "language": "css",
+      "sizeLines": 451,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "fe/src/main.jsx",
+      "language": "javascript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/Announcements.jsx",
+      "language": "javascript",
+      "sizeLines": 791,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/ApartmentManagement.jsx",
+      "language": "javascript",
+      "sizeLines": 1667,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/InvoiceApproval.jsx",
+      "language": "javascript",
+      "sizeLines": 757,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/MeterReading.jsx",
+      "language": "javascript",
+      "sizeLines": 1133,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/admin/TicketManagement.jsx",
+      "language": "javascript",
+      "sizeLines": 895,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/auth/LoginPage.jsx",
+      "language": "javascript",
+      "sizeLines": 472,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/resident/MyInvoices.jsx",
+      "language": "javascript",
+      "sizeLines": 705,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/resident/ReportTicket.jsx",
+      "language": "javascript",
+      "sizeLines": 940,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/resident/ResidentAnnouncements.jsx",
+      "language": "javascript",
+      "sizeLines": 393,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/technician/MyTasks.jsx",
+      "language": "javascript",
+      "sizeLines": 713,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/modules/technician/TaskPool.jsx",
+      "language": "javascript",
+      "sizeLines": 714,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/api/axiosClient.js",
+      "language": "javascript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/components/ChangePasswordModal.jsx",
+      "language": "javascript",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/components/ProtectedRoute.jsx",
+      "language": "javascript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/constants/mockData.js",
+      "language": "javascript",
+      "sizeLines": 290,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/context/ApartmentContext.jsx",
+      "language": "javascript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/context/AuthContext.jsx",
+      "language": "javascript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/layouts/AdminLayout.jsx",
+      "language": "javascript",
+      "sizeLines": 271,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/layouts/ResidentLayout.jsx",
+      "language": "javascript",
+      "sizeLines": 293,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/layouts/TechLayout.jsx",
+      "language": "javascript",
+      "sizeLines": 229,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/src/shared/theme/playstationTheme.js",
+      "language": "javascript",
+      "sizeLines": 184,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fe/vite.config.js",
+      "language": "javascript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 145,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "failures": [],
+  "stats": {
+    "filesScanned": 145,
+    "byCategory": {
+      "config": 33,
+      "code": 99,
+      "docs": 8,
+      "script": 1,
+      "data": 1,
+      "markup": 3
+    },
+    "byLanguage": {
+      "json": 30,
+      "javascript": 27,
+      "markdown": 8,
+      "unknown": 2,
+      "properties": 2,
+      "batch": 1,
+      "xml": 1,
+      "java": 70,
+      "sql": 1,
+      "html": 1,
+      "css": 2
+    }
+  }
+}

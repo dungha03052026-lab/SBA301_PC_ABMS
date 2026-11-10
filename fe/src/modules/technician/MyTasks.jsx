@@ -33,6 +33,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -56,10 +57,51 @@ const MyTasks = () => {
 
   const [form] = Form.useForm();
 
-  const reloadData = () => {
-    setTickets(MockDB.getTickets());
-    setApartments(MockDB.getApartments());
-    setUsers(MockDB.getUsers());
+  const reloadData = async () => {
+    let tcks = MockDB.getTickets();
+    let apts = MockDB.getApartments();
+    let usrs = MockDB.getUsers();
+
+    try {
+      const res = await axiosClient.get('/technician/tickets/my-tasks/all');
+      if (res && Array.isArray(res.data || res)) {
+        const raw = res.data || res;
+        tcks = raw.map((t) => ({
+          id: t.id,
+          ticket_code: t.ticketCode,
+          apartment_id: t.apartmentId,
+          resident_id: t.residentId,
+          category: t.category,
+          title: t.title,
+          description: t.description,
+          image_url: t.imageUrl,
+          status: t.status,
+          assigned_to: t.assignedToId,
+          technician_note: t.technicianNote,
+          rating: t.rating,
+          created_at: t.createdAt,
+          resolved_at: t.resolvedAt,
+          isOverdue: t.isOverdue,
+          apartment: {
+            id: t.apartmentId,
+            room_number: t.roomNumber,
+            floor: t.floor,
+            building_block: t.buildingBlock,
+          },
+          resident: {
+            id: t.residentId,
+            full_name: t.residentName,
+            phone_number: t.residentPhone,
+          },
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in MyTasks reloadData, using MockDB', e);
+    }
+
+    setTickets(tcks);
+    setApartments(apts);
+    setUsers(usrs);
   };
 
   useEffect(() => {
@@ -109,6 +151,18 @@ const MyTasks = () => {
 
   const handleConfirmComplete = async (values) => {
     try {
+      try {
+        await axiosClient.post(`/technician/tickets/${selectedTicket.id}/complete`, {
+          technicianNote: values.technician_note.trim(),
+        });
+        message.success(`Đã gửi biên bản hoàn thành sự cố ${selectedTicket.ticket_code}! Đang chờ cư dân nghiệm thu.`);
+        setCompleteModalOpen(false);
+        await reloadData();
+        return;
+      } catch (apiErr) {
+        console.warn('API error completing ticket, fallback to MockDB', apiErr);
+      }
+
       const updated = tickets.map((t) =>
         t.id === selectedTicket.id
           ? {

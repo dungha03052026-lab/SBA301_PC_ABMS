@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "id": "config:.ua/intermediate/assembled-graph.json",
+      "type": "config",
+      "name": "assembled-graph.json",
+      "filePath": ".ua/intermediate/assembled-graph.json",
+      "summary": "config file in json with 7360 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-1.json",
+      "type": "config",
+      "name": "batch-1.json",
+      "filePath": ".ua/intermediate/batch-1.json",
+      "summary": "config file in json with 65 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-2.json",
+      "type": "config",
+      "name": "batch-2.json",
+      "filePath": ".ua/intermediate/batch-2.json",
+      "summary": "config file in json with 17 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-3.json",
+      "type": "config",
+      "name": "batch-3.json",
+      "filePath": ".ua/intermediate/batch-3.json",
+      "summary": "config file in json with 29 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-4.json",
+      "type": "config",
+      "name": "batch-4.json",
+      "filePath": ".ua/intermediate/batch-4.json",
+      "summary": "config file in json with 2987 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-5.json",
+      "type": "config",
+      "name": "batch-5.json",
+      "filePath": ".ua/intermediate/batch-5.json",
+      "summary": "config file in json with 1692 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-6.json",
+      "type": "config",
+      "name": "batch-6.json",
+      "filePath": ".ua/intermediate/batch-6.json",
+      "summary": "config file in json with 5164 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-7.json",
+      "type": "config",
+      "name": "batch-7.json",
+      "filePath": ".ua/intermediate/batch-7.json",
+      "summary": "config file in json with 786 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/intermediate/batch-8.json",
+      "type": "config",
+      "name": "batch-8.json",
+      "filePath": ".ua/intermediate/batch-8.json",
+      "summary": "config file in json with 63 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/intermediate/batches.json",
+      "type": "config",
+      "name": "batches.json",
+      "filePath": ".ua/intermediate/batches.json",
+      "summary": "config file in json with 1477 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/intermediate/scan-result.json",
+      "type": "config",
+      "name": "scan-result.json",
+      "filePath": ".ua/intermediate/scan-result.json",
+      "summary": "config file in json with 904 lines",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

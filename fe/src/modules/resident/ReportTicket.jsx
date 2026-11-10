@@ -37,6 +37,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { useApartment } from '../../shared/context/ApartmentContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
@@ -61,9 +62,37 @@ const ReportTicket = () => {
   const [createForm] = Form.useForm();
   const [reviewForm] = Form.useForm();
 
-  const reloadData = () => {
-    setTickets(MockDB.getTickets());
-    setUsers(MockDB.getUsers());
+  const reloadData = async () => {
+    let tcks = MockDB.getTickets();
+    let usrs = MockDB.getUsers();
+
+    try {
+      const res = await axiosClient.get('/resident/tickets/all');
+      if (res && Array.isArray(res.data || res)) {
+        const raw = res.data || res;
+        tcks = raw.map((t) => ({
+          id: t.id,
+          ticket_code: t.ticketCode,
+          apartment_id: t.apartmentId,
+          resident_id: t.residentId,
+          category: t.category,
+          title: t.title,
+          description: t.description,
+          image_url: t.imageUrl,
+          status: t.status,
+          assigned_to: t.assignedTo,
+          technician_note: t.technicianNote,
+          rating: t.rating,
+          created_at: t.createdAt,
+          resolved_at: t.resolvedAt,
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in ReportTicket, using MockDB baseline', e);
+    }
+
+    setTickets(tcks);
+    setUsers(usrs);
   };
 
   useEffect(() => {
@@ -109,6 +138,22 @@ const ReportTicket = () => {
 
   const handleCreateTicket = async (values) => {
     try {
+      try {
+        await axiosClient.post('/resident/tickets', {
+          apartmentId: selectedApartmentId,
+          category: values.category,
+          title: values.title.trim(),
+          description: values.description.trim(),
+          imageUrl: values.image_url?.trim() || null,
+        });
+        message.success('Đã gửi phiếu báo hỏng thành công tới Ban Quản Lý và Đội Kỹ thuật!');
+        setCreateModalOpen(false);
+        await reloadData();
+        return;
+      } catch (apiErr) {
+        console.warn('API error creating ticket, falling back to MockDB', apiErr);
+      }
+
       const yearMonth = dayjs().format('YYYYMM');
       const seq = String(tickets.length + 1).padStart(3, '0');
       const ticketCode = `TCK-${yearMonth}-${seq}`;
@@ -156,6 +201,19 @@ const ReportTicket = () => {
 
   const handleConfirmReview = async (values) => {
     try {
+      try {
+        await axiosClient.post(`/resident/tickets/${selectedTicket.id}/inspect`, {
+          rating: values.rating,
+          rework: false,
+        });
+        message.success(`Cảm ơn bạn đã nghiệm thu và đánh giá ${values.rating} sao cho kỹ thuật viên!`);
+        setReviewModalOpen(false);
+        await reloadData();
+        return;
+      } catch (apiErr) {
+        console.warn('API error inspecting ticket, fallback to MockDB', apiErr);
+      }
+
       const updated = tickets.map((t) =>
         t.id === selectedTicket.id
           ? {
@@ -177,8 +235,20 @@ const ReportTicket = () => {
   };
 
   // UC-17: Yêu cầu làm lại (RESOLVED -> IN_PROGRESS)
-  const handleRequestRework = (ticketId) => {
+  const handleRequestRework = async (ticketId) => {
     try {
+      try {
+        await axiosClient.post(`/resident/tickets/${ticketId}/inspect`, {
+          rating: null,
+          rework: true,
+        });
+        message.warning('Đã gửi phản hồi yêu cầu kỹ thuật viên tiếp tục kiểm tra và xử lý lại.');
+        await reloadData();
+        return;
+      } catch (apiErr) {
+        console.warn('API error requesting rework, fallback to MockDB', apiErr);
+      }
+
       const updated = tickets.map((t) =>
         t.id === ticketId
           ? {

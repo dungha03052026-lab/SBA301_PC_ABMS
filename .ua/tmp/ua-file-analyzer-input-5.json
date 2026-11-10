@@ -1,0 +1,28 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "fe/README.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "fe/index.html",
+      "language": "html",
+      "sizeLines": 20,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "fe/package.json",
+      "language": "json",
+      "sizeLines": 33,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "fe/README.md": [],
+    "fe/index.html": [],
+    "fe/package.json": []
+  }
+}

@@ -35,6 +35,7 @@ import {
 import dayjs from 'dayjs';
 import { useNavigate } from 'react-router-dom';
 import { MockDB } from '../../shared/constants/mockData';
+import axiosClient from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -56,10 +57,51 @@ const TaskPool = () => {
   const [detailModalOpen, setDetailModalOpen] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState(null);
 
-  const reloadData = () => {
-    setTickets(MockDB.getTickets());
-    setApartments(MockDB.getApartments());
-    setUsers(MockDB.getUsers());
+  const reloadData = async () => {
+    let tcks = MockDB.getTickets();
+    let apts = MockDB.getApartments();
+    let usrs = MockDB.getUsers();
+
+    try {
+      const res = await axiosClient.get('/technician/tickets/pool/all');
+      if (res && Array.isArray(res.data || res)) {
+        const raw = res.data || res;
+        tcks = raw.map((t) => ({
+          id: t.id,
+          ticket_code: t.ticketCode,
+          apartment_id: t.apartmentId,
+          resident_id: t.residentId,
+          category: t.category,
+          title: t.title,
+          description: t.description,
+          image_url: t.imageUrl,
+          status: t.status,
+          assigned_to: t.assignedToId,
+          technician_note: t.technicianNote,
+          rating: t.rating,
+          created_at: t.createdAt,
+          resolved_at: t.resolvedAt,
+          isOverdue: t.isOverdue,
+          apartment: {
+            id: t.apartmentId,
+            room_number: t.roomNumber,
+            floor: t.floor,
+            building_block: t.buildingBlock,
+          },
+          resident: {
+            id: t.residentId,
+            full_name: t.residentName,
+            phone_number: t.residentPhone,
+          },
+        }));
+      }
+    } catch (e) {
+      console.warn('API error in TaskPool reloadData, using MockDB', e);
+    }
+
+    setTickets(tcks);
+    setApartments(apts);
+    setUsers(usrs);
   };
 
   useEffect(() => {
@@ -93,6 +135,7 @@ const TaskPool = () => {
         if (a.isOverdue !== b.isOverdue) {
           return b.isOverdue ? 1 : -1;
         }
+        
         return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
       });
   }, [tickets, apartments, users]);
@@ -121,8 +164,17 @@ const TaskPool = () => {
   // ==========================================
   // UC-15: NHẬN VIỆC (CLAIM) - ATOMIC CHECK
   // ==========================================
-  const handleClaimTicket = (ticketId) => {
+  const handleClaimTicket = async (ticketId) => {
     try {
+      try {
+        await axiosClient.post(`/technician/tickets/${ticketId}/claim`);
+        message.success('Bạn đã nhận việc xử lý sự cố thành công!');
+        navigate('/technician/my-tasks');
+        return;
+      } catch (apiErr) {
+        console.warn('API error claiming ticket, falling back to MockDB', apiErr);
+      }
+
       // Đọc dữ liệu mới nhất từ Storage để chống xung đột (Atomic Check)
       const freshTickets = MockDB.getTickets();
       const currentTicket = freshTickets.find((t) => t.id === ticketId);

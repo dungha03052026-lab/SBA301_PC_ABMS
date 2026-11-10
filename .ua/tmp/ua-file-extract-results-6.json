@@ -1,0 +1,3026 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 22,
+  "filesSkipped": [
+    "be/ApartmentBS/.gitattributes",
+    "be/ApartmentBS/.mvn/wrapper/maven-wrapper.properties",
+    "be/ApartmentBS/mvnw"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 22,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 20,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "results": [
+    {
+      "path": ".ua/knowledge-graph.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 7781,
+      "nonEmptyLines": 7781,
+      "sections": [
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "nodes",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "edges",
+          "level": 1,
+          "line": 5704
+        },
+        {
+          "heading": "layers",
+          "level": 1,
+          "line": 7380
+        },
+        {
+          "heading": "tour",
+          "level": 1,
+          "line": 7747
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": ".ua/meta.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "analyzedAt",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "gitCommitHash",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "nodeCount",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "edgeCount",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "layerCount",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "tourSteps",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": ".ua/tmp/run-batches.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 123,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/ApartmentBsApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 9,
+          "endLine": 12,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApartmentBsApplication",
+          "startLine": 6,
+          "endLine": 14,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ApartmentBsApplication",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/CorsConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "corsFilter",
+          "startLine": 15,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CorsConfig",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [
+            "corsFilter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "corsFilter",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "CorsConfig",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "corsFilter",
+          "callee": "new UrlBasedCorsConfigurationSource",
+          "lineNumber": 17
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "new CorsConfiguration",
+          "lineNumber": 18
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "config.setAllowCredentials",
+          "lineNumber": 20
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "config.setAllowedOriginPatterns",
+          "lineNumber": 21
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "Collections.singletonList",
+          "lineNumber": 21
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "config.setAllowedHeaders",
+          "lineNumber": 22
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "Arrays.asList",
+          "lineNumber": 22
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "config.setAllowedMethods",
+          "lineNumber": 23
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "Arrays.asList",
+          "lineNumber": 23
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "config.setExposedHeaders",
+          "lineNumber": 24
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "Arrays.asList",
+          "lineNumber": 24
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "source.registerCorsConfiguration",
+          "lineNumber": 26
+        },
+        {
+          "caller": "corsFilter",
+          "callee": "new CorsFilter",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtAuthenticationFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "doFilterInternal",
+          "startLine": 29,
+          "endLine": 57,
+          "params": [
+            "request",
+            "response",
+            "filterChain"
+          ]
+        },
+        {
+          "name": "getJwtFromRequest",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JwtAuthenticationFilter",
+          "startLine": 22,
+          "endLine": 66,
+          "methods": [
+            "doFilterInternal",
+            "getJwtFromRequest"
+          ],
+          "properties": [
+            "tokenProvider",
+            "userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JwtAuthenticationFilter",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilterInternal",
+          "callee": "getJwtFromRequest",
+          "lineNumber": 34
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 36
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "tokenProvider.validateToken",
+          "lineNumber": 36
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "tokenProvider.getUserIdFromToken",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "userRepository.findById",
+          "lineNumber": 38
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "userOptional.isPresent",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "userOptional.get().getIsActive",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "userOptional.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "userOptional.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "user.getRole().name",
+          "lineNumber": 42
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "user.getRole",
+          "lineNumber": 42
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new SimpleGrantedAuthority",
+          "lineNumber": 43
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new UsernamePasswordAuthenticationToken",
+          "lineNumber": 46
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "Collections.singletonList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "authentication.setDetails",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new WebAuthenticationDetailsSource().buildDetails",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new WebAuthenticationDetailsSource",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityContextHolder.getContext().setAuthentication",
+          "lineNumber": 49
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityContextHolder.getContext",
+          "lineNumber": 49
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "logger.error",
+          "lineNumber": 53
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "filterChain.doFilter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getJwtFromRequest",
+          "callee": "request.getHeader",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getJwtFromRequest",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getJwtFromRequest",
+          "callee": "bearerToken.startsWith",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getJwtFromRequest",
+          "callee": "bearerToken.substring",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/JwtTokenProvider.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "getSigningKey",
+          "startLine": 24,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "generateToken",
+          "startLine": 29,
+          "endLine": 43,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "getUserIdFromToken",
+          "startLine": 45,
+          "endLine": 53,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "getRoleFromToken",
+          "startLine": 55,
+          "endLine": 63,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "validateToken",
+          "startLine": 65,
+          "endLine": 75,
+          "params": [
+            "authToken"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JwtTokenProvider",
+          "startLine": 15,
+          "endLine": 76,
+          "methods": [
+            "getSigningKey",
+            "generateToken",
+            "getUserIdFromToken",
+            "getRoleFromToken",
+            "validateToken"
+          ],
+          "properties": [
+            "jwtSecret",
+            "jwtExpirationInMs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateToken",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "getUserIdFromToken",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleFromToken",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "validateToken",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "JwtTokenProvider",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSigningKey",
+          "callee": "jwtSecret.getBytes",
+          "lineNumber": 25
+        },
+        {
+          "caller": "getSigningKey",
+          "callee": "Keys.hmacShaKeyFor",
+          "lineNumber": 26
+        },
+        {
+          "caller": "generateToken",
+          "callee": "new Date",
+          "lineNumber": 30
+        },
+        {
+          "caller": "generateToken",
+          "callee": "new Date",
+          "lineNumber": 31
+        },
+        {
+          "caller": "generateToken",
+          "callee": "now.getTime",
+          "lineNumber": 31
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber())\r\n                .claim(\"fullName\", user.getFullName())\r\n                .claim(\"role\", user.getRole().name())\r\n                .claim(\"email\", user.getEmail())\r\n                .issuedAt(now)\r\n                .expiration(expiryDate)\r\n                .signWith(getSigningKey()).compact",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber())\r\n                .claim(\"fullName\", user.getFullName())\r\n                .claim(\"role\", user.getRole().name())\r\n                .claim(\"email\", user.getEmail())\r\n                .issuedAt(now)\r\n                .expiration(expiryDate).signWith",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber())\r\n                .claim(\"fullName\", user.getFullName())\r\n                .claim(\"role\", user.getRole().name())\r\n                .claim(\"email\", user.getEmail())\r\n                .issuedAt(now).expiration",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber())\r\n                .claim(\"fullName\", user.getFullName())\r\n                .claim(\"role\", user.getRole().name())\r\n                .claim(\"email\", user.getEmail()).issuedAt",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber())\r\n                .claim(\"fullName\", user.getFullName())\r\n                .claim(\"role\", user.getRole().name()).claim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber())\r\n                .claim(\"fullName\", user.getFullName()).claim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId()))\r\n                .claim(\"phoneNumber\", user.getPhoneNumber()).claim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder()\r\n                .subject(String.valueOf(user.getId())).claim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder().subject",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "Jwts.builder",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateToken",
+          "callee": "String.valueOf",
+          "lineNumber": 34
+        },
+        {
+          "caller": "generateToken",
+          "callee": "user.getId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "generateToken",
+          "callee": "user.getPhoneNumber",
+          "lineNumber": 35
+        },
+        {
+          "caller": "generateToken",
+          "callee": "user.getFullName",
+          "lineNumber": 36
+        },
+        {
+          "caller": "generateToken",
+          "callee": "user.getRole().name",
+          "lineNumber": 37
+        },
+        {
+          "caller": "generateToken",
+          "callee": "user.getRole",
+          "lineNumber": 37
+        },
+        {
+          "caller": "generateToken",
+          "callee": "user.getEmail",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generateToken",
+          "callee": "getSigningKey",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "Jwts.parser()\r\n                .verifyWith(getSigningKey())\r\n                .build()\r\n                .parseSignedClaims(token).getPayload",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "Jwts.parser()\r\n                .verifyWith(getSigningKey())\r\n                .build().parseSignedClaims",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "Jwts.parser()\r\n                .verifyWith(getSigningKey()).build",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "Jwts.parser().verifyWith",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "Jwts.parser",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "getSigningKey",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "Long.parseLong",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getUserIdFromToken",
+          "callee": "claims.getSubject",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "Jwts.parser()\r\n                .verifyWith(getSigningKey())\r\n                .build()\r\n                .parseSignedClaims(token).getPayload",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "Jwts.parser()\r\n                .verifyWith(getSigningKey())\r\n                .build().parseSignedClaims",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "Jwts.parser()\r\n                .verifyWith(getSigningKey()).build",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "Jwts.parser().verifyWith",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "Jwts.parser",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "getSigningKey",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getRoleFromToken",
+          "callee": "claims.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validateToken",
+          "callee": "Jwts.parser()\r\n                    .verifyWith(getSigningKey())\r\n                    .build().parseSignedClaims",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateToken",
+          "callee": "Jwts.parser()\r\n                    .verifyWith(getSigningKey()).build",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateToken",
+          "callee": "Jwts.parser().verifyWith",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateToken",
+          "callee": "Jwts.parser",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateToken",
+          "callee": "getSigningKey",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/config/SecurityConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "passwordEncoder",
+          "startLine": 32,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "authenticationManager",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "authenticationConfiguration"
+          ]
+        },
+        {
+          "name": "securityFilterChain",
+          "startLine": 42,
+          "endLine": 82,
+          "params": [
+            "http"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfig",
+          "startLine": 24,
+          "endLine": 83,
+          "methods": [
+            "passwordEncoder",
+            "authenticationManager",
+            "securityFilterChain"
+          ],
+          "properties": [
+            "jwtAuthenticationFilter"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "passwordEncoder",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "authenticationManager",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "securityFilterChain",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfig",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "passwordEncoder",
+          "callee": "new BCryptPasswordEncoder",
+          "lineNumber": 34
+        },
+        {
+          "caller": "authenticationManager",
+          "callee": "authenticationConfiguration.getAuthenticationManager",
+          "lineNumber": 39
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "new ObjectMapper().registerModule",
+          "lineNumber": 44
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "new ObjectMapper",
+          "lineNumber": 44
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "new JavaTimeModule",
+          "lineNumber": 44
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(AbstractHttpConfigurer::disable)\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\n                .authorizeHttpRequests(auth -> auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole(\"RESIDENT\")\n                        .requestMatchers(\"/api/v1/technician/**\").hasRole(\"TECHNICIAN\")\n                        .anyRequest().authenticated()\n                )\n                .exceptionHandling(ex -> ex\n                        .authenticationEntryPoint((request, response, authException) -> {\n                            response.setContentType(MediaType.APPLICATION_JSON_VALUE);\n                            response.setCharacterEncoding(\"UTF-8\");\n                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);\n                            ApiResponse<Object> body = ApiResponse.error(\"Yêu cầu không được xác thực hoặc phiên đăng nhập đã hết hạn\");\n                            objectMapper.writeValue(response.getOutputStream(), body);\n                        })\n                        .accessDeniedHandler((request, response, accessDeniedException) -> {\n                            response.setContentType(MediaType.APPLICATION_JSON_VALUE);\n                            response.setCharacterEncoding(\"UTF-8\");\n                            response.setStatus(HttpServletResponse.SC_FORBIDDEN);\n                            ApiResponse<Object> body = ApiResponse.error(\"Bạn không có quyền truy cập tài nguyên này\");\n                            objectMapper.writeValue(response.getOutputStream(), body);\n                        })\n                ).addFilterBefore",
+          "lineNumber": 46
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(AbstractHttpConfigurer::disable)\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\n                .authorizeHttpRequests(auth -> auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole(\"RESIDENT\")\n                        .requestMatchers(\"/api/v1/technician/**\").hasRole(\"TECHNICIAN\")\n                        .anyRequest().authenticated()\n                ).exceptionHandling",
+          "lineNumber": 46
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(AbstractHttpConfigurer::disable)\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).authorizeHttpRequests",
+          "lineNumber": 46
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(AbstractHttpConfigurer::disable).sessionManagement",
+          "lineNumber": 46
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http.csrf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "session.sessionCreationPolicy",
+          "lineNumber": 48
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole(\"RESIDENT\")\n                        .requestMatchers(\"/api/v1/technician/**\").hasRole(\"TECHNICIAN\")\n                        .anyRequest().authenticated",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole(\"RESIDENT\")\n                        .requestMatchers(\"/api/v1/technician/**\").hasRole(\"TECHNICIAN\").anyRequest",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole(\"RESIDENT\")\n                        .requestMatchers(\"/api/v1/technician/**\").hasRole",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole(\"RESIDENT\").requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\")\n                        .requestMatchers(\"/api/v1/resident/**\").hasRole",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole(\"ADMIN\").requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll()\n                        .requestMatchers(\"/api/v1/admin/**\").hasRole",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll().requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll()\n                        .requestMatchers(HttpMethod.GET, \"/api/v1/tariffs\").permitAll",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll().requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(\n                                \"/api/v1/auth/**\",\n                                \"/error\",\n                                \"/v3/api-docs/**\",\n                                \"/swagger-ui/**\"\n                        ).permitAll",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll().requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth.requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "ex\n                        .authenticationEntryPoint((request, response, authException) -> {\n                            response.setContentType(MediaType.APPLICATION_JSON_VALUE);\n                            response.setCharacterEncoding(\"UTF-8\");\n                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);\n                            ApiResponse<Object> body = ApiResponse.error(\"Yêu cầu không được xác thực hoặc phiên đăng nhập đã hết hạn\");\n                            objectMapper.writeValue(response.getOutputStream(), body);\n                        }).accessDeniedHandler",
+          "lineNumber": 63
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "ex.authenticationEntryPoint",
+          "lineNumber": 63
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.setContentType",
+          "lineNumber": 65
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.setCharacterEncoding",
+          "lineNumber": 66
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.setStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "ApiResponse.error",
+          "lineNumber": 68
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "objectMapper.writeValue",
+          "lineNumber": 69
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.getOutputStream",
+          "lineNumber": 69
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.setContentType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.setCharacterEncoding",
+          "lineNumber": 73
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.setStatus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "ApiResponse.error",
+          "lineNumber": 75
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "objectMapper.writeValue",
+          "lineNumber": 76
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "response.getOutputStream",
+          "lineNumber": 76
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http.build",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AnnouncementController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "getAllAnnouncements",
+          "startLine": 25,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "getAnnouncementById",
+          "startLine": 31,
+          "endLine": 35,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createAnnouncement",
+          "startLine": 37,
+          "endLine": 45,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "updateAnnouncement",
+          "startLine": 47,
+          "endLine": 55,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "deleteAnnouncement",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AnnouncementController",
+          "startLine": 17,
+          "endLine": 63,
+          "methods": [
+            "getAllAnnouncements",
+            "getAnnouncementById",
+            "createAnnouncement",
+            "updateAnnouncement",
+            "deleteAnnouncement"
+          ],
+          "properties": [
+            "announcementService",
+            "authService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAllAnnouncements",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "getAnnouncementById",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "createAnnouncement",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "updateAnnouncement",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAnnouncement",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "AnnouncementController",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "announcementService.getAllAnnouncements",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getAllAnnouncements",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "announcementService.getAnnouncementById",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getAnnouncementById",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "announcementService.createAnnouncement",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "admin.getId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createAnnouncement",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "announcementService.updateAnnouncement",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateAnnouncement",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "announcementService.deleteAnnouncement",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteAnnouncement",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ApartmentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 122,
+      "functions": [
+        {
+          "name": "searchApartments",
+          "startLine": 26,
+          "endLine": 43,
+          "params": [
+            "buildingBlock",
+            "floor",
+            "status",
+            "minArea",
+            "maxArea",
+            "search",
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getAllApartments",
+          "startLine": 45,
+          "endLine": 58,
+          "params": [
+            "buildingBlock",
+            "floor",
+            "status",
+            "minArea",
+            "maxArea",
+            "search"
+          ]
+        },
+        {
+          "name": "getApartmentById",
+          "startLine": 60,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createApartment",
+          "startLine": 66,
+          "endLine": 72,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "updateApartment",
+          "startLine": 74,
+          "endLine": 81,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "deleteApartment",
+          "startLine": 83,
+          "endLine": 87,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "moveIn",
+          "startLine": 89,
+          "endLine": 96,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "moveOut",
+          "startLine": 98,
+          "endLine": 102,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getVehicles",
+          "startLine": 104,
+          "endLine": 108,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "addVehicle",
+          "startLine": 110,
+          "endLine": 117,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "deleteVehicle",
+          "startLine": 119,
+          "endLine": 126,
+          "params": [
+            "id",
+            "vehicleId"
+          ]
+        },
+        {
+          "name": "getResidents",
+          "startLine": 128,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "getTechnicians",
+          "startLine": 134,
+          "endLine": 138,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApartmentController",
+          "startLine": 18,
+          "endLine": 139,
+          "methods": [
+            "searchApartments",
+            "getAllApartments",
+            "getApartmentById",
+            "createApartment",
+            "updateApartment",
+            "deleteApartment",
+            "moveIn",
+            "moveOut",
+            "getVehicles",
+            "addVehicle",
+            "deleteVehicle",
+            "getResidents",
+            "getTechnicians"
+          ],
+          "properties": [
+            "apartmentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "searchApartments",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getAllApartments",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getApartmentById",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "createApartment",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "updateApartment",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "deleteApartment",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "moveIn",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "moveOut",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "getVehicles",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "addVehicle",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "deleteVehicle",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "getResidents",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "getTechnicians",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "ApartmentController",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "searchApartments",
+          "callee": "apartmentService.searchApartmentsPaged",
+          "lineNumber": 39
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 42
+        },
+        {
+          "caller": "searchApartments",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getAllApartments",
+          "callee": "apartmentService.searchApartments",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getAllApartments",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getAllApartments",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "apartmentService.getApartmentById",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getApartmentById",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createApartment",
+          "callee": "apartmentService.createApartment",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createApartment",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createApartment",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "apartmentService.updateApartment",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateApartment",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 80
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "apartmentService.deleteApartment",
+          "lineNumber": 85
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 86
+        },
+        {
+          "caller": "deleteApartment",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 86
+        },
+        {
+          "caller": "moveIn",
+          "callee": "apartmentService.moveIn",
+          "lineNumber": 94
+        },
+        {
+          "caller": "moveIn",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 95
+        },
+        {
+          "caller": "moveIn",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 95
+        },
+        {
+          "caller": "moveOut",
+          "callee": "apartmentService.moveOut",
+          "lineNumber": 100
+        },
+        {
+          "caller": "moveOut",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 101
+        },
+        {
+          "caller": "moveOut",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getVehicles",
+          "callee": "apartmentService.getVehiclesByApartment",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getVehicles",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getVehicles",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 107
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "apartmentService.addVehicle",
+          "lineNumber": 115
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 116
+        },
+        {
+          "caller": "addVehicle",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 116
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "apartmentService.deleteVehicle",
+          "lineNumber": 124
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 125
+        },
+        {
+          "caller": "deleteVehicle",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getResidents",
+          "callee": "apartmentService.getResidents",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getResidents",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getResidents",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "apartmentService.getTechnicians",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getTechnicians",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/AuthController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 20,
+          "endLine": 24,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "getCurrentUser",
+          "startLine": 26,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthController",
+          "startLine": 13,
+          "endLine": 31,
+          "methods": [
+            "login",
+            "getCurrentUser"
+          ],
+          "properties": [
+            "authService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "getCurrentUser",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "AuthController",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "authService.login",
+          "lineNumber": 22
+        },
+        {
+          "caller": "login",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 23
+        },
+        {
+          "caller": "login",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "authService.getCurrentUser",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/BillingController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "getTariff",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "updateTariff",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "searchInvoices",
+          "startLine": 44,
+          "endLine": 59,
+          "params": [
+            "billingMonth",
+            "status",
+            "apartmentId",
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getAllInvoices",
+          "startLine": 61,
+          "endLine": 70,
+          "params": [
+            "billingMonth",
+            "status",
+            "apartmentId"
+          ]
+        },
+        {
+          "name": "batchGenerateInvoices",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "approveInvoice",
+          "startLine": 81,
+          "endLine": 87,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "rejectInvoice",
+          "startLine": 89,
+          "endLine": 94,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getResidentInvoices",
+          "startLine": 97,
+          "endLine": 112,
+          "params": [
+            "apartmentId"
+          ]
+        },
+        {
+          "name": "confirmPayment",
+          "startLine": 114,
+          "endLine": 120,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BillingController",
+          "startLine": 21,
+          "endLine": 121,
+          "methods": [
+            "getTariff",
+            "updateTariff",
+            "searchInvoices",
+            "getAllInvoices",
+            "batchGenerateInvoices",
+            "approveInvoice",
+            "rejectInvoice",
+            "getResidentInvoices",
+            "confirmPayment"
+          ],
+          "properties": [
+            "billingService",
+            "authService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTariff",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "updateTariff",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "searchInvoices",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getAllInvoices",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "batchGenerateInvoices",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "approveInvoice",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "rejectInvoice",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getResidentInvoices",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "confirmPayment",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "BillingController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTariff",
+          "callee": "billingService.getTariff",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getTariff",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getTariff",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 33
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "billingService.updateTariff",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateTariff",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 40
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "billingService.searchInvoicesPaged",
+          "lineNumber": 55
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 58
+        },
+        {
+          "caller": "searchInvoices",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getAllInvoices",
+          "callee": "billingService.searchInvoices",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getAllInvoices",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getAllInvoices",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 69
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "billingService.batchGenerateInvoices",
+          "lineNumber": 77
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 78
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 78
+        },
+        {
+          "caller": "batchGenerateInvoices",
+          "callee": "list.size",
+          "lineNumber": 78
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 84
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "billingService.approveInvoice",
+          "lineNumber": 85
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "admin.getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 86
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 86
+        },
+        {
+          "caller": "approveInvoice",
+          "callee": "response.getInvoiceCode",
+          "lineNumber": 86
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "billingService.rejectInvoice",
+          "lineNumber": 92
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 93
+        },
+        {
+          "caller": "rejectInvoice",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "billingService.searchInvoices",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "list.stream()\r\n                    .filter(inv -> inv.getApartmentId() != null && user.getId().equals(inv.getApartmentId())).toList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "list.stream().filter",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "list.stream",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "inv.getApartmentId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "user.getId().equals",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "user.getId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "inv.getApartmentId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "billingService.getInvoicesByApartment",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getResidentInvoices",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 111
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 117
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "billingService.confirmPayment",
+          "lineNumber": 118
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "resident.getId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 119
+        },
+        {
+          "caller": "confirmPayment",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/ResidentApartmentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "getMyApartments",
+          "startLine": 26,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResidentApartmentController",
+          "startLine": 17,
+          "endLine": 32,
+          "methods": [
+            "getMyApartments"
+          ],
+          "properties": [
+            "apartmentService",
+            "authService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMyApartments",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "ResidentApartmentController",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMyApartments",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getMyApartments",
+          "callee": "apartmentService.getApartmentsByResident",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getMyApartments",
+          "callee": "user.getId",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getMyApartments",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getMyApartments",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/controller/TicketController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "getAllTickets",
+          "startLine": 30,
+          "endLine": 40,
+          "params": [
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getAllTicketsList",
+          "startLine": 42,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "forceAssignTicket",
+          "startLine": 49,
+          "endLine": 57,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "getResidentTickets",
+          "startLine": 60,
+          "endLine": 71,
+          "params": [
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getResidentTicketsList",
+          "startLine": 73,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "createTicket",
+          "startLine": 81,
+          "endLine": 89,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "inspectTicket",
+          "startLine": 91,
+          "endLine": 103,
+          "params": [
+            "id",
+            "request"
+          ]
+        },
+        {
+          "name": "getOpenTickets",
+          "startLine": 106,
+          "endLine": 116,
+          "params": [
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getOpenTicketsList",
+          "startLine": 118,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "getMyTasks",
+          "startLine": 125,
+          "endLine": 136,
+          "params": [
+            "page",
+            "size",
+            "sortBy",
+            "sortDir"
+          ]
+        },
+        {
+          "name": "getMyTasksList",
+          "startLine": 138,
+          "endLine": 144,
+          "params": []
+        },
+        {
+          "name": "claimTicket",
+          "startLine": 146,
+          "endLine": 152,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "completeTicket",
+          "startLine": 154,
+          "endLine": 163,
+          "params": [
+            "id",
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TicketController",
+          "startLine": 21,
+          "endLine": 164,
+          "methods": [
+            "getAllTickets",
+            "getAllTicketsList",
+            "forceAssignTicket",
+            "getResidentTickets",
+            "getResidentTicketsList",
+            "createTicket",
+            "inspectTicket",
+            "getOpenTickets",
+            "getOpenTicketsList",
+            "getMyTasks",
+            "getMyTasksList",
+            "claimTicket",
+            "completeTicket"
+          ],
+          "properties": [
+            "ticketService",
+            "authService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAllTickets",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "getAllTicketsList",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "forceAssignTicket",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getResidentTickets",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getResidentTicketsList",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "createTicket",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "inspectTicket",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getOpenTickets",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getOpenTicketsList",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "getMyTasks",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "getMyTasksList",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "claimTicket",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "completeTicket",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "TicketController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAllTickets",
+          "callee": "ticketService.getAllTicketsPaged",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getAllTickets",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getAllTicketsList",
+          "callee": "ticketService.getAllTickets",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getAllTicketsList",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getAllTicketsList",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 46
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ticketService.forceAssignTicket",
+          "lineNumber": 55
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "request.getTechnicianId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 56
+        },
+        {
+          "caller": "forceAssignTicket",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getResidentTickets",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getResidentTickets",
+          "callee": "ticketService.getTicketsByResidentPaged",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getResidentTickets",
+          "callee": "resident.getId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getResidentTickets",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getResidentTickets",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getResidentTicketsList",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getResidentTicketsList",
+          "callee": "ticketService.getTicketsByResident",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getResidentTicketsList",
+          "callee": "resident.getId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getResidentTicketsList",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getResidentTicketsList",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createTicket",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createTicket",
+          "callee": "ticketService.createTicket",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createTicket",
+          "callee": "resident.getId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createTicket",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createTicket",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 88
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 97
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ticketService.inspectTicket",
+          "lineNumber": 98
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "resident.getId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 99
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "request.getRework",
+          "lineNumber": 99
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 102
+        },
+        {
+          "caller": "inspectTicket",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ticketService.getOpenTicketsPaged",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getOpenTickets",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getOpenTicketsList",
+          "callee": "ticketService.getOpenTickets",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getOpenTicketsList",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getOpenTicketsList",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMyTasks",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getMyTasks",
+          "callee": "ticketService.getAssignedTicketsPaged",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getMyTasks",
+          "callee": "tech.getId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getMyTasks",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getMyTasks",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getMyTasksList",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getMyTasksList",
+          "callee": "ticketService.getAssignedTickets",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getMyTasksList",
+          "callee": "tech.getId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getMyTasksList",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getMyTasksList",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 143
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 149
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "ticketService.claimTicket",
+          "lineNumber": 150
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "tech.getId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 151
+        },
+        {
+          "caller": "claimTicket",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 151
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "authService.getAuthenticatedUser",
+          "lineNumber": 160
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ticketService.completeTicket",
+          "lineNumber": 161
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "tech.getId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ResponseEntity.ok",
+          "lineNumber": 162
+        },
+        {
+          "caller": "completeTicket",
+          "callee": "ApiResponse.ok",
+          "lineNumber": 162
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/AnnouncementRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AnnouncementRequest",
+          "startLine": 9,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "title",
+            "content",
+            "isPinned"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AnnouncementRequest",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ApartmentRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "ApartmentRequest",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "roomNumber",
+            "floor",
+            "buildingBlock",
+            "areaSqm"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApartmentRequest",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/BatchInvoiceCreateRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "BatchInvoiceCreateRequest",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "billingMonth",
+            "dueDate",
+            "readings"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BatchInvoiceCreateRequest",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/ForceAssignRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "ForceAssignRequest",
+          "startLine": 9,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "technicianId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ForceAssignRequest",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/LoginRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "LoginRequest",
+          "startLine": 9,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "phoneNumber",
+            "password"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginRequest",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MeterReadingItem.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "MeterReadingItem",
+          "startLine": 10,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "apartmentId",
+            "oldElectricNum",
+            "newElectricNum",
+            "oldWaterNum",
+            "newWaterNum"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MeterReadingItem",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/MoveInRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "MoveInRequest",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "residentId",
+            "fullName",
+            "phoneNumber",
+            "email"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MoveInRequest",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "be/ApartmentBS/src/main/java/com/example/apartmentbs/dto/request/TariffRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "TariffRequest",
+          "startLine": 12,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "managementFeePerSqm",
+            "electricityUnitPrice",
+            "waterUnitPrice",
+            "motorbikeFee",
+            "carFee"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TariffRequest",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,679 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 5
+    }
+  },
+  "results": [
+    {
+      "path": "ABMS_ProjectGuidelines.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 587,
+      "nonEmptyLines": 524,
+      "sections": [
+        {
+          "heading": "PROJECT GUIDELINE & FULL SRS SPECIFICATION: APARTMENT BMS",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. TỔNG QUAN DỰ ÁN & CÔNG NGHỆ (PROJECT OVERVIEW & TECH STACK)",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "1.1. Bối cảnh & Phạm vi",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "1.2. Tech Stack",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "2. TÁC NHÂN & PHÂN QUYỀN (ACTORS & PERMISSIONS)",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "3. THIẾT KẾ CƠ SỞ DỮ LIỆU & SQL SCRIPT (7 BẢNG CHUẨN HÓA)",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "4. CÁC QUY TẮC NGHIỆP VỤ CỐT LÕI (CORE BUSINESS RULES)",
+          "level": 2,
+          "line": 157
+        },
+        {
+          "heading": "5. ĐẶC TẢ CHI TIẾT 20 USE CASES (FULL USE CASE SPECIFICATIONS)",
+          "level": 2,
+          "line": 195
+        },
+        {
+          "heading": "PHÂN HỆ 1: XÁC THỰC & ĐIỀU HƯỚNG (AUTH & CONTEXT)",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "UC-01: Đăng nhập hệ thống (Login)",
+          "level": 4,
+          "line": 199
+        },
+        {
+          "heading": "UC-02: Đổi mật khẩu cá nhân (Change Password)",
+          "level": 4,
+          "line": 217
+        },
+        {
+          "heading": "UC-03: Chuyển đổi căn hộ hiển thị (Context Switch Apartment)",
+          "level": 4,
+          "line": 232
+        },
+        {
+          "heading": "PHÂN HỆ 2: QUẢN LÝ CĂN HỘ, CƯ DÂN & PHƯƠNG TIỆN (APARTMENT & RESIDENT)",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "UC-04: Quản lý danh mục Căn hộ (CRUD Apartment)",
+          "level": 4,
+          "line": 251
+        },
+        {
+          "heading": "UC-05: Tiếp nhận cư dân mới & Tạo tài khoản (Move-in)",
+          "level": 4,
+          "line": 266
+        },
+        {
+          "heading": "UC-06: Bàn giao chuyển đi & Khóa tài khoản (Move-out)",
+          "level": 4,
+          "line": 283
+        },
+        {
+          "heading": "UC-07: Quản lý phương tiện đăng ký theo căn hộ (Vehicle Management)",
+          "level": 4,
+          "line": 301
+        },
+        {
+          "heading": "PHÂN HỆ 3: HÓA ĐƠN, VIETQR & ĐỐI SOÁT GẠCH NỢ (BILLING & PAYMENT - PLAN B)",
+          "level": 3,
+          "line": 316
+        },
+        {
+          "heading": "UC-08: Cấu hình bảng giá dịch vụ tòa nhà (Configure Service Tariffs)",
+          "level": 4,
+          "line": 318
+        },
+        {
+          "heading": "UC-09: Nhập chỉ số điện nước & Xuất hóa đơn tháng (Meter Reading & Batch Invoice Generation)",
+          "level": 4,
+          "line": 331
+        },
+        {
+          "heading": "UC-10: Xem danh sách & Chi tiết hóa đơn căn hộ (View Resident Invoices)",
+          "level": 4,
+          "line": 357
+        },
+        {
+          "heading": "UC-11: Quét VietQR & Báo đã chuyển khoản (Scan VietQR & Confirm Payment - Plan B)",
+          "level": 4,
+          "line": 374
+        },
+        {
+          "heading": "UC-12: Đối soát sao kê & Gạch nợ thủ công (Manual Payment Reconciliation - Plan B)",
+          "level": 4,
+          "line": 390
+        },
+        {
+          "heading": "PHÂN HỆ 4: SỰ CỐ & CHỢ VIỆC KỸ THUẬT (HELPDESK & SHARED TASK POOL)",
+          "level": 3,
+          "line": 407
+        },
+        {
+          "heading": "UC-13: Tạo phiếu báo hỏng/sự cố căn hộ (Create Maintenance Ticket)",
+          "level": 4,
+          "line": 409
+        },
+        {
+          "heading": "UC-14: Xem danh sách sự cố chờ nhận & Cảnh báo quá 24h (View Task Pool)",
+          "level": 4,
+          "line": 425
+        },
+        {
+          "heading": "UC-15: Nhận việc sửa chữa từ Task Pool (Claim Ticket - Atomic Lock)",
+          "level": 4,
+          "line": 437
+        },
+        {
+          "heading": "UC-16: Cập nhật tiến độ & Báo hoàn thành công việc (Resolve Ticket)",
+          "level": 4,
+          "line": 451
+        },
+        {
+          "heading": "UC-17: Nghiệm thu hoàn thành & Đánh giá chất lượng 1–5 sao (Rate & Close Ticket)",
+          "level": 4,
+          "line": 465
+        },
+        {
+          "heading": "UC-18: Giám sát & Điều phối cưỡng bức sự cố tồn đọng quá 24h (Force Assign Overdue Ticket)",
+          "level": 4,
+          "line": 481
+        },
+        {
+          "heading": "PHÂN HỆ 5: TRUYỀN THÔNG & BẢNG TIN TÒA NHÀ (ANNOUNCEMENTS)",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "UC-19: Đăng và Quản lý bản tin thông báo tòa nhà (Manage Announcements)",
+          "level": 4,
+          "line": 498
+        },
+        {
+          "heading": "UC-20: Xem danh sách & Chi tiết thông báo tòa nhà (View Announcements)",
+          "level": 4,
+          "line": 510
+        },
+        {
+          "heading": "6. KIẾN TRÚC THƯ MỤC FRONTEND & QUY CHUẨN GIAO DIỆN",
+          "level": 2,
+          "line": 523
+        },
+        {
+          "heading": "6.1. Cấu trúc thư mục chuẩn (Role-based Modular Architecture)",
+          "level": 3,
+          "line": 525
+        },
+        {
+          "heading": "6.2. Chiến lược Dữ liệu Mock đồng bộ Xuyên Vai trò (Cross-Role LocalStorage Sync)",
+          "level": 3,
+          "line": 566
+        },
+        {
+          "heading": "7. QUY TẮC CODE DÀNH CHO AI AGENT (CODING STANDARDS)",
+          "level": 2,
+          "line": 579
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 37
+      }
+    },
+    {
+      "path": "BACKEND_TASKS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 298,
+      "nonEmptyLines": 270,
+      "sections": [
+        {
+          "heading": "DANH SÁCH CHI TIẾT CÁC HẠNG MỤC CẦN CODE TRONG BACKEND (SPRING BOOT)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. TỔNG QUAN KIẾN TRÚC & QUY TẮC KỸ THUẬT",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "2. BẢNG CHECKLIST FILE CẦN CODE THEO TỪNG PACKAGE",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "BƯỚC 0: HẠ TẦNG, CƠ SỞ DỮ LIỆU & BẢO MẬT (INFRASTRUCTURE & CONFIG)",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "BƯỚC 1: PACKAGE `model` (7 JPA ENTITIES & ENUMS)",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "BƯỚC 2: PACKAGE `repository` & `specification` (DATA ACCESS)",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "BƯỚC 3: PACKAGE `exception` & `dto`",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "3.1. Package `exception`",
+          "level": 4,
+          "line": 168
+        },
+        {
+          "heading": "3.2. Package `dto/response`",
+          "level": 4,
+          "line": 176
+        },
+        {
+          "heading": "3.3. Package `dto/request`",
+          "level": 4,
+          "line": 187
+        },
+        {
+          "heading": "BƯỚC 4: PACKAGE `service` & `service/impl` (BUSINESS LOGIC LAYER)",
+          "level": 3,
+          "line": 205
+        },
+        {
+          "heading": "BƯỚC 5: PACKAGE `controller` (REST CONTROLLERS)",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "3. THỨ TỰ THỰC THI (IMPLEMENTATION WORKFLOW)",
+          "level": 2,
+          "line": 291
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "DESIGN-playstation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 661,
+      "nonEmptyLines": 576,
+      "sections": [
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 316
+        },
+        {
+          "heading": "Colors",
+          "level": 2,
+          "line": 333
+        },
+        {
+          "heading": "Brand & Accent",
+          "level": 3,
+          "line": 337
+        },
+        {
+          "heading": "Surface",
+          "level": 3,
+          "line": 345
+        },
+        {
+          "heading": "Text",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "Semantic",
+          "level": 3,
+          "line": 368
+        },
+        {
+          "heading": "Brand Gradient",
+          "level": 3,
+          "line": 373
+        },
+        {
+          "heading": "Typography",
+          "level": 2,
+          "line": 376
+        },
+        {
+          "heading": "Font Family",
+          "level": 3,
+          "line": 378
+        },
+        {
+          "heading": "Hierarchy",
+          "level": 3,
+          "line": 382
+        },
+        {
+          "heading": "Principles",
+          "level": 3,
+          "line": 401
+        },
+        {
+          "heading": "Note on Font Substitutes",
+          "level": 3,
+          "line": 404
+        },
+        {
+          "heading": "Layout",
+          "level": 2,
+          "line": 412
+        },
+        {
+          "heading": "Spacing System",
+          "level": 3,
+          "line": 414
+        },
+        {
+          "heading": "Grid & Container",
+          "level": 3,
+          "line": 420
+        },
+        {
+          "heading": "Whitespace Philosophy",
+          "level": 3,
+          "line": 427
+        },
+        {
+          "heading": "Elevation & Depth",
+          "level": 2,
+          "line": 430
+        },
+        {
+          "heading": "Decorative Depth",
+          "level": 3,
+          "line": 441
+        },
+        {
+          "heading": "Shapes",
+          "level": 2,
+          "line": 448
+        },
+        {
+          "heading": "Border Radius Scale",
+          "level": 3,
+          "line": 450
+        },
+        {
+          "heading": "Photography Geometry",
+          "level": 3,
+          "line": 462
+        },
+        {
+          "heading": "Components",
+          "level": 2,
+          "line": 469
+        },
+        {
+          "heading": "Buttons",
+          "level": 3,
+          "line": 473
+        },
+        {
+          "heading": "Filter & Tab Chips",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "Inputs & Forms",
+          "level": 3,
+          "line": 503
+        },
+        {
+          "heading": "Cards & Containers",
+          "level": 3,
+          "line": 513
+        },
+        {
+          "heading": "Inline",
+          "level": 3,
+          "line": 556
+        },
+        {
+          "heading": "Navigation",
+          "level": 3,
+          "line": 565
+        },
+        {
+          "heading": "Footer",
+          "level": 3,
+          "line": 578
+        },
+        {
+          "heading": "Support-page-specific",
+          "level": 3,
+          "line": 585
+        },
+        {
+          "heading": "Do's and Don'ts",
+          "level": 2,
+          "line": 591
+        },
+        {
+          "heading": "Do",
+          "level": 3,
+          "line": 593
+        },
+        {
+          "heading": "Don't",
+          "level": 3,
+          "line": 602
+        },
+        {
+          "heading": "Responsive Behavior",
+          "level": 2,
+          "line": 611
+        },
+        {
+          "heading": "Breakpoints",
+          "level": 3,
+          "line": 613
+        },
+        {
+          "heading": "Touch Targets",
+          "level": 3,
+          "line": 625
+        },
+        {
+          "heading": "Collapsing Strategy",
+          "level": 3,
+          "line": 628
+        },
+        {
+          "heading": "Image Behavior",
+          "level": 3,
+          "line": 638
+        },
+        {
+          "heading": "Iteration Guide",
+          "level": 2,
+          "line": 644
+        },
+        {
+          "heading": "Known Gaps",
+          "level": 2,
+          "line": 654
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 40
+      }
+    },
+    {
+      "path": "FRONTEND_TASKS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 174,
+      "nonEmptyLines": 155,
+      "sections": [
+        {
+          "heading": "DANH SÁCH CHI TIẾT CÁC HẠNG MỤC CẦN CODE TRONG FRONTEND (REACTJS / VITE)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. TỔNG QUAN KIẾN TRÚC & QUY TẮC KỸ THUẬT FRONTEND",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "2. BẢNG CHECKLIST FILE CẦN CODE THEO TỪNG MODULE",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "GIAI ĐOẠN 0: KHẮC PHỤC LỖI TỒN ĐỌNG & XÂY DỰNG HẠ TẦNG (FOUNDATION)",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "GIAI ĐOẠN 1: PHÂN HỆ BAN QUẢN LÝ (ADMIN MODULES)",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "GIAI ĐOẠN 2: PHÂN HỆ CƯ DÂN (RESIDENT MODULES)",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "GIAI ĐOẠN 3: PHÂN HỆ KỸ THUẬT VIÊN (TECHNICIAN MODULES)",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "GIAI ĐOẠN 4: ĐẤU NỐI REST API BACKEND & KIỂM THỬ TÍCH HỢP (E2E)",
+          "level": 3,
+          "line": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "HUONG_DAN_THUYET_TRINH_SPECIFICATION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 143,
+      "nonEmptyLines": 112,
+      "sections": [
+        {
+          "heading": "CẨM NANG ÔN TẬP CẤP TỐC 30 PHÚT: JPA CRITERIA SPECIFICATION",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "🎯 PHẦN 1: LỜI MỞ ĐẦU 30 GIÂY (NÓI KHI BƯỚC LÊN BẢNG)",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "🧠 PHẦN 2: 4 KHÁI NIỆM NỀN TẢNG CẦN NHỚ TRONG ĐẦU",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "1. Bộ ba tham số `(root, query, cb)` là gì?",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "2. Cơ chế tự động \"nuốt\" `null` (Null-safe Concatenation)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "3. Bí danh `a1_0` trong SQL từ đâu ra?",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "4. Hai tham số trong `cb.like(Tham_số_1, Tham_số_2)`",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "🔍 PHẦN 3: MỔ XẺ 3 HÀM QUAN TRỌNG NHẤT TRONG CODE",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "1. Hàm Nhạc Trưởng (`filter`) - Ghép nối logic",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "2. Hàm Lọc Đơn Lẻ (`hasBuildingBlock`) - Vị từ nguyên tử",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "3. Hàm Tìm Kiếm Thông Minh Đa Trường (`searchGeneral`)",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "🎬 PHẦN 4: KỊCH BẢN 4 BƯỚC BẤM DEMO TRỰC TIẾP",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "🏆 PHẦN 5: 4 CÂU HỎI \"BẪY\" THẦY CÔ HAY HỎI & CÁCH ĐÁP",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "❓ Câu 1: *Tại sao tìm kiếm cư dân lại dùng `LEFT JOIN` mà không dùng `INNER JOIN`?*",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "❓ Câu 2: *Lỡ người dùng nhập chuỗi độc hại SQL Injection vào ô tìm kiếm thì sao?*",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "❓ Câu 3: *Nếu dự án mở rộng thêm 5 tiêu chí lọc nữa thì việc nâng cấp có khó không?*",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "❓ Câu 4: *Em có viết Unit Test/Integration Test cho phần Specification này không?*",
+          "level": 3,
+          "line": 133
+        },
+        {
+          "heading": "🧪 PHẦN 6: CHẠY TEST TỰ ĐỘNG (NẾU ĐƯỢC YÊU CẦU DEMO CODE TEST)",
+          "level": 2,
+          "line": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    }
+  ]
+}

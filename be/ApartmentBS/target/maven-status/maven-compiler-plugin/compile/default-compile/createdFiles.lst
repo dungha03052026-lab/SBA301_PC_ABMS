@@ -59,6 +59,7 @@ com\example\apartmentbs\model\TicketCategory.class
 com\example\apartmentbs\model\User$UserBuilder.class
 com\example\apartmentbs\dto\response\AnnouncementResponse.class
 com\example\apartmentbs\model\Ticket$TicketBuilder.class
+com\example\apartmentbs\dto\request\ChangePasswordRequest.class
 com\example\apartmentbs\model\Invoice.class
 com\example\apartmentbs\dto\request\TicketCompleteRequest.class
 com\example\apartmentbs\controller\BillingController.class
@@ -74,6 +75,7 @@ com\example\apartmentbs\repository\InvoiceRepository.class
 com\example\apartmentbs\service\impl\ApartmentServiceImpl.class
 com\example\apartmentbs\dto\request\VehicleRequest.class
 com\example\apartmentbs\dto\request\TicketCreateRequest$TicketCreateRequestBuilder.class
+com\example\apartmentbs\dto\request\ChangePasswordRequest$ChangePasswordRequestBuilder.class
 com\example\apartmentbs\dto\response\AuthResponse.class
 com\example\apartmentbs\dto\response\ApiResponse$ApiResponseBuilder.class
 com\example\apartmentbs\dto\request\LoginRequest$LoginRequestBuilder.class

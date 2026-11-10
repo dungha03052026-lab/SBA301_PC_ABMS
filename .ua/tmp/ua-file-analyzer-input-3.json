@@ -1,0 +1,42 @@
+{
+  "projectRoot": "e:/Springboot/SBA301_PC_ABMS/SBA301_PC_ABMS",
+  "batchFiles": [
+    {
+      "path": "ABMS_ProjectGuidelines.md",
+      "language": "markdown",
+      "sizeLines": 586,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "BACKEND_TASKS.md",
+      "language": "markdown",
+      "sizeLines": 298,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "DESIGN-playstation.md",
+      "language": "markdown",
+      "sizeLines": 661,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "FRONTEND_TASKS.md",
+      "language": "markdown",
+      "sizeLines": 174,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "HUONG_DAN_THUYET_TRINH_SPECIFICATION.md",
+      "language": "markdown",
+      "sizeLines": 143,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "ABMS_ProjectGuidelines.md": [],
+    "BACKEND_TASKS.md": [],
+    "DESIGN-playstation.md": [],
+    "FRONTEND_TASKS.md": [],
+    "HUONG_DAN_THUYET_TRINH_SPECIFICATION.md": []
+  }
+}
