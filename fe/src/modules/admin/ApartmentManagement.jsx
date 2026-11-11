@@ -66,6 +66,7 @@ const ApartmentManagement = () => {
   // ==========================================
   const [apartments, setApartments] = useState([]);
   const [backendApartments, setBackendApartments] = useState([]);
+  const [backendResidents, setBackendResidents] = useState(null);
   const [isBackendLive, setIsBackendLive] = useState(false);
   const [loadingTable, setLoadingTable] = useState(false);
   const [backendStats, setBackendStats] = useState({ total: 0, occupied: 0, vacant: 0, vehicles: 0 });
@@ -105,8 +106,31 @@ const ApartmentManagement = () => {
     setInvoices(MockDB.getInvoices());
   };
 
+  // Tải danh sách cư dân (role RESIDENT) từ Backend cho modal Move-in (UC-05)
+  const fetchResidentsFromBackend = async () => {
+    try {
+      const res = await axiosClient.get('/admin/users/residents');
+      const dataList = res?.data || res;
+      if (Array.isArray(dataList)) {
+        setBackendResidents(
+          dataList.map((r) => ({
+            id: r.id,
+            full_name: r.fullName,
+            phone_number: r.phoneNumber,
+            email: r.email,
+            role: r.role || 'RESIDENT',
+            is_active: r.isActive,
+          }))
+        );
+      }
+    } catch (err) {
+      console.warn('Không thể tải danh sách cư dân từ Backend, dùng MockDB:', err);
+    }
+  };
+
   useEffect(() => {
     reloadData();
+    fetchResidentsFromBackend();
   }, []);
 
   // Gọi REST API Backend Spring Boot (JPA Criteria API / ApartmentSpecification)
@@ -219,6 +243,30 @@ const ApartmentManagement = () => {
     }
     return filteredApartments;
   }, [isBackendLive, backendApartments, filteredApartments]);
+
+  // Danh sách cư dân hiển thị trong dropdown "Chọn cư dân đã có (UC-05)"
+  const residentOptions = useMemo(() => {
+    const mapOption = (u) => ({
+      label: `${u.full_name} (${u.phone_number})`,
+      value: u.id,
+    });
+
+    if (isBackendLive && Array.isArray(backendResidents)) {
+      return backendResidents.map(mapOption);
+    }
+
+    if (isBackendLive) {
+      const byId = new Map();
+      backendApartments.forEach((apt) => {
+        if (apt.resident?.id) {
+          byId.set(apt.resident.id, apt.resident);
+        }
+      });
+      return Array.from(byId.values()).map(mapOption);
+    }
+
+    return users.filter((u) => u.role === 'RESIDENT').map(mapOption);
+  }, [isBackendLive, backendResidents, backendApartments, users]);
 
   // Metrics summary
   const totalApartments = isBackendLive ? (backendStats.total || backendApartments.length) : apartments.length;
@@ -351,6 +399,7 @@ const ApartmentManagement = () => {
     setMoveInType('NEW');
     moveInForm.resetFields();
     setMoveInModalOpen(true);
+    fetchResidentsFromBackend();
   };
 
   const handleConfirmMoveIn = async (values) => {
@@ -369,7 +418,10 @@ const ApartmentManagement = () => {
         await axiosClient.post(`/admin/apartments/${selectedApartment.id}/move-in`, moveInPayload);
         message.success(`Tiếp nhận Move-in thành công cho căn hộ ${selectedApartment.room_number} trên CSDL!`);
         setMoveInModalOpen(false);
-        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        await Promise.all([
+          fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom),
+          fetchResidentsFromBackend(),
+        ]);
         return;
       } catch (apiErr) {
         if (apiErr.response?.data?.message) {
@@ -468,7 +520,10 @@ const ApartmentManagement = () => {
         await axiosClient.post(`/admin/apartments/${selectedApartment.id}/move-out`);
         message.success(`Đã hoàn tất bàn giao Move-out cho căn hộ ${selectedApartment.room_number} trên CSDL!`);
         setMoveOutModalOpen(false);
-        await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
+        await Promise.all([
+          fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom),
+          fetchResidentsFromBackend(),
+        ]);
         return;
       } catch (apiErr) {
         if (apiErr.response?.data?.message) {
@@ -1303,14 +1358,11 @@ const ApartmentManagement = () => {
                 rules={[{ required: true, message: 'Vui lòng chọn cư dân!' }]}
               >
                 <Select
+                  showSearch
+                  optionFilterProp="label"
                   placeholder="Chọn cư dân từ danh sách..."
                   style={{ height: 44, borderRadius: PS_ROUNDED.sm }}
-                  options={users
-                    .filter((u) => u.role === 'RESIDENT')
-                    .map((u) => ({
-                      label: `${u.full_name} (${u.phone_number})`,
-                      value: u.id,
-                    }))}
+                  options={residentOptions}
                 />
               </Form.Item>
             ) : (
