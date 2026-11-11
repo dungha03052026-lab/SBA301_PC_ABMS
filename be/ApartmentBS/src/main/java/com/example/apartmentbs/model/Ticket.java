@@ -38,10 +38,10 @@ public class Ticket {
     @Column(name = "title", length = 255, nullable = false)
     private String title;
 
-    @Column(name = "description", columnDefinition = "NVARCHAR(MAX)", nullable = false)
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     private String description;
 
-    @Column(name = "image_url", columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
 
     @Enumerated(EnumType.STRING)
@@ -53,7 +53,7 @@ public class Ticket {
     @JoinColumn(name = "assigned_to")
     private User assignedTo;
 
-    @Column(name = "technician_note", columnDefinition = "NVARCHAR(MAX)")
+    @Column(name = "technician_note", columnDefinition = "TEXT")
     private String technicianNote;
 
     @Column(name = "rating")

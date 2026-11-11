@@ -23,7 +23,7 @@ public class Announcement {
     @Column(name = "title", length = 255, nullable = false)
     private String title;
 
-    @Column(name = "content", columnDefinition = "NVARCHAR(MAX)", nullable = false)
+    @Column(name = "content", columnDefinition = "TEXT", nullable = false)
     private String content;
 
     @ManyToOne(fetch = FetchType.EAGER)
