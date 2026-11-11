@@ -39,6 +39,7 @@ import {
   Popconfirm,
   Radio,
   Tooltip,
+  Spin,
 } from 'antd';
 import {
   SearchOutlined,
@@ -88,6 +89,7 @@ const ApartmentManagement = () => {
   const [moveInModalOpen, setMoveInModalOpen] = useState(false);
   const [moveOutModalOpen, setMoveOutModalOpen] = useState(false);
   const [moveOutDebts, setMoveOutDebts] = useState([]);
+  const [loadingMoveOutCheck, setLoadingMoveOutCheck] = useState(false);
 
   const [vehicleModalOpen, setVehicleModalOpen] = useState(false);
   const [modalVehicles, setModalVehicles] = useState([]);
@@ -498,14 +500,44 @@ const ApartmentManagement = () => {
   // ==========================================
   // 4. UC-06: TRẢ PHÒNG & CHẶN NỢ (MOVE-OUT / BR-04)
   // ==========================================
-  const handleOpenMoveOut = (record) => {
+  const handleOpenMoveOut = async (record) => {
     setSelectedApartment(record);
-    // Kiểm tra công nợ chưa trả (UNPAID hoặc PENDING)
+    setMoveOutDebts([]);
+    setMoveOutModalOpen(true);
+    setLoadingMoveOutCheck(true);
+
+    try {
+      // Kiểm tra công nợ chưa trả (UNPAID hoặc PENDING) trực tiếp từ Backend
+      const res = await axiosClient.get('/admin/invoices/all', {
+        params: { apartmentId: record.id },
+      });
+      const dataList = res?.data || res;
+      if (Array.isArray(dataList)) {
+        const unpaidFromApi = dataList
+          .filter((inv) => ['UNPAID', 'PENDING'].includes(inv.status))
+          .map((inv) => ({
+            id: inv.id,
+            invoice_code: inv.invoiceCode,
+            apartment_id: inv.apartmentId,
+            billing_month: inv.billingMonth,
+            total_amount: inv.totalAmount,
+            status: inv.status,
+            due_date: inv.dueDate,
+          }));
+        setMoveOutDebts(unpaidFromApi);
+        return;
+      }
+    } catch (err) {
+      console.warn('Không thể kiểm tra hóa đơn từ Backend, fallback MockDB:', err);
+    } finally {
+      setLoadingMoveOutCheck(false);
+    }
+
+    // Fallback MockDB khi offline
     const unpaidInvoices = invoices.filter(
       (inv) => inv.apartment_id === record.id && ['UNPAID', 'PENDING'].includes(inv.status)
     );
     setMoveOutDebts(unpaidInvoices);
-    setMoveOutModalOpen(true);
   };
 
   const handleConfirmMoveOut = async () => {
@@ -1465,7 +1497,14 @@ const ApartmentManagement = () => {
           </div>
 
           {/* KỊCH BẢN CHẶN NỢ THEO BR-04 */}
-          {moveOutDebts.length > 0 ? (
+          {loadingMoveOutCheck ? (
+            <div style={{ textAlign: 'center', padding: '32px 0' }}>
+              <Spin size="default" />
+              <div style={{ marginTop: 12, color: PS_COLORS.muteLight, fontSize: 13 }}>
+                Đang kiểm tra công nợ hóa đơn của căn hộ...
+              </div>
+            </div>
+          ) : moveOutDebts.length > 0 ? (
             <div>
               <Alert
                 message="CHẶN MOVE-OUT: CĂN HỘ CÒN CÔNG NỢ CHƯA THANH TOÁN"
