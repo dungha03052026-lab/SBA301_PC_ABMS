@@ -90,6 +90,7 @@ const ApartmentManagement = () => {
   const [moveOutModalOpen, setMoveOutModalOpen] = useState(false);
   const [moveOutDebts, setMoveOutDebts] = useState([]);
   const [loadingMoveOutCheck, setLoadingMoveOutCheck] = useState(false);
+  const [moveOutCheckError, setMoveOutCheckError] = useState('');
 
   const [vehicleModalOpen, setVehicleModalOpen] = useState(false);
   const [modalVehicles, setModalVehicles] = useState([]);
@@ -503,37 +504,69 @@ const ApartmentManagement = () => {
   const handleOpenMoveOut = async (record) => {
     setSelectedApartment(record);
     setMoveOutDebts([]);
+    setMoveOutCheckError('');
     setMoveOutModalOpen(true);
     setLoadingMoveOutCheck(true);
 
+    const mapBackendInvoice = (inv) => ({
+      id: inv.id,
+      invoice_code: inv.invoiceCode,
+      apartment_id: inv.apartmentId,
+      room_number: inv.roomNumber,
+      billing_month: inv.billingMonth,
+      total_amount: inv.totalAmount,
+      status: String(inv.status || '').toUpperCase(),
+      due_date: inv.dueDate,
+    });
+
+    const filterApartmentDebts = (list) =>
+      list
+        .map(mapBackendInvoice)
+        .filter((inv) => {
+          const sameApartment =
+            inv.apartment_id != null
+              ? Number(inv.apartment_id) === Number(record.id)
+              : inv.room_number === record.room_number;
+          return sameApartment && ['UNPAID', 'PENDING'].includes(inv.status);
+        });
+
     try {
-      // Kiểm tra công nợ chưa trả (UNPAID hoặc PENDING) trực tiếp từ Backend
-      const res = await axiosClient.get('/admin/invoices/all', {
-        params: { apartmentId: record.id },
+      // Thử gọi endpoint /admin/invoices/all (giống InvoiceApproval & MeterReading)
+      const res = await axiosClient.get('/admin/invoices/all');
+      const dataList = Array.isArray(res?.data) ? res.data : Array.isArray(res) ? res : null;
+      if (dataList) {
+        setMoveOutDebts(filterApartmentDebts(dataList));
+        return;
+      }
+
+      // Dự phòng qua endpoint phân trang /admin/invoices nếu /all không trả mảng
+      const pagedRes = await axiosClient.get('/admin/invoices', {
+        params: { apartmentId: record.id, page: 0, size: 100 },
       });
-      const dataList = res?.data || res;
-      if (Array.isArray(dataList)) {
-        const unpaidFromApi = dataList
-          .filter((inv) => ['UNPAID', 'PENDING'].includes(inv.status))
-          .map((inv) => ({
-            id: inv.id,
-            invoice_code: inv.invoiceCode,
-            apartment_id: inv.apartmentId,
-            billing_month: inv.billingMonth,
-            total_amount: inv.totalAmount,
-            status: inv.status,
-            due_date: inv.dueDate,
-          }));
-        setMoveOutDebts(unpaidFromApi);
+      const pagedContent = pagedRes?.data?.content || pagedRes?.content;
+      if (Array.isArray(pagedContent)) {
+        setMoveOutDebts(filterApartmentDebts(pagedContent));
+        return;
+      }
+
+      if (isBackendLive) {
+        setMoveOutCheckError('Không thể đọc dữ liệu hóa đơn từ máy chủ để kiểm tra công nợ.');
         return;
       }
     } catch (err) {
-      console.warn('Không thể kiểm tra hóa đơn từ Backend, fallback MockDB:', err);
+      console.warn('Không thể kiểm tra hóa đơn từ Backend:', err);
+      if (isBackendLive) {
+        setMoveOutCheckError(
+          err?.response?.data?.message ||
+            'Không thể kiểm tra công nợ hóa đơn từ máy chủ. Vui lòng thử lại!'
+        );
+        return;
+      }
     } finally {
       setLoadingMoveOutCheck(false);
     }
 
-    // Fallback MockDB khi offline
+    // Chỉ fallback MockDB khi thực sự chạy chế độ Offline
     const unpaidInvoices = invoices.filter(
       (inv) => inv.apartment_id === record.id && ['UNPAID', 'PENDING'].includes(inv.status)
     );
@@ -541,6 +574,11 @@ const ApartmentManagement = () => {
   };
 
   const handleConfirmMoveOut = async () => {
+    if (moveOutCheckError) {
+      message.error(moveOutCheckError);
+      return;
+    }
+
     if (moveOutDebts.length > 0) {
       message.error('Không thể thực hiện Move-out vì căn hộ còn công nợ chưa thanh toán!');
       return;
@@ -559,7 +597,9 @@ const ApartmentManagement = () => {
         return;
       } catch (apiErr) {
         if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+          const serverMsg = apiErr.response.data.message;
+          setMoveOutCheckError(serverMsg);
+          message.error(serverMsg);
           return;
         }
         console.warn('Move-out API failed, fallback MockDB', apiErr);
@@ -1502,6 +1542,36 @@ const ApartmentManagement = () => {
               <Spin size="default" />
               <div style={{ marginTop: 12, color: PS_COLORS.muteLight, fontSize: 13 }}>
                 Đang kiểm tra công nợ hóa đơn của căn hộ...
+              </div>
+            </div>
+          ) : moveOutCheckError ? (
+            <div>
+              <Alert
+                message="CHẶN MOVE-OUT / KHÔNG THỂ BÀN GIAO PHÒNG"
+                description={moveOutCheckError}
+                type="error"
+                showIcon
+                style={{
+                  marginBottom: 20,
+                  borderRadius: PS_ROUNDED.sm,
+                  borderColor: PS_COLORS.warning,
+                }}
+              />
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12 }}>
+                <Button
+                  onClick={() => setMoveOutModalOpen(false)}
+                  style={{ height: 44, borderRadius: PS_ROUNDED.full, padding: '0 24px' }}
+                >
+                  Đóng lại
+                </Button>
+                <Button
+                  type="primary"
+                  onClick={() => selectedApartment && handleOpenMoveOut(selectedApartment)}
+                  style={{ height: 44, borderRadius: PS_ROUNDED.full, padding: '0 24px' }}
+                >
+                  Kiểm tra lại
+                </Button>
               </div>
             </div>
           ) : moveOutDebts.length > 0 ? (
