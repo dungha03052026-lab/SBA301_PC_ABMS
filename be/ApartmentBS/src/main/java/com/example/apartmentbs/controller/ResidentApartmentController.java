@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controller dành riêng cho Cư dân để tra cứu danh sách các căn hộ mà mình đang đứng tên sở hữu.
+ * 
+ * Nghiệp vụ BR-02: Một cư dân có thể đứng tên đại diện cho nhiều căn hộ (1-N).
+ * Endpoint này cho phép Frontend nạp danh sách và cung cấp dropdown chuyển ngữ cảnh (ApartmentContext).
+ */
 @RestController
 @RequestMapping("/api/v1/resident")
 @RequiredArgsConstructor
@@ -23,6 +29,11 @@ public class ResidentApartmentController {
     private final ApartmentService apartmentService;
     private final AuthService authService;
 
+    /**
+     * Lấy danh sách toàn bộ căn hộ mà cư dân đang đăng nhập sở hữu.
+     *
+     * @return Danh sách ApartmentResponse kèm số lượng phương tiện
+     */
     @GetMapping("/apartments")
     public ResponseEntity<ApiResponse<List<ApartmentResponse>>> getMyApartments() {
         User user = authService.getAuthenticatedUser();

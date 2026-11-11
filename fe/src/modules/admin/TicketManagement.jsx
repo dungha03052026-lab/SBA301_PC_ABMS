@@ -1,3 +1,14 @@
+/**
+ * Phân hệ Giám Sát và Điều Phối Sự Cố Kỹ Thuật Tòa Nhà (Ticket Management - Admin).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-18: Giám sát toàn bộ phiếu báo hỏng kỹ thuật của cư dân tòa nhà:
+ *    - Theo dõi tiến độ vòng đời: OPEN -> IN_PROGRESS -> RESOLVED -> CLOSED.
+ *    - Cảnh báo sự cố quá hạn xử lý (> 24h) chưa có thợ nhận.
+ *    - Can thiệp cưỡng chế chỉ định kỹ thuật viên (Force Assign - BR-07) khi cần thiết.
+ * 2. Lọc sự cố theo danh mục (Điện, Nước, Khóa/Cửa, Khác), trạng thái và từ khóa tìm kiếm.
+ * 3. Xem chi tiết sự cố kèm hình ảnh hiện trường và điểm đánh giá sao từ cư dân.
+ */
 // src/modules/admin/TicketManagement.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -435,7 +446,7 @@ const TicketManagement = () => {
             marginBottom: 10,
           }}
         >
-          PHÂN HỆ BẢO TRÌ & GIÁM SÁT SỰ CỐ (UC-18 • BR-07)
+          PHÂN HỆ BẢO TRÌ & GIÁM SÁT SỰ CỐ
         </span>
 
         <h1
@@ -507,7 +518,7 @@ const TicketManagement = () => {
           }}
         >
           <span style={{ fontSize: 13, color: PS_COLORS.warning, fontWeight: 600 }}>
-            SỰ CỐ QUÁ HẠN &gt; 24H (BR-07)
+            SỰ CỐ QUÁ HẠN &gt; 24H
           </span>
           <div
             className="ps-display-md"
@@ -699,7 +710,7 @@ const TicketManagement = () => {
         title={
           <div>
             <span className="ps-heading-lg" style={{ fontWeight: 300, color: PS_COLORS.ink, display: 'block' }}>
-              Chỉ định Nhân viên Kỹ thuật (UC-18)
+              Chỉ định Nhân viên Kỹ thuật
             </span>
             <span style={{ fontSize: 14, color: PS_COLORS.primary, fontWeight: 600 }}>
               Sự cố: {selectedTicket?.ticket_code} — {selectedTicket?.title}
@@ -715,7 +726,7 @@ const TicketManagement = () => {
         <div style={{ marginTop: 16 }}>
           {selectedTicket?.isOverdue && (
             <Alert
-              message="ĐIỀU PHỐI KHẨN CẤP: SỰ CỐ ĐÃ QUÁ HẠN > 24H (BR-07)"
+              message="ĐIỀU PHỐI KHẨN CẤP: SỰ CỐ ĐÃ QUÁ HẠN > 24H"
               description={`Sự cố này được tạo cách đây ${selectedTicket?.diffHours} tiếng nhưng chưa có thợ nào nhận. Hệ thống yêu cầu Ban Quản Lý chỉ định cưỡng bức nhân sự để xử lý ngay.`}
               type="error"
               showIcon

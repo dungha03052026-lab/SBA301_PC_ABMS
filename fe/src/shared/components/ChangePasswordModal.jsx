@@ -1,4 +1,10 @@
-// src/shared/components/ChangePasswordModal.jsx
+/**
+ * Modal đổi mật khẩu tài khoản người dùng (UC-02 - Change Password Modal).
+ * 
+ * - Yêu cầu nhập mật khẩu hiện tại, mật khẩu mới (tối thiểu 6 ký tự) và xác nhận mật khẩu.
+ * - Gọi hàm `changePassword` từ AuthContext để gửi request tới API Backend (kèm offline fallback).
+ * - Sử dụng PlayStation Theme UI (bo góc thẻ, nút gradient PS Blue, phông chữ thanh lịch).
+ */
 import React, { useState } from 'react';
 import { Modal, Form, Input, message } from 'antd';
 import { useAuth } from '../context/AuthContext';
@@ -9,6 +15,7 @@ const ChangePasswordModal = ({ open, onCancel }) => {
   const { changePassword } = useAuth();
   const [loading, setLoading] = useState(false);
 
+  // Xử lý submit form đổi mật khẩu
   const handleSubmit = async () => {
     try {
       const values = await form.validateFields();
@@ -48,78 +55,75 @@ const ChangePasswordModal = ({ open, onCancel }) => {
         form.resetFields();
         onCancel();
       }}
-      confirmLoading={loading}
-      okText="Xác nhận đổi"
+      okText="Lưu mật khẩu mới"
       cancelText="Hủy bỏ"
-      destroyOnClose
+      confirmLoading={loading}
+      centered
       okButtonProps={{
         style: {
-          borderRadius: PS_ROUNDED.full,
-          backgroundColor: PS_COLORS.primary,
-          height: 40,
-          padding: '0 24px',
-          fontWeight: 700,
+          background: 'linear-gradient(135deg, #0070D1 0%, #00439C 100%)',
+          borderColor: 'transparent',
+          borderRadius: PS_ROUNDED.sm,
+          fontWeight: 500,
         },
       }}
       cancelButtonProps={{
         style: {
-          borderRadius: PS_ROUNDED.full,
-          height: 40,
-          padding: '0 24px',
-          fontWeight: 600,
+          borderRadius: PS_ROUNDED.sm,
         },
       }}
     >
-      <div style={{ marginTop: 16 }}>
-        <Form form={form} layout="vertical" preserve={false}>
-          <Form.Item
-            name="currentPassword"
-            label={<span style={{ fontWeight: 500, fontSize: 14 }}>Mật khẩu hiện tại</span>}
-            rules={[{ required: true, message: 'Vui lòng nhập mật khẩu hiện tại' }]}
-          >
-            <Input.Password
-              placeholder="Nhập mật khẩu hiện tại"
-              style={{ height: 44, borderRadius: PS_ROUNDED.sm }}
-            />
-          </Form.Item>
+      <Form form={form} layout="vertical" className="mt-4">
+        {/* Mật khẩu hiện tại */}
+        <Form.Item
+          label={<span style={{ fontWeight: 500 }}>Mật khẩu hiện tại</span>}
+          name="currentPassword"
+          rules={[{ required: true, message: 'Vui lòng nhập mật khẩu hiện tại' }]}
+        >
+          <Input.Password
+            placeholder="Nhập mật khẩu hiện tại"
+            style={{ borderRadius: PS_ROUNDED.sm }}
+          />
+        </Form.Item>
 
-          <Form.Item
-            name="newPassword"
-            label={<span style={{ fontWeight: 500, fontSize: 14 }}>Mật khẩu mới</span>}
-            rules={[
-              { required: true, message: 'Vui lòng nhập mật khẩu mới' },
-              { min: 6, message: 'Mật khẩu mới phải có ít nhất 6 ký tự' },
-            ]}
-          >
-            <Input.Password
-              placeholder="Nhập mật khẩu mới (tối thiểu 6 ký tự)"
-              style={{ height: 44, borderRadius: PS_ROUNDED.sm }}
-            />
-          </Form.Item>
+        {/* Mật khẩu mới */}
+        <Form.Item
+          label={<span style={{ fontWeight: 500 }}>Mật khẩu mới</span>}
+          name="newPassword"
+          rules={[
+            { required: true, message: 'Vui lòng nhập mật khẩu mới' },
+            { min: 6, message: 'Mật khẩu phải có ít nhất 6 ký tự' },
+          ]}
+        >
+          <Input.Password
+            placeholder="Nhập mật khẩu mới (tối thiểu 6 ký tự)"
+            style={{ borderRadius: PS_ROUNDED.sm }}
+          />
+        </Form.Item>
 
-          <Form.Item
-            name="confirmPassword"
-            label={<span style={{ fontWeight: 500, fontSize: 14 }}>Xác nhận mật khẩu mới</span>}
-            dependencies={['newPassword']}
-            rules={[
-              { required: true, message: 'Vui lòng xác nhận mật khẩu mới' },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue('newPassword') === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(new Error('Mật khẩu xác nhận không trùng khớp!'));
-                },
-              }),
-            ]}
-          >
-            <Input.Password
-              placeholder="Nhập lại mật khẩu mới"
-              style={{ height: 44, borderRadius: PS_ROUNDED.sm }}
-            />
-          </Form.Item>
-        </Form>
-      </div>
+        {/* Xác nhận mật khẩu mới */}
+        <Form.Item
+          label={<span style={{ fontWeight: 500 }}>Xác nhận mật khẩu mới</span>}
+          name="confirmPassword"
+          dependencies={['newPassword']}
+          rules={[
+            { required: true, message: 'Vui lòng xác nhận mật khẩu mới' },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('newPassword') === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(new Error('Mật khẩu xác nhận không khớp!'));
+              },
+            }),
+          ]}
+        >
+          <Input.Password
+            placeholder="Nhập lại mật khẩu mới"
+            style={{ borderRadius: PS_ROUNDED.sm }}
+          />
+        </Form.Item>
+      </Form>
     </Modal>
   );
 };

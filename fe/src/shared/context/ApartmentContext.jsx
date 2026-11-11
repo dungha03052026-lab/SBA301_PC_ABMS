@@ -1,4 +1,12 @@
-// src/shared/context/ApartmentContext.jsx
+/**
+ * Quản lý ngữ cảnh Căn hộ cho Cư dân (Apartment Context).
+ * 
+ * Nghiệp vụ cốt lõi:
+ * 1. Quan hệ Căn hộ - Cư dân (1-N): Một cư dân có thể đứng tên nhiều căn hộ OCCUPIED.
+ * 2. Chuyển đổi căn hộ (UC-03): Cư dân có thể chọn xem dữ liệu hóa đơn, báo hỏng theo từng căn hộ
+ *    thông qua `selectedApartmentId`, được đồng bộ bền vững trong LocalStorage.
+ * 3. Hỗ trợ nạp từ API GET /api/v1/resident/apartments kèm fallback sang MockDB nếu offline.
+ */
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 import axiosClient from '../api/axiosClient';
@@ -37,6 +45,7 @@ export const ApartmentProvider = ({ children }) => {
       console.warn('Cannot load apartments from backend, using MockDB:', e);
     }
 
+    // Fallback MockDB nếu chưa có dữ liệu từ backend
     if (userApts.length === 0) {
       const allApts = MockDB.getApartments();
       userApts = allApts.filter(
@@ -46,7 +55,7 @@ export const ApartmentProvider = ({ children }) => {
 
     setApartments(userApts);
 
-    // Xử lý selectedApartmentId
+    // Xử lý căn hộ đang được lựa chọn (selectedApartmentId)
     const savedId = localStorage.getItem('selectedApartmentId');
     const parsedSavedId = savedId ? parseInt(savedId, 10) : null;
 
@@ -74,6 +83,7 @@ export const ApartmentProvider = ({ children }) => {
     localStorage.setItem('selectedApartmentId', id.toString());
   };
 
+  // Đối tượng căn hộ chi tiết đang được chọn
   const selectedApartment = apartments.find((a) => a.id === selectedApartmentId) || null;
 
   return (

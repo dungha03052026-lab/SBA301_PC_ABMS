@@ -1,5 +1,6 @@
 package com.example.apartmentbs.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginRequest {
-    @NotBlank(message = "Số điện thoại không được để trống")
+    @NotBlank(message = "Số điện thoại hoặc Email không được để trống")
+    @JsonAlias({"username", "email"})
     private String phoneNumber;
 
     @NotBlank(message = "Mật khẩu không được để trống")

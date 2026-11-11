@@ -1,3 +1,12 @@
+/**
+ * Phân hệ Xem Bảng Tin & Thông Báo Tòa Nhà (Resident Announcements).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-20: Cư dân xem các thông báo từ Ban Quản Lý tòa nhà:
+ *    - Các tin được Ghim (isPinned = true) hiển thị nổi bật trên cùng.
+ *    - Tìm kiếm nhanh nội dung thông báo.
+ *    - Modal đọc toàn văn nội dung thông báo kèm thời gian ban hành và người tạo.
+ */
 // src/modules/resident/ResidentAnnouncements.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -124,7 +133,7 @@ const ResidentAnnouncements = () => {
             marginBottom: 10,
           }}
         >
-          BẢNG TIN TÒA NHÀ • THÔNG BÁO TỔNG HỢP (UC-20)
+          BẢNG TIN TÒA NHÀ • THÔNG BÁO TỔNG HỢP
         </span>
 
         <h1

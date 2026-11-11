@@ -416,6 +416,11 @@ body {
   transition: all 0.15s ease !important;
 }
 
+.ps-sider-light .ant-menu-inline-collapsed .ant-menu-item {
+  padding: 0 !important;
+  text-align: center !important;
+}
+
 .ps-sider-light .ant-menu-item .ant-menu-item-icon {
   font-size: 17px !important;
   color: var(--ps-ink) !important;

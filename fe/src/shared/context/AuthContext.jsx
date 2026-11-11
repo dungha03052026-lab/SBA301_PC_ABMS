@@ -1,4 +1,14 @@
-// src/shared/context/AuthContext.jsx
+/**
+ * Quản lý trạng thái Xác thực người dùng toàn cục (Authentication Context).
+ * 
+ * Chức năng:
+ * - Lưu trữ thông tin tài khoản đăng nhập hiện tại (`user`) và đồng bộ với LocalStorage.
+ * - `login(username, password)`: Gọi API POST /api/v1/auth/login. Nếu Backend không khả dụng,
+ *   tự động kích hoạt cơ chế fallback MockDB để ứng dụng vẫn demo được.
+ * - `changePassword(oldPass, newPass)`: Đổi mật khẩu cá nhân (UC-02) qua PUT /api/v1/auth/change-password.
+ * - `mockLogin(role)`: Đăng nhập giả lập nhanh 1-click dành cho kiểm thử giao diện theo vai trò.
+ * - `logout()`: Xóa token và dữ liệu phiên làm việc.
+ */
 import React, { createContext, useContext, useState } from 'react';
 import axiosClient from '../api/axiosClient';
 import { MockDB } from '../constants/mockData';
@@ -6,6 +16,7 @@ import { MockDB } from '../constants/mockData';
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
+  // Khởi tạo state user từ LocalStorage nếu có
   const [user, setUser] = useState(() => {
     try {
       const saved = localStorage.getItem('user');
@@ -15,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     }
   });
 
-  // Mock login nhanh theo vai trò cho mục đích test UI
+  // Đăng nhập nhanh 1 chạm theo vai trò phục vụ mục đích kiểm thử UI
   const mockLogin = (role) => {
     const users = MockDB.getUsers();
     let target = users.find((u) => u.role === role && u.is_active);
@@ -68,13 +79,13 @@ export const AuthProvider = ({ children }) => {
     } catch (apiError) {
       console.warn('Backend login error, attempting offline MockDB fallback:', apiError);
       
-      // Fallback sang MockDB nếu Backend không sẵn sàng hoặc thông báo lỗi từ server
+      // Bắt lỗi nghiệp vụ từ backend (Ví dụ: 403 Forbidden tài khoản bị khóa)
       if (apiError.response && apiError.response.data && apiError.response.data.message) {
         return { success: false, message: apiError.response.data.message };
       }
     }
 
-    // Fallback MockDB
+    // Fallback MockDB nếu Backend không sẵn sàng
     const users = MockDB.getUsers();
     const found = users.find(
       (u) => u.phone_number === username || u.email === username
@@ -84,16 +95,17 @@ export const AuthProvider = ({ children }) => {
       return { success: false, message: 'Số điện thoại/Email không tồn tại trong hệ thống' };
     }
 
+    // BR-04: Kiểm tra tài khoản bị khóa do đã Move-out hết căn hộ
     if (!found.is_active) {
       return {
         success: false,
-        message: 'Tài khoản đã bị vô hiệu hóa do cư dân đã làm thủ tục Move-out',
+        message: 'Tài khoản của bạn đã bị khóa. Vui lòng liên hệ Ban Quản Lý.',
       };
     }
 
     const isPasswordCorrect = found.password === password || password === '123456';
     if (!isPasswordCorrect) {
-      return { success: false, message: 'Mật khẩu không chính xác' };
+      return { success: false, message: 'Số điện thoại hoặc mật khẩu không chính xác' };
     }
 
     const authUser = {
@@ -147,6 +159,7 @@ export const AuthProvider = ({ children }) => {
     return { success: true, message: 'Đổi mật khẩu thành công' };
   };
 
+  // Đăng xuất và dọn sạch session lưu trữ
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');

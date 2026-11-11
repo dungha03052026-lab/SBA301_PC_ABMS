@@ -1,3 +1,17 @@
+/**
+ * Phân hệ Chốt số Điện Nước & Sinh Hóa Đơn Hàng Loạt (Meter Reading & Billing - Admin).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-08: Quản lý cấu hình đơn giá dịch vụ (Biểu phí Tariff):
+ *    - Đơn giá quản lý / m2.
+ *    - Đơn giá điện (VNĐ/kWh) và đơn giá nước (VNĐ/m3).
+ *    - Phí gửi xe máy và ô tô hàng tháng.
+ * 2. UC-09: Nhập chỉ số công tơ điện nước mới hàng tháng cho các căn hộ OCCUPIED:
+ *    - Kiểm tra số mới >= số cũ.
+ *    - Tính toán tiền điện, nước, phí quản lý và phí gửi xe theo chuẩn công thức BR-05.
+ *    - Xem trước chi tiết hóa đơn (Preview Invoice Breakdown).
+ *    - Chốt số & sinh hóa đơn hàng loạt (Batch Invoice Generation) gửi tới cư dân.
+ */
 // src/modules/admin/MeterReading.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -99,7 +113,46 @@ const MeterReading = () => {
           area_sqm: a.areaSqm,
           status: a.status,
           resident_id: a.resident?.id || null,
+          resident: a.resident
+            ? {
+                id: a.resident.id,
+                full_name: a.resident.fullName,
+                phone_number: a.resident.phoneNumber,
+                email: a.resident.email,
+              }
+            : null,
         }));
+
+        // Đồng bộ danh sách phương tiện thật từ Backend cho các căn OCCUPIED
+        const occupiedIds = apts.filter((a) => a.status === 'OCCUPIED').map((a) => a.id);
+        if (occupiedIds.length > 0) {
+          const vehResults = await Promise.allSettled(
+            occupiedIds.map((id) => axiosClient.get(`/admin/apartments/${id}/vehicles`))
+          );
+          const backendVehicles = [];
+          let hasVehResponse = false;
+          vehResults.forEach((vr, idx) => {
+            if (vr.status === 'fulfilled' && Array.isArray(vr.value?.data || vr.value)) {
+              hasVehResponse = true;
+              const list = vr.value?.data || vr.value;
+              list.forEach((v) => {
+                backendVehicles.push({
+                  id: v.id,
+                  apartment_id: v.apartmentId ?? occupiedIds[idx],
+                  license_plate: v.licensePlate,
+                  vehicle_type: v.vehicleType,
+                  owner_name: v.ownerName,
+                  created_at: v.createdAt,
+                });
+              });
+            }
+          });
+          if (hasVehResponse) {
+            vehs = backendVehicles;
+          }
+        } else {
+          vehs = [];
+        }
       }
 
       if (invRes.status === 'fulfilled' && Array.isArray(invRes.value?.data || invRes.value)) {
@@ -168,7 +221,7 @@ const MeterReading = () => {
     return apartments
       .filter((apt) => apt.status === 'OCCUPIED')
       .map((apt) => {
-        const resident = users.find((u) => u.id === apt.resident_id);
+        const resident = apt.resident || users.find((u) => u.id === apt.resident_id) || null;
         const aptVehicles = vehicles.filter((v) => v.apartment_id === apt.id);
         const motorCount = aptVehicles.filter((v) => v.vehicle_type === 'MOTORBIKE').length;
         const carCount = aptVehicles.filter((v) => v.vehicle_type === 'CAR').length;
@@ -577,7 +630,7 @@ const MeterReading = () => {
       ),
     },
     {
-      title: 'TỔNG CỘNG TẠM TÍNH (BR-05)',
+      title: 'TỔNG CỘNG TẠM TÍNH',
       key: 'total',
       width: 200,
       render: (_, record) => (
@@ -688,7 +741,7 @@ const MeterReading = () => {
               marginBottom: 10,
             }}
           >
-            PHÂN HỆ HÓA ĐƠN & DỊCH VỤ (UC-08 • UC-09 • BR-05)
+            PHÂN HỆ HÓA ĐƠN & DỊCH VỤ
           </span>
 
           <h1
@@ -708,7 +761,7 @@ const MeterReading = () => {
             style={{ color: PS_COLORS.bodyLight, margin: 0, maxWidth: 780 }}
           >
             Cấu hình đơn giá dịch vụ tòa nhà, nhập chỉ số điện nước theo kỳ và xuất hóa đơn
-            tự động cho các căn hộ đang có người ở (OCCUPIED) theo đúng công thức chuẩn BR-05.
+            tự động cho các căn hộ đang có người ở (OCCUPIED) theo đúng công thức chuẩn.
           </p>
         </div>
 
@@ -725,7 +778,7 @@ const MeterReading = () => {
               fontWeight: 600,
             }}
           >
-            Cấu hình Đơn giá (UC-08)
+            Cấu hình Đơn giá
           </Button>
 
           <Button
@@ -889,7 +942,7 @@ const MeterReading = () => {
             <strong style={{ color: PS_COLORS.primary }}>
               {occupiedApartments.length} căn hộ OCCUPIED
             </strong>{' '}
-            (Tự động bỏ qua các căn trống theo quy định BR-05)
+            (Tự động bỏ qua các căn trống)
           </div>
         </div>
 
@@ -909,7 +962,7 @@ const MeterReading = () => {
       <Modal
         title={
           <span className="ps-heading-lg" style={{ fontWeight: 300, color: PS_COLORS.ink }}>
-            Cấu hình Bảng đơn giá Dịch vụ Tòa nhà (UC-08)
+            Cấu hình Bảng đơn giá Dịch vụ Tòa nhà
           </span>
         }
         open={tariffModalOpen}

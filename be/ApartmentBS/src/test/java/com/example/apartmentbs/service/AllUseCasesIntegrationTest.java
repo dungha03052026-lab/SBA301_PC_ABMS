@@ -153,6 +153,15 @@ public class AllUseCasesIntegrationTest {
         assertEquals("BQL Test Admin", response.getUser().getFullName());
         assertEquals(Role.ADMIN, response.getUser().getRole());
 
+        // When & Then: Đăng nhập bằng Email
+        LoginRequest emailReq = LoginRequest.builder()
+                .phoneNumber("admin.test@building.vn")
+                .password("123456")
+                .build();
+        AuthResponse emailResponse = authService.login(emailReq);
+        assertNotNull(emailResponse.getToken());
+        assertEquals("BQL Test Admin", emailResponse.getUser().getFullName());
+
         // When & Then: Sai mật khẩu
         LoginRequest invalidReq = LoginRequest.builder()
                 .phoneNumber("0901000099")

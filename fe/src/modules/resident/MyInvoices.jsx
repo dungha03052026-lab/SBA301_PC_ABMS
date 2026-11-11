@@ -1,3 +1,14 @@
+/**
+ * Phân hệ Xem Hóa Đơn & Thanh Toán Dịch Vụ Căn Hộ (My Invoices - Resident).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-10: Cư dân tra cứu danh sách hóa đơn theo ngữ cảnh căn hộ đang chọn (ApartmentContext):
+ *    - Xem chỉ số điện nước (cũ - mới), lượng tiêu thụ và chi tiết từng khoản mục (Breakdown).
+ * 2. UC-11: Thanh toán không tiền mặt qua mã VietQR động:
+ *    - Sinh mã QR chuẩn ngân hàng tự động điền số tài khoản, số tiền và nội dung chuyển khoản.
+ *    - Nút "Tôi đã chuyển khoản": Chuyển trạng thái hóa đơn từ UNPAID -> PENDING (BR-06)
+ *      để gửi thông báo đối soát tới Ban Quản Lý.
+ */
 // src/modules/resident/MyInvoices.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -334,7 +345,7 @@ const MyInvoices = () => {
             marginBottom: 10,
           }}
         >
-          CỔNG DỊCH VỤ CƯ DÂN • HÓA ĐƠN & VIETQR (UC-10 • UC-11 • BR-06)
+          CỔNG DỊCH VỤ CƯ DÂN • HÓA ĐƠN & VIETQR
         </span>
 
         <h1
@@ -470,7 +481,7 @@ const MyInvoices = () => {
             Danh sách Hóa đơn căn hộ {currentApartment?.room_number} ({currentApartment?.building_block})
           </h2>
           <span style={{ fontSize: 13, color: PS_COLORS.muteLight }}>
-            (Hệ thống tự động lọc theo căn hộ đang chọn tại Header phía trên theo chuẩn BR-02)
+            (Hệ thống tự động lọc theo căn hộ đang chọn tại Header phía trên)
           </span>
         </div>
 

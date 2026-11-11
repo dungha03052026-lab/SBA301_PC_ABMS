@@ -29,6 +29,21 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Triển khai nghiệp vụ tính phí dịch vụ và chu trình quản lý hóa đơn (BillingServiceImpl).
+ * 
+ * Nghiệp vụ tính phí (BR-05):
+ *  - Phí quản lý = Diện tích căn hộ (m2) * Đơn giá quản lý / m2.
+ *  - Tiền điện = (Chỉ số điện mới - Chỉ số điện cũ) * Đơn giá điện.
+ *  - Tiền nước = (Chỉ số nước mới - Chỉ số nước cũ) * Đơn giá nước.
+ *  - Phí gửi xe = (Số lượng xe máy * Phí xe máy) + (Số lượng ô tô * Phí ô tô).
+ *  - Tổng thanh toán = Phí quản lý + Tiền điện + Tiền nước + Phí gửi xe.
+ * 
+ * Vòng đời phê duyệt thanh toán (BR-06):
+ *  - UNPAID -> Cư dân xác nhận chuyển khoản -> PENDING.
+ *  - PENDING -> Ban Quản Lý đối soát ngân hàng khớp lệnh -> PAID (Lưu admin duyệt và paidAt).
+ *  - PENDING -> Ban Quản Lý từ chối nếu không thấy tiền -> UNPAID.
+ */
 @Service
 @RequiredArgsConstructor
 public class BillingServiceImpl implements BillingService {
@@ -39,6 +54,9 @@ public class BillingServiceImpl implements BillingService {
     private final VehicleRepository vehicleRepository;
     private final UserRepository userRepository;
 
+    /**
+     * Lấy biểu phí hiện hành (khởi tạo mặc định nếu bảng csdl chưa có).
+     */
     @Override
     @Transactional(readOnly = true)
     public TariffResponse getTariff() {
@@ -46,6 +64,9 @@ public class BillingServiceImpl implements BillingService {
         return TariffResponse.fromEntity(tariff);
     }
 
+    /**
+     * Cập nhật biểu phí dịch vụ tòa nhà (Dành riêng cho ADMIN).
+     */
     @Override
     @Transactional
     public TariffResponse updateTariff(TariffRequest request) {
@@ -61,6 +82,9 @@ public class BillingServiceImpl implements BillingService {
         return TariffResponse.fromEntity(saved);
     }
 
+    /**
+     * Tìm kiếm hóa đơn không phân trang theo kỳ, trạng thái hoặc căn hộ.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<InvoiceResponse> searchInvoices(String billingMonth, InvoiceStatus status, Long apartmentId) {
@@ -81,6 +105,9 @@ public class BillingServiceImpl implements BillingService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Tìm kiếm hóa đơn có phân trang và sắp xếp.
+     */
     @Override
     @Transactional(readOnly = true)
     public PageResponse<InvoiceResponse> searchInvoicesPaged(
@@ -115,6 +142,9 @@ public class BillingServiceImpl implements BillingService {
         return PageResponse.from(invoicePage, content);
     }
 
+    /**
+     * Lấy chi tiết một hóa đơn kèm bảng chi tiết phí (InvoiceBreakdown).
+     */
     @Override
     @Transactional(readOnly = true)
     public InvoiceResponse getInvoiceById(Long id) {
@@ -123,6 +153,9 @@ public class BillingServiceImpl implements BillingService {
         return enrichInvoiceResponse(invoice, getOrInitTariff());
     }
 
+    /**
+     * Lấy toàn bộ hóa đơn của một căn hộ cụ thể.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<InvoiceResponse> getInvoicesByApartment(Long apartmentId) {
@@ -132,6 +165,13 @@ public class BillingServiceImpl implements BillingService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Chốt số công tơ và sinh hóa đơn hàng loạt (Batch Invoice Generation - BR-05):
+     * - Chỉ tạo cho các căn hộ đang có người ở (OCCUPIED).
+     * - Kiểm tra tính hợp lệ: Số mới >= Số cũ.
+     * - Tính toán phí quản lý, điện, nước, phương tiện dựa trên biểu phí hiện hành.
+     * - Lưu hóa đơn với trạng thái UNPAID và hạn nộp (dueDate).
+     */
     @Override
     @Transactional
     public List<InvoiceResponse> batchGenerateInvoices(BatchInvoiceCreateRequest request) {
@@ -211,6 +251,10 @@ public class BillingServiceImpl implements BillingService {
         return results;
     }
 
+    /**
+     * Cư dân xác nhận đã thanh toán chuyển khoản (BR-06):
+     * Kiểm tra quyền sở hữu căn hộ, chuyển hóa đơn sang PENDING chờ đối soát.
+     */
     @Override
     @Transactional
     public InvoiceResponse confirmPayment(Long invoiceId, Long residentId) {
@@ -232,6 +276,10 @@ public class BillingServiceImpl implements BillingService {
         return enrichInvoiceResponse(saved, getOrInitTariff());
     }
 
+    /**
+     * Ban Quản Lý duyệt thanh toán thành công (BR-06):
+     * Cập nhật trạng thái PAID, ghi nhận Admin duyệt và thời điểm thanh toán (paidAt).
+     */
     @Override
     @Transactional
     public InvoiceResponse approveInvoice(Long invoiceId, Long adminId) {
@@ -250,6 +298,10 @@ public class BillingServiceImpl implements BillingService {
         return enrichInvoiceResponse(saved, getOrInitTariff());
     }
 
+    /**
+     * Ban Quản Lý từ chối xác nhận thanh toán do chưa nhận được tiền (BR-06):
+     * Đưa trạng thái hóa đơn quay trở lại UNPAID.
+     */
     @Override
     @Transactional
     public InvoiceResponse rejectInvoice(Long invoiceId) {
@@ -265,6 +317,9 @@ public class BillingServiceImpl implements BillingService {
         return enrichInvoiceResponse(saved, getOrInitTariff());
     }
 
+    /**
+     * Lấy hoặc khởi tạo cấu hình biểu phí dịch vụ mặc định (Tariff ID = 1).
+     */
     private ServiceTariff getOrInitTariff() {
         return tariffRepository.findById(1).orElseGet(() -> {
             ServiceTariff defaultTariff = ServiceTariff.builder()
@@ -280,6 +335,9 @@ public class BillingServiceImpl implements BillingService {
         });
     }
 
+    /**
+     * Bổ sung bảng phân tích chi phí chi tiết (Breakdown) vào InvoiceResponse.
+     */
     private InvoiceResponse enrichInvoiceResponse(Invoice invoice, ServiceTariff tariff) {
         InvoiceResponse response = InvoiceResponse.fromEntity(invoice);
         if (invoice.getApartment() != null) {

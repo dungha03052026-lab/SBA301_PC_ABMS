@@ -1,3 +1,16 @@
+/**
+ * Phân hệ Chợ Việc Chung & Nhận Sự Cố (Task Pool - Technician).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-14: Danh sách kho việc chung (Task Pool) của toàn bộ tòa nhà:
+ *    - Chỉ hiển thị các ticket đang ở trạng thái OPEN (chưa có kỹ thuật viên nhận).
+ *    - Đánh dấu cảnh báo đỏ với các sự cố Quá Hạn (> 24h) chưa được xử lý.
+ * 2. UC-15: Cơ chế Nhận Việc Nguyên Tử (Atomic Claim - BR-07):
+ *    - Kỹ thuật viên ấn "Tiếp nhận công việc".
+ *    - Gửi request POST /api/v1/technician/tickets/{id}/claim.
+ *    - Chống xung đột đồng thời (Concurrency): nếu kỹ thuật viên khác đã nhận trước thì hiển thị lỗi thông báo ngay.
+ *    - Sau khi nhận việc thành công, công việc tự động chuyển sang phân hệ "Việc của tôi".
+ */
 // src/modules/technician/TaskPool.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -368,7 +381,7 @@ const TaskPool = () => {
             marginBottom: 10,
           }}
         >
-          CỔNG KỸ THUẬT VIÊN • CHỢ VIỆC TOÀN TÒA NHÀ (UC-14 • UC-15 • BR-07)
+          CỔNG KỸ THUẬT VIÊN • CHỢ VIỆC TOÀN TÒA NHÀ
         </span>
 
         <h1
@@ -440,7 +453,7 @@ const TaskPool = () => {
           }}
         >
           <span style={{ fontSize: 13, color: overdueCount > 0 ? PS_COLORS.warning : PS_COLORS.muteLight, fontWeight: 600 }}>
-            SỰ CỐ QUÁ HẠN &gt; 24H (BR-07)
+            SỰ CỐ QUÁ HẠN &gt; 24H
           </span>
           <div
             className="ps-display-md"
@@ -622,7 +635,7 @@ const TaskPool = () => {
           <div style={{ marginTop: 16 }}>
             {selectedTicket.isOverdue && (
               <Alert
-                message="SỰ CỐ ĐÃ QUÁ HẠN > 24H (BR-07)"
+                message="SỰ CỐ ĐÃ QUÁ HẠN > 24H"
                 description={`Yêu cầu này được tạo cách đây ${selectedTicket.diffHours} tiếng. Cần được tiếp nhận khẩn cấp.`}
                 type="error"
                 showIcon

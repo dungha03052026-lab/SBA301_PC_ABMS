@@ -1,3 +1,14 @@
+/**
+ * Phân hệ Việc Của Tôi & Báo Hoàn Thành Sửa Chữa (My Tasks - Technician).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-16: Quản lý danh sách các công việc đã nhận sửa chữa của cá nhân kỹ thuật viên:
+ *    - Lọc nhanh các việc đang làm (IN_PROGRESS), đã xong chờ cư dân nghiệm thu (RESOLVED), hoặc đã đóng (CLOSED).
+ *    - Xem thông tin liên hệ cư dân và địa chỉ phòng để liên lạc hẹn giờ sửa.
+ * 2. Báo hoàn thành xử lý sự cố:
+ *    - Mở modal nhập giải pháp khắc phục (Biên bản kỹ thuật / Technician Note).
+ *    - Gửi request POST /api/v1/technician/tickets/{id}/complete chuyển trạng thái sang RESOLVED để cư dân nghiệm thu.
+ */
 // src/modules/technician/MyTasks.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -340,7 +351,7 @@ const MyTasks = () => {
             marginBottom: 10,
           }}
         >
-          CỔNG KỸ THUẬT VIÊN • CÔNG VIỆC CỦA TÔI (UC-16)
+          CỔNG KỸ THUẬT VIÊN • CÔNG VIỆC CỦA TÔI
         </span>
 
         <h1
@@ -520,7 +531,7 @@ const MyTasks = () => {
         title={
           <div>
             <span className="ps-heading-lg" style={{ fontWeight: 300, color: PS_COLORS.ink, display: 'block' }}>
-              Biên bản Báo hoàn thành Xử lý Sự cố (UC-16)
+              Biên bản Báo hoàn thành Xử lý Sự cố
             </span>
             <span style={{ fontSize: 14, color: PS_COLORS.primary, fontWeight: 600 }}>
               Sự cố: {selectedTicket?.ticket_code} — {selectedTicket?.title}

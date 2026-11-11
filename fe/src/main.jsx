@@ -1,3 +1,10 @@
+/**
+ * Điểm khởi nhập (Entry Point) của ứng dụng Frontend ABMS.
+ * 
+ * - Nạp stylesheet CSS: Bootstrap 5 & Custom Global Styles.
+ * - Khởi tạo MockDB (LocalStorage) phục vụ chế độ offline fallback nếu Backend không kết nối được.
+ * - Render cây component React vào phần tử DOM gốc '#root'.
+ */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';

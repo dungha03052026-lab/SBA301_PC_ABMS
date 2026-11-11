@@ -1,3 +1,14 @@
+/**
+ * Phân hệ Đối Soát Sao Kê Ngân Hàng & Phê Duyệt Gạch Nợ Hóa Đơn (Invoice Approval - Admin).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-12: Đối soát thanh toán hóa đơn theo quy tắc BR-06:
+ *    - Danh sách mặc định lọc theo PENDING (các hóa đơn cư dân đã chuyển khoản và ấn xác nhận).
+ *    - Ban Quản Lý đối chiếu sao kê tài khoản ngân hàng của tòa nhà.
+ *    - Nút "Duyệt gạch nợ": Chuyển trạng thái sang PAID, lưu thông tin admin duyệt và thời điểm thanh toán.
+ *    - Nút "Từ chối": Chuyển trạng thái ngược về UNPAID khi không thấy giao dịch hoặc số tiền không khớp.
+ * 2. Xem chi tiết bảng kê cấu thành chi phí (Invoice Breakdown Modal).
+ */
 // src/modules/admin/InvoiceApproval.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -83,6 +94,8 @@ const InvoiceApproval = () => {
           created_at: i.createdAt,
           paid_at: i.paidAt,
           approved_by: i.approvedBy,
+          resident_name: i.residentName,
+          resident_phone: i.residentPhone,
         }));
       }
 
@@ -96,6 +109,14 @@ const InvoiceApproval = () => {
           area_sqm: a.areaSqm,
           status: a.status,
           resident_id: a.resident?.id || null,
+          resident: a.resident
+            ? {
+                id: a.resident.id,
+                full_name: a.resident.fullName,
+                phone_number: a.resident.phoneNumber,
+                email: a.resident.email,
+              }
+            : null,
         }));
       }
     } catch (e) {
@@ -116,7 +137,12 @@ const InvoiceApproval = () => {
   const enrichedInvoices = useMemo(() => {
     return invoices.map((inv) => {
       const apt = apartments.find((a) => a.id === inv.apartment_id);
-      const resident = apt ? users.find((u) => u.id === apt.resident_id) : null;
+      const resident =
+        apt?.resident ||
+        (apt ? users.find((u) => u.id === apt.resident_id) : null) ||
+        (inv.resident_name
+          ? { full_name: inv.resident_name, phone_number: inv.resident_phone || '' }
+          : null);
       return {
         ...inv,
         apartment: apt,
@@ -398,7 +424,7 @@ const InvoiceApproval = () => {
             marginBottom: 10,
           }}
         >
-          PHÂN HỆ TÀI CHÍNH & ĐỐI SOÁT (UC-12 • BR-06 PLAN B)
+          PHÂN HỆ TÀI CHÍNH & ĐỐI SOÁT
         </span>
 
         <h1

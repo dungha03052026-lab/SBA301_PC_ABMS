@@ -17,6 +17,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Triển khai nghiệp vụ Quản lý Thông báo tòa nhà (AnnouncementServiceImpl).
+ * 
+ * - Đăng tải tin tức quan trọng từ Ban Quản Lý gửi tới toàn thể cư dân.
+ * - Hỗ trợ tính năng ghim tin (isPinned = true) giúp tin quan trọng luôn nổi bật ở đầu trang.
+ */
 @Service
 @RequiredArgsConstructor
 public class AnnouncementServiceImpl implements AnnouncementService {
@@ -24,6 +30,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     private final AnnouncementRepository announcementRepository;
     private final UserRepository userRepository;
 
+    /**
+     * Lấy toàn bộ thông báo tòa nhà, sắp xếp ưu tiên tin ghim trước, sau đó tới ngày tạo mới nhất.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<AnnouncementResponse> getAllAnnouncements() {
@@ -32,6 +41,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy chi tiết thông báo theo ID.
+     */
     @Override
     @Transactional(readOnly = true)
     public AnnouncementResponse getAnnouncementById(Long id) {
@@ -40,6 +52,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
         return AnnouncementResponse.fromEntity(announcement);
     }
 
+    /**
+     * Ban Quản Lý soạn thảo và đăng thông báo mới.
+     */
     @Override
     @Transactional
     public AnnouncementResponse createAnnouncement(AnnouncementRequest request, Long adminId) {
@@ -58,6 +73,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
         return AnnouncementResponse.fromEntity(saved);
     }
 
+    /**
+     * Chỉnh sửa thông báo (nội dung hoặc trạng thái ghim).
+     */
     @Override
     @Transactional
     public AnnouncementResponse updateAnnouncement(Long id, AnnouncementRequest request) {
@@ -72,6 +90,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
         return AnnouncementResponse.fromEntity(saved);
     }
 
+    /**
+     * Xóa thông báo khỏi hệ thống.
+     */
     @Override
     @Transactional
     public void deleteAnnouncement(Long id) {

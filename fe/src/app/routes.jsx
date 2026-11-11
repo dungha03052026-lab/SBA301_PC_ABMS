@@ -1,11 +1,29 @@
-// src/app/routes.jsx
+/**
+ * Quản lý định tuyến tập trung của hệ thống ABMS (Centralized Routing).
+ * 
+ * Cấu trúc phân quyền & bảo vệ tuyến đường (ProtectedRoute):
+ * 1. /login: Trang đăng nhập chung cho cả 3 vai trò (ADMIN, RESIDENT, TECHNICIAN).
+ * 2. /admin/**: Phân hệ Quản trị viên (Ban Quản Lý):
+ *    - apartments: Quản lý căn hộ, cư dân, phương tiện, Move-in/Move-out.
+ *    - meter-reading: Ghi chỉ số điện nước & chốt số hóa đơn.
+ *    - invoices: Đối soát và phê duyệt thanh toán hóa đơn (BR-06).
+ *    - tickets: Giám sát toàn bộ sự cố và phân công kỹ thuật viên.
+ *    - announcements: Soạn thảo và quản lý thông báo tòa nhà.
+ * 3. /resident/**: Phân hệ Cư dân:
+ *    - invoices: Xem lịch sử hóa đơn & gửi xác nhận đã chuyển khoản.
+ *    - tickets: Báo hỏng kỹ thuật & nghiệm thu đánh giá kết quả sửa chữa.
+ *    - announcements: Xem bảng tin tòa nhà.
+ * 4. /technician/**: Phân hệ Kỹ thuật viên:
+ *    - task-pool: Chợ việc chung - nhận việc (Claim) từ danh sách OPEN.
+ *    - my-tasks: Danh sách việc đang nhận xử lý & báo hoàn thành.
+ */
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from '../shared/context/AuthContext';
 import { ApartmentProvider } from '../shared/context/ApartmentContext';
 import ProtectedRoute from '../shared/components/ProtectedRoute';
 
-// Layouts
+// Layouts theo vai trò
 import AdminLayout from '../shared/layouts/AdminLayout';
 import ResidentLayout from '../shared/layouts/ResidentLayout';
 import TechLayout from '../shared/layouts/TechLayout';
@@ -35,10 +53,10 @@ const AppRoutes = () => {
       <ApartmentProvider>
         <BrowserRouter>
           <Routes>
-            {/* Public Route */}
+            {/* Tuyến đường công khai (Public Route) */}
             <Route path="/login" element={<LoginPage />} />
 
-            {/* Phân hệ ADMIN */}
+            {/* Phân hệ ADMIN (Yêu cầu vai trò ADMIN) */}
             <Route
               path="/admin"
               element={
@@ -55,7 +73,7 @@ const AppRoutes = () => {
               <Route path="announcements" element={<Announcements />} />
             </Route>
 
-            {/* Phân hệ RESIDENT (Cư dân) */}
+            {/* Phân hệ RESIDENT (Yêu cầu vai trò RESIDENT) */}
             <Route
               path="/resident"
               element={
@@ -70,7 +88,7 @@ const AppRoutes = () => {
               <Route path="announcements" element={<ResidentAnnouncements />} />
             </Route>
 
-            {/* Phân hệ TECHNICIAN (Kỹ thuật) */}
+            {/* Phân hệ TECHNICIAN (Yêu cầu vai trò TECHNICIAN) */}
             <Route
               path="/technician"
               element={
@@ -84,7 +102,7 @@ const AppRoutes = () => {
               <Route path="my-tasks" element={<MyTasks />} />
             </Route>
 
-            {/* Fallback route */}
+            {/* Tuyến đường mặc định khi sai URL */}
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </BrowserRouter>

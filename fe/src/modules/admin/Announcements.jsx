@@ -1,3 +1,13 @@
+/**
+ * Phân hệ Quản Lý Bảng Tin & Thông Báo Tòa Nhà (Announcements Management - Admin).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-19: Soạn thảo, ghim và quản lý thông báo tòa nhà:
+ *    - Đăng thông báo mới với tiêu đề và nội dung chi tiết.
+ *    - Tính năng Ghim tin quan trọng (Pushpin): Đẩy tin lên đầu bảng tin cư dân.
+ *    - Chỉnh sửa thông báo hoặc xóa tin cũ.
+ * 2. Lọc thông báo theo trạng thái ghim và từ khóa tìm kiếm.
+ */
 // src/modules/admin/Announcements.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -13,7 +23,7 @@ import {
   Input,
   Modal,
   Form,
-  Space,
+
   Tag,
   Switch,
   message,
@@ -288,13 +298,32 @@ const Announcements = () => {
   // ==========================================
   // TABLE COLUMNS DEFINITION
   // ==========================================
+  const tableActionBtnStyle = {
+    borderRadius: PS_ROUNDED.full,
+    height: 30,
+    paddingInline: 8,
+    fontSize: 13,
+    fontWeight: 600,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
   const columns = [
     {
       title: 'TIÊU ĐỀ BẢN TIN',
       key: 'title_info',
       render: (_, record) => (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+        <div style={{ minWidth: 0 }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 8,
+              marginBottom: 4,
+            }}
+          >
             {record.is_pinned && (
               <Tag
                 color="blue"
@@ -306,6 +335,7 @@ const Announcements = () => {
                   backgroundColor: 'rgba(0, 112, 209, 0.1)',
                   borderColor: PS_COLORS.primary,
                   color: PS_COLORS.primary,
+                  marginInlineEnd: 0,
                 }}
               >
                 <PushpinOutlined /> ĐÃ GHIM ƯU TIÊN
@@ -320,7 +350,6 @@ const Announcements = () => {
               color: PS_COLORS.bodyLight,
               fontSize: 13,
               margin: 0,
-              maxWidth: 580,
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
@@ -334,9 +363,17 @@ const Announcements = () => {
     {
       title: 'NGƯỜI ĐĂNG',
       key: 'author',
-      width: 180,
+      width: 165,
+      onHeaderCell: () => ({ style: { whiteSpace: 'nowrap' } }),
       render: (_, record) => (
-        <span style={{ fontWeight: 600, color: PS_COLORS.ink, fontSize: 13 }}>
+        <span
+          style={{
+            fontWeight: 600,
+            color: PS_COLORS.ink,
+            fontSize: 13,
+            whiteSpace: 'nowrap',
+          }}
+        >
           {record.author?.full_name || 'Ban Quản Lý'}
         </span>
       ),
@@ -345,9 +382,16 @@ const Announcements = () => {
       title: 'NGÀY PHÁT HÀNH',
       dataIndex: 'created_at',
       key: 'created_at',
-      width: 170,
+      width: 145,
+      onHeaderCell: () => ({ style: { whiteSpace: 'nowrap' } }),
       render: (d) => (
-        <span style={{ fontSize: 13, color: PS_COLORS.muteLight }}>
+        <span
+          style={{
+            fontSize: 13,
+            color: PS_COLORS.muteLight,
+            whiteSpace: 'nowrap',
+          }}
+        >
           {dayjs(d).format('DD/MM/YYYY HH:mm')}
         </span>
       ),
@@ -355,18 +399,29 @@ const Announcements = () => {
     {
       title: 'THAO TÁC',
       key: 'actions',
-      width: 240,
+      width: 280,
+      align: 'right',
+      onHeaderCell: () => ({ style: { whiteSpace: 'nowrap' } }),
       render: (_, record) => (
-        <Space size="small">
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            gap: 4,
+            whiteSpace: 'nowrap',
+          }}
+        >
           <Button
             type="text"
+            size="small"
             icon={<PushpinOutlined />}
             onClick={() => handleTogglePin(record)}
             style={{
-              borderRadius: PS_ROUNDED.full,
+              ...tableActionBtnStyle,
+              width: 88,
+              justifyContent: 'flex-start',
               color: record.is_pinned ? PS_COLORS.primary : PS_COLORS.muteLight,
-              fontWeight: 600,
-              fontSize: 13,
             }}
           >
             {record.is_pinned ? 'Bỏ ghim' : 'Ghim'}
@@ -374,9 +429,10 @@ const Announcements = () => {
 
           <Button
             type="text"
+            size="small"
             icon={<EditOutlined />}
             onClick={() => handleOpenEdit(record)}
-            style={{ borderRadius: PS_ROUNDED.full, fontSize: 13 }}
+            style={{ ...tableActionBtnStyle, width: 58, fontWeight: 500 }}
           >
             Sửa
           </Button>
@@ -390,9 +446,10 @@ const Announcements = () => {
           >
             <Button
               type="text"
+              size="small"
               danger
               icon={<DeleteOutlined />}
-              style={{ borderRadius: PS_ROUNDED.full, fontSize: 13 }}
+              style={{ ...tableActionBtnStyle, width: 58, fontWeight: 500 }}
             >
               Xóa
             </Button>
@@ -400,14 +457,20 @@ const Announcements = () => {
 
           <Button
             type="text"
+            size="small"
             icon={<EyeOutlined />}
+            title="Xem chi tiết"
             onClick={() => {
               setSelectedAnnouncement(record);
               setDetailModalOpen(true);
             }}
-            style={{ borderRadius: PS_ROUNDED.full }}
+            style={{
+              ...tableActionBtnStyle,
+              width: 30,
+              paddingInline: 0,
+            }}
           />
-        </Space>
+        </div>
       ),
     },
   ];
@@ -440,7 +503,7 @@ const Announcements = () => {
               marginBottom: 10,
             }}
           >
-            PHÂN HỆ TRUYỀN THÔNG & BẢN TIN TÒA NHÀ (UC-19)
+            PHÂN HỆ TRUYỀN THÔNG & BẢN TIN TÒA NHÀ
           </span>
 
           <h1
@@ -643,6 +706,8 @@ const Announcements = () => {
           columns={columns}
           dataSource={filteredAnnouncements}
           rowKey="id"
+          tableLayout="fixed"
+          scroll={{ x: 800 }}
           pagination={{ pageSize: 6, showSizeChanger: false }}
           locale={{ emptyText: 'Không có bản tin nào' }}
         />

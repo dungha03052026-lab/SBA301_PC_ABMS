@@ -1,3 +1,19 @@
+/**
+ * Phân hệ Quản lý Căn hộ & Cư dân (Apartment Management Module - Admin).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-04: Tra cứu, thêm mới, sửa, xóa thông tin căn hộ (Số phòng, tòa, tầng, diện tích).
+ * 2. UC-05: Thủ tục dọn vào (Move-In):
+ *    - Gán cư dân đã có trên hệ thống (Hỗ trợ 1 cư dân sở hữu nhiều căn hộ BR-02).
+ *    - Tạo mới cư dân với mật khẩu mặc định '123456'.
+ * 3. UC-06: Thủ tục dọn đi (Move-Out):
+ *    - Ràng buộc BR-04: Kiểm tra và chặn Move-out nếu căn hộ còn hóa đơn UNPAID hoặc PENDING.
+ *    - Xóa các phương tiện xe đã đăng ký của căn hộ.
+ *    - Chuyển trạng thái căn hộ về VACANT.
+ *    - Tự động khóa mềm tài khoản cư dân (is_active = 0) nếu người đó không còn sở hữu căn hộ nào khác.
+ * 4. UC-07: Đăng ký và quản lý phương tiện gửi xe (Xe máy, Ô tô) gắn liền với căn hộ.
+ * 5. Bộ lọc đa tiêu chí: Lọc theo Tòa nhà, Tầng, Trạng thái (Trống / Đang ở), và ô tìm kiếm tức thì.
+ */
 // src/modules/admin/ApartmentManagement.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -73,6 +89,8 @@ const ApartmentManagement = () => {
   const [moveOutDebts, setMoveOutDebts] = useState([]);
 
   const [vehicleModalOpen, setVehicleModalOpen] = useState(false);
+  const [modalVehicles, setModalVehicles] = useState([]);
+  const [loadingVehicles, setLoadingVehicles] = useState(false);
 
   // Forms
   const [aptForm] = Form.useForm();
@@ -503,16 +521,47 @@ const ApartmentManagement = () => {
   // ==========================================
   // 5. UC-07: QUẢN LÝ PHƯƠNG TIỆN (VEHICLES)
   // ==========================================
-  const handleOpenVehicles = (record) => {
-    setSelectedApartment(record);
+  const resetVehicleForm = (apt) => {
     vehicleForm.resetFields();
-    if (record.resident) {
+    if (apt?.resident) {
       vehicleForm.setFieldsValue({
-        owner_name: record.resident.full_name,
+        owner_name: apt.resident.full_name,
         vehicle_type: 'MOTORBIKE',
       });
     }
+  };
+
+  const fetchVehiclesForApartment = async (apartmentId) => {
+    setLoadingVehicles(true);
+    try {
+      const res = await axiosClient.get(`/admin/apartments/${apartmentId}/vehicles`);
+      const dataList = res?.data || res;
+      if (Array.isArray(dataList)) {
+        const mapped = dataList.map((v) => ({
+          id: v.id,
+          apartment_id: v.apartmentId ?? apartmentId,
+          license_plate: v.licensePlate,
+          vehicle_type: v.vehicleType,
+          owner_name: v.ownerName,
+          created_at: v.createdAt,
+        }));
+        setModalVehicles(mapped);
+        return;
+      }
+    } catch (err) {
+      console.warn('Cannot load vehicles from backend, using MockDB:', err);
+    } finally {
+      setLoadingVehicles(false);
+    }
+    setModalVehicles(MockDB.getVehicles().filter((v) => v.apartment_id === apartmentId));
+  };
+
+  const handleOpenVehicles = (record) => {
+    setSelectedApartment(record);
+    setModalVehicles([]);
+    resetVehicleForm(record);
     setVehicleModalOpen(true);
+    fetchVehiclesForApartment(record.id);
   };
 
   const handleAddVehicle = async (values) => {
@@ -527,13 +576,8 @@ const ApartmentManagement = () => {
       try {
         await axiosClient.post(`/admin/apartments/${selectedApartment.id}/vehicles`, vehiclePayload);
         message.success(`Đăng ký phương tiện ${vehiclePayload.licensePlate} thành công trên CSDL!`);
-        vehicleForm.resetFields();
-        if (selectedApartment.resident) {
-          vehicleForm.setFieldsValue({
-            owner_name: selectedApartment.resident.full_name,
-            vehicle_type: 'MOTORBIKE',
-          });
-        }
+        resetVehicleForm(selectedApartment);
+        await fetchVehiclesForApartment(selectedApartment.id);
         await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
         return;
       } catch (apiErr) {
@@ -566,15 +610,10 @@ const ApartmentManagement = () => {
 
       const updatedVehicles = [...vehicles, newVehicle];
       MockDB.saveVehicles(updatedVehicles);
+      setModalVehicles(updatedVehicles.filter((v) => v.apartment_id === selectedApartment.id));
       message.success(`Đăng ký phương tiện ${newVehicle.license_plate} thành công!`);
 
-      vehicleForm.resetFields();
-      if (selectedApartment.resident) {
-        vehicleForm.setFieldsValue({
-          owner_name: selectedApartment.resident.full_name,
-          vehicle_type: 'MOTORBIKE',
-        });
-      }
+      resetVehicleForm(selectedApartment);
       reloadData();
     } catch {
       message.error('Lỗi khi đăng ký xe!');
@@ -586,6 +625,7 @@ const ApartmentManagement = () => {
       try {
         await axiosClient.delete(`/admin/apartments/${selectedApartment.id}/vehicles/${vehicleId}`);
         message.success('Đã hủy đăng ký phương tiện trên CSDL!');
+        await fetchVehiclesForApartment(selectedApartment.id);
         await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
         return;
       } catch (apiErr) {
@@ -598,6 +638,7 @@ const ApartmentManagement = () => {
 
       const updated = vehicles.filter((v) => v.id !== vehicleId);
       MockDB.saveVehicles(updated);
+      setModalVehicles(updated.filter((v) => v.apartment_id === selectedApartment.id));
       message.success('Đã hủy đăng ký phương tiện!');
       reloadData();
     } catch {
@@ -751,58 +792,71 @@ const ApartmentManagement = () => {
     {
       title: 'THAO TÁC NGHIỆP VỤ',
       key: 'actions',
-      render: (_, record) => (
-        <Space size="small">
-          {record.status === 'VACANT' ? (
-            <Button
-              type="primary"
-              icon={<LoginOutlined />}
-              onClick={() => handleOpenMoveIn(record)}
-              className="ps-btn-primary"
-              style={{
-                height: 36,
-                padding: '0 18px',
-                fontSize: 13,
-                borderRadius: PS_ROUNDED.full,
-              }}
-            >
-              Move-in
-            </Button>
-          ) : (
-            <Button
-              danger
-              icon={<LogoutOutlined />}
-              onClick={() => handleOpenMoveOut(record)}
-              style={{
-                height: 36,
-                padding: '0 18px',
-                fontSize: 13,
-                borderRadius: PS_ROUNDED.full,
-                fontWeight: 600,
-                borderColor: PS_COLORS.warning,
-                color: PS_COLORS.warning,
-              }}
-            >
-              Move-out
-            </Button>
-          )}
+      render: (_, record) => {
+        const primaryRowActionStyle = {
+          height: 36,
+          minWidth: 116,
+          padding: '0 16px',
+          fontSize: 13,
+          fontWeight: 600,
+          borderRadius: PS_ROUNDED.full,
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        };
 
-          <Button
-            type="default"
-            icon={<EditOutlined />}
-            onClick={() => handleOpenEditApartment(record)}
-            style={{
-              height: 36,
-              borderRadius: PS_ROUNDED.full,
-              borderColor: PS_COLORS.ashLight,
-              fontSize: 13,
-              padding: '0 14px',
-            }}
-          >
-            Sửa
-          </Button>
-        </Space>
-      ),
+        return (
+          <Space size="small">
+            {record.status === 'VACANT' ? (
+              <Button
+                type="primary"
+                icon={<LoginOutlined />}
+                onClick={() => handleOpenMoveIn(record)}
+                style={{
+                  ...primaryRowActionStyle,
+                  backgroundColor: PS_COLORS.primary,
+                  borderColor: PS_COLORS.primary,
+                  color: PS_COLORS.onPrimary,
+                }}
+              >
+                Move-in
+              </Button>
+            ) : (
+              <Button
+                danger
+                icon={<LogoutOutlined />}
+                onClick={() => handleOpenMoveOut(record)}
+                style={{
+                  ...primaryRowActionStyle,
+                  borderColor: PS_COLORS.warning,
+                  color: PS_COLORS.warning,
+                }}
+              >
+                Move-out
+              </Button>
+            )}
+
+            <Button
+              type="default"
+              icon={<EditOutlined />}
+              onClick={() => handleOpenEditApartment(record)}
+              style={{
+                height: 36,
+                borderRadius: PS_ROUNDED.full,
+                borderColor: PS_COLORS.ashLight,
+                fontSize: 13,
+                fontWeight: 600,
+                padding: '0 16px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              Sửa
+            </Button>
+          </Space>
+        );
+      },
     },
   ];
 
@@ -834,7 +888,7 @@ const ApartmentManagement = () => {
               marginBottom: 10,
             }}
           >
-            PHÂN HỆ QUẢN LÝ MẶT BẰNG & CƯ DÂN (UC-04 • UC-05 • UC-06 • UC-07)
+            PHÂN HỆ QUẢN LÝ MẶT BẰNG & CƯ DÂN
           </span>
 
           <h1
@@ -854,7 +908,7 @@ const ApartmentManagement = () => {
             style={{ color: PS_COLORS.bodyLight, margin: 0, maxWidth: 760 }}
           >
             Theo dõi danh mục mặt bằng, tiếp nhận cư dân (Move-in), kiểm tra chặn nợ
-            trả phòng (Move-out BR-04) và quản lý định danh phương tiện gửi xe toàn tòa nhà.
+            trả phòng (Move-out) và quản lý định danh phương tiện gửi xe toàn tòa nhà.
           </p>
         </div>
 
@@ -1233,7 +1287,7 @@ const ApartmentManagement = () => {
             style={{ marginBottom: 20 }}
           >
             <Radio.Button value="NEW">Đăng ký cư dân mới</Radio.Button>
-            <Radio.Button value="EXISTING">Chọn cư dân đã có (UC-03 Multi-unit)</Radio.Button>
+            <Radio.Button value="EXISTING">Chọn cư dân đã có (Nhiều căn hộ)</Radio.Button>
           </Radio.Group>
 
           <Form
@@ -1362,7 +1416,7 @@ const ApartmentManagement = () => {
           {moveOutDebts.length > 0 ? (
             <div>
               <Alert
-                message="CHẶN MOVE-OUT: CĂN HỘ CÒN CÔNG NỢ CHƯA THANH TOÁN (BR-04)"
+                message="CHẶN MOVE-OUT: CĂN HỘ CÒN CÔNG NỢ CHƯA THANH TOÁN"
                 description="Hệ thống quy định cư dân chỉ được làm thủ tục trả phòng khi đã hoàn tất thanh toán hoặc đối soát gạch nợ xong toàn bộ hóa đơn."
                 type="error"
                 showIcon
@@ -1596,12 +1650,12 @@ const ApartmentManagement = () => {
               marginBottom: 12,
             }}
           >
-            Danh sách phương tiện đã đăng ký (
-            {vehicles.filter((v) => v.apartment_id === selectedApartment?.id).length} xe):
+            Danh sách phương tiện đã đăng ký ({modalVehicles.length} xe):
           </span>
 
           <Table
-            dataSource={vehicles.filter((v) => v.apartment_id === selectedApartment?.id)}
+            dataSource={modalVehicles}
+            loading={loadingVehicles}
             rowKey="id"
             pagination={false}
             columns={[

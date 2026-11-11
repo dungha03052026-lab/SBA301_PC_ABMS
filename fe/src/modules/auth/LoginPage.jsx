@@ -1,3 +1,17 @@
+/**
+ * Trang Đăng nhập hệ thống ABMS (Authentication & Login Page).
+ * 
+ * Luồng hoạt động:
+ * 1. Tiếp nhận số điện thoại và mật khẩu từ form submit.
+ * 2. Gọi hàm login(username, password) từ AuthContext để gửi request tới Spring Boot API /api/v1/auth/login.
+ * 3. Bắt lỗi nghiệp vụ: Ví dụ tài khoản bị vô hiệu hóa khi cư dân Move-out hết căn hộ (BR-04) -> Báo lỗi 403 Forbidden.
+ * 4. Điều hướng người dùng tự động theo Role:
+ *    - ADMIN -> /admin/apartments
+ *    - RESIDENT -> /resident/invoices
+ *    - TECHNICIAN -> /technician/task-pool
+ * 5. Cung cấp tính năng "Quick Role Testing" 1-click chuyển đổi nhanh tài khoản mẫu phục vụ thử nghiệm.
+ * 6. Tuân thủ 100% nguyên tắc thiết kế PlayStation Theme (Three-Canvas Chapter System, Headline Light 300, Pill Buttons).
+ */
 // src/modules/auth/LoginPage.jsx
 // Tuân thủ nghiêm ngặt 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Three-Canvas Chapter System: Primary-Nav đen (#000000), Body Light Canvas (#ffffff / #f5f7fa), Footer PlayStation Blue (#0070d1)
@@ -6,19 +20,18 @@
 // - Elevation: Level 0 Flat, tuyệt đối không dùng resting drop shadow
 // - Imagery does the heavy lifting: Phối cảnh kiến trúc chung cư chiếm 60% không gian thị giác
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Form, Input, Button, message, Alert } from 'antd';
 import {
   UserOutlined,
   LockOutlined,
-  CheckCircleOutlined,
 } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const LoginPage = () => {
-  const { mockLogin, login } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -28,41 +41,6 @@ const LoginPage = () => {
     if (role === 'ADMIN') navigate('/admin/apartments');
     else if (role === 'RESIDENT') navigate('/resident/invoices');
     else if (role === 'TECHNICIAN') navigate('/technician/task-pool');
-  };
-
-  // Quick Role Testing: Tự động điền thông tin và đăng nhập
-  const handleQuickRole = async (role) => {
-    const roleCredentials = {
-      ADMIN: { username: '0901000001', pass: '123456' },
-      RESIDENT: { username: '0903000001', pass: '123456' },
-      TECHNICIAN: { username: '0902000001', pass: '123456' },
-    };
-
-    const cred = roleCredentials[role];
-    if (cred) {
-      form.setFieldsValue({
-        username: cred.username,
-        password: cred.pass,
-      });
-    }
-
-    setLoading(true);
-    try {
-      const res = await login(cred.username, cred.pass);
-      if (res && res.success) {
-        message.success(`Đăng nhập Backend thành công: ${res.user.full_name} (${role})`);
-        navigateByRole(res.user.role);
-        return;
-      }
-    } catch {
-      // Fallback nếu Backend chưa bật
-    } finally {
-      setLoading(false);
-    }
-
-    const loggedUser = mockLogin(role);
-    message.info(`Đang chạy chế độ Offline (MockDB) với vai trò: ${role}`);
-    navigateByRole(loggedUser.role);
   };
 
   const handleFinish = async (values) => {
@@ -182,11 +160,11 @@ const LoginPage = () => {
             borderRadius: PS_ROUNDED.md, // 8px
             overflow: 'hidden',
             backgroundColor: PS_COLORS.canvasDark,
-            minHeight: 460,
+            minHeight: 520,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-end',
-            padding: 36,
+            justifyContent: 'center',
+            padding: '48px 44px',
           }}
         >
           {/* Architectural Background Image: Phối cảnh tòa nhà chung cư hiện đại */}
@@ -213,53 +191,48 @@ const LoginPage = () => {
               width: '100%',
               height: '100%',
               background:
-                'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.85) 100%)',
+                'linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.28) 100%)',
             }}
           />
 
-          {/* Content Slot: Compressed editorial block overlaid on lower-left */}
-          <div style={{ position: 'relative', zIndex: 1, maxWidth: 480 }}>
-            {/* Badge Info: PlayStation Blue pill */}
+          {/* Grouped Editorial Block: Badge + Headline */}
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 1,
+              maxWidth: 440,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: 16,
+            }}
+          >
             <span
               className="ps-caption-sm"
               style={{
                 backgroundColor: PS_COLORS.primary,
                 color: PS_COLORS.onPrimary,
-                padding: '4px 12px',
+                padding: '6px 14px',
                 borderRadius: PS_ROUNDED.full,
                 fontWeight: 700,
                 letterSpacing: '0.8px',
                 display: 'inline-block',
-                marginBottom: 16,
               }}
             >
               HỆ THỐNG VẬN HÀNH TÒA NHÀ
             </span>
 
-            {/* Headline: Weight 300 (light!) */}
             <h1
               className="ps-display-md"
               style={{
                 color: PS_COLORS.onDark,
                 fontWeight: 300,
-                lineHeight: 1.25,
-                marginBottom: 14,
+                lineHeight: 1.3,
+                margin: 0,
               }}
             >
               Không gian sống thông minh, vận hành chuẩn mực.
             </h1>
-
-            <p
-              className="ps-body-sm"
-              style={{
-                color: PS_COLORS.bodyDark,
-                lineHeight: 1.5,
-                margin: 0,
-              }}
-            >
-              Quy trình Move-in/Move-out đồng bộ, chốt chỉ số điện nước minh bạch,
-              thanh toán VietQR động và chợ việc bảo trì kỹ thuật cho tòa nhà.
-            </p>
           </div>
         </div>
 
@@ -376,7 +349,7 @@ const LoginPage = () => {
                 className="ps-btn-primary"
                 style={{
                   marginTop: 12,
-                  marginBottom: 24,
+                  marginBottom: 0,
                   height: 48,
                   borderRadius: PS_ROUNDED.full,
                 }}
@@ -384,53 +357,6 @@ const LoginPage = () => {
                 Đăng nhập hệ thống
               </Button>
             </Form>
-
-            {/* Quick Test Role Section: Filter Pill styling (rounded.full, subtle hairline) */}
-            <div
-              style={{
-                borderTop: `1px solid ${PS_COLORS.hairlineLight}`,
-                paddingTop: 20,
-                textAlign: 'center',
-              }}
-            >
-              <span
-                className="ps-caption-sm"
-                style={{
-                  display: 'block',
-                  color: PS_COLORS.muteLight,
-                  fontWeight: 500,
-                  marginBottom: 12,
-                }}
-              >
-                Tài khoản kiểm thử nhanh (1-Click Switch):
-              </span>
-              <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap' }}>
-                <button
-                  type="button"
-                  className="ps-filter-pill"
-                  onClick={() => handleQuickRole('ADMIN')}
-                  title="Ban Quản Lý Tòa Nhà (0901000001)"
-                >
-                  Admin (BQL)
-                </button>
-                <button
-                  type="button"
-                  className="ps-filter-pill"
-                  onClick={() => handleQuickRole('RESIDENT')}
-                  title="Cư dân Hồ Anh Dũng (2 căn hộ)"
-                >
-                  Cư dân (2 căn)
-                </button>
-                <button
-                  type="button"
-                  className="ps-filter-pill"
-                  onClick={() => handleQuickRole('TECHNICIAN')}
-                  title="Nhân viên Kỹ thuật (0902000001)"
-                >
-                  Kỹ thuật viên
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </main>

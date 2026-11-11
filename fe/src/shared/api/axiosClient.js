@@ -1,4 +1,13 @@
-// src/shared/api/axiosClient.js
+/**
+ * Cấu hình HTTP Client tập trung (Axios Instance) cho toàn bộ ứng dụng Frontend.
+ * 
+ * Tính năng chính:
+ * 1. Base URL: Lấy từ biến môi trường VITE_API_BASE_URL hoặc mặc định 'http://localhost:8080/api/v1'.
+ * 2. Request Interceptor: Tự động trích xuất Bearer token từ localStorage('user') và gắn vào Header 'Authorization'.
+ * 3. Response Interceptor: 
+ *    - Tự động bóc tách và trả về `response.data` cho các hàm gọi API.
+ *    - Bắt lỗi HTTP 401 Unauthorized: Xóa phiên làm việc và tự động điều hướng người dùng về màn hình đăng nhập /login.
+ */
 import axios from 'axios';
 
 const axiosClient = axios.create({
@@ -28,7 +37,7 @@ axiosClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Interceptor cho Response: Xử lý response hoặc bắt lỗi 401
+// Interceptor cho Response: Xử lý response hoặc bắt lỗi 401 (Hết hạn phiên)
 axiosClient.interceptors.response.use(
   (response) => {
     // Trả về trực tiếp data từ server
@@ -36,7 +45,7 @@ axiosClient.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      // Hết hạn phiên đăng nhập
+      // Hết hạn phiên đăng nhập -> Dọn dẹp session và chuyển về login
       localStorage.removeItem('user');
       localStorage.removeItem('selectedApartmentId');
       if (window.location.pathname !== '/login') {

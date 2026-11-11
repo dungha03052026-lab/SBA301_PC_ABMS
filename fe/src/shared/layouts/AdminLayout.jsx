@@ -1,6 +1,15 @@
+/**
+ * Khung giao diện Quản trị viên (Admin Layout) - Dành riêng cho Ban Quản Lý tòa nhà.
+ * 
+ * Thành phần chính:
+ * 1. Sidebar điều hướng: Căn hộ & Cư dân, Chốt số & Hóa đơn, Đối soát gạch nợ, Giám sát sự cố, Bản tin tòa nhà.
+ * 2. Header: Hiển thị thông tin quản trị viên, nút Đổi mật khẩu và Đăng xuất.
+ * 3. Content: Outlet động nạp các module tương ứng.
+ * 4. Áp dụng chuẩn thiết kế PlayStation Theme (Pure Black Sider, PS Blue Active highlights, bo góc mềm).
+ */
 // src/shared/layouts/AdminLayout.jsx
-import React, { useState } from 'react';
-import { Layout, Menu, Button, Space, Typography, Tag, Avatar } from 'antd';
+import { useState } from 'react';
+import { Layout, Menu, Button, Space, Avatar } from 'antd';
 import {
   AppstoreOutlined,
   ThunderboltOutlined,
@@ -8,7 +17,7 @@ import {
   ToolOutlined,
   NotificationOutlined,
   LogoutOutlined,
-  KeyOutlined,
+  LockOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
@@ -16,8 +25,8 @@ import { useAuth } from '../context/AuthContext';
 import ChangePasswordModal from '../components/ChangePasswordModal';
 import { PS_COLORS, PS_ROUNDED } from '../theme/playstationTheme';
 
-const { Header, Sider, Content, Footer } = Layout;
-const { Text } = Typography;
+const { Header, Sider, Content } = Layout;
+
 
 const AdminLayout = () => {
   const { user, logout } = useAuth();
@@ -111,13 +120,55 @@ const AdminLayout = () => {
           </div>
         </div>
 
-        <div style={{ padding: '16px 12px' }}>
+        <div style={{ padding: '16px 12px', flex: 1, overflowY: 'auto' }}>
           <Menu
             theme="light"
             mode="inline"
             selectedKeys={[location.pathname]}
             items={menuItems}
             onClick={handleMenuClick}
+            style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+            }}
+          />
+        </div>
+
+        {/* Khu vực tiện ích tài khoản & bảo mật (Sidebar Bottom) */}
+        <div
+          style={{
+            padding: collapsed ? '12px 8px' : '12px 12px',
+            borderTop: `1px solid ${PS_COLORS.hairlineLight}`,
+            backgroundColor: PS_COLORS.canvasLight,
+          }}
+        >
+          {!collapsed && (
+            <div
+              style={{
+                padding: '4px 16px 8px',
+                fontSize: 11,
+                fontWeight: 700,
+                color: PS_COLORS.muteLight,
+                letterSpacing: '0.6px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Hệ thống
+            </div>
+          )}
+          <Menu
+            theme="light"
+            mode="inline"
+            selectable={false}
+            selectedKeys={[]}
+            items={[
+              {
+                key: 'change-password',
+                icon: <LockOutlined />,
+                label: 'Đổi mật khẩu',
+                onClick: () => setChangePassOpen(true),
+              },
+            ]}
             style={{
               backgroundColor: 'transparent',
               border: 'none',
@@ -192,21 +243,6 @@ const AdminLayout = () => {
               </div>
             </Space>
 
-            {/* Button Secondary Light: Outline Pill */}
-            <Button
-              icon={<KeyOutlined />}
-              onClick={() => setChangePassOpen(true)}
-              style={{
-                borderRadius: PS_ROUNDED.full,
-                height: 38,
-                padding: '0 20px',
-                borderColor: PS_COLORS.ashLight,
-                fontWeight: 600,
-                fontSize: 14,
-              }}
-            >
-              Đổi mật khẩu
-            </Button>
 
             {/* Button Warning: Destructive Action Pill */}
             <Button
@@ -230,7 +266,7 @@ const AdminLayout = () => {
         <Content
           style={{
             padding: '28px 32px',
-            minHeight: 'calc(100vh - 180px)',
+            minHeight: 'calc(100vh - 64px)',
             maxWidth: 1400,
             width: '100%',
             margin: '0 auto',
@@ -238,26 +274,6 @@ const AdminLayout = () => {
         >
           <Outlet />
         </Content>
-
-        {/* Footer: PlayStation Blue band (#0070d1 footer-section) */}
-        <Footer
-          style={{
-            backgroundColor: PS_COLORS.primary,
-            color: PS_COLORS.onPrimary,
-            padding: '24px 32px',
-            textAlign: 'center',
-            fontSize: 14,
-          }}
-        >
-          <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-            <span style={{ fontWeight: 300, letterSpacing: '0.5px' }}>
-              BMS • Apartment Building Management System
-            </span>
-            <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
-              Thiết kế theo chuẩn PlayStation Design System (Flat Level 0 • Pill CTAs • 8px Radius)
-            </span>
-          </div>
-        </Footer>
       </Layout>
 
       <ChangePasswordModal

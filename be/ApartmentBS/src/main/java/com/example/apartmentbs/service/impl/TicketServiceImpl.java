@@ -26,6 +26,19 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Triển khai nghiệp vụ Xử lý và Điều phối sự cố bảo trì tòa nhà (TicketServiceImpl).
+ * 
+ * Vòng đời sự cố và các quy tắc nghiệp vụ:
+ * 1. Tạo ticket (OPEN): Tự động sinh mã ticket dạng TCK-yyyyMM-xxx.
+ * 2. Nhận việc nguyên tử (Atomic Claim - BR-07): Dùng update truy vấn có điều kiện status = 'OPEN' 
+ *    để chống tranh chấp tài nguyên khi nhiều kỹ thuật viên cùng bấm nhận việc cùng một lúc.
+ * 3. Hoàn thành sửa chữa (RESOLVED): Kỹ thuật viên phụ trách nhập phương án khắc phục.
+ * 4. Nghiệm thu & Chấm điểm (Inspect): Cư dân tạo ticket kiểm tra kết quả:
+ *    - Đạt: Đánh giá số sao (1-5 sao) và đóng ticket (CLOSED).
+ *    - Chưa đạt (Rework): Chuyển trạng thái ngược về IN_PROGRESS yêu cầu xử lý lại.
+ * 5. Điều phối cưỡng chế (Force Assign): Admin có quyền phân công trực tiếp cho kỹ thuật viên.
+ */
 @Service
 @RequiredArgsConstructor
 public class TicketServiceImpl implements TicketService {
@@ -34,6 +47,9 @@ public class TicketServiceImpl implements TicketService {
     private final ApartmentRepository apartmentRepository;
     private final UserRepository userRepository;
 
+    /**
+     * Cư dân tạo báo hỏng mới với mã tự sinh theo tháng và số thứ tự.
+     */
     @Override
     @Transactional
     public TicketResponse createTicket(TicketCreateRequest request, Long residentId) {
@@ -63,6 +79,9 @@ public class TicketServiceImpl implements TicketService {
         return TicketResponse.fromEntity(saved);
     }
 
+    /**
+     * Lấy toàn bộ danh sách báo hỏng của cư dân.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<TicketResponse> getTicketsByResident(Long residentId) {
@@ -71,6 +90,9 @@ public class TicketServiceImpl implements TicketService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy danh sách báo hỏng của cư dân có phân trang và sắp xếp.
+     */
     @Override
     @Transactional(readOnly = true)
     public PageResponse<TicketResponse> getTicketsByResidentPaged(Long residentId, int page, int size, String sortBy, String sortDir) {
@@ -86,6 +108,9 @@ public class TicketServiceImpl implements TicketService {
         return PageResponse.from(ticketPage, dtoList);
     }
 
+    /**
+     * Lấy danh sách các sự cố chưa được tiếp nhận (OPEN) trong Task Pool (không phân trang).
+     */
     @Override
     @Transactional(readOnly = true)
     public List<TicketResponse> getOpenTickets() {
@@ -94,6 +119,9 @@ public class TicketServiceImpl implements TicketService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy danh sách việc chung trong Task Pool có phân trang.
+     */
     @Override
     @Transactional(readOnly = true)
     public PageResponse<TicketResponse> getOpenTicketsPaged(int page, int size, String sortBy, String sortDir) {
@@ -109,6 +137,9 @@ public class TicketServiceImpl implements TicketService {
         return PageResponse.from(ticketPage, dtoList);
     }
 
+    /**
+     * Lấy danh sách việc mà kỹ thuật viên đang đảm nhận (không phân trang).
+     */
     @Override
     @Transactional(readOnly = true)
     public List<TicketResponse> getAssignedTickets(Long technicianId) {
@@ -117,6 +148,9 @@ public class TicketServiceImpl implements TicketService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy danh sách việc của kỹ thuật viên có phân trang.
+     */
     @Override
     @Transactional(readOnly = true)
     public PageResponse<TicketResponse> getAssignedTicketsPaged(Long technicianId, int page, int size, String sortBy, String sortDir) {
@@ -132,6 +166,9 @@ public class TicketServiceImpl implements TicketService {
         return PageResponse.from(ticketPage, dtoList);
     }
 
+    /**
+     * Lấy toàn bộ danh sách ticket trong hệ thống cho Admin (không phân trang).
+     */
     @Override
     @Transactional(readOnly = true)
     public List<TicketResponse> getAllTickets() {
@@ -140,6 +177,9 @@ public class TicketServiceImpl implements TicketService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy toàn bộ danh sách ticket cho Admin có phân trang.
+     */
     @Override
     @Transactional(readOnly = true)
     public PageResponse<TicketResponse> getAllTicketsPaged(int page, int size, String sortBy, String sortDir) {
@@ -155,6 +195,9 @@ public class TicketServiceImpl implements TicketService {
         return PageResponse.from(ticketPage, dtoList);
     }
 
+    /**
+     * Lấy chi tiết ticket theo ID.
+     */
     @Override
     @Transactional(readOnly = true)
     public TicketResponse getTicketById(Long id) {
@@ -163,6 +206,11 @@ public class TicketServiceImpl implements TicketService {
         return TicketResponse.fromEntity(ticket);
     }
 
+    /**
+     * Kỹ thuật viên nhận việc từ Task Pool (BR-07):
+     * Thực hiện cập nhật nguyên tử (UPDATE ticket SET status='IN_PROGRESS', assigned_to=? WHERE id=? AND status='OPEN').
+     * Nếu trả về 0 dòng -> Ném lỗi CONFLICT (409) do người khác đã nhanh tay nhận trước.
+     */
     @Override
     @Transactional
     public TicketResponse claimTicket(Long ticketId, Long technicianId) {
@@ -187,6 +235,10 @@ public class TicketServiceImpl implements TicketService {
         return TicketResponse.fromEntity(ticket);
     }
 
+    /**
+     * Kỹ thuật viên hoàn thành sửa chữa (Chuyển IN_PROGRESS -> RESOLVED).
+     * Yêu cầu nhập ghi chú giải pháp đã khắc phục sự cố.
+     */
     @Override
     @Transactional
     public TicketResponse completeTicket(Long ticketId, TicketCompleteRequest request, Long technicianId) {
@@ -209,6 +261,11 @@ public class TicketServiceImpl implements TicketService {
         return TicketResponse.fromEntity(saved);
     }
 
+    /**
+     * Cư dân nghiệm thu kết quả xử lý sự cố:
+     * - Nếu hài lòng: Chấm điểm sao (1-5), đóng ticket (CLOSED).
+     * - Nếu chưa đạt (rework = true): Trả lại trạng thái IN_PROGRESS để kỹ thuật viên làm lại.
+     */
     @Override
     @Transactional
     public TicketResponse inspectTicket(Long ticketId, TicketRateRequest request, Long residentId) {
@@ -237,6 +294,9 @@ public class TicketServiceImpl implements TicketService {
         return TicketResponse.fromEntity(saved);
     }
 
+    /**
+     * Ban Quản Lý chỉ định cưỡng chế kỹ thuật viên xử lý công việc (Force Assign).
+     */
     @Override
     @Transactional
     public TicketResponse forceAssignTicket(Long ticketId, Long technicianId) {

@@ -1,3 +1,15 @@
+/**
+ * Phân hệ Báo Hỏng Sự Cố & Nghiệm Thu Sửa Chữa (Report & Inspect Ticket - Resident).
+ * 
+ * Các ca sử dụng và nghiệp vụ trọng tâm:
+ * 1. UC-13: Cư dân tạo phiếu báo hỏng sự cố căn hộ:
+ *    - Phân loại danh mục (Điện, Nước, Khóa/Cửa, Khác).
+ *    - Tiêu đề, mô tả chi tiết và tải ảnh hiện trường sự cố.
+ * 2. UC-17: Nghiệm thu và đánh giá chất lượng dịch vụ khi sự cố chuyển sang RESOLVED:
+ *    - Nếu hài lòng: Chấm điểm hài lòng (1 - 5 sao) và đóng ticket (CLOSED).
+ *    - Nếu chưa hài lòng (Rework): Yêu cầu kỹ thuật viên làm lại -> Chuyển ngược về IN_PROGRESS.
+ * 3. Hiển thị tiến trình trực quan dạng Steps (OPEN -> IN_PROGRESS -> RESOLVED -> CLOSED).
+ */
 // src/modules/resident/ReportTicket.jsx
 // Tuân thủ 100% nguyên tắc thiết kế từ DESIGN-playstation.md:
 // - Light Canvas Mode (#f5f7fa layout, #ffffff cards/tables)
@@ -480,7 +492,7 @@ const ReportTicket = () => {
               marginBottom: 10,
             }}
           >
-            CỔNG DỊCH VỤ CƯ DÂN • BẢO TRÌ SỰ CỐ (UC-13 • UC-17)
+            CỔNG DỊCH VỤ CƯ DÂN • BẢO TRÌ SỰ CỐ
           </span>
 
           <h1
@@ -652,7 +664,7 @@ const ReportTicket = () => {
         title={
           <div>
             <span className="ps-heading-lg" style={{ fontWeight: 300, color: PS_COLORS.ink, display: 'block' }}>
-              Tạo Phiếu Báo hỏng Sự cố (UC-13)
+              Tạo Phiếu Báo hỏng Sự cố
             </span>
             <span style={{ fontSize: 14, color: PS_COLORS.primary, fontWeight: 600 }}>
               Căn hộ: {currentApartment?.room_number} ({currentApartment?.building_block})
@@ -748,7 +760,7 @@ const ReportTicket = () => {
       <Modal
         title={
           <span className="ps-heading-lg" style={{ fontWeight: 300, color: PS_COLORS.ink }}>
-            Nghiệm thu & Đánh giá Chất lượng (UC-17)
+            Nghiệm thu & Đánh giá Chất lượng
           </span>
         }
         open={reviewModalOpen}

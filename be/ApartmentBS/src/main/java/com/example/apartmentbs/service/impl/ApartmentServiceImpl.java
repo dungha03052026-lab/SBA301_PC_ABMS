@@ -32,6 +32,18 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Triển khai nghiệp vụ quản lý Căn hộ, Cư dân và Phương tiện (ApartmentServiceImpl).
+ * 
+ * Các nghiệp vụ cốt lõi:
+ * 1. Quan hệ Căn hộ - Cư dân (1-N): Một cư dân có thể đứng tên nhiều căn hộ OCCUPIED.
+ * 2. Thủ tục Dọn vào (Move-In): Gán cư dân hiện có hoặc tạo mới cư dân với mật khẩu mặc định.
+ * 3. Thủ tục Dọn đi (Move-Out - BR-04):
+ *    - CHẶN dọn đi nếu còn hóa đơn UNPAID hoặc PENDING (nợ phí/chờ duyệt).
+ *    - Xóa phương tiện liên quan.
+ *    - Chuyển trạng thái căn hộ về VACANT.
+ *    - CHỈ khóa tài khoản (is_active = 0) nếu số căn hộ OCCUPIED còn lại của người đó bằng 0.
+ */
 @Service
 @RequiredArgsConstructor
 public class ApartmentServiceImpl implements ApartmentService {
@@ -42,6 +54,9 @@ public class ApartmentServiceImpl implements ApartmentService {
     private final InvoiceRepository invoiceRepository;
     private final PasswordEncoder passwordEncoder;
 
+    /**
+     * Tìm kiếm căn hộ theo các tiêu chí lọc động không phân trang.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<ApartmentResponse> searchApartments(
@@ -65,6 +80,9 @@ public class ApartmentServiceImpl implements ApartmentService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Tìm kiếm căn hộ có phân trang và sắp xếp nhiều cột linh hoạt.
+     */
     @Override
     @Transactional(readOnly = true)
     public PageResponse<ApartmentResponse> searchApartmentsPaged(
@@ -99,6 +117,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         return PageResponse.from(apartmentPage, dtoList);
     }
 
+    /**
+     * Lấy chi tiết thông tin căn hộ kèm số lượng phương tiện đã đăng ký.
+     */
     @Override
     @Transactional(readOnly = true)
     public ApartmentResponse getApartmentById(Long id) {
@@ -107,6 +128,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         return ApartmentResponse.fromEntity(apt, vehicles.size());
     }
 
+    /**
+     * Tạo căn hộ mới trên hệ thống. Kiểm tra chống trùng số phòng.
+     */
     @Override
     @Transactional
     public ApartmentResponse createApartment(ApartmentRequest request) {
@@ -127,6 +151,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         return ApartmentResponse.fromEntity(saved, 0);
     }
 
+    /**
+     * Cập nhật thông số căn hộ. Nếu đổi mã phòng thì kiểm tra trùng mã.
+     */
     @Override
     @Transactional
     public ApartmentResponse updateApartment(Long id, ApartmentRequest request) {
@@ -147,6 +174,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         return ApartmentResponse.fromEntity(updated, vehicles.size());
     }
 
+    /**
+     * Xóa căn hộ (chỉ cho phép xóa khi căn hộ đang VACANT để đảm bảo an toàn dữ liệu).
+     */
     @Override
     @Transactional
     public void deleteApartment(Long id) {
@@ -157,6 +187,12 @@ public class ApartmentServiceImpl implements ApartmentService {
         apartmentRepository.delete(apt);
     }
 
+    /**
+     * Thủ tục tiếp nhận cư dân dọn vào (Move-in - UC-05):
+     * - Nếu chọn cư dân có sẵn: Liên kết trực tiếp (hỗ trợ 1 cư dân sở hữu nhiều căn hộ BR-02).
+     * - Nếu nhập cư dân mới: Kiểm tra số điện thoại, tạo tài khoản mới với mật khẩu mặc định '123456'.
+     * - Cập nhật trạng thái căn hộ sang OCCUPIED.
+     */
     @Override
     @Transactional
     public ApartmentResponse moveIn(Long id, MoveInRequest request) {
@@ -207,6 +243,13 @@ public class ApartmentServiceImpl implements ApartmentService {
         return ApartmentResponse.fromEntity(saved, 0);
     }
 
+    /**
+     * Thủ tục cư dân dọn đi (Move-out - UC-06):
+     * - BR-04: Kiểm tra công nợ. Chặn dọn đi nếu còn hóa đơn UNPAID hoặc PENDING.
+     * - Xóa thông tin các phương tiện đã đăng ký của căn hộ.
+     * - Chuyển trạng thái căn hộ về VACANT và gỡ bỏ liên kết cư dân.
+     * - Khóa tài khoản cư dân (is_active = 0) nếu cư dân không còn đứng tên căn hộ OCCUPIED nào khác.
+     */
     @Override
     @Transactional
     public ApartmentResponse moveOut(Long id) {
@@ -216,7 +259,7 @@ public class ApartmentServiceImpl implements ApartmentService {
             throw new AppException("Căn hộ " + apt.getRoomNumber() + " hiện đang trống, không thể thực hiện dọn đi!");
         }
 
-        // BR-04: RÀNG BUỘC CHẶN DỌN ĐI NẾU CÒN NỢ HÓA ĐƠN
+        // BR-04: RÀNG BUỘC CHẶN DỌN ĐI NẾU CÒN NỢ HÓA ĐƠN HOẶC ĐANG CHỜ DUYỆT
         long unpaidCount = invoiceRepository.countByApartmentIdAndStatusIn(
                 id, List.of(InvoiceStatus.UNPAID, InvoiceStatus.PENDING)
         );
@@ -231,7 +274,6 @@ public class ApartmentServiceImpl implements ApartmentService {
 
         // Xóa các phương tiện liên quan đến căn hộ
         User oldResident = apt.getResident();
-
         vehicleRepository.deleteByApartmentId(id);
 
         // Chuyển trạng thái căn hộ về trống
@@ -239,7 +281,7 @@ public class ApartmentServiceImpl implements ApartmentService {
         apt.setStatus(ApartmentStatus.VACANT);
         Apartment saved = apartmentRepository.save(apt);
 
-        // UC-06: Bàn giao chuyển đi & Khóa tài khoản cư dân nếu không còn sở hữu căn hộ nào khác
+        // UC-06 & BR-04: Bàn giao chuyển đi & Khóa tài khoản cư dân nếu không còn sở hữu căn hộ nào khác
         if (oldResident != null) {
             long remainingCount = apartmentRepository.countByResidentIdAndStatus(oldResident.getId(), ApartmentStatus.OCCUPIED);
             if (remainingCount == 0) {
@@ -251,6 +293,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         return ApartmentResponse.fromEntity(saved, 0);
     }
 
+    /**
+     * Lấy danh sách phương tiện gửi của một căn hộ.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<VehicleResponse> getVehiclesByApartment(Long apartmentId) {
@@ -260,6 +305,9 @@ public class ApartmentServiceImpl implements ApartmentService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Đăng ký thêm phương tiện cho căn hộ. Kiểm tra chống trùng biển số xe.
+     */
     @Override
     @Transactional
     public VehicleResponse addVehicle(Long apartmentId, VehicleRequest request) {
@@ -288,6 +336,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         return VehicleResponse.fromEntity(saved);
     }
 
+    /**
+     * Xóa phương tiện khỏi căn hộ.
+     */
     @Override
     @Transactional
     public void deleteVehicle(Long apartmentId, Long vehicleId) {
@@ -302,6 +353,9 @@ public class ApartmentServiceImpl implements ApartmentService {
         vehicleRepository.delete(vehicle);
     }
 
+    /**
+     * Lấy danh sách các căn hộ mà cư dân đang đứng tên.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<ApartmentResponse> getApartmentsByResident(Long residentId) {
@@ -313,6 +367,9 @@ public class ApartmentServiceImpl implements ApartmentService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy danh sách người dùng có vai trò RESIDENT.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<UserResponse> getResidents() {
@@ -321,6 +378,9 @@ public class ApartmentServiceImpl implements ApartmentService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Lấy danh sách người dùng có vai trò TECHNICIAN.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<UserResponse> getTechnicians() {
@@ -329,6 +389,9 @@ public class ApartmentServiceImpl implements ApartmentService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Hàm phụ trợ tìm căn hộ hoặc ném ngoại lệ 404 Not Found.
+     */
     private Apartment findApartmentOrThrow(Long id) {
         return apartmentRepository.findById(id)
                 .orElseThrow(() -> new AppException("Không tìm thấy căn hộ có ID: " + id, HttpStatus.NOT_FOUND));
