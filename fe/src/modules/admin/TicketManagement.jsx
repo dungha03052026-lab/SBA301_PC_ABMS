@@ -44,8 +44,8 @@ import {
   CheckOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const TicketManagement = () => {
@@ -53,6 +53,8 @@ const TicketManagement = () => {
   const [tickets, setTickets] = useState([]);
   const [apartments, setApartments] = useState([]);
   const [users, setUsers] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Filters
   const [statusFilter, setStatusFilter] = useState('ALL'); // 'ALL' | 'OVERDUE' | 'OPEN' | 'IN_PROGRESS' | 'RESOLVED'
@@ -66,9 +68,12 @@ const TicketManagement = () => {
   const [selectedTechId, setSelectedTechId] = useState(null);
 
   const reloadData = async () => {
-    let tcks = MockDB.getTickets();
-    let apts = MockDB.getApartments();
-    let usrs = MockDB.getUsers();
+    setLoading(true);
+    let tcks = [];
+    let apts = [];
+    let usrs = [];
+    let hasBackendFailure = false;
+    let firstError = null;
 
     try {
       const [ticketRes, aptRes, techRes] = await Promise.allSettled([
@@ -89,12 +94,37 @@ const TicketManagement = () => {
           description: t.description,
           image_url: t.imageUrl,
           status: t.status,
-          assigned_to: t.assignedTo,
+          assigned_to: t.assignedToId ?? t.assignedTo,
           technician_note: t.technicianNote,
           rating: t.rating,
           created_at: t.createdAt,
           resolved_at: t.resolvedAt,
+          apartment: t.roomNumber
+            ? {
+                id: t.apartmentId,
+                room_number: t.roomNumber,
+                floor: t.floor,
+                building_block: t.buildingBlock,
+              }
+            : null,
+          resident: t.residentName
+            ? {
+                id: t.residentId,
+                full_name: t.residentName,
+                phone_number: t.residentPhone || '',
+              }
+            : null,
+          technician: t.assignedToName
+            ? {
+                id: t.assignedToId ?? t.assignedTo,
+                full_name: t.assignedToName,
+                phone_number: '',
+              }
+            : null,
         }));
+      } else if (ticketRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || ticketRes.reason;
       }
 
       if (aptRes.status === 'fulfilled' && Array.isArray(aptRes.value?.data || aptRes.value)) {
@@ -108,11 +138,14 @@ const TicketManagement = () => {
           status: a.status,
           resident_id: a.resident?.id || null,
         }));
+      } else if (aptRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || aptRes.reason;
       }
 
       if (techRes.status === 'fulfilled' && Array.isArray(techRes.value?.data || techRes.value)) {
         const rawTechs = techRes.value?.data || techRes.value;
-        const techs = rawTechs.map((u) => ({
+        usrs = rawTechs.map((u) => ({
           id: u.id,
           full_name: u.fullName,
           phone_number: u.phoneNumber,
@@ -120,10 +153,37 @@ const TicketManagement = () => {
           role: 'TECHNICIAN',
           is_active: u.isActive,
         }));
-        usrs = [...usrs.filter((u) => u.role !== 'TECHNICIAN'), ...techs];
+      } else if (techRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || techRes.reason;
       }
     } catch (e) {
-      console.warn('API error in TicketManagement, using MockDB baseline', e);
+      hasBackendFailure = true;
+      firstError = firstError || e;
+    } finally {
+      setLoading(false);
+    }
+
+    if (hasBackendFailure) {
+      console.warn('API error in TicketManagement:', firstError);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            firstError,
+            'Không thể kết nối tới máy chủ để tải danh sách sự cố. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        if (tcks.length === 0) tcks = MockDB.getTickets();
+        if (apts.length === 0) apts = MockDB.getApartments();
+        if (usrs.length === 0) {
+          usrs = MockDB.getUsers();
+        } else {
+          usrs = [...MockDB.getUsers().filter((u) => u.role !== 'TECHNICIAN'), ...usrs];
+        }
+      }
+    } else {
+      setBackendError('');
     }
 
     setTickets(tcks);
@@ -140,9 +200,9 @@ const TicketManagement = () => {
     const now = Date.now();
 
     return tickets.map((t) => {
-      const apt = apartments.find((a) => a.id === t.apartment_id);
-      const resident = users.find((u) => u.id === t.resident_id);
-      const technician = users.find((u) => u.id === t.assigned_to);
+      const apt = apartments.find((a) => a.id === t.apartment_id) || t.apartment;
+      const resident = t.resident || users.find((u) => u.id === t.resident_id);
+      const technician = users.find((u) => u.id === t.assigned_to) || t.technician;
 
       // BR-07: Tính quá hạn > 24h nếu trạng thái OPEN
       const createdTime = new Date(t.created_at).getTime();
@@ -219,8 +279,13 @@ const TicketManagement = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(
+              apiErr,
+              'Không thể kết nối máy chủ. Chưa thể điều phối kỹ thuật viên!'
+            )
+          );
           return;
         }
         console.warn('Force assign API failed, fallback MockDB', apiErr);
@@ -693,11 +758,27 @@ const TicketManagement = () => {
           </div>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         {/* Table of Tickets */}
         <Table
           columns={columns}
           dataSource={filteredTickets}
           rowKey="id"
+          loading={loading}
           pagination={{ pageSize: 8, showSizeChanger: false }}
           locale={{ emptyText: 'Không tìm thấy sự cố nào phù hợp điều kiện lọc' }}
         />

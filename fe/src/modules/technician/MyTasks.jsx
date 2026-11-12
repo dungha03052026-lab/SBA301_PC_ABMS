@@ -43,8 +43,8 @@ import {
   StarOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -57,6 +57,8 @@ const MyTasks = () => {
   const [tickets, setTickets] = useState([]);
   const [apartments, setApartments] = useState([]);
   const [users, setUsers] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Filter
   const [statusFilter, setStatusFilter] = useState('IN_PROGRESS'); // 'IN_PROGRESS' | 'RESOLVED' | 'CLOSED' | 'ALL'
@@ -69,9 +71,10 @@ const MyTasks = () => {
   const [form] = Form.useForm();
 
   const reloadData = async () => {
-    let tcks = MockDB.getTickets();
-    let apts = MockDB.getApartments();
-    let usrs = MockDB.getUsers();
+    setLoading(true);
+    let tcks = [];
+    let apts = [];
+    let usrs = [];
 
     try {
       const res = await axiosClient.get('/technician/tickets/my-tasks/all');
@@ -106,8 +109,23 @@ const MyTasks = () => {
           },
         }));
       }
+      setBackendError('');
     } catch (e) {
-      console.warn('API error in MyTasks reloadData, using MockDB', e);
+      console.warn('API error in MyTasks reloadData:', e);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            e,
+            'Không thể kết nối tới máy chủ để tải danh sách công việc của bạn. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        tcks = MockDB.getTickets();
+        apts = MockDB.getApartments();
+        usrs = MockDB.getUsers();
+      }
+    } finally {
+      setLoading(false);
     }
 
     setTickets(tcks);
@@ -121,13 +139,13 @@ const MyTasks = () => {
 
   // Lọc các ticket thuộc về chính kỹ thuật viên này (UC-16)
   const myTasksList = useMemo(() => {
-    const currentTechId = user?.id || 2; // Default tech ID
+    const currentTechId = user?.id ?? (IS_MOCK_FALLBACK_ENABLED ? 2 : null);
 
     return tickets
-      .filter((t) => t.assigned_to === currentTechId)
+      .filter((t) => currentTechId != null && t.assigned_to === currentTechId)
       .map((t) => {
-        const apt = apartments.find((a) => a.id === t.apartment_id);
-        const resident = users.find((u) => u.id === t.resident_id);
+        const apt = t.apartment || apartments.find((a) => a.id === t.apartment_id);
+        const resident = t.resident || users.find((u) => u.id === t.resident_id);
         return {
           ...t,
           apartment: apt,
@@ -171,6 +189,15 @@ const MyTasks = () => {
         await reloadData();
         return;
       } catch (apiErr) {
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(
+              apiErr,
+              'Không thể kết nối máy chủ. Chưa thể gửi biên bản hoàn thành!'
+            )
+          );
+          return;
+        }
         console.warn('API error completing ticket, fallback to MockDB', apiErr);
       }
 
@@ -514,11 +541,27 @@ const MyTasks = () => {
           </button>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         {/* Table of Tasks */}
         <Table
           columns={columns}
           dataSource={filteredTasks}
           rowKey="id"
+          loading={loading}
           pagination={{ pageSize: 6, showSizeChanger: false }}
           locale={{ emptyText: 'Không có công việc nào trong danh mục này' }}
         />

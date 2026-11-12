@@ -29,6 +29,7 @@ import {
   message,
   Popconfirm,
   Badge,
+  Alert,
 } from 'antd';
 import {
   NotificationOutlined,
@@ -41,8 +42,8 @@ import {
   CheckCircleOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -54,6 +55,8 @@ const Announcements = () => {
   // State
   const [announcements, setAnnouncements] = useState([]);
   const [users, setUsers] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [pinFilter, setPinFilter] = useState('ALL'); // 'ALL' | 'PINNED' | 'NORMAL'
 
@@ -66,8 +69,9 @@ const Announcements = () => {
   const [form] = Form.useForm();
 
   const reloadData = async () => {
-    let anns = MockDB.getAnnouncements();
-    let usrs = MockDB.getUsers();
+    setLoading(true);
+    let anns = [];
+    let usrs = [];
 
     try {
       const res = await axiosClient.get('/announcements');
@@ -77,20 +81,40 @@ const Announcements = () => {
           id: a.id,
           title: a.title,
           content: a.content,
-          created_by: a.author ? a.author.id : 1,
-          author: a.author
+          created_by: a.createdById ?? a.author?.id ?? 1,
+          author: a.createdByName
             ? {
-                id: a.author.id,
-                full_name: a.author.fullName,
-                email: a.author.email,
+                id: a.createdById,
+                full_name: a.createdByName,
+                email: '',
               }
-            : null,
+            : a.author
+              ? {
+                  id: a.author.id,
+                  full_name: a.author.fullName,
+                  email: a.author.email,
+                }
+              : null,
           is_pinned: a.isPinned,
           created_at: a.createdAt,
         }));
       }
+      setBackendError('');
     } catch (e) {
-      console.warn('API error in Announcements, using MockDB baseline', e);
+      console.warn('API error in Announcements:', e);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            e,
+            'Không thể kết nối tới máy chủ để tải danh sách bản tin. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        anns = MockDB.getAnnouncements();
+        usrs = MockDB.getUsers();
+      }
+    } finally {
+      setLoading(false);
     }
 
     setAnnouncements(anns);
@@ -105,7 +129,7 @@ const Announcements = () => {
   const enrichedAnnouncements = useMemo(() => {
     return announcements
       .map((ann) => {
-        const author = users.find((u) => u.id === ann.created_by);
+        const author = ann.author || users.find((u) => u.id === ann.created_by);
         return {
           ...ann,
           author,
@@ -184,8 +208,13 @@ const Announcements = () => {
           reloadData();
           return;
         } catch (apiErr) {
-          if (apiErr.response?.data?.message) {
-            message.error(apiErr.response.data.message);
+          if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+            message.error(
+              getBackendErrorMessage(
+                apiErr,
+                'Không thể kết nối máy chủ. Bản tin chưa được cập nhật!'
+              )
+            );
             return;
           }
           console.warn('Update announcement API failed, fallback MockDB', apiErr);
@@ -212,8 +241,10 @@ const Announcements = () => {
           reloadData();
           return;
         } catch (apiErr) {
-          if (apiErr.response?.data?.message) {
-            message.error(apiErr.response.data.message);
+          if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+            message.error(
+              getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Bản tin chưa được đăng!')
+            );
             return;
           }
           console.warn('Create announcement API failed, fallback MockDB', apiErr);
@@ -254,6 +285,15 @@ const Announcements = () => {
         reloadData();
         return;
       } catch (apiErr) {
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(
+              apiErr,
+              'Không thể kết nối máy chủ. Trạng thái ghim chưa được cập nhật!'
+            )
+          );
+          return;
+        }
         console.warn('Toggle pin API failed, fallback MockDB', apiErr);
       }
 
@@ -279,8 +319,10 @@ const Announcements = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Bản tin chưa được xóa!')
+          );
           return;
         }
         console.warn('Delete announcement API failed, fallback MockDB', apiErr);
@@ -701,11 +743,27 @@ const Announcements = () => {
           </div>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         {/* Table of Announcements */}
         <Table
           columns={columns}
           dataSource={filteredAnnouncements}
           rowKey="id"
+          loading={loading}
           tableLayout="fixed"
           scroll={{ x: 800 }}
           pagination={{ pageSize: 6, showSizeChanger: false }}

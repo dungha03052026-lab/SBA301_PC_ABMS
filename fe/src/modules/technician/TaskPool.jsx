@@ -47,8 +47,8 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { useNavigate } from 'react-router-dom';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -60,6 +60,8 @@ const TaskPool = () => {
   const [tickets, setTickets] = useState([]);
   const [apartments, setApartments] = useState([]);
   const [users, setUsers] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Filters
   const [categoryFilter, setCategoryFilter] = useState('ALL');
@@ -71,9 +73,10 @@ const TaskPool = () => {
   const [selectedTicket, setSelectedTicket] = useState(null);
 
   const reloadData = async () => {
-    let tcks = MockDB.getTickets();
-    let apts = MockDB.getApartments();
-    let usrs = MockDB.getUsers();
+    setLoading(true);
+    let tcks = [];
+    let apts = [];
+    let usrs = [];
 
     try {
       const res = await axiosClient.get('/technician/tickets/pool/all');
@@ -108,8 +111,23 @@ const TaskPool = () => {
           },
         }));
       }
+      setBackendError('');
     } catch (e) {
-      console.warn('API error in TaskPool reloadData, using MockDB', e);
+      console.warn('API error in TaskPool reloadData:', e);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            e,
+            'Không thể kết nối tới máy chủ để tải danh sách việc chờ nhận. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        tcks = MockDB.getTickets();
+        apts = MockDB.getApartments();
+        usrs = MockDB.getUsers();
+      }
+    } finally {
+      setLoading(false);
     }
 
     setTickets(tcks);
@@ -128,12 +146,12 @@ const TaskPool = () => {
     return tickets
       .filter((t) => t.status === 'OPEN' && !t.assigned_to)
       .map((t) => {
-        const apt = apartments.find((a) => a.id === t.apartment_id);
-        const resident = users.find((u) => u.id === t.resident_id);
+        const apt = t.apartment || apartments.find((a) => a.id === t.apartment_id);
+        const resident = t.resident || users.find((u) => u.id === t.resident_id);
 
         const createdTime = new Date(t.created_at).getTime();
         const diffHours = (now - createdTime) / (1000 * 60 * 60);
-        const isOverdue = diffHours > 24;
+        const isOverdue = Boolean(t.isOverdue) || diffHours > 24;
 
         return {
           ...t,
@@ -185,6 +203,15 @@ const TaskPool = () => {
         navigate('/technician/my-tasks');
         return;
       } catch (apiErr) {
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa thể nhận việc!')
+          );
+          if (apiErr.response?.status === 409) {
+            reloadData();
+          }
+          return;
+        }
         console.warn('API error claiming ticket, falling back to MockDB', apiErr);
       }
 
@@ -606,11 +633,27 @@ const TaskPool = () => {
           </div>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         {/* Table of Open Tasks */}
         <Table
           columns={columns}
           dataSource={filteredList}
           rowKey="id"
+          loading={loading}
           pagination={{ pageSize: 6, showSizeChanger: false }}
           locale={{ emptyText: 'Hiện tại không có sự cố nào đang chờ trong Task Pool' }}
         />

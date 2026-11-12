@@ -47,8 +47,8 @@ import {
   InfoCircleOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const MeterReading = () => {
@@ -60,6 +60,8 @@ const MeterReading = () => {
   const [vehicles, setVehicles] = useState([]);
   const [tariffs, setTariffs] = useState(null);
   const [invoices, setInvoices] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Selected billing month (Format: YYYY-MM, e.g. '2026-10')
   const [billingMonth, setBillingMonth] = useState('2026-10');
@@ -75,11 +77,14 @@ const MeterReading = () => {
   const [tariffForm] = Form.useForm();
 
   const reloadData = async () => {
-    let apts = MockDB.getApartments();
-    let usrs = MockDB.getUsers();
-    let vehs = MockDB.getVehicles();
-    let trfs = MockDB.getTariffs();
-    let invs = MockDB.getInvoices();
+    setLoading(true);
+    let apts = [];
+    let usrs = [];
+    let vehs = [];
+    let trfs = null;
+    let invs = [];
+    let hasBackendFailure = false;
+    let firstError = null;
 
     // 1. Đồng bộ dữ liệu thật từ Backend Spring Boot
     try {
@@ -101,6 +106,9 @@ const MeterReading = () => {
             car_fee: t.carFee,
           };
         }
+      } else if (tariffRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || tariffRes.reason;
       }
 
       if (aptRes.status === 'fulfilled' && Array.isArray(aptRes.value?.data || aptRes.value)) {
@@ -150,9 +158,10 @@ const MeterReading = () => {
           if (hasVehResponse) {
             vehs = backendVehicles;
           }
-        } else {
-          vehs = [];
         }
+      } else if (aptRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || aptRes.reason;
       }
 
       if (invRes.status === 'fulfilled' && Array.isArray(invRes.value?.data || invRes.value)) {
@@ -171,9 +180,35 @@ const MeterReading = () => {
           due_date: i.dueDate,
           created_at: i.createdAt,
         }));
+      } else if (invRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || invRes.reason;
       }
     } catch (e) {
-      console.warn('API error in MeterReading, using MockDB baseline', e);
+      hasBackendFailure = true;
+      firstError = firstError || e;
+    } finally {
+      setLoading(false);
+    }
+
+    if (hasBackendFailure) {
+      console.warn('API error in MeterReading:', firstError);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            firstError,
+            'Không thể kết nối tới máy chủ để tải dữ liệu chốt số điện nước. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        if (apts.length === 0) apts = MockDB.getApartments();
+        if (usrs.length === 0) usrs = MockDB.getUsers();
+        if (vehs.length === 0) vehs = MockDB.getVehicles();
+        if (!trfs) trfs = MockDB.getTariffs();
+        if (invs.length === 0) invs = MockDB.getInvoices();
+      }
+    } else {
+      setBackendError('');
     }
 
     setApartments(apts);
@@ -320,8 +355,10 @@ const MeterReading = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Biểu phí chưa được cập nhật!')
+          );
           return;
         }
         console.warn('Tariff API failed, fallback MockDB', apiErr);
@@ -401,8 +438,10 @@ const MeterReading = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Hóa đơn chưa được phát hành!')
+          );
           return;
         }
         console.warn('Single invoice API failed, fallback MockDB', apiErr);
@@ -455,8 +494,10 @@ const MeterReading = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa thể xuất hóa đơn hàng loạt!')
+          );
           return;
         }
         console.warn('Batch invoice API failed, fallback MockDB', apiErr);
@@ -946,11 +987,27 @@ const MeterReading = () => {
           </div>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         {/* Table of Readings */}
         <Table
           columns={columns}
           dataSource={occupiedApartments}
           rowKey="id"
+          loading={loading}
           pagination={false}
           locale={{ emptyText: 'Không có căn hộ nào đang ở (OCCUPIED)' }}
         />

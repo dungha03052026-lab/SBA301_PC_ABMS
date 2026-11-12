@@ -42,8 +42,8 @@ import {
   EyeOutlined,
   FilterOutlined,
 } from '@ant-design/icons';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -55,6 +55,8 @@ const InvoiceApproval = () => {
   const [apartments, setApartments] = useState([]);
   const [users, setUsers] = useState([]);
   const [tariffs, setTariffs] = useState(null);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Filters
   const [statusFilter, setStatusFilter] = useState('PENDING'); // Default ưu tiên PENDING
@@ -66,15 +68,19 @@ const InvoiceApproval = () => {
   const [selectedInvoice, setSelectedInvoice] = useState(null);
 
   const reloadData = async () => {
-    let invs = MockDB.getInvoices();
-    let apts = MockDB.getApartments();
-    let usrs = MockDB.getUsers();
-    let trfs = MockDB.getTariffs();
+    setLoading(true);
+    let invs = [];
+    let apts = [];
+    let usrs = [];
+    let trfs = null;
+    let hasBackendFailure = false;
+    let firstError = null;
 
     try {
-      const [invRes, aptRes] = await Promise.allSettled([
+      const [invRes, aptRes, tariffRes] = await Promise.allSettled([
         axiosClient.get('/admin/invoices/all'),
         axiosClient.get('/admin/apartments/all'),
+        axiosClient.get('/tariffs'),
       ]);
 
       if (invRes.status === 'fulfilled' && Array.isArray(invRes.value?.data || invRes.value)) {
@@ -83,6 +89,8 @@ const InvoiceApproval = () => {
           id: i.id,
           invoice_code: i.invoiceCode,
           apartment_id: i.apartmentId,
+          room_number: i.roomNumber,
+          building_block: i.buildingBlock,
           billing_month: i.billingMonth,
           old_electric_num: i.oldElectricNum,
           new_electric_num: i.newElectricNum,
@@ -93,10 +101,14 @@ const InvoiceApproval = () => {
           due_date: i.dueDate,
           created_at: i.createdAt,
           paid_at: i.paidAt,
-          approved_by: i.approvedBy,
+          approved_by: i.approvedByName ?? i.approvedBy,
           resident_name: i.residentName,
           resident_phone: i.residentPhone,
+          breakdown: i.breakdown || null,
         }));
+      } else if (invRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || invRes.reason;
       }
 
       if (aptRes.status === 'fulfilled' && Array.isArray(aptRes.value?.data || aptRes.value)) {
@@ -118,9 +130,48 @@ const InvoiceApproval = () => {
               }
             : null,
         }));
+      } else if (aptRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || aptRes.reason;
+      }
+
+      if (tariffRes.status === 'fulfilled' && (tariffRes.value?.data || tariffRes.value)) {
+        const t = tariffRes.value?.data || tariffRes.value;
+        if (t && t.managementFeePerSqm !== undefined) {
+          trfs = {
+            id: t.id,
+            management_fee_per_sqm: t.managementFeePerSqm,
+            electricity_unit_price: t.electricityUnitPrice,
+            water_unit_price: t.waterUnitPrice,
+            motorbike_fee: t.motorbikeFee,
+            car_fee: t.carFee,
+          };
+        }
       }
     } catch (e) {
-      console.warn('API error in InvoiceApproval, using MockDB baseline', e);
+      hasBackendFailure = true;
+      firstError = firstError || e;
+    } finally {
+      setLoading(false);
+    }
+
+    if (hasBackendFailure) {
+      console.warn('API error in InvoiceApproval:', firstError);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            firstError,
+            'Không thể kết nối tới máy chủ để tải danh sách hóa đơn. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        if (invs.length === 0) invs = MockDB.getInvoices();
+        if (apts.length === 0) apts = MockDB.getApartments();
+        if (usrs.length === 0) usrs = MockDB.getUsers();
+        if (!trfs) trfs = MockDB.getTariffs();
+      }
+    } else {
+      setBackendError('');
     }
 
     setInvoices(invs);
@@ -136,7 +187,16 @@ const InvoiceApproval = () => {
   // Map invoice with apartment and resident
   const enrichedInvoices = useMemo(() => {
     return invoices.map((inv) => {
-      const apt = apartments.find((a) => a.id === inv.apartment_id);
+      const apt =
+        apartments.find((a) => a.id === inv.apartment_id) ||
+        (inv.room_number
+          ? {
+              id: inv.apartment_id,
+              room_number: inv.room_number,
+              building_block: inv.building_block || '',
+              area_sqm: inv.breakdown?.areaSqm || 0,
+            }
+          : null);
       const resident =
         apt?.resident ||
         (apt ? users.find((u) => u.id === apt.resident_id) : null) ||
@@ -197,8 +257,10 @@ const InvoiceApproval = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa thể duyệt gạch nợ!')
+          );
           return;
         }
         console.warn('Approve invoice API failed, fallback MockDB', apiErr);
@@ -234,8 +296,10 @@ const InvoiceApproval = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa thể từ chối gạch nợ!')
+          );
           return;
         }
         console.warn('Reject invoice API failed, fallback MockDB', apiErr);
@@ -653,11 +717,27 @@ const InvoiceApproval = () => {
           </div>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         {/* Table of Invoices */}
         <Table
           columns={columns}
           dataSource={filteredInvoices}
           rowKey="id"
+          loading={loading}
           pagination={{ pageSize: 8, showSizeChanger: false }}
           locale={{ emptyText: 'Không có hóa đơn nào thỏa mãn điều kiện lọc' }}
         />
@@ -718,23 +798,44 @@ const InvoiceApproval = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 8 }}>
                 <span>⚡ Điện: {selectedInvoice.new_electric_num - selectedInvoice.old_electric_num} kWh ({selectedInvoice.old_electric_num} → {selectedInvoice.new_electric_num})</span>
                 <strong>
-                  {((selectedInvoice.new_electric_num - selectedInvoice.old_electric_num) * (tariffs?.electricity_unit_price || 3500)).toLocaleString('vi-VN')} đ
+                  {Number(
+                    selectedInvoice.breakdown?.electricAmount ??
+                      (selectedInvoice.new_electric_num - selectedInvoice.old_electric_num) *
+                        (tariffs?.electricity_unit_price || 3500)
+                  ).toLocaleString('vi-VN')} đ
                 </strong>
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 8 }}>
                 <span>💧 Nước: {selectedInvoice.new_water_num - selectedInvoice.old_water_num} m³ ({selectedInvoice.old_water_num} → {selectedInvoice.new_water_num})</span>
                 <strong>
-                  {((selectedInvoice.new_water_num - selectedInvoice.old_water_num) * (tariffs?.water_unit_price || 15000)).toLocaleString('vi-VN')} đ
+                  {Number(
+                    selectedInvoice.breakdown?.waterAmount ??
+                      (selectedInvoice.new_water_num - selectedInvoice.old_water_num) *
+                        (tariffs?.water_unit_price || 15000)
+                  ).toLocaleString('vi-VN')} đ
                 </strong>
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 8 }}>
                 <span>🏢 Phí quản lý chung cư:</span>
                 <strong>
-                  {((selectedInvoice.apartment?.area_sqm || 0) * (tariffs?.management_fee_per_sqm || 10000)).toLocaleString('vi-VN')} đ
+                  {Number(
+                    selectedInvoice.breakdown?.managementFee ??
+                      (selectedInvoice.apartment?.area_sqm || 0) *
+                        (tariffs?.management_fee_per_sqm || 10000)
+                  ).toLocaleString('vi-VN')} đ
                 </strong>
               </div>
+
+              {selectedInvoice.breakdown && Number(selectedInvoice.breakdown.totalParkingFee) > 0 && (
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 8 }}>
+                  <span>🚗 Phí gửi xe ({selectedInvoice.breakdown.motorbikeCount} xe máy, {selectedInvoice.breakdown.carCount} ô tô):</span>
+                  <strong>
+                    {Number(selectedInvoice.breakdown.totalParkingFee).toLocaleString('vi-VN')} đ
+                  </strong>
+                </div>
+              )}
 
               <div
                 style={{

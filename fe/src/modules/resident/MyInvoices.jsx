@@ -41,8 +41,8 @@ import {
   CopyOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { useApartment } from '../../shared/context/ApartmentContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
@@ -54,16 +54,19 @@ const MyInvoices = () => {
   // State
   const [invoices, setInvoices] = useState([]);
   const [tariffs, setTariffs] = useState(null);
-  const [vehicles, setVehicles] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Modal payment & detail
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
 
   const reloadData = async () => {
-    let invs = MockDB.getInvoices();
-    let trfs = MockDB.getTariffs();
-    let vehs = MockDB.getVehicles();
+    setLoading(true);
+    let invs = [];
+    let trfs = null;
+    let hasBackendFailure = false;
+    let firstError = null;
 
     try {
       const params = selectedApartmentId ? { apartmentId: selectedApartmentId } : {};
@@ -88,7 +91,12 @@ const MyInvoices = () => {
           due_date: i.dueDate,
           created_at: i.createdAt,
           paid_at: i.paidAt,
+          breakdown: i.breakdown || null,
+          viet_qr_url: i.vietQrUrl || null,
         }));
+      } else if (invRes.status === 'rejected') {
+        hasBackendFailure = true;
+        firstError = firstError || invRes.reason;
       }
 
       if (tariffRes.status === 'fulfilled' && (tariffRes.value?.data || tariffRes.value)) {
@@ -105,12 +113,31 @@ const MyInvoices = () => {
         }
       }
     } catch (e) {
-      console.warn('API error in MyInvoices, using MockDB baseline', e);
+      hasBackendFailure = true;
+      firstError = firstError || e;
+    } finally {
+      setLoading(false);
+    }
+
+    if (hasBackendFailure) {
+      console.warn('API error in MyInvoices:', firstError);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            firstError,
+            'Không thể kết nối tới máy chủ để tải danh sách hóa đơn. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        if (invs.length === 0) invs = MockDB.getInvoices();
+        if (!trfs) trfs = MockDB.getTariffs();
+      }
+    } else {
+      setBackendError('');
     }
 
     setInvoices(invs);
     setTariffs(trfs);
-    setVehicles(vehs);
   };
 
   useEffect(() => {
@@ -160,8 +187,13 @@ const MyInvoices = () => {
         reloadData();
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(
+              apiErr,
+              'Không thể kết nối máy chủ. Xác nhận chuyển khoản chưa được ghi nhận!'
+            )
+          );
           return;
         }
         console.warn('Confirm payment API failed, fallback MockDB', apiErr);
@@ -485,10 +517,26 @@ const MyInvoices = () => {
           </span>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         <Table
           columns={columns}
           dataSource={myApartmentInvoices}
           rowKey="id"
+          loading={loading}
           pagination={{ pageSize: 6, showSizeChanger: false }}
           locale={{ emptyText: 'Chưa có hóa đơn nào cho căn hộ này' }}
         />
@@ -642,23 +690,44 @@ const MyInvoices = () => {
                   <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 6 }}>
                     <span>⚡ Điện sinh hoạt ({selectedInvoice.new_electric_num - selectedInvoice.old_electric_num} kWh):</span>
                     <strong>
-                      {((selectedInvoice.new_electric_num - selectedInvoice.old_electric_num) * (tariffs?.electricity_unit_price || 3500)).toLocaleString('vi-VN')} đ
+                      {Number(
+                        selectedInvoice.breakdown?.electricAmount ??
+                          (selectedInvoice.new_electric_num - selectedInvoice.old_electric_num) *
+                            (tariffs?.electricity_unit_price || 3500)
+                      ).toLocaleString('vi-VN')} đ
                     </strong>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 6 }}>
                     <span>💧 Nước sinh hoạt ({selectedInvoice.new_water_num - selectedInvoice.old_water_num} m³):</span>
                     <strong>
-                      {((selectedInvoice.new_water_num - selectedInvoice.old_water_num) * (tariffs?.water_unit_price || 15000)).toLocaleString('vi-VN')} đ
+                      {Number(
+                        selectedInvoice.breakdown?.waterAmount ??
+                          (selectedInvoice.new_water_num - selectedInvoice.old_water_num) *
+                            (tariffs?.water_unit_price || 15000)
+                      ).toLocaleString('vi-VN')} đ
                     </strong>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 6 }}>
-                    <span>🏢 Phí quản lý chung cư ({currentApartment?.area_sqm} m²):</span>
+                    <span>🏢 Phí quản lý chung cư ({selectedInvoice.breakdown?.areaSqm ?? currentApartment?.area_sqm} m²):</span>
                     <strong>
-                      {((currentApartment?.area_sqm || 0) * (tariffs?.management_fee_per_sqm || 10000)).toLocaleString('vi-VN')} đ
+                      {Number(
+                        selectedInvoice.breakdown?.managementFee ??
+                          (currentApartment?.area_sqm || 0) *
+                            (tariffs?.management_fee_per_sqm || 10000)
+                      ).toLocaleString('vi-VN')} đ
                     </strong>
                   </div>
+
+                  {selectedInvoice.breakdown && Number(selectedInvoice.breakdown.totalParkingFee) > 0 && (
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${PS_COLORS.hairlineLight}`, paddingBottom: 6 }}>
+                      <span>🚗 Phí gửi xe ({selectedInvoice.breakdown.motorbikeCount} xe máy, {selectedInvoice.breakdown.carCount} ô tô):</span>
+                      <strong>
+                        {Number(selectedInvoice.breakdown.totalParkingFee).toLocaleString('vi-VN')} đ
+                      </strong>
+                    </div>
+                  )}
 
                   <div
                     style={{

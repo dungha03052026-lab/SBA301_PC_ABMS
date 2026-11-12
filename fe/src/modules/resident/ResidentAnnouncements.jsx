@@ -24,6 +24,8 @@ import {
   Space,
   Empty,
   Badge,
+  Alert,
+  Spin,
 } from 'antd';
 import {
   NotificationOutlined,
@@ -35,21 +37,24 @@ import {
   CheckCircleOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
 
 const ResidentAnnouncements = () => {
   // State
   const [announcements, setAnnouncements] = useState([]);
   const [users, setUsers] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [selectedAnnouncement, setSelectedAnnouncement] = useState(null);
   const [detailModalOpen, setDetailModalOpen] = useState(false);
 
   const reloadData = async () => {
-    let anns = MockDB.getAnnouncements();
-    let usrs = MockDB.getUsers();
+    setLoading(true);
+    let anns = [];
+    let usrs = [];
 
     try {
       const res = await axiosClient.get('/announcements');
@@ -59,20 +64,40 @@ const ResidentAnnouncements = () => {
           id: a.id,
           title: a.title,
           content: a.content,
-          created_by: a.author ? a.author.id : 1,
-          author: a.author
+          created_by: a.createdById ?? a.author?.id ?? 1,
+          author: a.createdByName
             ? {
-                id: a.author.id,
-                full_name: a.author.fullName,
-                email: a.author.email,
+                id: a.createdById,
+                full_name: a.createdByName,
+                email: '',
               }
-            : null,
+            : a.author
+              ? {
+                  id: a.author.id,
+                  full_name: a.author.fullName,
+                  email: a.author.email,
+                }
+              : null,
           is_pinned: a.isPinned,
           created_at: a.createdAt,
         }));
       }
+      setBackendError('');
     } catch (e) {
-      console.warn('API error in ResidentAnnouncements, using MockDB baseline', e);
+      console.warn('API error in ResidentAnnouncements:', e);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            e,
+            'Không thể kết nối tới máy chủ để tải bản tin thông báo. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        anns = MockDB.getAnnouncements();
+        usrs = MockDB.getUsers();
+      }
+    } finally {
+      setLoading(false);
     }
 
     setAnnouncements(anns);
@@ -87,7 +112,7 @@ const ResidentAnnouncements = () => {
   const enrichedList = useMemo(() => {
     return announcements
       .map((ann) => {
-        const author = users.find((u) => u.id === ann.created_by);
+        const author = ann.author || users.find((u) => u.id === ann.created_by);
         return {
           ...ann,
           author,
@@ -200,9 +225,25 @@ const ResidentAnnouncements = () => {
         </div>
       </div>
 
+      {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+        <Alert
+          message="Không thể tải dữ liệu từ máy chủ"
+          description={backendError}
+          type="error"
+          showIcon
+          action={
+            <Button size="small" onClick={reloadData}>
+              Thử lại
+            </Button>
+          }
+          style={{ borderRadius: PS_ROUNDED.sm }}
+        />
+      )}
+
       {/* ====================================================================
           ANNOUNCEMENTS LIST: 8px-radius Flat Level 0 Cards
           ==================================================================== */}
+      <Spin spinning={loading}>
       {filteredList.length === 0 ? (
         <div
           style={{
@@ -323,6 +364,7 @@ const ResidentAnnouncements = () => {
           ))}
         </div>
       )}
+      </Spin>
 
       {/* ====================================================================
           MODAL: CHI TIẾT TOÀN VĂN THÔNG BÁO

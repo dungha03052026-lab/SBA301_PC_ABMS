@@ -56,4 +56,7 @@ axiosClient.interceptors.response.use(
   }
 );
 
+export const getBackendErrorMessage = (err, fallback) =>
+  err?.response?.data?.message || fallback;
+
 export default axiosClient;

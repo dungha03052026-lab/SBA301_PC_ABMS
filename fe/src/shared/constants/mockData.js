@@ -220,8 +220,10 @@ export const initMockStorage = () => {
   }
 };
 
-// Đảm bảo khởi tạo ngay khi file được nạp
-initMockStorage();
+// Chỉ khởi tạo dữ liệu mẫu khi bật chế độ offline fallback
+if (IS_MOCK_FALLBACK_ENABLED) {
+  initMockStorage();
+}
 
 // Các hàm Helper truy xuất và lưu dữ liệu
 const getList = (key) => {

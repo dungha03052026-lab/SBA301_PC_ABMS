@@ -48,8 +48,8 @@ import {
   ThunderboltOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import { MockDB } from '../../shared/constants/mockData';
-import axiosClient from '../../shared/api/axiosClient';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
+import axiosClient, { getBackendErrorMessage } from '../../shared/api/axiosClient';
 import { useAuth } from '../../shared/context/AuthContext';
 import { useApartment } from '../../shared/context/ApartmentContext';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
@@ -63,6 +63,8 @@ const ReportTicket = () => {
   // State
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
+  const [backendError, setBackendError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Modals
   const [createModalOpen, setCreateModalOpen] = useState(false);
@@ -75,8 +77,9 @@ const ReportTicket = () => {
   const [reviewForm] = Form.useForm();
 
   const reloadData = async () => {
-    let tcks = MockDB.getTickets();
-    let usrs = MockDB.getUsers();
+    setLoading(true);
+    let tcks = [];
+    let usrs = [];
 
     try {
       const res = await axiosClient.get('/resident/tickets/all');
@@ -92,15 +95,36 @@ const ReportTicket = () => {
           description: t.description,
           image_url: t.imageUrl,
           status: t.status,
-          assigned_to: t.assignedTo,
+          assigned_to: t.assignedToId ?? t.assignedTo,
+          technician: t.assignedToName
+            ? {
+                id: t.assignedToId ?? t.assignedTo,
+                full_name: t.assignedToName,
+                phone_number: '',
+              }
+            : null,
           technician_note: t.technicianNote,
           rating: t.rating,
           created_at: t.createdAt,
           resolved_at: t.resolvedAt,
         }));
       }
+      setBackendError('');
     } catch (e) {
-      console.warn('API error in ReportTicket, using MockDB baseline', e);
+      console.warn('API error in ReportTicket:', e);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        setBackendError(
+          getBackendErrorMessage(
+            e,
+            'Không thể kết nối tới máy chủ để tải danh sách sự cố. Vui lòng thử lại!'
+          )
+        );
+      } else {
+        tcks = MockDB.getTickets();
+        usrs = MockDB.getUsers();
+      }
+    } finally {
+      setLoading(false);
     }
 
     setTickets(tcks);
@@ -122,7 +146,7 @@ const ReportTicket = () => {
     return tickets
       .filter((t) => t.apartment_id === selectedApartmentId)
       .map((t) => {
-        const technician = users.find((u) => u.id === t.assigned_to);
+        const technician = t.technician || users.find((u) => u.id === t.assigned_to);
         return {
           ...t,
           technician,
@@ -163,6 +187,12 @@ const ReportTicket = () => {
         await reloadData();
         return;
       } catch (apiErr) {
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Phiếu báo hỏng chưa được gửi!')
+          );
+          return;
+        }
         console.warn('API error creating ticket, falling back to MockDB', apiErr);
       }
 
@@ -223,6 +253,12 @@ const ReportTicket = () => {
         await reloadData();
         return;
       } catch (apiErr) {
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa thể nghiệm thu sự cố!')
+          );
+          return;
+        }
         console.warn('API error inspecting ticket, fallback to MockDB', apiErr);
       }
 
@@ -258,6 +294,12 @@ const ReportTicket = () => {
         await reloadData();
         return;
       } catch (apiErr) {
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa thể gửi yêu cầu làm lại!')
+          );
+          return;
+        }
         console.warn('API error requesting rework, fallback to MockDB', apiErr);
       }
 
@@ -648,10 +690,26 @@ const ReportTicket = () => {
           </span>
         </div>
 
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button size="small" onClick={reloadData}>
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
+
         <Table
           columns={columns}
           dataSource={myApartmentTickets}
           rowKey="id"
+          loading={loading}
           pagination={{ pageSize: 6, showSizeChanger: false }}
           locale={{ emptyText: 'Căn hộ hiện tại không có sự cố nào' }}
         />
