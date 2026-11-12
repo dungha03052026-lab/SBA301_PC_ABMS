@@ -57,9 +57,12 @@ import {
   LoginOutlined,
   LogoutOutlined,
 } from '@ant-design/icons';
-import { MockDB } from '../../shared/constants/mockData';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../../shared/constants/mockData';
 import axiosClient from '../../shared/api/axiosClient';
 import { PS_COLORS, PS_ROUNDED } from '../../shared/theme/playstationTheme';
+
+const getBackendErrorMessage = (err, fallback) =>
+  err?.response?.data?.message || fallback;
 
 const ApartmentManagement = () => {
   // ==========================================
@@ -69,6 +72,7 @@ const ApartmentManagement = () => {
   const [backendApartments, setBackendApartments] = useState([]);
   const [backendResidents, setBackendResidents] = useState(null);
   const [isBackendLive, setIsBackendLive] = useState(false);
+  const [backendError, setBackendError] = useState('');
   const [loadingTable, setLoadingTable] = useState(false);
   const [backendStats, setBackendStats] = useState({ total: 0, occupied: 0, vacant: 0, vehicles: 0 });
 
@@ -132,7 +136,9 @@ const ApartmentManagement = () => {
   };
 
   useEffect(() => {
-    reloadData();
+    if (IS_MOCK_FALLBACK_ENABLED) {
+      reloadData();
+    }
     fetchResidentsFromBackend();
   }, []);
 
@@ -179,6 +185,7 @@ const ApartmentManagement = () => {
 
         setBackendApartments(mapped);
         setIsBackendLive(true);
+        setBackendError('');
 
         // Lưu thông số tổng quan khi không lọc
         if ((!search || !search.trim()) && block === 'ALL' && status === 'ALL') {
@@ -195,8 +202,15 @@ const ApartmentManagement = () => {
         return;
       }
     } catch (err) {
-      console.warn('Backend Criteria API offline hoặc chưa đăng nhập, sử dụng MockDB:', err);
+      console.warn('Backend Criteria API offline hoặc chưa đăng nhập:', err);
       setIsBackendLive(false);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        const msg = getBackendErrorMessage(
+          err,
+          'Không thể kết nối tới máy chủ để tải danh sách căn hộ. Vui lòng thử lại!'
+        );
+        setBackendError(msg);
+      }
     } finally {
       setLoadingTable(false);
     }
@@ -241,7 +255,7 @@ const ApartmentManagement = () => {
 
   // Dữ liệu hiển thị cuối cùng: Ưu tiên dữ liệu lọc từ Backend Criteria API
   const displayedApartments = useMemo(() => {
-    if (isBackendLive) {
+    if (isBackendLive || !IS_MOCK_FALLBACK_ENABLED) {
       return backendApartments;
     }
     return filteredApartments;
@@ -254,11 +268,11 @@ const ApartmentManagement = () => {
       value: u.id,
     });
 
-    if (isBackendLive && Array.isArray(backendResidents)) {
+    if ((isBackendLive || !IS_MOCK_FALLBACK_ENABLED) && Array.isArray(backendResidents)) {
       return backendResidents.map(mapOption);
     }
 
-    if (isBackendLive) {
+    if (isBackendLive || !IS_MOCK_FALLBACK_ENABLED) {
       const byId = new Map();
       backendApartments.forEach((apt) => {
         if (apt.resident?.id) {
@@ -272,10 +286,11 @@ const ApartmentManagement = () => {
   }, [isBackendLive, backendResidents, backendApartments, users]);
 
   // Metrics summary
-  const totalApartments = isBackendLive ? (backendStats.total || backendApartments.length) : apartments.length;
-  const occupiedCount = isBackendLive ? (backendStats.occupied || backendApartments.filter((a) => a.status === 'OCCUPIED').length) : apartments.filter((a) => a.status === 'OCCUPIED').length;
-  const vacantCount = isBackendLive ? (backendStats.vacant || backendApartments.filter((a) => a.status === 'VACANT').length) : apartments.filter((a) => a.status === 'VACANT').length;
-  const totalVehiclesCount = isBackendLive ? backendStats.vehicles : vehicles.length;
+  const useBackendMetrics = isBackendLive || !IS_MOCK_FALLBACK_ENABLED;
+  const totalApartments = useBackendMetrics ? (backendStats.total || backendApartments.length) : apartments.length;
+  const occupiedCount = useBackendMetrics ? (backendStats.occupied || backendApartments.filter((a) => a.status === 'OCCUPIED').length) : apartments.filter((a) => a.status === 'OCCUPIED').length;
+  const vacantCount = useBackendMetrics ? (backendStats.vacant || backendApartments.filter((a) => a.status === 'VACANT').length) : apartments.filter((a) => a.status === 'VACANT').length;
+  const totalVehiclesCount = useBackendMetrics ? backendStats.vehicles : vehicles.length;
 
   // ==========================================
   // 2. UC-04: CRUD CĂN HỘ
@@ -314,7 +329,7 @@ const ApartmentManagement = () => {
 
     try {
       if (apartmentEditMode && selectedApartment) {
-        // 1. Thử gọi API Backend Cập nhật vào MSSQL
+        // 1. Gọi API Backend Cập nhật vào CSDL
         try {
           await axiosClient.put(`/admin/apartments/${selectedApartment.id}`, payload);
           message.success(`Cập nhật căn hộ ${values.room_number} thành công trên CSDL!`);
@@ -322,8 +337,10 @@ const ApartmentManagement = () => {
           await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
           return;
         } catch (apiErr) {
-          if (apiErr.response?.data?.message) {
-            message.error(apiErr.response.data.message);
+          if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+            message.error(
+              getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Thông tin căn hộ chưa được cập nhật!')
+            );
             return;
           }
           console.warn('API update failed, fallback to MockDB', apiErr);
@@ -344,16 +361,18 @@ const ApartmentManagement = () => {
         MockDB.saveApartments(updatedList);
         message.success(`Cập nhật thông tin căn hộ ${selectedApartment.room_number} thành công!`);
       } else {
-        // 2. Thử gọi API Backend Thêm mới vào MSSQL
+        // 2. Gọi API Backend Thêm mới vào CSDL
         try {
           await axiosClient.post('/admin/apartments', payload);
-          message.success(`Thêm mới căn hộ ${payload.roomNumber} thành công vào CSDL MSSQL!`);
+          message.success(`Thêm mới căn hộ ${payload.roomNumber} thành công vào CSDL!`);
           setApartmentModalOpen(false);
           await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
           return;
         } catch (apiErr) {
-          if (apiErr.response?.data?.message) {
-            message.error(apiErr.response.data.message);
+          if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+            message.error(
+              getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Căn hộ mới chưa được lưu vào CSDL!')
+            );
             return;
           }
           console.warn('API create failed, fallback to MockDB', apiErr);
@@ -427,8 +446,10 @@ const ApartmentManagement = () => {
         ]);
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Thủ tục Move-in chưa được lưu!')
+          );
           return;
         }
         console.warn('Move-in API failed, fallback MockDB', apiErr);
@@ -549,21 +570,27 @@ const ApartmentManagement = () => {
         return;
       }
 
-      if (isBackendLive) {
+      if (isBackendLive || !IS_MOCK_FALLBACK_ENABLED) {
         setMoveOutCheckError('Không thể đọc dữ liệu hóa đơn từ máy chủ để kiểm tra công nợ.');
         return;
       }
     } catch (err) {
       console.warn('Không thể kiểm tra hóa đơn từ Backend:', err);
-      if (isBackendLive) {
+      if (isBackendLive || !IS_MOCK_FALLBACK_ENABLED) {
         setMoveOutCheckError(
-          err?.response?.data?.message ||
+          getBackendErrorMessage(
+            err,
             'Không thể kiểm tra công nợ hóa đơn từ máy chủ. Vui lòng thử lại!'
+          )
         );
         return;
       }
     } finally {
       setLoadingMoveOutCheck(false);
+    }
+
+    if (!IS_MOCK_FALLBACK_ENABLED) {
+      return;
     }
 
     // Chỉ fallback MockDB khi thực sự chạy chế độ Offline
@@ -596,8 +623,11 @@ const ApartmentManagement = () => {
         ]);
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          const serverMsg = apiErr.response.data.message;
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          const serverMsg = getBackendErrorMessage(
+            apiErr,
+            'Không thể kết nối máy chủ. Thủ tục Move-out chưa được thực hiện!'
+          );
           setMoveOutCheckError(serverMsg);
           message.error(serverMsg);
           return;
@@ -676,7 +706,11 @@ const ApartmentManagement = () => {
         return;
       }
     } catch (err) {
-      console.warn('Cannot load vehicles from backend, using MockDB:', err);
+      console.warn('Cannot load vehicles from backend:', err);
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        message.error(getBackendErrorMessage(err, 'Không thể tải danh sách phương tiện từ máy chủ!'));
+        return;
+      }
     } finally {
       setLoadingVehicles(false);
     }
@@ -708,8 +742,10 @@ const ApartmentManagement = () => {
         await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Phương tiện chưa được lưu!')
+          );
           return;
         }
         console.warn('Add vehicle API failed, fallback MockDB', apiErr);
@@ -756,8 +792,10 @@ const ApartmentManagement = () => {
         await fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom);
         return;
       } catch (apiErr) {
-        if (apiErr.response?.data?.message) {
-          message.error(apiErr.response.data.message);
+        if (apiErr.response?.data?.message || !IS_MOCK_FALLBACK_ENABLED) {
+          message.error(
+            getBackendErrorMessage(apiErr, 'Không thể kết nối máy chủ. Chưa xóa được phương tiện!')
+          );
           return;
         }
         console.warn('Delete vehicle API failed, fallback MockDB', apiErr);
@@ -1275,6 +1313,24 @@ const ApartmentManagement = () => {
             </button>
           </div>
         </div>
+
+        {!IS_MOCK_FALLBACK_ENABLED && backendError && (
+          <Alert
+            message="Không thể tải dữ liệu từ máy chủ"
+            description={backendError}
+            type="error"
+            showIcon
+            action={
+              <Button
+                size="small"
+                onClick={() => fetchApartmentsFromBackend(blockFilter, statusFilter, searchRoom)}
+              >
+                Thử lại
+              </Button>
+            }
+            style={{ marginBottom: 16, borderRadius: PS_ROUNDED.sm }}
+          />
+        )}
 
         {/* Apartments Table */}
         <Table

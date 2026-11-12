@@ -10,7 +10,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 import axiosClient from '../api/axiosClient';
-import { MockDB } from '../constants/mockData';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../constants/mockData';
 
 const ApartmentContext = createContext(null);
 
@@ -45,8 +45,8 @@ export const ApartmentProvider = ({ children }) => {
       console.warn('Cannot load apartments from backend, using MockDB:', e);
     }
 
-    // Fallback MockDB nếu chưa có dữ liệu từ backend
-    if (userApts.length === 0) {
+    // Fallback MockDB chỉ khi được bật cờ offline dev
+    if (IS_MOCK_FALLBACK_ENABLED && userApts.length === 0) {
       const allApts = MockDB.getApartments();
       userApts = allApts.filter(
         (apt) => apt.resident_id === user.id && apt.status === 'OCCUPIED'

@@ -1,6 +1,9 @@
 // src/shared/constants/mockData.js
 // Nguồn dữ liệu giả lập 7 bảng chuẩn hóa MSSQL đồng bộ qua LocalStorage
 
+// Cờ cho phép fallback sang MockDB (chỉ bật khi chạy offline dev với VITE_ENABLE_MOCK_FALLBACK=true)
+export const IS_MOCK_FALLBACK_ENABLED = import.meta.env.VITE_ENABLE_MOCK_FALLBACK === 'true';
+
 const STORAGE_KEYS = {
   USERS: 'bms_users',
   APARTMENTS: 'bms_apartments',

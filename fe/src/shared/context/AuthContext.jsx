@@ -11,16 +11,23 @@
  */
 import React, { createContext, useContext, useState } from 'react';
 import axiosClient from '../api/axiosClient';
-import { MockDB } from '../constants/mockData';
+import { MockDB, IS_MOCK_FALLBACK_ENABLED } from '../constants/mockData';
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  // Khởi tạo state user từ LocalStorage nếu có
+  // Khởi tạo state user từ LocalStorage nếu có (xóa token giả nếu tắt MockDB fallback)
   const [user, setUser] = useState(() => {
     try {
       const saved = localStorage.getItem('user');
-      return saved ? JSON.parse(saved) : null;
+      if (!saved) return null;
+      const parsed = JSON.parse(saved);
+      if (!IS_MOCK_FALLBACK_ENABLED && parsed?.token?.startsWith('mock-jwt-token-')) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('selectedApartmentId');
+        return null;
+      }
+      return parsed;
     } catch {
       return null;
     }
@@ -83,6 +90,13 @@ export const AuthProvider = ({ children }) => {
       if (apiError.response && apiError.response.data && apiError.response.data.message) {
         return { success: false, message: apiError.response.data.message };
       }
+
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        return {
+          success: false,
+          message: 'Không thể kết nối tới máy chủ. Vui lòng thử lại sau ít phút!',
+        };
+      }
     }
 
     // Fallback MockDB nếu Backend không sẵn sàng
@@ -134,6 +148,13 @@ export const AuthProvider = ({ children }) => {
       console.warn('Backend changePassword error, attempting offline MockDB fallback:', apiError);
       if (apiError.response && apiError.response.data && apiError.response.data.message) {
         return { success: false, message: apiError.response.data.message };
+      }
+
+      if (!IS_MOCK_FALLBACK_ENABLED) {
+        return {
+          success: false,
+          message: 'Không thể kết nối tới máy chủ để đổi mật khẩu. Vui lòng thử lại!',
+        };
       }
     }
 

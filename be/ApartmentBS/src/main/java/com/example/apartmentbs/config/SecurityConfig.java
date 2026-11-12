@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -64,6 +65,8 @@ public class SecurityConfig {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
         http
+                // Kích hoạt CORS sử dụng CorsConfigurationSource để đảm bảo 401/403 vẫn có header CORS
+                .cors(Customizer.withDefaults())
                 // Vô hiệu hóa CSRF vì hệ thống sử dụng REST API không lưu session cookie
                 .csrf(AbstractHttpConfigurer::disable)
                 // Thiết lập phiên làm việc STATELESS cho kiến trúc Token JWT
